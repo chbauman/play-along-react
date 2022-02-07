@@ -56,11 +56,9 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        {yt}
-        <p>Elapsed: {elapsed}</p>
-        <Score></Score>
-      </header>
+      {yt}
+      <p>Elapsed: {elapsed}</p>
+      <Score></Score>
     </div>
   );
 }
