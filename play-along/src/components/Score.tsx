@@ -16,7 +16,10 @@ export const Score = () => {
     const res = await fetch(fileName);
     const txt = await res.text();
 
-    var osmd = new OpenSheetMusicDisplay("osmd");
+    var osmd = new OpenSheetMusicDisplay("osmd", {
+      drawCredits: false,
+      drawPartNames: false,
+    });
     await osmd.load(txt);
     osmdRef.current = osmd;
 
