@@ -1,84 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import Vex from "vexflow";
-import { OpenSheetMusicDisplay, Pitch, Note } from "opensheetmusicdisplay";
+import { OpenSheetMusicDisplay } from "opensheetmusicdisplay";
+import { getSingle, xml2json } from "../util/util";
+import { measureToVex } from "../util/vexUtil";
 
-const noteToStr = (el: Note) => {
-  // Find note pitch
-  let retVal = "B4";
-  const isRest = el.isRest();
-  if (!isRest) {
-    const str = Pitch.getNoteEnumString(el.Pitch.FundamentalNote);
-    retVal = `${str}${el.Pitch.Octave + 3}`;
-  }
-
-  // Find length
-  const den = el.Length.Denominator;
-  if (den !== 1) {
-    retVal = `${retVal}/${den}`;
-  }
-
-  // Handle rests
-  if (el.isRest()) {
-    retVal = `${retVal}/r`;
-  }
-  return retVal;
-};
-
-const collectBeams = (noteStrings: string[], noteList: Note[]) => {
-  const nNotes = noteStrings.length;
-  let currCollection: string[] = [];
-  const res = [];
-
-  let prevIsBeam = noteList[0].NoteBeam?.BeamNumber !== undefined;
-  currCollection.push(noteStrings[0]);
-
-  for (let i = 1; i < nNotes; ++i) {
-    const el = noteList[i];
-    const currIsBeam = el.NoteBeam?.BeamNumber !== undefined;
-    if (currIsBeam === prevIsBeam) {
-      currCollection.push(noteStrings[i]);
-    } else if (prevIsBeam) {
-      res.push({ type: "beam", els: currCollection.join(", ") });
-      currCollection = [noteStrings[i]];
-    } else {
-      res.push({ type: "normal", els: currCollection.join(", ") });
-      currCollection = [noteStrings[i]];
-    }
-    prevIsBeam = currIsBeam;
-  }
-
-  if (prevIsBeam) {
-    res.push({ type: "beam", els: currCollection.join(", ") });
-  } else {
-    res.push({ type: "normal", els: currCollection.join(", ") });
-  }
-
-  return res;
-};
-
-const toNotes = (
-  score: any,
-  res: { type: "beam" | "normal"; els: string }[]
-) => {
-  let fullRes: any = null;
-
-  res.forEach((el) => {
-    let retVal =
-      el.type === "beam"
-        ? score.beam(score.notes(el.els))
-        : score.notes(el.els);
-    if (fullRes === null) {
-      fullRes = retVal;
-    } else {
-      fullRes = fullRes.concat(retVal);
-    }
-  });
-
-  return fullRes;
-};
+const VF = Vex.Flow;
 
 export const Score = () => {
   const osmdRef = useRef<any>();
+  const xmlRef = useRef<any>();
   const [osmdSet, setOsmd] = useState(false);
 
   const loadLocal = async () => {
@@ -86,22 +16,15 @@ export const Score = () => {
     const res = await fetch(fileName);
     const txt = await res.text();
 
-    var osmd = new OpenSheetMusicDisplay("vf");
-    osmd.setOptions({
-      backend: "svg",
-      drawTitle: false,
-      // drawingParameters: "compacttight" // don't display title, composer etc., smaller margins
-    });
+    var osmd = new OpenSheetMusicDisplay("osmd");
     await osmd.load(txt);
-    osmd.render();
     osmdRef.current = osmd;
+
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(txt, "text/xml");
+    xmlRef.current = xmlDoc;
     setOsmd(true);
-
-    const sheet = osmd.Sheet;
-    const first = sheet.SelectionStart.WholeValue;
-    const end = sheet.SelectionEnd.WholeValue;
-
-    console.log("Rendered", first, end, osmd.Sheet);
+    console.log("Loaded xml");
     return txt;
   };
 
@@ -110,40 +33,62 @@ export const Score = () => {
   }, []);
 
   useEffect(() => {
-    var vf = new Vex.Flow.Factory({ renderer: { elementId: "vf-test" } });
-    var score = vf.EasyScore();
-    var system = vf.System();
     if (osmdSet) {
-      const osmd = osmdRef.current as OpenSheetMusicDisplay;
-      const sourceMeasures = osmd.Sheet.SourceMeasures;
-      let beamed: any = null;
-      sourceMeasures.map((bar, idx) => {
-        const noteList = bar.VerticalSourceStaffEntryContainers.map(
-          (el) => el.StaffEntries[0].VoiceEntries[0].Notes[0]
-        );
-        const noteStrings = noteList.map(noteToStr);
-        if (idx === 0) {
-          beamed = collectBeams(noteStrings, noteList);
-        }
-        return noteStrings.join(", ");
+      const xmlDoc = xmlRef.current as Document;
+      console.log(xmlDoc);
+
+      const jsonRes = xml2json(xmlDoc);
+      console.log("JSON", jsonRes);
+
+      const scorePartwise = getSingle(jsonRes, "score-partwise");
+      const partList = getSingle(scorePartwise, "part-list");
+
+      const partIdList = partList["score-part"].map((el: any) => el._ATTRS.id);
+      console.log("Parts", partIdList);
+
+      const firstPartId = partIdList[0];
+      const firstPart = scorePartwise["part"].filter(
+        (el: any) => el._ATTRS.id === firstPartId
+      )[0];
+      const firstPartMeasures = firstPart.measure;
+      console.log("First part measures", firstPartMeasures);
+
+      const notes = measureToVex(firstPartMeasures[0]);
+
+      ////////////////////////////////////////////////////////
+
+      // Create an SVG renderer and attach it to the DIV element named "vf-extended-test".
+      var div: any = document.getElementById("vf-extended-test");
+      var renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG);
+      renderer.resize(500, 180); // Size our SVG:
+      var context = renderer.getContext();
+
+      // Create a stave at position 10, 40 of width 400 on the canvas.
+      var stave = new VF.Stave(10, 40, 400);
+
+      // Add a clef and time signature.
+      stave.addClef("treble").addTimeSignature("4/4");
+
+      // Connect it to the rendering context and draw!
+      stave.setContext(context).draw();
+
+      // Create a voice in 4/4 and add the notes from above
+      var voice = new VF.Voice({ num_beats: 4, beat_value: 4 });
+      voice.addTickables(notes);
+
+      // Auto-format and draw
+      var beams = VF.Beam.generateBeams(notes);
+      Vex.Flow.Formatter.FormatAndDraw(context, stave, notes);
+      beams.forEach(function (b) {
+        b.setContext(context).draw();
       });
-
-      const allNOtes = toNotes(score, beamed);
-      system
-        .addStave({
-          voices: [score.voice(allNOtes, {})],
-        })
-        .addClef("treble")
-        .addTimeSignature("4/4");
-
-      vf.draw();
     }
   }, [osmdSet]);
 
   return (
     <>
       <div
-        id="vf-test"
+        id="vf-extended-test"
         style={{
           height: "200px",
           width: "4000px",
@@ -158,7 +103,7 @@ export const Score = () => {
         }}
       ></div>
       <div
-        id="vf"
+        id="osmd"
         style={{
           height: "200px",
           width: "4000px",
@@ -168,6 +113,12 @@ export const Score = () => {
         }}
       ></div>
       <div id="osmd" style={{ width: "100%" }}></div>
+      <div
+        style={{
+          height: "20px",
+        }}
+      ></div>
+      <div id="xml-direct" style={{ width: "100%", height: "200px" }}></div>
     </>
   );
 };
