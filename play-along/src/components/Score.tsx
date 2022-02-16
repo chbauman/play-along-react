@@ -1,34 +1,51 @@
 import { useEffect, useRef, useState } from "react";
-import Vex from "vexflow";
 import { OpenSheetMusicDisplay } from "opensheetmusicdisplay";
-import { getSingle, xml2json } from "../util/util";
-import { measureToVex } from "../util/vexUtil";
+import YouTube from "react-youtube";
+import React from "react";
 
-const VF = Vex.Flow;
+const fullW = 40000;
+
+/** Map video seconds to measure number. */
+const matchData = {
+  0: 1,
+  12: 7,
+  20: 11,
+  39: 21,
+};
+
+const loadFile = async (fileName: string) => {
+  const res = await fetch(fileName);
+  const txt = await res.text();
+  const osmd = new OpenSheetMusicDisplay("osmd", {
+    drawCredits: false,
+    drawPartNames: false,
+  });
+  await osmd.load(txt);
+  osmd.setCustomPageFormat(fullW, 2000);
+  osmd.render();
+  return osmd;
+};
 
 export const Score = () => {
   const osmdRef = useRef<any>();
-  const xmlRef = useRef<any>();
-  const [osmdSet, setOsmd] = useState(false);
+  const playerRef = useRef<any>();
+
+  const [currXPos, setCurrXPos] = useState(0);
+  const [osmdLoaded, setLoaded] = useState(false);
+
+  const [elapsed, setElapsed] = useState("0");
+  console.log(elapsed);
+
+  const getTime = async () => {
+    return await playerRef.current.getInternalPlayer().getCurrentTime();
+  };
 
   const loadLocal = async () => {
     const fileName = "./scores/soviet_march_test.musicxml";
-    const res = await fetch(fileName);
-    const txt = await res.text();
-
-    var osmd = new OpenSheetMusicDisplay("osmd", {
-      drawCredits: false,
-      drawPartNames: false,
-    });
-    await osmd.load(txt);
+    const osmd = await loadFile(fileName);
     osmdRef.current = osmd;
-
-    const parser = new DOMParser();
-    const xmlDoc = parser.parseFromString(txt, "text/xml");
-    xmlRef.current = xmlDoc;
-    setOsmd(true);
-    console.log("Loaded xml");
-    return txt;
+    console.log("osmd", osmd);
+    setLoaded(true);
   };
 
   useEffect(() => {
@@ -36,92 +53,75 @@ export const Score = () => {
   }, []);
 
   useEffect(() => {
-    if (osmdSet) {
-      const xmlDoc = xmlRef.current as Document;
-      console.log(xmlDoc);
-
-      const jsonRes = xml2json(xmlDoc);
-      console.log("JSON", jsonRes);
-
-      const scorePartwise = getSingle(jsonRes, "score-partwise");
-      const partList = getSingle(scorePartwise, "part-list");
-
-      const partIdList = partList["score-part"].map((el: any) => el._ATTRS.id);
-      console.log("Parts", partIdList);
-
-      const firstPartId = partIdList[0];
-      const firstPart = scorePartwise["part"].filter(
-        (el: any) => el._ATTRS.id === firstPartId
-      )[0];
-      const firstPartMeasures = firstPart.measure;
-      console.log("First part measures", firstPartMeasures);
-
-      const notes = measureToVex(firstPartMeasures[0]);
-
-      ////////////////////////////////////////////////////////
-
-      // Create an SVG renderer and attach it to the DIV element named "vf-extended-test".
-      var div: any = document.getElementById("vf-extended-test");
-      var renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG);
-      renderer.resize(500, 180); // Size our SVG:
-      var context = renderer.getContext();
-
-      // Create a stave at position 10, 40 of width 400 on the canvas.
-      var stave = new VF.Stave(10, 40, 400);
-
-      // Add a clef and time signature.
-      stave.addClef("treble").addTimeSignature("4/4");
-
-      // Connect it to the rendering context and draw!
-      stave.setContext(context).draw();
-
-      // Create a voice in 4/4 and add the notes from above
-      var voice = new VF.Voice({ num_beats: 4, beat_value: 4 });
-      voice.addTickables(notes);
-
-      // Auto-format and draw
-      var beams = VF.Beam.generateBeams(notes);
-      Vex.Flow.Formatter.FormatAndDraw(context, stave, notes);
-      beams.forEach(function (b) {
-        b.setContext(context).draw();
-      });
+    const osmd = osmdRef.current;
+    if (osmd) {
+      const staveNr = 35;
+      const currMeasure = osmd.GraphicSheet.MeasureList[staveNr];
+      const xPos = (currMeasure[0] as any).stave.x;
+      setCurrXPos(xPos);
     }
-  }, [osmdSet]);
+  }, [osmdLoaded]);
+
+  const { innerWidth: width } = window;
+  const marginRight = Math.round(fullW - currXPos - width);
+
+  useEffect(() => {
+    const interval = setInterval(async () => {
+      const elapsedSec = await getTime();
+
+      // calculations
+      const elapsed_ms = Math.floor(elapsedSec * 1000);
+      const ms = elapsed_ms % 1000;
+      const min = Math.floor(elapsed_ms / 60000);
+      const seconds = Math.floor((elapsed_ms - min * 60000) / 1000);
+
+      const resStr =
+        min.toString().padStart(2, "0") +
+        ":" +
+        seconds.toString().padStart(2, "0") +
+        ":" +
+        ms.toString().padStart(3, "0");
+
+      setElapsed(resStr);
+    }, 100); // 100 ms refresh. increase it if you don't require millisecond precision
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  const opts = {
+    height: "390",
+    width: "640",
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+    },
+  };
+
+  // This is a hack for shutting up typescript compiler!
+  const yt: any = React.createElement(YouTube as any, {
+    videoId: "lDQ7hXMLxGc",
+    opts,
+    ref: playerRef,
+    onReady: () => console.log("Fuck"),
+  });
 
   return (
     <>
-      <div
-        id="vf-extended-test"
-        style={{
-          height: "200px",
-          width: "4000px",
-          backgroundColor: "green",
-          overflowX: "hidden",
-          maxWidth: "100%",
-        }}
-      ></div>
-      <div
-        style={{
-          height: "20px",
-        }}
-      ></div>
-      <div
-        id="osmd"
-        style={{
-          height: "200px",
-          width: "4000px",
-          backgroundColor: "green",
-          overflowX: "hidden",
-          maxWidth: "100%",
-        }}
-      ></div>
-      <div id="osmd" style={{ width: "100%" }}></div>
-      <div
-        style={{
-          height: "20px",
-        }}
-      ></div>
-      <div id="xml-direct" style={{ width: "100%", height: "200px" }}></div>
+      {yt}
+      <div style={{ overflow: "hidden" }}>
+        <div
+          id="osmd"
+          style={{
+            height: "200px",
+            width: `${fullW}px`,
+            backgroundColor: "darkgreen",
+            marginLeft: `-${currXPos}px`,
+            marginRight: `-${marginRight}px`,
+          }}
+        ></div>
+      </div>
     </>
   );
 };

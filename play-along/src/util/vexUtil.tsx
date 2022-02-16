@@ -19,7 +19,6 @@ const getDuration = (measure: any) => {
 const getKeys = (measure: any) => {
   const pitch = measure.pitch;
   if (pitch === undefined) {
-    console.log("break");
     return ["b/4"];
   }
 
@@ -52,7 +51,6 @@ export const measureToVex = (measure: any) => {
   const newNotes = measure.note.map((el: any) => {
     const duration = getDuration(el);
     const keys = getKeys(el);
-    console.log(keys);
     const note = new Vex.Flow.StaveNote({ clef, keys, duration });
 
     return wrapArticulations(note, el);
