@@ -5,12 +5,57 @@ import React from "react";
 
 const fullW = 40000;
 
+const leftStaveMarginPx = 1000;
+
 /** Map video seconds to measure number. */
-const matchData = {
+const matchData: { [key: number]: number } = {
   0: 1,
   12: 7,
   20: 11,
   39: 21,
+  63: 33,
+};
+
+const secsToMeasureNr = (secs: number) => {
+  let minIdx: number | null = null;
+  let minDist: number | null = null;
+  let maxIdx: number | null = null;
+  let maxDist: number | null = null;
+  Object.keys(matchData).forEach((el) => {
+    const elInt = parseInt(el);
+    if (elInt >= secs) {
+      const diff = elInt - secs;
+      if (maxDist === null || maxDist > diff) {
+        maxIdx = elInt;
+        maxDist = diff;
+      }
+    }
+    if (elInt <= secs) {
+      const diff = secs - elInt;
+      if (minDist === null || minDist > diff) {
+        minIdx = elInt;
+        minDist = diff;
+      }
+    }
+  });
+
+  if (minIdx === null) {
+    if (maxIdx === null) {
+      throw new Error("Fuck");
+    }
+    return matchData[maxIdx];
+  } else if (maxIdx === null) {
+    return matchData[minIdx];
+  }
+
+  if (minDist === null || maxDist === null) {
+    throw new Error("Shit sucks!");
+  }
+
+  const frac = minDist / (minDist + maxDist);
+  const [minMeas, maxMeas] = [matchData[minIdx], matchData[maxIdx]];
+  const measureNrFloat = minMeas + (maxMeas - minMeas) * frac;
+  return measureNrFloat;
 };
 
 const loadFile = async (fileName: string) => {
@@ -26,15 +71,27 @@ const loadFile = async (fileName: string) => {
   return osmd;
 };
 
+const interpolatedMap = (secs: number, osmd: OpenSheetMusicDisplay | null) => {
+  if (!osmd) {
+    return 0;
+  }
+
+  // Interpolate again
+  const measureNr = secsToMeasureNr(secs);
+  const staveNr = Math.floor(measureNr);
+  const currMeasure = osmd.GraphicSheet.MeasureList[staveNr - 1];
+  const nextMeasure = osmd.GraphicSheet.MeasureList[staveNr];
+  const xPos = (currMeasure[0] as any).stave.x;
+  const xPosNext = (nextMeasure[0] as any).stave.x;
+  const xPosInterpolated = xPos + (xPosNext - xPos) * (measureNr - staveNr);
+  return xPosInterpolated - leftStaveMarginPx;
+};
+
 export const Score = () => {
   const osmdRef = useRef<any>();
   const playerRef = useRef<any>();
 
   const [currXPos, setCurrXPos] = useState(0);
-  const [osmdLoaded, setLoaded] = useState(false);
-
-  const [elapsed, setElapsed] = useState("0");
-  console.log(elapsed);
 
   const getTime = async () => {
     return await playerRef.current.getInternalPlayer().getCurrentTime();
@@ -45,22 +102,11 @@ export const Score = () => {
     const osmd = await loadFile(fileName);
     osmdRef.current = osmd;
     console.log("osmd", osmd);
-    setLoaded(true);
   };
 
   useEffect(() => {
     loadLocal();
   }, []);
-
-  useEffect(() => {
-    const osmd = osmdRef.current;
-    if (osmd) {
-      const staveNr = 35;
-      const currMeasure = osmd.GraphicSheet.MeasureList[staveNr];
-      const xPos = (currMeasure[0] as any).stave.x;
-      setCurrXPos(xPos);
-    }
-  }, [osmdLoaded]);
 
   const { innerWidth: width } = window;
   const marginRight = Math.round(fullW - currXPos - width);
@@ -68,22 +114,9 @@ export const Score = () => {
   useEffect(() => {
     const interval = setInterval(async () => {
       const elapsedSec = await getTime();
-
-      // calculations
-      const elapsed_ms = Math.floor(elapsedSec * 1000);
-      const ms = elapsed_ms % 1000;
-      const min = Math.floor(elapsed_ms / 60000);
-      const seconds = Math.floor((elapsed_ms - min * 60000) / 1000);
-
-      const resStr =
-        min.toString().padStart(2, "0") +
-        ":" +
-        seconds.toString().padStart(2, "0") +
-        ":" +
-        ms.toString().padStart(3, "0");
-
-      setElapsed(resStr);
-    }, 100); // 100 ms refresh. increase it if you don't require millisecond precision
+      const xPos = interpolatedMap(elapsedSec, osmdRef.current);
+      setCurrXPos(xPos);
+    }, 20); // 100 ms refresh. increase it if you don't require millisecond precision
 
     return () => {
       clearInterval(interval);
