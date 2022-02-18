@@ -98,9 +98,14 @@ export const Score = () => {
   };
 
   const loadLocal = async () => {
-    const fileName = "./scores/soviet_march_test.musicxml";
+    const fileName = "./scores/soviet_march.musicxml";
     const osmd = await loadFile(fileName);
-    osmdRef.current = osmd;
+
+    const parts = osmd.Sheet.Parts;
+    const partIdx = 0;
+
+    // osmd.Sheet.Parts = osmd.Sheet.Parts.filter((el, idx) => idx === partIdx);
+    osmdRef.current = { osmd, parts, partIdx };
     console.log("osmd", osmd);
   };
 
@@ -114,7 +119,7 @@ export const Score = () => {
   useEffect(() => {
     const interval = setInterval(async () => {
       const elapsedSec = await getTime();
-      const xPos = interpolatedMap(elapsedSec, osmdRef.current);
+      const xPos = interpolatedMap(elapsedSec, osmdRef.current.osmd);
       setCurrXPos(xPos);
     }, 20); // 100 ms refresh. increase it if you don't require millisecond precision
 
