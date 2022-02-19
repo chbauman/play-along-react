@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { OpenSheetMusicDisplay } from "opensheetmusicdisplay";
 import YouTube from "react-youtube";
 import React from "react";
+import { xml2js } from "xml-js";
+import { getSingle } from "../util/util";
 
 const fullW = 40000;
 
@@ -65,6 +67,10 @@ const loadFile = async (fileName: string) => {
     drawCredits: false,
     drawPartNames: false,
   });
+
+  const jasonized = xml2js(txt);
+  const scorePartwise = getSingle(jasonized, "score-partwise");
+  console.log("jason", scorePartwise);
   await osmd.load(txt);
   osmd.setCustomPageFormat(fullW, 2000);
   osmd.render();
