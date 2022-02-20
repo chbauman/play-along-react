@@ -1,12 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { OpenSheetMusicDisplay } from "opensheetmusicdisplay";
-import { xml2js } from "xml-js";
-import { getSingle } from "../util/util";
 import { useYoutubePlayer } from "./YtPlayer";
-import { MeasureMap, scores } from "../scores";
+import { MeasureMap, ScoreInfo } from "../scores";
 
 const fullW = 40000;
-
 const leftStaveMarginPx = 1000;
 
 const secsToMeasureNr = (secs: number, matchData: MeasureMap) => {
@@ -51,23 +48,6 @@ const secsToMeasureNr = (secs: number, matchData: MeasureMap) => {
   return measureNrFloat;
 };
 
-const loadFile = async (fileName: string) => {
-  const res = await fetch(fileName);
-  const txt = await res.text();
-  const osmd = new OpenSheetMusicDisplay("osmd", {
-    drawCredits: false,
-    drawPartNames: false,
-  });
-
-  const jasonized = xml2js(txt);
-  const scorePartwise = getSingle(jasonized, "score-partwise");
-  console.log("json", scorePartwise);
-  await osmd.load(txt);
-  osmd.setCustomPageFormat(fullW, 2000);
-  osmd.render();
-  return osmd;
-};
-
 const interpolatedMap = (
   secs: number,
   osmd: OpenSheetMusicDisplay | null,
@@ -88,51 +68,35 @@ const interpolatedMap = (
   return xPosInterpolated - leftStaveMarginPx;
 };
 
-export const ScoreSelector = () => {
-  const nScores = scores.length;
-  const [scoreIdx, setScoreIdx] = useState<number | null>(null);
+const loadOsmd = async (xmlTxt: string) => {
+  const osmd = new OpenSheetMusicDisplay("osmd", {
+    drawCredits: false,
+    drawPartNames: false,
+  });
 
-  const selectNext = () => {
-    if (scoreIdx === null) {
-      setScoreIdx(0);
-      return;
-    }
-    const newIdx = Math.min(scoreIdx + 1, nScores - 1);
-    setScoreIdx(newIdx);
-  };
-  const scoreSelectorComp = <button onClick={selectNext}>Next Score</button>;
-  const scoreComp =
-    scoreIdx === null ? <></> : <Score scoreIdx={scoreIdx}></Score>;
-  return (
-    <>
-      {scoreSelectorComp}
-      {scoreComp}
-    </>
-  );
+  await osmd.load(xmlTxt);
+  osmd.setCustomPageFormat(fullW, 2000);
+  osmd.render();
+  return osmd;
 };
 
-export const Score = (props: { scoreIdx: number }) => {
-  const scoreInfo = scores[props.scoreIdx];
+export const Score = (props: { xmlTxt: string; scoreInfo: ScoreInfo }) => {
   const osmdRef = useRef<any>();
 
-  const { youtubeComp, getTime } = useYoutubePlayer(scoreInfo.videoId);
+  const { youtubeComp, getTime } = useYoutubePlayer(props.scoreInfo.videoId);
 
   const [currXPos, setCurrXPos] = useState(0);
 
   useEffect(() => {
     const loadLocal = async () => {
-      const fileName = `./scores/${scoreInfo.fileName}.musicxml`;
-      const osmd = await loadFile(fileName);
-
-      const parts = osmd.Sheet.Parts;
-      const partIdx = 0;
+      const osmd = await loadOsmd(props.xmlTxt);
 
       // osmd.Sheet.Parts = osmd.Sheet.Parts.filter((el, idx) => idx === partIdx);
-      osmdRef.current = { osmd, parts, partIdx };
+      osmdRef.current = osmd;
       console.log("osmd", osmd);
     };
     loadLocal();
-  }, [scoreInfo]);
+  }, [props.xmlTxt]);
 
   const { innerWidth: width } = window;
   const marginRight = Math.round(fullW - currXPos - width);
@@ -142,8 +106,8 @@ export const Score = (props: { scoreIdx: number }) => {
       const elapsedSec = await getTime();
       const xPos = interpolatedMap(
         elapsedSec,
-        osmdRef.current.osmd,
-        scoreInfo.measureMap
+        osmdRef.current,
+        props.scoreInfo.measureMap
       );
       setCurrXPos(xPos);
     }, 20); // ms refresh.
@@ -151,7 +115,7 @@ export const Score = (props: { scoreIdx: number }) => {
     return () => {
       clearInterval(interval);
     };
-  }, [getTime, scoreInfo]);
+  }, [getTime, props.scoreInfo]);
 
   return (
     <>
