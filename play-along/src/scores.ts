@@ -1,5 +1,10 @@
 /** Map video seconds to measure number. */
 export type MeasureMap = { [key: number]: number };
+export type ScoreInfo = {
+  videoId: string;
+  measureMap: MeasureMap;
+  fileName: string;
+};
 
 const matchData: MeasureMap = {
   0: 1,
@@ -9,4 +14,6 @@ const matchData: MeasureMap = {
   63: 33,
 };
 
-export const scores = [{ videoId: "lDQ7hXMLxGc", measureMap: matchData }];
+export const scores: ScoreInfo[] = [
+  { videoId: "lDQ7hXMLxGc", measureMap: matchData, fileName: "soviet_march" },
+];

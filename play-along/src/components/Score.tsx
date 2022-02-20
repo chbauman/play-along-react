@@ -3,21 +3,13 @@ import { OpenSheetMusicDisplay } from "opensheetmusicdisplay";
 import { xml2js } from "xml-js";
 import { getSingle } from "../util/util";
 import { useYoutubePlayer } from "./YtPlayer";
+import { MeasureMap, scores } from "../scores";
 
 const fullW = 40000;
 
 const leftStaveMarginPx = 1000;
 
-/** Map video seconds to measure number. */
-const matchData: { [key: number]: number } = {
-  0: 1,
-  12: 7,
-  20: 11,
-  39: 21,
-  63: 33,
-};
-
-const secsToMeasureNr = (secs: number) => {
+const secsToMeasureNr = (secs: number, matchData: MeasureMap) => {
   let minIdx: number | null = null;
   let minDist: number | null = null;
   let maxIdx: number | null = null;
@@ -76,13 +68,17 @@ const loadFile = async (fileName: string) => {
   return osmd;
 };
 
-const interpolatedMap = (secs: number, osmd: OpenSheetMusicDisplay | null) => {
+const interpolatedMap = (
+  secs: number,
+  osmd: OpenSheetMusicDisplay | null,
+  measureMap: MeasureMap
+) => {
   if (!osmd) {
     return 0;
   }
 
   // Interpolate again
-  const measureNr = secsToMeasureNr(secs);
+  const measureNr = secsToMeasureNr(secs, measureMap);
   const staveNr = Math.floor(measureNr);
   const currMeasure = osmd.GraphicSheet.MeasureList[staveNr - 1];
   const nextMeasure = osmd.GraphicSheet.MeasureList[staveNr];
@@ -92,28 +88,51 @@ const interpolatedMap = (secs: number, osmd: OpenSheetMusicDisplay | null) => {
   return xPosInterpolated - leftStaveMarginPx;
 };
 
-export const Score = () => {
+export const ScoreSelector = () => {
+  const nScores = scores.length;
+  const [scoreIdx, setScoreIdx] = useState<number | null>(null);
+
+  const selectNext = () => {
+    if (scoreIdx === null) {
+      setScoreIdx(0);
+      return;
+    }
+    const newIdx = Math.min(scoreIdx + 1, nScores - 1);
+    setScoreIdx(newIdx);
+  };
+  const scoreSelectorComp = <button onClick={selectNext}>Next Score</button>;
+  const scoreComp =
+    scoreIdx === null ? <></> : <Score scoreIdx={scoreIdx}></Score>;
+  return (
+    <>
+      {scoreSelectorComp}
+      {scoreComp}
+    </>
+  );
+};
+
+export const Score = (props: { scoreIdx: number }) => {
+  const scoreInfo = scores[props.scoreIdx];
   const osmdRef = useRef<any>();
 
-  const { youtubeComp, getTime } = useYoutubePlayer("lDQ7hXMLxGc");
+  const { youtubeComp, getTime } = useYoutubePlayer(scoreInfo.videoId);
 
   const [currXPos, setCurrXPos] = useState(0);
 
-  const loadLocal = async () => {
-    const fileName = "./scores/soviet_march.musicxml";
-    const osmd = await loadFile(fileName);
-
-    const parts = osmd.Sheet.Parts;
-    const partIdx = 0;
-
-    // osmd.Sheet.Parts = osmd.Sheet.Parts.filter((el, idx) => idx === partIdx);
-    osmdRef.current = { osmd, parts, partIdx };
-    console.log("osmd", osmd);
-  };
-
   useEffect(() => {
+    const loadLocal = async () => {
+      const fileName = `./scores/${scoreInfo.fileName}.musicxml`;
+      const osmd = await loadFile(fileName);
+
+      const parts = osmd.Sheet.Parts;
+      const partIdx = 0;
+
+      // osmd.Sheet.Parts = osmd.Sheet.Parts.filter((el, idx) => idx === partIdx);
+      osmdRef.current = { osmd, parts, partIdx };
+      console.log("osmd", osmd);
+    };
     loadLocal();
-  }, []);
+  }, [scoreInfo]);
 
   const { innerWidth: width } = window;
   const marginRight = Math.round(fullW - currXPos - width);
@@ -121,14 +140,18 @@ export const Score = () => {
   useEffect(() => {
     const interval = setInterval(async () => {
       const elapsedSec = await getTime();
-      const xPos = interpolatedMap(elapsedSec, osmdRef.current.osmd);
+      const xPos = interpolatedMap(
+        elapsedSec,
+        osmdRef.current.osmd,
+        scoreInfo.measureMap
+      );
       setCurrXPos(xPos);
     }, 20); // ms refresh.
 
     return () => {
       clearInterval(interval);
     };
-  }, [getTime]);
+  }, [getTime, scoreInfo]);
 
   return (
     <>
