@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { OpenSheetMusicDisplay } from "opensheetmusicdisplay";
-import YouTube from "react-youtube";
-import React from "react";
 import { xml2js } from "xml-js";
 import { getSingle } from "../util/util";
+import { useYoutubePlayer } from "./YtPlayer";
 
 const fullW = 40000;
 
@@ -70,7 +69,7 @@ const loadFile = async (fileName: string) => {
 
   const jasonized = xml2js(txt);
   const scorePartwise = getSingle(jasonized, "score-partwise");
-  console.log("jason", scorePartwise);
+  console.log("json", scorePartwise);
   await osmd.load(txt);
   osmd.setCustomPageFormat(fullW, 2000);
   osmd.render();
@@ -95,13 +94,10 @@ const interpolatedMap = (secs: number, osmd: OpenSheetMusicDisplay | null) => {
 
 export const Score = () => {
   const osmdRef = useRef<any>();
-  const playerRef = useRef<any>();
+
+  const { youtubeComp, getTime } = useYoutubePlayer("lDQ7hXMLxGc");
 
   const [currXPos, setCurrXPos] = useState(0);
-
-  const getTime = async () => {
-    return await playerRef.current.getInternalPlayer().getCurrentTime();
-  };
 
   const loadLocal = async () => {
     const fileName = "./scores/soviet_march.musicxml";
@@ -127,33 +123,16 @@ export const Score = () => {
       const elapsedSec = await getTime();
       const xPos = interpolatedMap(elapsedSec, osmdRef.current.osmd);
       setCurrXPos(xPos);
-    }, 20); // 100 ms refresh. increase it if you don't require millisecond precision
+    }, 20); // ms refresh.
 
     return () => {
       clearInterval(interval);
     };
-  }, []);
-
-  const opts = {
-    height: "390",
-    width: "640",
-    playerVars: {
-      // https://developers.google.com/youtube/player_parameters
-      autoplay: 1,
-    },
-  };
-
-  // This is a hack for shutting up typescript compiler!
-  const yt: any = React.createElement(YouTube as any, {
-    videoId: "lDQ7hXMLxGc",
-    opts,
-    ref: playerRef,
-    onReady: () => console.log("Fuck"),
-  });
+  }, [getTime]);
 
   return (
     <>
-      {yt}
+      {youtubeComp}
       <div style={{ overflow: "hidden" }}>
         <div
           id="osmd"
