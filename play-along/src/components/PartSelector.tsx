@@ -4,6 +4,7 @@ import { js2xml, xml2js } from "xml-js";
 import { ScoreInfo } from "../scores";
 import { getAll, getSingle } from "../util/util";
 import { Score } from "./Score";
+import { useYoutubePlayer, playerSizePx } from "./YtPlayer";
 
 type PartSelectorState = {
   xml: any;
@@ -78,21 +79,27 @@ export const PartSelector = (props: { scoreInfo: ScoreInfo }) => {
     loadLocal();
   }, [props.scoreInfo]);
 
+  const { youtubeComp, getTime } = useYoutubePlayer(props.scoreInfo.videoId);
+
   if (origXmlAndParts !== null) {
     const setPart = (newPartIdx: number) => {
       if (newPartIdx === origXmlAndParts.currPartIdx) {
         return;
       }
-      const xml = extractPartXml(origXmlAndParts);
-      setOrigXmlAndParts({
+      const newXmlAndParts = {
         ...origXmlAndParts,
+        currPartIdx: newPartIdx,
+      };
+      const xml = extractPartXml(newXmlAndParts);
+      setOrigXmlAndParts({
+        ...newXmlAndParts,
         xml: xml,
         currPartIdx: newPartIdx,
       });
     };
     const currPart = origXmlAndParts.parts[origXmlAndParts.currPartIdx];
     const partSelectorDD = (
-      <DropdownButton id="choose-part" title="Choose Part">
+      <DropdownButton id="choose-part" title="Select Part">
         {origXmlAndParts.parts.map((el, idx) => {
           return (
             <Dropdown.Item key={idx} onClick={() => setPart(idx)}>
@@ -104,9 +111,19 @@ export const PartSelector = (props: { scoreInfo: ScoreInfo }) => {
     );
     return (
       <>
-        <p>Loaded part {currPart.name}</p>
-        {partSelectorDD}
-        <Score xmlTxt={origXmlAndParts.xml} scoreInfo={props.scoreInfo}></Score>
+        {youtubeComp}
+        <div
+          className="d-flex justify-content-between mt-1 mb-1"
+          style={{ width: playerSizePx.width, margin: "auto" }}
+        >
+          <h4>Part: {currPart.name}</h4>
+          {partSelectorDD}
+        </div>
+        <Score
+          xmlTxt={origXmlAndParts.xml}
+          scoreInfo={props.scoreInfo}
+          getTime={getTime}
+        ></Score>
       </>
     );
   }

@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { OpenSheetMusicDisplay } from "opensheetmusicdisplay";
-import { useYoutubePlayer } from "./YtPlayer";
 import { MeasureMap, ScoreInfo } from "../scores";
 
 const fullW = 40000;
@@ -80,20 +79,19 @@ const loadOsmd = async (xmlTxt: string) => {
   return osmd;
 };
 
-export const Score = (props: { xmlTxt: string; scoreInfo: ScoreInfo }) => {
+export const Score = (props: {
+  xmlTxt: string;
+  scoreInfo: ScoreInfo;
+  getTime: () => Promise<any>;
+}) => {
   const osmdRef = useRef<any>();
-
-  const { youtubeComp, getTime } = useYoutubePlayer(props.scoreInfo.videoId);
 
   const [currXPos, setCurrXPos] = useState(0);
 
   useEffect(() => {
     const loadLocal = async () => {
       const osmd = await loadOsmd(props.xmlTxt);
-
-      // osmd.Sheet.Parts = osmd.Sheet.Parts.filter((el, idx) => idx === partIdx);
       osmdRef.current = osmd;
-      console.log("osmd", osmd);
     };
     loadLocal();
   }, [props.xmlTxt]);
@@ -101,13 +99,14 @@ export const Score = (props: { xmlTxt: string; scoreInfo: ScoreInfo }) => {
   const { innerWidth: width } = window;
   const marginRight = Math.round(fullW - currXPos - width);
 
+  const { getTime, scoreInfo } = props;
   useEffect(() => {
     const interval = setInterval(async () => {
       const elapsedSec = await getTime();
       const xPos = interpolatedMap(
         elapsedSec,
         osmdRef.current,
-        props.scoreInfo.measureMap
+        scoreInfo.measureMap
       );
       setCurrXPos(xPos);
     }, 20); // ms refresh.
@@ -115,18 +114,16 @@ export const Score = (props: { xmlTxt: string; scoreInfo: ScoreInfo }) => {
     return () => {
       clearInterval(interval);
     };
-  }, [getTime, props.scoreInfo]);
+  }, [getTime, scoreInfo]);
 
   return (
     <>
-      {youtubeComp}
       <div style={{ overflow: "hidden" }}>
         <div
           id="osmd"
           style={{
             height: "200px",
             width: `${fullW}px`,
-            backgroundColor: "darkgreen",
             marginLeft: `-${currXPos}px`,
             marginRight: `-${marginRight}px`,
           }}
