@@ -8,7 +8,7 @@ export const ScoreSelector = () => {
   const [scoreIdx, setScoreIdx] = useState<number | null>(null);
 
   const scoreSelectorDD = (
-    <DropdownButton id="dropdown-basic-button" title="Choose Score">
+    <DropdownButton id="choose-score" title="Choose Score">
       {scores.map((el, idx) => {
         return (
           <Dropdown.Item key={idx} onClick={() => setScoreIdx(idx)}>

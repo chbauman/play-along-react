@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Dropdown, DropdownButton } from "react-bootstrap";
 import { js2xml, xml2js } from "xml-js";
 import { ScoreInfo } from "../scores";
 import { getAll, getSingle } from "../util/util";
@@ -78,25 +79,33 @@ export const PartSelector = (props: { scoreInfo: ScoreInfo }) => {
   }, [props.scoreInfo]);
 
   if (origXmlAndParts !== null) {
-    const nextPart = () => {
-      const nParts = origXmlAndParts.parts.length;
-      const currIdx = origXmlAndParts.currPartIdx;
-      const newIndex = Math.min(currIdx + 1, nParts - 1);
-      if (newIndex === currIdx) {
+    const setPart = (newPartIdx: number) => {
+      if (newPartIdx === origXmlAndParts.currPartIdx) {
         return;
       }
       const xml = extractPartXml(origXmlAndParts);
       setOrigXmlAndParts({
         ...origXmlAndParts,
         xml: xml,
-        currPartIdx: newIndex,
+        currPartIdx: newPartIdx,
       });
     };
     const currPart = origXmlAndParts.parts[origXmlAndParts.currPartIdx];
+    const partSelectorDD = (
+      <DropdownButton id="choose-part" title="Choose Part">
+        {origXmlAndParts.parts.map((el, idx) => {
+          return (
+            <Dropdown.Item key={idx} onClick={() => setPart(idx)}>
+              {el.name}
+            </Dropdown.Item>
+          );
+        })}
+      </DropdownButton>
+    );
     return (
       <>
         <p>Loaded part {currPart.name}</p>
-        <button onClick={nextPart}>Next part</button>
+        {partSelectorDD}
         <Score xmlTxt={origXmlAndParts.xml} scoreInfo={props.scoreInfo}></Score>
       </>
     );
