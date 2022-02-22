@@ -6,7 +6,7 @@ export type ScoreInfo = {
   fileName: string;
 };
 
-const matchData: MeasureMap = {
+const matchDataSovietMarch: MeasureMap = {
   0: 1,
   12: 7,
   20: 11,
@@ -14,6 +14,25 @@ const matchData: MeasureMap = {
   63: 33,
 };
 
+const myMotherMatchData: MeasureMap = {
+  3: 1,
+  16: 6,
+  21: 7,
+  32: 11,
+  57: 20,
+  81: 29,
+  103: 37,
+};
+
 export const scores: ScoreInfo[] = [
-  { videoId: "lDQ7hXMLxGc", measureMap: matchData, fileName: "soviet_march" },
+  {
+    videoId: "lDQ7hXMLxGc",
+    measureMap: matchDataSovietMarch,
+    fileName: "soviet_march",
+  },
+  {
+    videoId: "4dIiN57DQOI",
+    measureMap: myMotherMatchData,
+    fileName: "My_Mother_Told_Me",
+  },
 ];
