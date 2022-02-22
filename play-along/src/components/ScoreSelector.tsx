@@ -22,6 +22,15 @@ export const ScoreSelector = () => {
     <>
       <Navbar bg="light" expand="lg">
         <Container>
+          <Navbar.Brand className="mt-0 p-0">
+            <img
+              src="/logo512.png"
+              width="45"
+              height="45"
+              className="d-inline-block align-top"
+              alt="React Bootstrap logo"
+            />
+          </Navbar.Brand>
           {scoreName}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse
