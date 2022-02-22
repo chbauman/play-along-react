@@ -1,21 +1,23 @@
 import { useState } from "react";
+import { Dropdown, DropdownButton } from "react-bootstrap";
 import { scores } from "../scores";
 import { PartSelector } from "./PartSelector";
 
 /** Lets the user select the score and displays it. */
 export const ScoreSelector = () => {
-  const nScores = scores.length;
   const [scoreIdx, setScoreIdx] = useState<number | null>(null);
 
-  const selectNext = () => {
-    if (scoreIdx === null) {
-      setScoreIdx(0);
-      return;
-    }
-    const newIdx = Math.min(scoreIdx + 1, nScores - 1);
-    setScoreIdx(newIdx);
-  };
-  const scoreSelectorComp = <button onClick={selectNext}>Next Score</button>;
+  const scoreSelectorDD = (
+    <DropdownButton id="dropdown-basic-button" title="Choose Score">
+      {scores.map((el, idx) => {
+        return (
+          <Dropdown.Item key={idx} onClick={() => setScoreIdx(idx)}>
+            {el.name}
+          </Dropdown.Item>
+        );
+      })}
+    </DropdownButton>
+  );
   let scoreComp = <></>;
   if (scoreIdx !== null) {
     const scoreInfo = scores[scoreIdx];
@@ -27,7 +29,7 @@ export const ScoreSelector = () => {
   }
   return (
     <>
-      {scoreSelectorComp}
+      {scoreSelectorDD}
       {scoreComp}
     </>
   );
