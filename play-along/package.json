@@ -1,7 +1,8 @@
 {
-  "name": "play-along",
-  "version": "0.1.0",
+  "name": "youtube-play-along",
+  "version": "0.4.0",
   "private": true,
+  "homepage": "https://ytplayalong.chrisbaumann.ch",
   "dependencies": {
     "bootstrap": "^5.1.3",
     "buffer": "^6.0.3",
@@ -21,7 +22,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "echo ytplayalong.chrisbaumann.ch > ./build/CNAME && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
