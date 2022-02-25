@@ -23,6 +23,12 @@ const myMotherMatchData: MeasureMap = {
   57: 20,
   81: 29,
   103: 37,
+  109: 39,
+  133: 48,
+  157: 57,
+  179: 65,
+  188: 68,
+  192: 69,
 };
 
 export const scores: ScoreInfo[] = [
