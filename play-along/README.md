@@ -32,4 +32,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### `npm run deploy`
 
 Publishes the app through Github pages.
-Note that `npm build` needs to be run first.
+Note that `npm run build` needs to be run first.

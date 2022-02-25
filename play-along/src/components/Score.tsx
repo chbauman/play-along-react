@@ -64,7 +64,7 @@ const interpolatedMap = (
   const xPos = (currMeasure[0] as any).stave.x;
   const xPosNext = (nextMeasure[0] as any).stave.x;
   const xPosInterpolated = xPos + (xPosNext - xPos) * (measureNr - staveNr);
-  return xPosInterpolated - leftStaveMarginPx;
+  return Math.max(0, xPosInterpolated - leftStaveMarginPx);
 };
 
 const loadOsmd = async (xmlTxt: string) => {
