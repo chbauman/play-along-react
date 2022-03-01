@@ -13,6 +13,9 @@ const matchDataSovietMarch: MeasureMap = {
   20: 11,
   39: 21,
   63: 33,
+  79: 41,
+  95: 49,
+  114: 59,
 };
 
 const myMotherMatchData: MeasureMap = {

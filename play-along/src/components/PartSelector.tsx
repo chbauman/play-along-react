@@ -41,7 +41,6 @@ const extractPartXml = (state: PartSelectorState) => {
     return true;
   });
 
-  console.log(partId, scorePartwise, jasonized);
   return js2xml(jasonized);
 };
 
@@ -64,7 +63,6 @@ export const PartSelector = (props: { scoreInfo: ScoreInfo }) => {
           name: getSingle(el, "part-name").elements[0].text,
         };
       });
-      console.log("nice", partList, parts);
       const baseState = {
         xml: xmlTxt,
         parts,
