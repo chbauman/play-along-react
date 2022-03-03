@@ -67,6 +67,17 @@ const linksRadSchlagerMM: MeasureMap = {
   234: 130,
 };
 
+const waterfallMM = {
+  1: 2,
+  15: 10,
+  50: 30,
+  71: 42,
+  91: 54,
+  119: 70,
+  133: 78,
+  145: 85,
+};
+
 export const scores: ScoreInfo[] = [
   {
     videoId: "lDQ7hXMLxGc",
@@ -91,6 +102,12 @@ export const scores: ScoreInfo[] = [
     measureMap: linksRadSchlagerMM,
     fileName: "Linksradikaler_Schlager",
     name: "Linksradikaler Schlager - SWISS",
+  },
+  {
+    videoId: "5AWltYjY1y4",
+    measureMap: waterfallMM,
+    fileName: "Waterfall",
+    name: "Waterfall - Neelix ft. The Gardener and The Tree",
   },
 ];
 
