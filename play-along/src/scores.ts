@@ -85,6 +85,19 @@ const sfMM = {
   143: 67,
 };
 
+const zirkusMM = {
+  8: 2,
+  24: 9,
+  43: 18,
+  60: 26,
+  78: 34,
+  101: 45,
+  116: 52,
+  133: 60,
+  157: 71,
+  189: 86,
+};
+
 export const scores: ScoreInfo[] = [
   {
     videoId: "lDQ7hXMLxGc",
@@ -121,6 +134,12 @@ export const scores: ScoreInfo[] = [
     measureMap: sfMM,
     fileName: "San_Francisco",
     name: "San Francisco - Scott McKenzie",
+  },
+  {
+    videoId: "n3FrFQNRj9w",
+    measureMap: zirkusMM,
+    fileName: "Zirkus",
+    name: "Die ganze Welt ist ein Zirkus - Grausame Töchter",
   },
 ];
 
