@@ -17,12 +17,18 @@ export const ScoreSelector = () => {
         <PartSelector scoreInfo={scoreInfo}></PartSelector>
       </>
     );
+  } else {
+    scoreComp = (
+      <Container className="mt-3">
+        <p>Start by selecting a score using the menu above on the right.</p>
+      </Container>
+    );
   }
   return (
     <>
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand className="mt-0 p-0">
+          <Navbar.Brand className="mt-0 p-0" onClick={() => setScoreIdx(null)}>
             <img
               src="/logo512.png"
               width="45"
@@ -38,7 +44,11 @@ export const ScoreSelector = () => {
             id="basic-navbar-nav"
           >
             <Nav>
-              <NavDropdown title="Select Score" id="basic-nav-dropdown">
+              <NavDropdown
+                align="end"
+                title="Select Score"
+                id="basic-nav-dropdown"
+              >
                 {scores.map((el, idx) => {
                   return (
                     <NavDropdown.Item
