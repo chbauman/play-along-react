@@ -77,6 +77,13 @@ const waterfallMM = {
   133: 78,
   145: 85,
 };
+const sfMM = {
+  4: 2,
+  43: 20,
+  79: 37,
+  111: 52,
+  143: 67,
+};
 
 export const scores: ScoreInfo[] = [
   {
@@ -108,6 +115,12 @@ export const scores: ScoreInfo[] = [
     measureMap: waterfallMM,
     fileName: "Waterfall",
     name: "Waterfall - Neelix ft. The Gardener and The Tree",
+  },
+  {
+    videoId: "kZcyRLtwUVY",
+    measureMap: sfMM,
+    fileName: "San_Francisco",
+    name: "San Francisco - Scott McKenzie",
   },
 ];
 
