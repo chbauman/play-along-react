@@ -4,7 +4,7 @@ import { MeasureMap, ScoreInfo } from "../scores";
 import Spline from "typescript-cubic-spline";
 
 const fullW = 40000;
-const leftStaveMarginPx = 1000;
+const screenAnchorFactor = 0.3;
 
 const loadOsmd = async (xmlTxt: string) => {
   const osmd = new OpenSheetMusicDisplay("osmd", {
@@ -74,7 +74,10 @@ const interpolate = (
 
   // new a Spline object
   const spline = new Spline(secs, xVals);
-  return (val: number) => Math.max(0, spline.at(val) - leftStaveMarginPx);
+  return (val: number) => {
+    const offset = screenAnchorFactor * window.innerWidth;
+    return Math.max(0, spline.at(val) - offset);
+  };
 };
 
 export const Score = (props: {
