@@ -6,6 +6,7 @@ import Spline from "typescript-cubic-spline";
 const fullW = 40000;
 const screenAnchorFactor = 0.3;
 
+/** Load the score from the xml text string. */
 const loadOsmd = async (xmlTxt: string) => {
   const osmd = new OpenSheetMusicDisplay("osmd", {
     drawCredits: false,
@@ -72,7 +73,7 @@ const interpolate = (
   secs.push(currSec);
   xVals.push(measureXList[currMeasIdx - 1]);
 
-  // new a Spline object
+  // Create a Spline object
   const spline = new Spline(secs, xVals);
   return (val: number) => {
     const offset = screenAnchorFactor * window.innerWidth;
