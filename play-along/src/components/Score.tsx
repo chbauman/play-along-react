@@ -29,7 +29,15 @@ const interpolate = (
   const measureList = osmd.GraphicSheet.MeasureList;
   const measureXList = measureList.map((el) => (el[0] as any)?.stave.x);
 
-  const mmEntries = Object.entries(measureMap);
+  let mmEntries = Object.entries(measureMap);
+  const lastEntry = mmEntries[mmEntries.length - 1];
+  const idxNr = parseInt(lastEntry[0]);
+  const endEntries: [string, number][] = [1, 2, 3, 4, 5].map((el) => {
+    return [`${idxNr + el * 5}`, lastEntry[1]];
+  });
+  const start: [string, number] = ["0", 0];
+  mmEntries = [start].concat(mmEntries).concat(endEntries);
+
   const nEntries = mmEntries.length;
   const getFromEntry = (idx: number) => {
     const [secStr, measIdx] = mmEntries[idx];
