@@ -115,6 +115,17 @@ const amenoMM = {
   221: 91,
 };
 
+const tddiMM = {
+  69: 5,
+  111: 21,
+  142: 33,
+  185: 49,
+  216: 61,
+  247: 73,
+  251: 74,
+  284: 86,
+  292: 90,
+};
 export const scores: ScoreInfo[] = [
   {
     videoId: "lDQ7hXMLxGc",
@@ -163,6 +174,12 @@ export const scores: ScoreInfo[] = [
     measureMap: amenoMM,
     fileName: "Ameno",
     name: "Ameno - ERA",
+  },
+  {
+    videoId: "XEEasR7hVhA",
+    measureMap: tddiMM,
+    fileName: "The_Devil_In_I",
+    name: "The Devil in I - Slipknot",
   },
 ];
 
