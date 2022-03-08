@@ -97,6 +97,23 @@ const zirkusMM = {
   157: 71,
   189: 86,
 };
+const amenoMM = {
+  18: 3,
+  32: 9,
+  36: 11,
+  50: 17,
+  53: 19,
+  77: 29,
+  91: 35,
+  104: 41,
+  121: 48,
+  142: 57,
+  158: 64,
+  170: 69,
+  181: 74,
+  198: 81,
+  221: 91,
+};
 
 export const scores: ScoreInfo[] = [
   {
@@ -140,6 +157,12 @@ export const scores: ScoreInfo[] = [
     measureMap: zirkusMM,
     fileName: "Zirkus",
     name: "Die ganze Welt ist ein Zirkus - Grausame Töchter",
+  },
+  {
+    videoId: "6xUnSVTh8fI",
+    measureMap: amenoMM,
+    fileName: "Ameno",
+    name: "Ameno - ERA",
   },
 ];
 
