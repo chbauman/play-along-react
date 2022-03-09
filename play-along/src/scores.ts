@@ -126,6 +126,17 @@ const tddiMM = {
   284: 86,
   292: 90,
 };
+
+const wbdMM = {
+  3: 2,
+  36: 13,
+  91: 31,
+  115: 39,
+  146: 49,
+  170: 57,
+  194: 65,
+  219: 73,
+};
 export const scores: ScoreInfo[] = [
   {
     videoId: "lDQ7hXMLxGc",
@@ -180,6 +191,12 @@ export const scores: ScoreInfo[] = [
     measureMap: tddiMM,
     fileName: "The_Devil_In_I",
     name: "The Devil in I - Slipknot",
+  },
+  {
+    videoId: "ERCybZO3BTk",
+    measureMap: wbdMM,
+    fileName: "Wo_Bist_Du",
+    name: "Wo Bist Du - Rammstein",
   },
 ];
 
