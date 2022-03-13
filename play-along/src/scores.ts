@@ -78,10 +78,10 @@ const waterfallMM = {
   145: 85,
 };
 const sfMM = {
-  4: 2,
-  43: 20,
+  6: 3,
+  42: 20,
   79: 37,
-  111: 52,
+  110: 52,
   143: 67,
 };
 
@@ -137,6 +137,20 @@ const wbdMM = {
   194: 65,
   219: 73,
 };
+
+const zeitMM = {
+  6: 1,
+  37: 17,
+  84: 41,
+  98: 48,
+  101: 50,
+  117: 58,
+  133: 66,
+  146: 73,
+  160: 80,
+  189: 95,
+};
+
 export const scores: ScoreInfo[] = [
   {
     videoId: "lDQ7hXMLxGc",
@@ -169,7 +183,7 @@ export const scores: ScoreInfo[] = [
     name: "Waterfall - Neelix ft. The Gardener and The Tree",
   },
   {
-    videoId: "kZcyRLtwUVY",
+    videoId: "7I0vkKy504U",
     measureMap: sfMM,
     fileName: "San_Francisco",
     name: "San Francisco - Scott McKenzie",
@@ -197,6 +211,12 @@ export const scores: ScoreInfo[] = [
     measureMap: wbdMM,
     fileName: "Wo_Bist_Du",
     name: "Wo Bist Du - Rammstein",
+  },
+  {
+    videoId: "EbHGS_bVkXY",
+    measureMap: zeitMM,
+    fileName: "Zeit",
+    name: "Zeit - Rammstein",
   },
 ];
 
