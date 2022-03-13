@@ -166,6 +166,15 @@ const saufiSaufiMM = {
   200: 115,
 };
 
+const sosMM = {
+  3: 3,
+  37: 33,
+  71: 63,
+  106: 94,
+  140: 125,
+  172: 153,
+};
+
 export const scores: ScoreInfo[] = [
   {
     videoId: "lDQ7hXMLxGc",
@@ -238,6 +247,12 @@ export const scores: ScoreInfo[] = [
     measureMap: saufiSaufiMM,
     fileName: "Saufi_Saufi",
     name: "Saufi saufi - Tobee",
+  },
+  {
+    videoId: "nkUOACGtGfA",
+    measureMap: sosMM,
+    fileName: "Sound_Of_Silence",
+    name: "The Sound Of Silence - Simon And Garfunkel",
   },
 ];
 
