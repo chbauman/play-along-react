@@ -151,6 +151,21 @@ const zeitMM = {
   189: 95,
 };
 
+const saufiSaufiMM = {
+  2: 1,
+  14: 8,
+  16: 9,
+  30: 17,
+  58: 33,
+  72: 41,
+  79: 45,
+  107: 61,
+  124: 71,
+  138: 79,
+  157: 90,
+  200: 115,
+};
+
 export const scores: ScoreInfo[] = [
   {
     videoId: "lDQ7hXMLxGc",
@@ -217,6 +232,12 @@ export const scores: ScoreInfo[] = [
     measureMap: zeitMM,
     fileName: "Zeit",
     name: "Zeit - Rammstein",
+  },
+  {
+    videoId: "MJRQYboCV7Q",
+    measureMap: saufiSaufiMM,
+    fileName: "Saufi_Saufi",
+    name: "Saufi saufi - Tobee",
   },
 ];
 
