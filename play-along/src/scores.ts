@@ -175,6 +175,16 @@ const sosMM = {
   172: 153,
 };
 
+const htrjMM = {
+  6: 6,
+  25: 20,
+  39: 30,
+  61: 46,
+  78: 58,
+  97: 72,
+  114: 84,
+};
+
 export const scores: ScoreInfo[] = [
   {
     videoId: "lDQ7hXMLxGc",
@@ -253,6 +263,12 @@ export const scores: ScoreInfo[] = [
     measureMap: sosMM,
     fileName: "Sound_Of_Silence",
     name: "The Sound Of Silence - Simon And Garfunkel",
+  },
+  {
+    videoId: "SrnWp5O0DEs",
+    measureMap: htrjMM,
+    fileName: "Hit_The_Road",
+    name: "Hit the Road Jack - Ray Charles",
   },
 ];
 
