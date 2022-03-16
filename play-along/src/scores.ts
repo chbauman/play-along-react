@@ -193,6 +193,14 @@ const ritgMM = {
   149: 79,
 };
 
+const horrMM = {
+  5: 2,
+  37: 26,
+  69: 50,
+  101: 74,
+  133: 98,
+};
+
 export const scores: ScoreInfo[] = [
   {
     videoId: "lDQ7hXMLxGc",
@@ -283,6 +291,12 @@ export const scores: ScoreInfo[] = [
     measureMap: ritgMM,
     fileName: "Rave_In_The_Grave",
     name: "Rave in the Grave - AronChupa & Little Sis Nora",
+  },
+  {
+    videoId: "z_6FajEhLAU",
+    measureMap: horrMM,
+    fileName: "Horrortrip",
+    name: "Der Horrortrip - Klatschkind",
   },
 ];
 
