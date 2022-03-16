@@ -185,6 +185,14 @@ const htrjMM = {
   114: 84,
 };
 
+const ritgMM = {
+  9: 2,
+  49: 24,
+  80: 41,
+  107: 56,
+  149: 79,
+};
+
 export const scores: ScoreInfo[] = [
   {
     videoId: "lDQ7hXMLxGc",
@@ -269,6 +277,12 @@ export const scores: ScoreInfo[] = [
     measureMap: htrjMM,
     fileName: "Hit_The_Road",
     name: "Hit the Road Jack - Ray Charles",
+  },
+  {
+    videoId: "LTIOFW7Pwgc",
+    measureMap: ritgMM,
+    fileName: "Rave_In_The_Grave",
+    name: "Rave in the Grave - AronChupa & Little Sis Nora",
   },
 ];
 
