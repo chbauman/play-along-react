@@ -201,6 +201,20 @@ const horrMM = {
   133: 98,
 };
 
+const sidnrMM = {
+  1: 1,
+  21: 13,
+  41: 25,
+  53: 32,
+  68: 41,
+  81: 49,
+  95: 57,
+  108: 65,
+  120: 72,
+  135: 81,
+  189: 113,
+};
+
 export const scores: ScoreInfo[] = [
   {
     videoId: "lDQ7hXMLxGc",
@@ -297,6 +311,12 @@ export const scores: ScoreInfo[] = [
     measureMap: horrMM,
     fileName: "Horrortrip",
     name: "Der Horrortrip - Klatschkind",
+  },
+  {
+    videoId: "1-8_gHs-Lww",
+    measureMap: sidnrMM,
+    fileName: "Saufen_ist_das_neue_Reden",
+    name: "Saufen ist das neue Reden - Timo Turbine",
   },
 ];
 
