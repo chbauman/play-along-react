@@ -215,6 +215,17 @@ const sidnrMM = {
   189: 113,
 };
 
+const oktoberMM = {
+  14: 6,
+  36: 13,
+  38: 13,
+  51: 22,
+  64: 30,
+  77: 38,
+  90: 46,
+  115: 62,
+};
+
 export const scores: ScoreInfo[] = [
   {
     videoId: "lDQ7hXMLxGc",
@@ -317,6 +328,12 @@ export const scores: ScoreInfo[] = [
     measureMap: sidnrMM,
     fileName: "Saufen_ist_das_neue_Reden",
     name: "Saufen ist das neue Reden - Timo Turbine",
+  },
+  {
+    videoId: "tg_-uIzzSRs",
+    measureMap: oktoberMM,
+    fileName: "Oktoberfest",
+    name: "Oktoberfest - DJ Blyatman & Russian Village Boys",
   },
 ];
 
