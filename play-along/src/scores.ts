@@ -336,13 +336,3 @@ export const scores: ScoreInfo[] = [
     name: "Oktoberfest - DJ Blyatman & Russian Village Boys",
   },
 ];
-
-// Sort alphabetically based on name
-scores.sort((a, b) => {
-  if (a.name < b.name) {
-    return -1;
-  } else if (a.name > b.name) {
-    return 1;
-  }
-  return 0;
-});

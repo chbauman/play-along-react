@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { scores } from "../scores";
 import ContactForm from "./FormSpree";
+import { NewestScores } from "./NewestScores";
 import { PartSelector } from "./PartSelector";
 
 /** Lets the user select the score and displays it. */
@@ -23,10 +24,24 @@ export const ScoreSelector = () => {
       <Container className="mt-3">
         <h4>Getting Started</h4>
         <p>Start by selecting a score using the menu above on the right.</p>
+        <NewestScores setScore={setScoreIdx} />
         <ContactForm />
       </Container>
     );
   }
+  const scoresWithIndex = scores.map((score, idx) => {
+    return { score, idx };
+  });
+  const scoreCopy = [...scoresWithIndex];
+  scoreCopy.sort((a, b) => {
+    if (a.score.name < b.score.name) {
+      return -1;
+    } else if (a.score.name > b.score.name) {
+      return 1;
+    }
+    return 0;
+  });
+
   return (
     <>
       <Navbar bg="light" expand="lg">
@@ -52,13 +67,13 @@ export const ScoreSelector = () => {
                 title="Select Score"
                 id="basic-nav-dropdown"
               >
-                {scores.map((el, idx) => {
+                {scoreCopy.map((el) => {
                   return (
                     <NavDropdown.Item
-                      key={idx}
-                      onClick={() => setScoreIdx(idx)}
+                      key={el.idx}
+                      onClick={() => setScoreIdx(el.idx)}
                     >
-                      {el.name}
+                      {el.score.name}
                     </NavDropdown.Item>
                   );
                 })}
