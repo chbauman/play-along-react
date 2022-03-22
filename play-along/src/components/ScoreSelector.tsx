@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { scores } from "../scores";
+import ContactForm from "./FormSpree";
 import { PartSelector } from "./PartSelector";
 
 /** Lets the user select the score and displays it. */
@@ -20,7 +21,9 @@ export const ScoreSelector = () => {
   } else {
     scoreComp = (
       <Container className="mt-3">
+        <h4>Getting Started</h4>
         <p>Start by selecting a score using the menu above on the right.</p>
+        <ContactForm />
       </Container>
     );
   }
