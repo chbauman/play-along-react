@@ -1,6 +1,10 @@
 import { useForm, ValidationError } from "@formspree/react";
 import { Button, Col, Form, FormLabel, Row } from "react-bootstrap";
 
+/** Form spree contact form component.
+ *
+ * Taken from: https://developers.cloudflare.com/pages/tutorials/add-a-react-form-with-formspree/
+ */
 export default function ContactForm() {
   const [state, handleSubmit] = useForm("xpzbwoql");
 
