@@ -226,6 +226,14 @@ const oktoberMM = {
   115: 62,
 };
 
+const lolitaMM = {
+  45: 2,
+  81: 35,
+  100: 52,
+  137: 85,
+  172: 116,
+};
+
 export const scores: ScoreInfo[] = [
   {
     videoId: "lDQ7hXMLxGc",
@@ -334,5 +342,11 @@ export const scores: ScoreInfo[] = [
     measureMap: oktoberMM,
     fileName: "Oktoberfest",
     name: "Oktoberfest - DJ Blyatman & Russian Village Boys",
+  },
+  {
+    videoId: "QpbHdIrtpNo",
+    measureMap: lolitaMM,
+    fileName: "Lolita",
+    name: "Moi... Lolita - Alizée",
   },
 ];
