@@ -234,6 +234,15 @@ const lolitaMM = {
   172: 116,
 };
 
+const bambolaMM = {
+  10: 10,
+  41: 36,
+  72: 62,
+  101: 86,
+  124: 106,
+  143: 121,
+};
+
 export const scores: ScoreInfo[] = [
   {
     videoId: "lDQ7hXMLxGc",
@@ -348,5 +357,11 @@ export const scores: ScoreInfo[] = [
     measureMap: lolitaMM,
     fileName: "Lolita",
     name: "Moi... Lolita - Alizée",
+  },
+  {
+    videoId: "NMvMR-jNSKg",
+    measureMap: bambolaMM,
+    fileName: "Bambola",
+    name: "Bambola - Betta Lemme",
   },
 ];
