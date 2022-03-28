@@ -243,6 +243,15 @@ const bambolaMM = {
   143: 121,
 };
 
+const youtheoneMM = {
+  8: 2,
+  46: 25,
+  79: 45,
+  125: 73,
+  179: 106,
+  202: 120,
+};
+
 export const scores: ScoreInfo[] = [
   {
     videoId: "lDQ7hXMLxGc",
@@ -363,5 +372,11 @@ export const scores: ScoreInfo[] = [
     measureMap: bambolaMM,
     fileName: "Bambola",
     name: "Bambola - Betta Lemme",
+  },
+  {
+    videoId: "FcyzvRfRIEU",
+    measureMap: youtheoneMM,
+    fileName: "You're_The_one_That_I_Want",
+    name: "You're The one That I Want (Reggae Version) - Joudas ft. Ranja",
   },
 ];
