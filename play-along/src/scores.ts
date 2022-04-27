@@ -252,6 +252,12 @@ const youtheoneMM = {
   202: 120,
 };
 
+const oskarMM = {
+  12: 5,
+  46: 17,
+  104: 37,
+};
+
 export const scores: ScoreInfo[] = [
   {
     videoId: "lDQ7hXMLxGc",
@@ -378,5 +384,11 @@ export const scores: ScoreInfo[] = [
     measureMap: youtheoneMM,
     fileName: "You're_The_one_That_I_Want",
     name: "You're The one That I Want (Reggae Version) - Joudas ft. Ranja",
+  },
+  {
+    videoId: "Uxk4tw9dWUE",
+    measureMap: oskarMM,
+    fileName: "Oskar_der_Elefant",
+    name: "Oskar der Elefant - K.I.Z",
   },
 ];
