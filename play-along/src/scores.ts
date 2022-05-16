@@ -257,6 +257,11 @@ const oskarMM = {
   46: 17,
   104: 37,
 };
+const brainsMM = {
+  10: 7,
+  96: 59,
+  202: 123,
+};
 
 export const scores: ScoreInfo[] = [
   {
@@ -390,5 +395,11 @@ export const scores: ScoreInfo[] = [
     measureMap: oskarMM,
     fileName: "Oskar_der_Elefant",
     name: "Oskar der Elefant - K.I.Z",
+  },
+  {
+    videoId: "d7eEZrRwc_0",
+    measureMap: brainsMM,
+    fileName: "Brains",
+    name: "Brains - Klaypex ft. Kings High",
   },
 ];
