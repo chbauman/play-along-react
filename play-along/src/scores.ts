@@ -273,6 +273,15 @@ const imalrMM = {
   106: 105,
   112: 110,
 };
+const destMM = {
+  27: 1,
+  64: 13,
+  70: 15,
+  92: 29,
+  100: 34,
+  107: 36,
+  131: 51,
+};
 
 export const scores: ScoreInfo[] = [
   {
@@ -424,5 +433,11 @@ export const scores: ScoreInfo[] = [
     measureMap: imalrMM,
     fileName: "Im_Alright",
     name: "I'm Alright - Sportfreunde Stiller",
+  },
+  {
+    videoId: "dv2NtTtwVVY",
+    measureMap: destMM,
+    fileName: "Destiny",
+    name: "Destiny - Headhunterz",
   },
 ];
