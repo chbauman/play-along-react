@@ -268,6 +268,11 @@ const klangMM = {
   84: 55,
   103: 69,
 };
+const imalrMM = {
+  8: 9,
+  106: 105,
+  112: 110,
+};
 
 export const scores: ScoreInfo[] = [
   {
@@ -413,5 +418,11 @@ export const scores: ScoreInfo[] = [
     measureMap: klangMM,
     fileName: "Klaangzang",
     name: "Klaangzang - Sefa",
+  },
+  {
+    videoId: "ha-edv6PVqY",
+    measureMap: imalrMM,
+    fileName: "Im_Alright",
+    name: "I'm Alright - Sportfreunde Stiller",
   },
 ];
