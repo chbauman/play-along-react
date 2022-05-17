@@ -260,7 +260,13 @@ const oskarMM = {
 const brainsMM = {
   10: 7,
   96: 59,
+
   202: 123,
+};
+const klangMM = {
+  11: 1,
+  84: 55,
+  103: 69,
 };
 
 export const scores: ScoreInfo[] = [
@@ -401,5 +407,11 @@ export const scores: ScoreInfo[] = [
     measureMap: brainsMM,
     fileName: "Brains",
     name: "Brains - Klaypex ft. Kings High",
+  },
+  {
+    videoId: "XM7BVj_C7PI",
+    measureMap: klangMM,
+    fileName: "Klaangzang",
+    name: "Klaangzang - Sefa",
   },
 ];
