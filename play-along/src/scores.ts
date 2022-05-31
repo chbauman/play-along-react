@@ -282,6 +282,60 @@ const destMM = {
   107: 36,
   131: 51,
 };
+const freundMM = {
+  40: 15,
+  145: 127,
+  213: 199,
+  219: 205,
+  249: 236,
+};
+
+const cahiMM = {
+  5: 1,
+  44: 29,
+  81: 55,
+  107: 73,
+};
+
+const kingMM = {
+  9: 2,
+  47: 26,
+  105: 62,
+  156: 94,
+};
+
+const deprecatedScores: ScoreInfo[] = [
+  {
+    videoId: "5AWltYjY1y4",
+    measureMap: waterfallMM,
+    fileName: "Waterfall",
+    name: "Waterfall - Neelix ft. The Gardener and The Tree",
+  },
+  {
+    videoId: "n3FrFQNRj9w",
+    measureMap: zirkusMM,
+    fileName: "Zirkus",
+    name: "Die ganze Welt ist ein Zirkus - Grausame Töchter",
+  },
+  {
+    videoId: "z_6FajEhLAU",
+    measureMap: horrMM,
+    fileName: "Horrortrip",
+    name: "Der Horrortrip - Klatschkind",
+  },
+  {
+    videoId: "NMvMR-jNSKg",
+    measureMap: bambolaMM,
+    fileName: "Bambola",
+    name: "Bambola - Betta Lemme",
+  },
+  {
+    videoId: "XM7BVj_C7PI",
+    measureMap: klangMM,
+    fileName: "Klaangzang",
+    name: "Klaangzang - Sefa",
+  },
+];
 
 export const scores: ScoreInfo[] = [
   {
@@ -309,22 +363,10 @@ export const scores: ScoreInfo[] = [
     name: "Linksradikaler Schlager - SWISS",
   },
   {
-    videoId: "5AWltYjY1y4",
-    measureMap: waterfallMM,
-    fileName: "Waterfall",
-    name: "Waterfall - Neelix ft. The Gardener and The Tree",
-  },
-  {
     videoId: "7I0vkKy504U",
     measureMap: sfMM,
     fileName: "San_Francisco",
     name: "San Francisco - Scott McKenzie",
-  },
-  {
-    videoId: "n3FrFQNRj9w",
-    measureMap: zirkusMM,
-    fileName: "Zirkus",
-    name: "Die ganze Welt ist ein Zirkus - Grausame Töchter",
   },
   {
     videoId: "6xUnSVTh8fI",
@@ -375,12 +417,6 @@ export const scores: ScoreInfo[] = [
     name: "Rave in the Grave - AronChupa & Little Sis Nora",
   },
   {
-    videoId: "z_6FajEhLAU",
-    measureMap: horrMM,
-    fileName: "Horrortrip",
-    name: "Der Horrortrip - Klatschkind",
-  },
-  {
     videoId: "1-8_gHs-Lww",
     measureMap: sidnrMM,
     fileName: "Saufen_ist_das_neue_Reden",
@@ -397,12 +433,6 @@ export const scores: ScoreInfo[] = [
     measureMap: lolitaMM,
     fileName: "Lolita",
     name: "Moi... Lolita - Alizée",
-  },
-  {
-    videoId: "NMvMR-jNSKg",
-    measureMap: bambolaMM,
-    fileName: "Bambola",
-    name: "Bambola - Betta Lemme",
   },
   {
     videoId: "FcyzvRfRIEU",
@@ -423,12 +453,6 @@ export const scores: ScoreInfo[] = [
     name: "Brains - Klaypex ft. Kings High",
   },
   {
-    videoId: "XM7BVj_C7PI",
-    measureMap: klangMM,
-    fileName: "Klaangzang",
-    name: "Klaangzang - Sefa",
-  },
-  {
     videoId: "ha-edv6PVqY",
     measureMap: imalrMM,
     fileName: "Im_Alright",
@@ -440,4 +464,25 @@ export const scores: ScoreInfo[] = [
     fileName: "Destiny",
     name: "Destiny - Headhunterz",
   },
+  {
+    videoId: "0vB7xV1sqkU",
+    measureMap: freundMM,
+    fileName: "VonFreund",
+    name: "Von Freund zu Freund - Junger Schwung Tirol",
+  },
+  {
+    videoId: "7wW33aOPAqs",
+    measureMap: cahiMM,
+    fileName: "Cahi_En_La",
+    name: "Cahi en la Trampa - Manu Chao",
+  },
+  {
+    videoId: "e1kwr-C78mI",
+    measureMap: kingMM,
+    fileName: "The_King",
+    name: "The King - Timmy Trumpet & Vitas",
+  },
 ];
+
+const deprNames = deprecatedScores.map((el) => el.name);
+console.log("Not showing", deprNames);
