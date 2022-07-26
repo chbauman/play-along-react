@@ -304,6 +304,11 @@ const kingMM = {
   156: 94,
 };
 
+const rockCivMM = {
+  159: 2,
+  249: 58,
+};
+
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -481,6 +486,12 @@ export const scores: ScoreInfo[] = [
     measureMap: kingMM,
     fileName: "The_King",
     name: "The King - Timmy Trumpet & Vitas",
+  },
+  {
+    videoId: "LotJFb90iZ8",
+    measureMap: rockCivMM,
+    fileName: "Rock_Civilization",
+    name: "Rock Civilization - Headhunterz",
   },
 ];
 
