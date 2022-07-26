@@ -309,6 +309,11 @@ const rockCivMM = {
   249: 58,
 };
 
+const rightNowMM = {
+  13: 9,
+  192: 121,
+};
+
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -492,6 +497,12 @@ export const scores: ScoreInfo[] = [
     measureMap: rockCivMM,
     fileName: "Rock_Civilization",
     name: "Rock Civilization - Headhunterz",
+  },
+  {
+    videoId: "USlp4lbJ0kQ",
+    measureMap: rightNowMM,
+    fileName: "Right_Now",
+    name: "Right Now - TNT & Sound Rush",
   },
 ];
 
