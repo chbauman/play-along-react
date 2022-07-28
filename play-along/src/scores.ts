@@ -322,6 +322,13 @@ const blosEMM = {
   146: 73,
   152: 76,
 };
+const champsMM = {
+  3: 2,
+  21: 10,
+  57: 26,
+  93: 42,
+  129: 58,
+};
 
 const deprecatedScores: ScoreInfo[] = [
   {
@@ -518,6 +525,12 @@ export const scores: ScoreInfo[] = [
     measureMap: blosEMM,
     fileName: "Blos_E_Chlini",
     name: "Blos e chlini Stadt - Dieter Wiesmann",
+  },
+  {
+    videoId: "7B4CLQGxHmI",
+    measureMap: champsMM,
+    fileName: "Champs_Elysees",
+    name: "Aux Champs Elysées - Joe Dassin (Pomplamoose)",
   },
 ];
 
