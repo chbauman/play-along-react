@@ -361,6 +361,24 @@ const deprecatedScores: ScoreInfo[] = [
     fileName: "Klaangzang",
     name: "Klaangzang - Sefa",
   },
+  {
+    videoId: "d7eEZrRwc_0",
+    measureMap: brainsMM,
+    fileName: "Brains",
+    name: "Brains - Klaypex ft. Kings High",
+  },
+  {
+    videoId: "6xUnSVTh8fI",
+    measureMap: amenoMM,
+    fileName: "Ameno",
+    name: "Ameno - ERA",
+  },
+  {
+    videoId: "XEEasR7hVhA",
+    measureMap: tddiMM,
+    fileName: "The_Devil_In_I",
+    name: "The Devil in I - Slipknot",
+  },
 ];
 
 export const scores: ScoreInfo[] = [
@@ -393,18 +411,6 @@ export const scores: ScoreInfo[] = [
     measureMap: sfMM,
     fileName: "San_Francisco",
     name: "San Francisco - Scott McKenzie",
-  },
-  {
-    videoId: "6xUnSVTh8fI",
-    measureMap: amenoMM,
-    fileName: "Ameno",
-    name: "Ameno - ERA",
-  },
-  {
-    videoId: "XEEasR7hVhA",
-    measureMap: tddiMM,
-    fileName: "The_Devil_In_I",
-    name: "The Devil in I - Slipknot",
   },
   {
     videoId: "ERCybZO3BTk",
@@ -471,12 +477,6 @@ export const scores: ScoreInfo[] = [
     measureMap: oskarMM,
     fileName: "Oskar_der_Elefant",
     name: "Oskar der Elefant - K.I.Z",
-  },
-  {
-    videoId: "d7eEZrRwc_0",
-    measureMap: brainsMM,
-    fileName: "Brains",
-    name: "Brains - Klaypex ft. Kings High",
   },
   {
     videoId: "ha-edv6PVqY",
