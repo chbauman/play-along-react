@@ -314,6 +314,15 @@ const rightNowMM = {
   192: 121,
 };
 
+const blosEMM = {
+  22: 12,
+  59: 30,
+  100: 50,
+  132: 66,
+  146: 73,
+  152: 76,
+};
+
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -503,6 +512,12 @@ export const scores: ScoreInfo[] = [
     measureMap: rightNowMM,
     fileName: "Right_Now",
     name: "Right Now - TNT & Sound Rush",
+  },
+  {
+    videoId: "mRIIUNbuiD4",
+    measureMap: blosEMM,
+    fileName: "Blos_E_Chlini",
+    name: "Blos e chlini Stadt - Dieter Wiesmann",
   },
 ];
 
