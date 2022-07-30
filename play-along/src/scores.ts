@@ -341,6 +341,12 @@ const sambaMM = {
   96: 47,
   128: 65,
 };
+const hochMM = {
+  11: 2,
+  30: 9,
+  50: 21,
+  116: 61,
+};
 
 const deprecatedScores: ScoreInfo[] = [
   {
@@ -555,6 +561,12 @@ export const scores: ScoreInfo[] = [
     measureMap: sambaMM,
     fileName: "Samba_De_Janeiro",
     name: "Samba de Janeiro - Bellini",
+  },
+  {
+    videoId: "QCTkqF6lX-c",
+    measureMap: hochMM,
+    fileName: "Hoch_Die_Haende",
+    name: "Hoch die Hände Wochenende - Fäaschtbänkler, Finch & HBz",
   },
 ];
 
