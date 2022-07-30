@@ -329,6 +329,12 @@ const champsMM = {
   93: 42,
   129: 58,
 };
+const ukrAnthMM = {
+  6: 2,
+  65: 19,
+  110: 32,
+  115: 33,
+};
 
 const deprecatedScores: ScoreInfo[] = [
   {
@@ -531,6 +537,12 @@ export const scores: ScoreInfo[] = [
     measureMap: champsMM,
     fileName: "Champs_Elysees",
     name: "Aux Champs Elysées - Joe Dassin (Pomplamoose)",
+  },
+  {
+    videoId: "bHzHlSLhtmM",
+    measureMap: ukrAnthMM,
+    fileName: "Ukrainian_Anthem",
+    name: "Ukrainian National Anthem",
   },
 ];
 
