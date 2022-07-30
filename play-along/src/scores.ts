@@ -347,6 +347,10 @@ const hochMM = {
   50: 21,
   116: 61,
 };
+const laylMM = {
+  8: 6,
+  160: 90,
+};
 
 const deprecatedScores: ScoreInfo[] = [
   {
@@ -567,6 +571,12 @@ export const scores: ScoreInfo[] = [
     measureMap: hochMM,
     fileName: "Hoch_Die_Haende",
     name: "Hoch die Hände Wochenende - Fäaschtbänkler, Finch & HBz",
+  },
+  {
+    videoId: "2seCB54Bv-c",
+    measureMap: laylMM,
+    fileName: "Lay_All_Your_Love",
+    name: "Lay All your Love on Me - ABBA",
   },
 ];
 
