@@ -335,6 +335,12 @@ const ukrAnthMM = {
   110: 32,
   115: 33,
 };
+const sambaMM = {
+  16: 2,
+  59: 26,
+  96: 47,
+  128: 65,
+};
 
 const deprecatedScores: ScoreInfo[] = [
   {
@@ -543,6 +549,12 @@ export const scores: ScoreInfo[] = [
     measureMap: ukrAnthMM,
     fileName: "Ukrainian_Anthem",
     name: "Ukrainian National Anthem",
+  },
+  {
+    videoId: "HAiHEQblKeQ",
+    measureMap: sambaMM,
+    fileName: "Samba_De_Janeiro",
+    name: "Samba de Janeiro - Bellini",
   },
 ];
 
