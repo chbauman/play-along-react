@@ -351,6 +351,14 @@ const laylMM = {
   8: 6,
   160: 90,
 };
+const wwwMM = {
+  1: 2,
+  94: 72,
+};
+const partypMM = {
+  2: 3,
+  180: 98,
+};
 
 const deprecatedScores: ScoreInfo[] = [
   {
@@ -577,6 +585,18 @@ export const scores: ScoreInfo[] = [
     measureMap: laylMM,
     fileName: "Lay_All_Your_Love",
     name: "Lay All your Love on Me - ABBA",
+  },
+  {
+    videoId: "WiR-5swzlvE",
+    measureMap: wwwMM,
+    fileName: "Was_Wollen_Wir",
+    name: "Was wollen wir trinken - dArtagnan",
+  },
+  {
+    videoId: "-4nB-9dmHoc",
+    measureMap: partypMM,
+    fileName: "Partyplanet",
+    name: "Partyplanet - Fäaschtbänkler",
   },
 ];
 
