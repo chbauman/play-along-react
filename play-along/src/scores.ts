@@ -359,6 +359,12 @@ const partypMM = {
   2: 3,
   180: 98,
 };
+const ownTheNightMM = {
+  2: 3,
+  41: 27,
+  108: 68,
+  222: 138,
+};
 
 const deprecatedScores: ScoreInfo[] = [
   {
@@ -597,6 +603,12 @@ export const scores: ScoreInfo[] = [
     measureMap: partypMM,
     fileName: "Partyplanet",
     name: "Partyplanet - Fäaschtbänkler",
+  },
+  {
+    videoId: "5b7m5mENslY",
+    measureMap: ownTheNightMM,
+    fileName: "Own_The_Night",
+    name: "Own The Night - Showtek ft. MC DV8",
   },
 ];
 
