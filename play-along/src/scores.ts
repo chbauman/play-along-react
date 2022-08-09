@@ -365,7 +365,11 @@ const ownTheNightMM = {
   108: 68,
   222: 138,
 };
-
+const oliviaMM = {
+  8: 6,
+  72: 44,
+  170: 102,
+};
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -609,6 +613,12 @@ export const scores: ScoreInfo[] = [
     measureMap: ownTheNightMM,
     fileName: "Own_The_Night",
     name: "Own The Night - Showtek ft. MC DV8",
+  },
+  {
+    videoId: "w0FE4xmAEq4",
+    measureMap: oliviaMM,
+    fileName: "Olivia",
+    name: "Olivia - Die Zipfelbuben",
   },
 ];
 
