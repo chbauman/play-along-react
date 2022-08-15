@@ -370,6 +370,10 @@ const oliviaMM = {
   72: 44,
   170: 102,
 };
+const botAnnaMM = {
+  1: 3,
+  203: 121,
+};
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -619,6 +623,12 @@ export const scores: ScoreInfo[] = [
     measureMap: oliviaMM,
     fileName: "Olivia",
     name: "Olivia - Die Zipfelbuben",
+  },
+  {
+    videoId: "1XK5-n4rR7Q",
+    measureMap: botAnnaMM,
+    fileName: "Boten_Anna",
+    name: "Boten Anna - Basshunter",
   },
 ];
 
