@@ -374,6 +374,10 @@ const botAnnaMM = {
   1: 3,
   203: 121,
 };
+const richiMM = {
+  7: 6,
+  120: 68,
+};
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -629,6 +633,12 @@ export const scores: ScoreInfo[] = [
     measureMap: botAnnaMM,
     fileName: "Boten_Anna",
     name: "Boten Anna - Basshunter",
+  },
+  {
+    videoId: "o5aVBKtXWwo",
+    measureMap: richiMM,
+    fileName: "Richi",
+    name: "Richi - Stubete Gäng",
   },
 ];
 
