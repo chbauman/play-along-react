@@ -378,6 +378,10 @@ const richiMM = {
   7: 6,
   120: 68,
 };
+const fightMM = {
+  74: 3,
+  183: 71,
+};
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -639,6 +643,12 @@ export const scores: ScoreInfo[] = [
     measureMap: richiMM,
     fileName: "Richi",
     name: "Richi - Stubete Gäng",
+  },
+  {
+    videoId: "I_TKhQ7KK1Y",
+    measureMap: fightMM,
+    fileName: "Fight_The_Resistance",
+    name: "Fight The Resistance - Brennan Heart & Zatox",
   },
 ];
 
