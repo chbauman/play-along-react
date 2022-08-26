@@ -382,6 +382,12 @@ const fightMM = {
   74: 3,
   183: 71,
 };
+const poundingMM = {
+  107: 2,
+  142: 24,
+  152: 28,
+  240: 83,
+};
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -649,6 +655,12 @@ export const scores: ScoreInfo[] = [
     measureMap: fightMM,
     fileName: "Fight_The_Resistance",
     name: "Fight The Resistance - Brennan Heart & Zatox",
+  },
+  {
+    videoId: "6BaysTL48SQ",
+    measureMap: poundingMM,
+    fileName: "Pounding_Senses",
+    name: "Pounding Senses (deeper inside mix) - Southstylers",
   },
 ];
 
