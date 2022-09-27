@@ -388,6 +388,12 @@ const poundingMM = {
   152: 28,
   240: 83,
 };
+const canCanMM = {
+  12: 5,
+  41: 44,
+  81: 98,
+  104: 129,
+};
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -661,6 +667,12 @@ export const scores: ScoreInfo[] = [
     measureMap: poundingMM,
     fileName: "Pounding_Senses",
     name: "Pounding Senses (deeper inside mix) - Southstylers",
+  },
+  {
+    videoId: "4Diu2N8TGKA",
+    measureMap: canCanMM,
+    fileName: "Can_Can",
+    name: "Can Can - Offenbach",
   },
 ];
 
