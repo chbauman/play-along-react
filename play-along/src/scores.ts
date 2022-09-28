@@ -394,6 +394,12 @@ const canCanMM = {
   81: 98,
   104: 129,
 };
+const beatItMM = {
+  53: 2,
+  88: 22,
+  107: 33,
+  164: 66,
+};
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -673,6 +679,12 @@ export const scores: ScoreInfo[] = [
     measureMap: canCanMM,
     fileName: "Can_Can",
     name: "Can Can - Offenbach",
+  },
+  {
+    videoId: "oRdxUFDoQe0",
+    measureMap: beatItMM,
+    fileName: "Beat_It",
+    name: "Beat It - Michael Jackson",
   },
 ];
 
