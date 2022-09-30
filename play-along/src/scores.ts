@@ -400,6 +400,11 @@ const beatItMM = {
   107: 33,
   164: 66,
 };
+const savageMM = {
+  4: 2,
+  64: 39,
+  131: 81,
+};
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -685,6 +690,12 @@ export const scores: ScoreInfo[] = [
     measureMap: beatItMM,
     fileName: "Beat_It",
     name: "Beat It - Michael Jackson",
+  },
+  {
+    videoId: "sQR2-Q-k_9Y",
+    measureMap: savageMM,
+    fileName: "Savage_Love",
+    name: "Savage Love - Jason Derulo",
   },
 ];
 
