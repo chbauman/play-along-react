@@ -405,6 +405,11 @@ const savageMM = {
   64: 39,
   131: 81,
 };
+const yesterdayMM = {
+  26: 2,
+  79: 24,
+  115: 39,
+};
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -696,6 +701,12 @@ export const scores: ScoreInfo[] = [
     measureMap: savageMM,
     fileName: "Savage_Love",
     name: "Savage Love - Jason Derulo",
+  },
+  {
+    videoId: "wXTJBr9tt8Q",
+    measureMap: yesterdayMM,
+    fileName: "Yesterday",
+    name: "Yesterday - The Beatles",
   },
 ];
 
