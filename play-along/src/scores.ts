@@ -415,6 +415,15 @@ const misirlouMM = {
   67: 25,
   150: 55,
 };
+const dropTahtMM = {
+  4: 4,
+  72: 40,
+};
+const bootyMM = {
+  9: 6,
+  43: 22,
+  58: 29,
+};
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -718,6 +727,18 @@ export const scores: ScoreInfo[] = [
     measureMap: misirlouMM,
     fileName: "Misirlou",
     name: "Misirlou - The Big Band Royale",
+  },
+  {
+    videoId: "souJM4aCk6w",
+    measureMap: dropTahtMM,
+    fileName: "Drop_That",
+    name: "Drop That Low - Tujamo",
+  },
+  {
+    videoId: "Eco4z98nIQY",
+    measureMap: bootyMM,
+    fileName: "Booty_Swing",
+    name: "Booty Swing - Parov Stelar",
   },
 ];
 
