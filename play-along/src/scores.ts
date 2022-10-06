@@ -410,6 +410,11 @@ const yesterdayMM = {
   79: 24,
   115: 39,
 };
+const misirlouMM = {
+  4: 2,
+  67: 25,
+  150: 55,
+};
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -707,6 +712,12 @@ export const scores: ScoreInfo[] = [
     measureMap: yesterdayMM,
     fileName: "Yesterday",
     name: "Yesterday - The Beatles",
+  },
+  {
+    videoId: "Hd8SmiJHEQM",
+    measureMap: misirlouMM,
+    fileName: "Misirlou",
+    name: "Misirlou - The Big Band Royale",
   },
 ];
 
