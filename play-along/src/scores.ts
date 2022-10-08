@@ -424,6 +424,11 @@ const bootyMM = {
   43: 22,
   58: 29,
 };
+const cordulaMM = {
+  9.5: 5,
+  70: 36,
+  185: 95,
+};
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -739,6 +744,12 @@ export const scores: ScoreInfo[] = [
     measureMap: bootyMM,
     fileName: "Booty_Swing",
     name: "Booty Swing - Parov Stelar",
+  },
+  {
+    videoId: "Xw-g6X8qob0",
+    measureMap: cordulaMM,
+    fileName: "Cordula",
+    name: "Cordula Grün - Die Draufgänger",
   },
 ];
 
