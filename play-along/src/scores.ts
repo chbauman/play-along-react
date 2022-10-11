@@ -429,6 +429,15 @@ const cordulaMM = {
   70: 36,
   185: 95,
 };
+const sunMM = {
+  10: 6,
+  136: 57,
+};
+const vicSongMM = {
+  5: 2,
+  103: 43,
+  151: 63,
+};
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -722,6 +731,12 @@ export const scores: ScoreInfo[] = [
     name: "Savage Love - Jason Derulo",
   },
   {
+    videoId: "x4-sfeHGAYU",
+    measureMap: vicSongMM,
+    fileName: "Victory_Song",
+    name: "Victory Song - Broken Minds & D-Frek",
+  },
+  {
     videoId: "wXTJBr9tt8Q",
     measureMap: yesterdayMM,
     fileName: "Yesterday",
@@ -750,6 +765,12 @@ export const scores: ScoreInfo[] = [
     measureMap: cordulaMM,
     fileName: "Cordula",
     name: "Cordula Grün - Die Draufgänger",
+  },
+  {
+    videoId: "sKyK1Mme9Sc",
+    measureMap: sunMM,
+    fileName: "Sun",
+    name: "Sun - Two Door Cinema Club",
   },
 ];
 
