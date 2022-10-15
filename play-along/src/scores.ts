@@ -438,6 +438,13 @@ const vicSongMM = {
   103: 43,
   151: 63,
 };
+const sweetMM = {
+  8: 5,
+  50: 27,
+  92: 49,
+  134: 71,
+  149.5: 79,
+};
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -771,6 +778,12 @@ export const scores: ScoreInfo[] = [
     measureMap: sunMM,
     fileName: "Sun",
     name: "Sun - Two Door Cinema Club",
+  },
+  {
+    videoId: "qeMFqkcPYcg",
+    measureMap: sweetMM,
+    fileName: "Sweet_Dreams",
+    name: "Sweet Dreams - Eurhythmics",
   },
 ];
 
