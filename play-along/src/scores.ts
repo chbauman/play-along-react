@@ -429,10 +429,7 @@ const cordulaMM = {
   70: 36,
   185: 95,
 };
-const sunMM = {
-  10: 6,
-  136: 57,
-};
+const sunMM = { 10: 6, 136: 57 };
 const vicSongMM = {
   5: 2,
   103: 43,
@@ -445,6 +442,7 @@ const sweetMM = {
   134: 71,
   149.5: 79,
 };
+const chickenMM = { 6: 7, 142: 118 };
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -784,6 +782,12 @@ export const scores: ScoreInfo[] = [
     measureMap: sweetMM,
     fileName: "Sweet_Dreams",
     name: "Sweet Dreams - Eurhythmics",
+  },
+  {
+    videoId: "-xvVsZsvD4c",
+    measureMap: chickenMM,
+    fileName: "Chicken_Dance",
+    name: "The Chicken Dance",
   },
 ];
 
