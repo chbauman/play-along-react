@@ -366,6 +366,7 @@ const sweetMM = {
 };
 const chickenMM = { 6: 7, 142: 118 };
 const tequilaMM = { 8: 7, 104: 79 };
+const cumbancheroMM = { 7: 6, 57: 37 };
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -717,6 +718,12 @@ export const scores: ScoreInfo[] = [
     measureMap: tequilaMM,
     fileName: "Tequila",
     name: "Tequila - The Champs",
+  },
+  {
+    videoId: "sZn1GXdzY9g",
+    measureMap: cumbancheroMM,
+    fileName: "El_Cumbanchero",
+    name: "El Cumbanchero - Daniel Santos",
   },
 ];
 
