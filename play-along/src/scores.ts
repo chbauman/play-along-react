@@ -251,28 +251,14 @@ const youtheoneMM = {
   179: 106,
   202: 120,
 };
-
-const oskarMM = {
-  12: 5,
-  46: 17,
-  104: 37,
-};
-const brainsMM = {
-  10: 7,
-  96: 59,
-
-  202: 123,
-};
+const oskarMM = { 12: 5, 46: 17, 104: 37 };
+const brainsMM = { 10: 7, 96: 59, 202: 123 };
 const klangMM = {
   11: 1,
   84: 55,
   103: 69,
 };
-const imalrMM = {
-  8: 9,
-  106: 105,
-  112: 110,
-};
+const imalrMM = { 8: 9, 106: 105, 112: 110 };
 const destMM = {
   27: 1,
   64: 13,
@@ -289,14 +275,7 @@ const freundMM = {
   219: 205,
   249: 236,
 };
-
-const cahiMM = {
-  5: 1,
-  44: 29,
-  81: 55,
-  107: 73,
-};
-
+const cahiMM = { 5: 1, 44: 29, 81: 55, 107: 73 };
 const kingMM = {
   9: 2,
   47: 26,
@@ -304,16 +283,8 @@ const kingMM = {
   156: 94,
 };
 
-const rockCivMM = {
-  159: 2,
-  249: 58,
-};
-
-const rightNowMM = {
-  13: 9,
-  192: 121,
-};
-
+const rockCivMM = { 159: 2, 249: 58 };
+const rightNowMM = { 13: 9, 192: 121 };
 const blosEMM = {
   22: 12,
   59: 30,
@@ -347,41 +318,19 @@ const hochMM = {
   50: 21,
   116: 61,
 };
-const laylMM = {
-  8: 6,
-  160: 90,
-};
-const wwwMM = {
-  1: 2,
-  94: 72,
-};
-const partypMM = {
-  2: 3,
-  180: 98,
-};
+const laylMM = { 8: 6, 160: 90 };
+const wwwMM = { 1: 2, 94: 72 };
+const partypMM = { 2: 3, 180: 98 };
 const ownTheNightMM = {
   2: 3,
   41: 27,
   108: 68,
   222: 138,
 };
-const oliviaMM = {
-  8: 6,
-  72: 44,
-  170: 102,
-};
-const botAnnaMM = {
-  1: 3,
-  203: 121,
-};
-const richiMM = {
-  7: 6,
-  120: 68,
-};
-const fightMM = {
-  74: 3,
-  183: 71,
-};
+const oliviaMM = { 8: 6, 72: 44, 170: 102 };
+const botAnnaMM = { 1: 3, 203: 121 };
+const richiMM = { 7: 6, 120: 68 };
+const fightMM = { 74: 3, 183: 71 };
 const poundingMM = {
   107: 2,
   142: 24,
@@ -400,41 +349,14 @@ const beatItMM = {
   107: 33,
   164: 66,
 };
-const savageMM = {
-  4: 2,
-  64: 39,
-  131: 81,
-};
-const yesterdayMM = {
-  26: 2,
-  79: 24,
-  115: 39,
-};
-const misirlouMM = {
-  4: 2,
-  67: 25,
-  150: 55,
-};
-const dropTahtMM = {
-  4: 4,
-  72: 40,
-};
-const bootyMM = {
-  9: 6,
-  43: 22,
-  58: 29,
-};
-const cordulaMM = {
-  9.5: 5,
-  70: 36,
-  185: 95,
-};
+const savageMM = { 4: 2, 64: 39, 131: 81 };
+const yesterdayMM = { 26: 2, 79: 24, 115: 39 };
+const misirlouMM = { 4: 2, 67: 25, 150: 55 };
+const dropTahtMM = { 4: 4, 72: 40 };
+const bootyMM = { 9: 6, 43: 22, 58: 29 };
+const cordulaMM = { 9.5: 5, 70: 36, 185: 95 };
 const sunMM = { 10: 6, 136: 57 };
-const vicSongMM = {
-  5: 2,
-  103: 43,
-  151: 63,
-};
+const vicSongMM = { 5: 2, 103: 43, 151: 63 };
 const sweetMM = {
   8: 5,
   50: 27,
@@ -443,6 +365,7 @@ const sweetMM = {
   149.5: 79,
 };
 const chickenMM = { 6: 7, 142: 118 };
+const tequilaMM = { 8: 7, 104: 79 };
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -788,6 +711,12 @@ export const scores: ScoreInfo[] = [
     measureMap: chickenMM,
     fileName: "Chicken_Dance",
     name: "The Chicken Dance",
+  },
+  {
+    videoId: "U_JFLb1IItM",
+    measureMap: tequilaMM,
+    fileName: "Tequila",
+    name: "Tequila - The Champs",
   },
 ];
 
