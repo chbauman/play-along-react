@@ -17,7 +17,6 @@ const matchDataSovietMarch: MeasureMap = {
   95: 49,
   114: 59,
 };
-
 const myMotherMatchData: MeasureMap = {
   3: 1,
   16: 6,
@@ -33,7 +32,6 @@ const myMotherMatchData: MeasureMap = {
   188: 68,
   192: 69,
 };
-
 const kannibalenliedMeasureMap: MeasureMap = {
   26: 2,
   35: 6,
@@ -50,7 +48,6 @@ const kannibalenliedMeasureMap: MeasureMap = {
   221: 94,
   245: 105,
 };
-
 const linksRadSchlagerMM: MeasureMap = {
   14: 2,
   20: 6,
@@ -150,7 +147,6 @@ const zeitMM = {
   160: 80,
   189: 95,
 };
-
 const saufiSaufiMM = {
   2: 1,
   14: 8,
@@ -165,7 +161,6 @@ const saufiSaufiMM = {
   157: 90,
   200: 115,
 };
-
 const sosMM = {
   3: 3,
   37: 33,
@@ -174,7 +169,6 @@ const sosMM = {
   140: 125,
   172: 153,
 };
-
 const htrjMM = {
   6: 6,
   25: 20,
@@ -184,23 +178,8 @@ const htrjMM = {
   97: 72,
   114: 84,
 };
-
-const ritgMM = {
-  9: 2,
-  49: 24,
-  80: 41,
-  107: 56,
-  149: 79,
-};
-
-const horrMM = {
-  5: 2,
-  37: 26,
-  69: 50,
-  101: 74,
-  133: 98,
-};
-
+const ritgMM = { 9: 2, 49: 24, 80: 41, 107: 56, 149: 79 };
+const horrMM = { 5: 2, 37: 26, 69: 50, 101: 74, 133: 98 };
 const sidnrMM = {
   1: 1,
   21: 13,
@@ -214,7 +193,6 @@ const sidnrMM = {
   135: 81,
   189: 113,
 };
-
 const oktoberMM = {
   14: 6,
   36: 13,
@@ -225,15 +203,7 @@ const oktoberMM = {
   90: 46,
   115: 62,
 };
-
-const lolitaMM = {
-  45: 2,
-  81: 35,
-  100: 52,
-  137: 85,
-  172: 116,
-};
-
+const lolitaMM = { 45: 2, 81: 35, 100: 52, 137: 85, 172: 116 };
 const bambolaMM = {
   10: 10,
   41: 36,
@@ -242,7 +212,6 @@ const bambolaMM = {
   124: 106,
   143: 121,
 };
-
 const youtheoneMM = {
   8: 2,
   46: 25,
@@ -253,11 +222,7 @@ const youtheoneMM = {
 };
 const oskarMM = { 12: 5, 46: 17, 104: 37 };
 const brainsMM = { 10: 7, 96: 59, 202: 123 };
-const klangMM = {
-  11: 1,
-  84: 55,
-  103: 69,
-};
+const klangMM = { 11: 1, 84: 55, 103: 69 };
 const imalrMM = { 8: 9, 106: 105, 112: 110 };
 const destMM = {
   27: 1,
@@ -276,13 +241,7 @@ const freundMM = {
   249: 236,
 };
 const cahiMM = { 5: 1, 44: 29, 81: 55, 107: 73 };
-const kingMM = {
-  9: 2,
-  47: 26,
-  105: 62,
-  156: 94,
-};
-
+const kingMM = { 9: 2, 47: 26, 105: 62, 156: 94 };
 const rockCivMM = { 159: 2, 249: 58 };
 const rightNowMM = { 13: 9, 192: 121 };
 const blosEMM = {
@@ -293,62 +252,21 @@ const blosEMM = {
   146: 73,
   152: 76,
 };
-const champsMM = {
-  3: 2,
-  21: 10,
-  57: 26,
-  93: 42,
-  129: 58,
-};
-const ukrAnthMM = {
-  6: 2,
-  65: 19,
-  110: 32,
-  115: 33,
-};
-const sambaMM = {
-  16: 2,
-  59: 26,
-  96: 47,
-  128: 65,
-};
-const hochMM = {
-  11: 2,
-  30: 9,
-  50: 21,
-  116: 61,
-};
+const champsMM = { 3: 2, 21: 10, 57: 26, 93: 42, 129: 58 };
+const ukrAnthMM = { 6: 2, 65: 19, 110: 32, 115: 33 };
+const sambaMM = { 16: 2, 59: 26, 96: 47, 128: 65 };
+const hochMM = { 11: 2, 30: 9, 50: 21, 116: 61 };
 const laylMM = { 8: 6, 160: 90 };
 const wwwMM = { 1: 2, 94: 72 };
 const partypMM = { 2: 3, 180: 98 };
-const ownTheNightMM = {
-  2: 3,
-  41: 27,
-  108: 68,
-  222: 138,
-};
+const ownTheNightMM = { 2: 3, 41: 27, 108: 68, 222: 138 };
 const oliviaMM = { 8: 6, 72: 44, 170: 102 };
 const botAnnaMM = { 1: 3, 203: 121 };
 const richiMM = { 7: 6, 120: 68 };
 const fightMM = { 74: 3, 183: 71 };
-const poundingMM = {
-  107: 2,
-  142: 24,
-  152: 28,
-  240: 83,
-};
-const canCanMM = {
-  12: 5,
-  41: 44,
-  81: 98,
-  104: 129,
-};
-const beatItMM = {
-  53: 2,
-  88: 22,
-  107: 33,
-  164: 66,
-};
+const poundingMM = { 107: 2, 142: 24, 152: 28, 240: 83 };
+const canCanMM = { 12: 5, 41: 44, 81: 98, 104: 129 };
+const beatItMM = { 53: 2, 88: 22, 107: 33, 164: 66 };
 const savageMM = { 4: 2, 64: 39, 131: 81 };
 const yesterdayMM = { 26: 2, 79: 24, 115: 39 };
 const misirlouMM = { 4: 2, 67: 25, 150: 55 };
@@ -357,13 +275,7 @@ const bootyMM = { 9: 6, 43: 22, 58: 29 };
 const cordulaMM = { 9.5: 5, 70: 36, 185: 95 };
 const sunMM = { 10: 6, 136: 57 };
 const vicSongMM = { 5: 2, 103: 43, 151: 63 };
-const sweetMM = {
-  8: 5,
-  50: 27,
-  92: 49,
-  134: 71,
-  149.5: 79,
-};
+const sweetMM = { 8: 5, 50: 27, 92: 49, 134: 71, 149.5: 79 };
 const chickenMM = { 6: 7, 142: 118 };
 const tequilaMM = { 8: 7, 104: 79 };
 const cumbancheroMM = { 7: 6, 57: 37 };
