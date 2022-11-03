@@ -367,6 +367,7 @@ const sweetMM = {
 const chickenMM = { 6: 7, 142: 118 };
 const tequilaMM = { 8: 7, 104: 79 };
 const cumbancheroMM = { 7: 6, 57: 37 };
+const recalledMM = { 13: 6, 79: 46, 92: 54 };
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -690,16 +691,22 @@ export const scores: ScoreInfo[] = [
     name: "Booty Swing - Parov Stelar",
   },
   {
-    videoId: "Xw-g6X8qob0",
-    measureMap: cordulaMM,
-    fileName: "Cordula",
-    name: "Cordula Grün - Die Draufgänger",
+    videoId: "GKARuQGhrO4",
+    measureMap: recalledMM,
+    fileName: "Recalled",
+    name: "Recalled To Life - Dutch Master",
   },
   {
     videoId: "sKyK1Mme9Sc",
     measureMap: sunMM,
     fileName: "Sun",
     name: "Sun - Two Door Cinema Club",
+  },
+  {
+    videoId: "Xw-g6X8qob0",
+    measureMap: cordulaMM,
+    fileName: "Cordula",
+    name: "Cordula Grün - Die Draufgänger",
   },
   {
     videoId: "qeMFqkcPYcg",
