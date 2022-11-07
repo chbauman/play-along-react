@@ -281,6 +281,7 @@ const tequilaMM = { 8: 7, 104: 79 };
 const cumbancheroMM = { 7: 6, 57: 37 };
 const recalledMM = { 13: 6, 79: 46, 92: 54 };
 const freedMM = { 13: 9, 80: 45 };
+const soulSplitMM = { 9: 6, 58: 25, 105: 61, 115: 69, 131: 75 };
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -614,6 +615,12 @@ export const scores: ScoreInfo[] = [
     measureMap: sunMM,
     fileName: "Sun",
     name: "Sun - Two Door Cinema Club",
+  },
+  {
+    videoId: "1LEfacrCU9M",
+    measureMap: soulSplitMM,
+    fileName: "Soul_Split",
+    name: "Soul Split - Irradiate",
   },
   {
     videoId: "Xw-g6X8qob0",
