@@ -17,10 +17,8 @@ export default function ContactForm() {
       <Row>
         <h4>Contact</h4>
         <p>
-          Use the form below to contact the website's developer. Any feedback is
-          welcome, especially also song requests. Even better if you already
-          have the corresponding sheet music, preferrably as a MuseScore (.mscz)
-          or as a MusicXML file.
+          Use the form below to contact the creator of this application. Any
+          feedback is welcome.
         </p>
       </Row>
       <Row>
