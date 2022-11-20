@@ -284,6 +284,7 @@ const freedMM = { 13: 9, 80: 45 };
 const soulSplitMM = { 9: 6, 58: 25, 105: 61, 115: 69, 131: 75 };
 const rhythmIsAMM = { 2: 3, 31: 18, 62: 34, 108: 58, 123.5: 66 };
 const badTouchMM = { 17: 3, 110.5: 51 };
+const happyMM = { 7: 2, 100: 64 };
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -671,6 +672,12 @@ export const scores: ScoreInfo[] = [
     measureMap: badTouchMM,
     fileName: "The_Bad_Touch",
     name: "The Bad Touch - Bloodhound Gang",
+  },
+  {
+    videoId: "ZbZSe6N_BXs",
+    measureMap: happyMM,
+    fileName: "Happy",
+    name: "Happy - Pharrell Williams",
   },
 ];
 
