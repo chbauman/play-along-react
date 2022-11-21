@@ -1,3 +1,4 @@
+"""This python script reduces the sizes of the xml files."""
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -16,7 +17,7 @@ REMOVE_ELEMENTS = [
     "midi-device",
     "midi-instrument",
     "voice",
-    "type",
+    # "type", # Needed for small notes
     # "beam",
     "stem",
 ]
