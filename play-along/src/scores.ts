@@ -285,6 +285,8 @@ const soulSplitMM = { 9: 6, 58: 25, 105: 61, 115: 69, 131: 75 };
 const rhythmIsAMM = { 2: 3, 31: 18, 62: 34, 108: 58, 123.5: 66 };
 const badTouchMM = { 17: 3, 110.5: 51 };
 const happyMM = { 7: 2, 100: 64 };
+const crazyFrogMM = { 7: 2, 75: 41 };
+const uprisingMM = { 6: 2, 107: 56 };
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -678,6 +680,18 @@ export const scores: ScoreInfo[] = [
     measureMap: happyMM,
     fileName: "Happy",
     name: "Happy - Pharrell Williams",
+  },
+  {
+    videoId: "k85mRPqvMbE",
+    measureMap: crazyFrogMM,
+    fileName: "Crazy_Frog",
+    name: "Axel F - Crazy Frog",
+  },
+  {
+    videoId: "w8KQmps-Sog",
+    measureMap: uprisingMM,
+    fileName: "Uprising",
+    name: "Uprising - Muse",
   },
 ];
 
