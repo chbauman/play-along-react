@@ -287,6 +287,7 @@ const badTouchMM = { 17: 3, 110.5: 51 };
 const happyMM = { 7: 2, 100: 64 };
 const crazyFrogMM = { 7: 2, 75: 41 };
 const uprisingMM = { 6: 2, 107: 56 };
+const cambodiaMM = { 11: 5, 150: 69 };
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -692,6 +693,12 @@ export const scores: ScoreInfo[] = [
     measureMap: uprisingMM,
     fileName: "Uprising",
     name: "Uprising - Muse",
+  },
+  {
+    videoId: "BERFZja9wb0",
+    measureMap: cambodiaMM,
+    fileName: "Cambodia",
+    name: "Cambodia - Kim Wilde",
   },
 ];
 
