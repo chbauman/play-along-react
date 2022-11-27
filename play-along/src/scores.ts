@@ -288,6 +288,7 @@ const happyMM = { 7: 2, 100: 64 };
 const crazyFrogMM = { 7: 2, 75: 41 };
 const uprisingMM = { 6: 2, 107: 56 };
 const cambodiaMM = { 11: 5, 150: 69 };
+const ievanMM = { 11: 9, 157: 154 };
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -699,6 +700,12 @@ export const scores: ScoreInfo[] = [
     measureMap: cambodiaMM,
     fileName: "Cambodia",
     name: "Cambodia - Kim Wilde",
+  },
+  {
+    videoId: "S4nwKLxEboo",
+    measureMap: ievanMM,
+    fileName: "Ievan_Polkka",
+    name: "Ievan Polkka - Loituma",
   },
 ];
 
