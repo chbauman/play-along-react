@@ -289,6 +289,8 @@ const crazyFrogMM = { 7: 2, 75: 41 };
 const uprisingMM = { 6: 2, 107: 56 };
 const cambodiaMM = { 11: 5, 150: 69 };
 const ievanMM = { 11: 9, 157: 154 };
+const santianoMM = { 12: 3, 56: 46, 104: 93 };
+const choristesMM = { 3: 3, 94: 38, 128: 51 };
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -706,6 +708,18 @@ export const scores: ScoreInfo[] = [
     measureMap: ievanMM,
     fileName: "Ievan_Polkka",
     name: "Ievan Polkka - Loituma",
+  },
+  {
+    videoId: "qYyaKNvcKEA",
+    measureMap: santianoMM,
+    fileName: "Santiano",
+    name: "Santiano - Les Marins D'Iroise",
+  },
+  {
+    videoId: "9lfgOfMY2FI",
+    measureMap: choristesMM,
+    fileName: "Les_Choristes",
+    name: "Les Choristes - Bruno Coulais",
   },
 ];
 
