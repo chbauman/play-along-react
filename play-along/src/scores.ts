@@ -289,8 +289,9 @@ const crazyFrogMM = { 7: 2, 75: 41 };
 const uprisingMM = { 6: 2, 107: 56 };
 const cambodiaMM = { 11: 5, 150: 69 };
 const ievanMM = { 11: 9, 157: 154 };
-const santianoMM = { 12: 3, 56: 46, 104: 93 };
+const santianoMM = { 12: 3, 56: 45, 104: 92 };
 const choristesMM = { 3: 3, 94: 38, 128: 51 };
+const sombToLoveMM = { 7: 2, 18: 6, 26: 8, 33: 10, 56: 17, 95: 29, 129: 39 };
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -720,6 +721,12 @@ export const scores: ScoreInfo[] = [
     measureMap: choristesMM,
     fileName: "Les_Choristes",
     name: "Les Choristes - Bruno Coulais",
+  },
+  {
+    videoId: "kijpcUv-b8M",
+    measureMap: sombToLoveMM,
+    fileName: "Somebody_To_Love",
+    name: "Somebody To Love - Queen",
   },
 ];
 
