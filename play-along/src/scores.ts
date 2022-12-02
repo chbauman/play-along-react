@@ -292,6 +292,7 @@ const ievanMM = { 11: 9, 157: 154 };
 const santianoMM = { 12: 3, 56: 45, 104: 92 };
 const choristesMM = { 3: 3, 94: 38, 128: 51 };
 const sombToLoveMM = { 7: 2, 18: 6, 26: 8, 33: 10, 56: 17, 95: 29, 129: 39 };
+const dieEineMM = { 6: 2, 167: 88 };
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -727,6 +728,12 @@ export const scores: ScoreInfo[] = [
     measureMap: sombToLoveMM,
     fileName: "Somebody_To_Love",
     name: "Somebody To Love - Queen",
+  },
+  {
+    videoId: "Bkj3IVIO2Os",
+    measureMap: dieEineMM,
+    fileName: "Die_Immer_Lacht",
+    name: "Die Immer Lacht - Stereoact ft. Kerstin Ott",
   },
 ];
 
