@@ -737,5 +737,15 @@ export const scores: ScoreInfo[] = [
   },
 ];
 
+const DEBUG = false;
+if (DEBUG) {
+  scores.push({
+    videoId: "8spuxFUNIFw",
+    measureMap: { 6: 2, 17: 4, 29: 6 },
+    fileName: "Calibration",
+    name: "Calibration",
+  });
+}
+
 const deprNames = deprecatedScores.map((el) => el.name);
 console.log("Not showing", deprNames);
