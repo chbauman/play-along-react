@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import { Dropdown, DropdownButton } from "react-bootstrap";
-import { js2xml, xml2js } from "xml-js";
 import { ScoreInfo } from "../scores";
-import { getAll, getSingle } from "../util/util";
+import { getSingleXml, parseXml, xmlToString } from "../util/util";
 import { Score } from "./Score";
 import { useYoutubePlayer, playerSizePx } from "./YtPlayer";
 
 type PartSelectorState = {
-  xml: any;
-  origXml: any;
+  xml: string;
+  origXml: string;
   parts: { id: string; name: string }[];
   currPartIdx: number;
 };
@@ -19,29 +18,45 @@ const loadXmlFile = async (fileName: string) => {
   return res.text();
 };
 
-const getScorePartwise = (xml: any) => {
-  const jasonized = xml2js(xml);
-  const scorePartwise = getSingle(jasonized, "score-partwise");
-  return { jasonized, scorePartwise };
+const removeUnused = (
+  baseEl: Document,
+  parName: string,
+  childName: string,
+  partId: string
+) => {
+  const parEl = getSingleXml(baseEl, parName);
+  parEl.childNodes.forEach((el) => {
+    if (el.nodeName === childName && (el as any).id !== partId) {
+      parEl.removeChild(el);
+    }
+  });
 };
 
 const extractPartXml = (state: PartSelectorState) => {
   const partId = state.parts[state.currPartIdx].id;
 
-  const { jasonized, scorePartwise } = getScorePartwise(state.origXml);
-  const partList = getSingle(scorePartwise, "part-list");
-  partList.elements = partList.elements.filter((el: any) => {
-    return el.name === "score-part" && el.attributes.id === partId;
-  });
+  const parsedXML = parseXml(state.origXml);
 
-  scorePartwise.elements = scorePartwise.elements.filter((el: any) => {
-    if (el.name === "part") {
-      return el.attributes.id === partId;
-    }
-    return true;
-  });
+  // Remove all but current part from part-list
+  removeUnused(parsedXML, "part-list", "score-part", partId);
 
-  return js2xml(jasonized);
+  // Remove all but current parts
+  removeUnused(parsedXML, "score-partwise", "part", partId);
+
+  return xmlToString(parsedXML);
+};
+
+export const getParts = (xml: Document) => {
+  const scorePwXml = getSingleXml(xml, "score-partwise");
+  const parts = [];
+  const els = scorePwXml.getElementsByTagName("score-part");
+  for (let i = 0; i < els.length; ++i) {
+    parts.push({
+      id: els[i].id,
+      name: els[i].getElementsByTagName("part-name")[0].textContent!,
+    });
+  }
+  return parts;
 };
 
 export const PartSelector = (props: { scoreInfo: ScoreInfo }) => {
@@ -55,14 +70,10 @@ export const PartSelector = (props: { scoreInfo: ScoreInfo }) => {
       const fileName = `./scores/${scoreInfo.fileName}.musicxml`;
       const xmlTxt = await loadXmlFile(fileName);
 
-      const { scorePartwise } = getScorePartwise(xmlTxt);
-      const partList = getSingle(scorePartwise, "part-list");
-      const parts = getAll(partList, "score-part").map((el: any) => {
-        return {
-          id: el.attributes.id,
-          name: getSingle(el, "part-name").elements[0].text,
-        };
-      });
+      const parsedXML = parseXml(xmlTxt);
+
+      const parts = getParts(parsedXML);
+
       const baseState = {
         xml: xmlTxt,
         parts,
