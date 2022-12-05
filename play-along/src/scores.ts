@@ -737,7 +737,7 @@ export const scores: ScoreInfo[] = [
   },
 ];
 
-const DEBUG = false;
+const DEBUG = true;
 if (DEBUG) {
   scores.push({
     videoId: "8spuxFUNIFw",

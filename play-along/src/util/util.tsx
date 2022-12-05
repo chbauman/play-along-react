@@ -11,29 +11,116 @@ export const getSingleXml = (xml: Document, name: string) => {
   return elList[0];
 };
 
-const scale = ["C", "D", "E", "F", "G", "A", "B"];
-const sLen = scale.length;
-const increase = (val: string, oct: number, n: number) => {
-  const idx = scale.indexOf(val);
-  const newIdx = (idx + n) % sLen;
-  const newOct = idx + n >= sLen ? oct + 1 : oct;
-  const newStep = scale[newIdx];
-  return [newStep, newOct] as const;
+const pitchMap: { [key: string]: number } = {
+  C: 0,
+  D: 2,
+  E: 4,
+  F: 5,
+  G: 7,
+  A: 9,
+  B: 11,
+};
+const sharpScale = [
+  ["C", 0],
+  ["C", 1],
+  ["D", 0],
+  ["D", 1],
+  ["E", 0],
+  ["F", 0],
+  ["F", 1],
+  ["G", 0],
+  ["G", 1],
+  ["A", 0],
+  ["A", 1],
+  ["B", 0],
+];
+const flatScale = [
+  ["C", 0],
+  ["D", -1],
+  ["D", 0],
+  ["E", -1],
+  ["E", 0],
+  ["F", 0],
+  ["G", -1],
+  ["G", 0],
+  ["A", -1],
+  ["A", 0],
+  ["B", -1],
+  ["B", 0],
+];
+const transposeOptions: { [key: string]: [number, number] } = {
+  C: [0, 0],
+  Bb: [2, 2],
+  F: [7, 1],
+  Eb: [9, 3],
+};
+export const transposeKeys = Object.keys(transposeOptions);
+const sLen = flatScale.length;
+const increase = (
+  val: string,
+  oct: number,
+  alterNum: number,
+  n: number,
+  scale: any
+) => {
+  const idx = pitchMap[val];
+  const newIdxTot = idx + n + alterNum;
+  const newIdx = newIdxTot % sLen;
+  const newOct = newIdxTot >= sLen ? oct + 1 : oct;
+  const [newPitch, newAlter] = scale[newIdx];
+  return [newPitch, newAlter, newOct] as const;
 };
 
-export const transpose = (xml: Document, steps: number = 1) => {
+export const transpose = (xml: Document, pitch: string) => {
+  const [chrom, fifths] = transposeOptions[pitch];
+  const measures = xml.getElementsByTagName("measure");
+  const attrs = measures[0].getElementsByTagName("attributes")[0];
+
+  const fifthsEl = attrs.getElementsByTagName("fifths")[0];
+  const fifthsNum = parseInt(fifthsEl.textContent!);
+  const newFifths = fifthsNum + fifths;
+  fifthsEl.textContent = `${newFifths}`;
+  const usedScale = newFifths >= 0 ? sharpScale : flatScale;
+  console.log(usedScale);
   console.log(xml);
-  const elements = xml.getElementsByTagName("pitch");
+
+  const elements = xml.getElementsByTagName("note");
   for (let i = 0; i < elements.length; ++i) {
-    const el = elements[i];
+    const noteEl = elements[i];
+    const el = noteEl.getElementsByTagName("pitch")[0];
+    if (!el) {
+      continue;
+    }
     const step = el.getElementsByTagName("step")[0];
     const oct = el.getElementsByTagName("octave")[0];
+    const alter = el.getElementsByTagName("alter")[0];
+    const alterNum = alter ? Number.parseInt(alter.textContent!) : 0;
     const octNum = Number.parseInt(oct.textContent!);
-    const [newStep, newOct] = increase(step.textContent!, octNum, steps);
-    if (newStep === undefined) {
-      console.log(newStep, step.textContent);
-    }
-    step.textContent = newStep;
+    const [newPitch, newAlter, newOct] = increase(
+      step.textContent!,
+      octNum,
+      alterNum,
+      chrom,
+      usedScale
+    );
+    step.textContent = newPitch;
     oct.textContent = newOct.toString();
+    if (alter) {
+      if (newAlter !== 0) {
+        alter.textContent = newAlter.toString();
+      } else {
+        el.removeChild(alter);
+      }
+    } else if (newAlter !== 0) {
+      const newEl = xml.createElement("alter");
+      newEl.textContent = newAlter.toString();
+      el.appendChild(newEl);
+    }
+
+    // Remove any accidentals
+    const acc = noteEl.getElementsByTagName("accidental")[0];
+    if (acc) {
+      noteEl.removeChild(acc);
+    }
   }
 };

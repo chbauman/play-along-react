@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
-import { Dropdown, DropdownButton } from "react-bootstrap";
+import { ButtonGroup, Dropdown, DropdownButton } from "react-bootstrap";
 import { ScoreInfo } from "../scores";
-import { getSingleXml, parseXml, xmlToString } from "../util/util";
+import {
+  getSingleXml,
+  parseXml,
+  transpose,
+  transposeKeys,
+  xmlToString,
+} from "../util/util";
 import { Score } from "./Score";
 import { useYoutubePlayer, playerSizePx } from "./YtPlayer";
 
@@ -10,6 +16,7 @@ type PartSelectorState = {
   origXml: string;
   parts: { id: string; name: string }[];
   currPartIdx: number;
+  pitch: string;
 };
 
 /** Loads a local xml file. */
@@ -42,6 +49,9 @@ const extractPartXml = (state: PartSelectorState) => {
 
   // Remove all but current parts
   removeUnused(parsedXML, "score-partwise", "part", partId);
+
+  // Transpose
+  transpose(parsedXML, state.pitch);
 
   return xmlToString(parsedXML);
 };
@@ -79,6 +89,7 @@ export const PartSelector = (props: { scoreInfo: ScoreInfo }) => {
         parts,
         currPartIdx: 0,
         origXml: xmlTxt,
+        pitch: transposeKeys[0],
       };
       setOrigXmlAndParts({
         ...baseState,
@@ -91,13 +102,17 @@ export const PartSelector = (props: { scoreInfo: ScoreInfo }) => {
   const { youtubeComp, getTime } = useYoutubePlayer(props.scoreInfo.videoId);
 
   if (origXmlAndParts !== null) {
-    const setPart = (newPartIdx: number) => {
-      if (newPartIdx === origXmlAndParts.currPartIdx) {
+    const setPart = (newPartIdx: number, newPitch: string) => {
+      if (
+        newPartIdx === origXmlAndParts.currPartIdx &&
+        newPitch === origXmlAndParts.pitch
+      ) {
         return;
       }
       const newXmlAndParts = {
         ...origXmlAndParts,
         currPartIdx: newPartIdx,
+        pitch: newPitch,
       };
       const xml = extractPartXml(newXmlAndParts);
       setOrigXmlAndParts({
@@ -107,16 +122,31 @@ export const PartSelector = (props: { scoreInfo: ScoreInfo }) => {
       });
     };
     const currPart = origXmlAndParts.parts[origXmlAndParts.currPartIdx];
+    const currPitch = origXmlAndParts.pitch;
     const partSelectorDD = (
-      <DropdownButton id="choose-part" title="Select Part">
-        {origXmlAndParts.parts.map((el, idx) => {
-          return (
-            <Dropdown.Item key={idx} onClick={() => setPart(idx)}>
-              {el.name}
-            </Dropdown.Item>
-          );
-        })}
-      </DropdownButton>
+      <ButtonGroup>
+        <DropdownButton id="choose-part" title="Select Part" as={ButtonGroup}>
+          {origXmlAndParts.parts.map((el, idx) => {
+            return (
+              <Dropdown.Item key={idx} onClick={() => setPart(idx, currPitch)}>
+                {el.name}
+              </Dropdown.Item>
+            );
+          })}
+        </DropdownButton>
+        <DropdownButton id="choose-key" title="Select Pitch" as={ButtonGroup}>
+          {transposeKeys.map((el) => {
+            return (
+              <Dropdown.Item
+                key={el}
+                onClick={() => setPart(origXmlAndParts.currPartIdx, el)}
+              >
+                {el}
+              </Dropdown.Item>
+            );
+          })}
+        </DropdownButton>
+      </ButtonGroup>
     );
     return (
       <>
@@ -125,8 +155,10 @@ export const PartSelector = (props: { scoreInfo: ScoreInfo }) => {
           className="d-flex justify-content-between mt-1 mb-1"
           style={{ width: playerSizePx.width, margin: "auto" }}
         >
-          <h4>Part: {currPart.name}</h4>
-          {partSelectorDD}
+          <h4>
+            Part: {currPart.name}, {currPitch}
+          </h4>
+          <div className="d-flex">{partSelectorDD}</div>
         </div>
         <Score
           xmlTxt={origXmlAndParts.xml}
