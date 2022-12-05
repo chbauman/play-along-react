@@ -741,7 +741,7 @@ const DEBUG = false;
 if (DEBUG) {
   scores.push({
     videoId: "8spuxFUNIFw",
-    measureMap: { 6: 2, 17: 4, 29: 6 },
+    measureMap: { 6: 2, 17: 4, 29: 6, 50: 11 },
     fileName: "Calibration",
     name: "Calibration",
   });
