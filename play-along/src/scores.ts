@@ -293,6 +293,8 @@ const santianoMM = { 12: 3, 56: 45, 104: 92 };
 const choristesMM = { 3: 3, 94: 38, 128: 51 };
 const sombToLoveMM = { 7: 2, 18: 6, 26: 8, 33: 10, 56: 17, 95: 29, 129: 39 };
 const dieEineMM = { 6: 2, 167: 88 };
+const mrBlueMM = { 22: 2, 91: 52, 231: 156, 237: 160 };
+const loveOnRaveMM = { 5: 5, 101: 81 };
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -734,6 +736,18 @@ export const scores: ScoreInfo[] = [
     measureMap: dieEineMM,
     fileName: "Die_Immer_Lacht",
     name: "Die Immer Lacht - Stereoact ft. Kerstin Ott",
+  },
+  {
+    videoId: "aQUlA8Hcv4s",
+    measureMap: mrBlueMM,
+    fileName: "Mr_Blue_Sky",
+    name: "Mr. Blue Sky - Electric Light Orchestra",
+  },
+  {
+    videoId: "CVbTtJ2tbyg",
+    measureMap: loveOnRaveMM,
+    fileName: "Love_On_Rave",
+    name: "Love On Rave - ДЕТИ RAVE",
   },
 ];
 
