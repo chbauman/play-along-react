@@ -749,6 +749,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Love_On_Rave",
     name: "Love On Rave - ДЕТИ RAVE",
   },
+  {
+    videoId: "6fMwrdWmExg",
+    measureMap: { 12: 6, 113: 51, 205: 92 },
+    fileName: "Luchtballon",
+    name: "10.000 luchtballonnen - K3",
+  },
 ];
 
 const DEBUG = true;
