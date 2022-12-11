@@ -763,6 +763,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Chlini",
     name: "Chlini Händ - Kunz",
   },
+  {
+    videoId: "ZqcXgODTeOU",
+    measureMap: { 1.5: 1, 59: 37, 77: 48 },
+    fileName: "People_Shit",
+    name: "People Equals Shit - Richard Cheese",
+  },
 ];
 
 if (DEBUG) {
