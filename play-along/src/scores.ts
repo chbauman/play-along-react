@@ -1,3 +1,5 @@
+import { DEBUG } from "./util/util";
+
 /** Map video seconds to measure number. */
 export type MeasureMap = { [key: number]: number };
 export type ScoreInfo = {
@@ -763,7 +765,6 @@ export const scores: ScoreInfo[] = [
   },
 ];
 
-const DEBUG = true;
 if (DEBUG) {
   scores.push({
     videoId: "8spuxFUNIFw",

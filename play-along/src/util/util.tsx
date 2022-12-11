@@ -1,3 +1,5 @@
+export const DEBUG = false;
+
 export const parseXml = (xmlStr: string) => {
   return new window.DOMParser().parseFromString(xmlStr, "text/xml");
 };
