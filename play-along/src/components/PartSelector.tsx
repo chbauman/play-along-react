@@ -1,19 +1,13 @@
 import { useEffect, useState } from "react";
 import { ButtonGroup, Dropdown, DropdownButton } from "react-bootstrap";
 import { ScoreInfo } from "../scores";
-import {
-  getSingleXml,
-  parseXml,
-  transpose,
-  transposeKeys,
-  xmlToString,
-} from "../util/util";
+import { getSingleXml, parseXml, transpose, transposeKeys } from "../util/util";
 import { Score } from "./Score";
 import { useYoutubePlayer, playerSizePx } from "./YtPlayer";
 
 type PartSelectorState = {
-  xml: string;
-  origXml: string;
+  xml: Document;
+  origXml: Document;
   parts: { id: string; name: string }[];
   currPartIdx: number;
   pitch: string;
@@ -39,10 +33,16 @@ const removeUnused = (
   });
 };
 
+const clodeDoc = (doc: Document) => {
+  const newDoc: any = doc.cloneNode(true);
+  newDoc.xmlStandalone = (doc as any).xmlStandalone;
+  return newDoc as Document;
+};
+
 const extractPartXml = (state: PartSelectorState) => {
   const partId = state.parts[state.currPartIdx].id;
 
-  const parsedXML = parseXml(state.origXml);
+  const parsedXML = clodeDoc(state.origXml);
 
   // Remove all but current part from part-list
   removeUnused(parsedXML, "part-list", "score-part", partId);
@@ -53,7 +53,7 @@ const extractPartXml = (state: PartSelectorState) => {
   // Transpose
   transpose(parsedXML, state.pitch);
 
-  return xmlToString(parsedXML);
+  return parsedXML;
 };
 
 export const getParts = (xml: Document) => {
@@ -85,10 +85,10 @@ export const PartSelector = (props: { scoreInfo: ScoreInfo }) => {
       const parts = getParts(parsedXML);
 
       const baseState = {
-        xml: xmlTxt,
+        xml: parsedXML,
         parts,
         currPartIdx: 0,
-        origXml: xmlTxt,
+        origXml: parsedXML,
         pitch: transposeKeys[0],
       };
       setOrigXmlAndParts({
@@ -121,10 +121,11 @@ export const PartSelector = (props: { scoreInfo: ScoreInfo }) => {
         currPartIdx: newPartIdx,
       });
     };
-    const currPart = origXmlAndParts.parts[origXmlAndParts.currPartIdx];
+    const allParts = origXmlAndParts.parts;
+    const currPart = allParts[origXmlAndParts.currPartIdx];
     const currPitch = origXmlAndParts.pitch;
-    const partSelectorDD = (
-      <ButtonGroup>
+    const partChooser =
+      allParts.length <= 1 ? null : (
         <DropdownButton id="choose-part" title="Select Part" as={ButtonGroup}>
           {origXmlAndParts.parts.map((el, idx) => {
             return (
@@ -134,6 +135,10 @@ export const PartSelector = (props: { scoreInfo: ScoreInfo }) => {
             );
           })}
         </DropdownButton>
+      );
+    const partSelectorDD = (
+      <ButtonGroup>
+        {partChooser}
         <DropdownButton id="choose-key" title="Select Pitch" as={ButtonGroup}>
           {transposeKeys.map((el) => {
             return (

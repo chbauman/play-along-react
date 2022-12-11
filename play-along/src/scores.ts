@@ -759,7 +759,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "aNgjX8y_HHU",
-    measureMap: { 15.5: 1, 50: 16, 134.5: 53 },
+    measureMap: { 15: 1, 50: 16, 134.5: 53 },
     fileName: "Chlini",
     name: "Chlini Händ - Kunz",
   },

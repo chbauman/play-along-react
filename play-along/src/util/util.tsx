@@ -4,9 +4,6 @@ export const parseXml = (xmlStr: string) => {
   return new window.DOMParser().parseFromString(xmlStr, "text/xml");
 };
 
-export const xmlToString = (xml: Document) =>
-  new XMLSerializer().serializeToString(xml);
-
 export const getSingleXml = (xml: Document, name: string) => {
   const elList = xml.getElementsByTagName(name);
   console.assert(elList.length === 1);

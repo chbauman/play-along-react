@@ -7,13 +7,13 @@ const fullW = 40000;
 const screenAnchorFactor = 0.3;
 
 /** Load the score from the xml text string. */
-const loadOsmd = async (xmlTxt: string) => {
+const loadOsmd = async (xml: Document) => {
   const osmd = new OpenSheetMusicDisplay("osmd", {
     drawCredits: false,
     drawPartNames: false,
   });
 
-  await osmd.load(xmlTxt);
+  await osmd.load(xml);
   osmd.setCustomPageFormat(fullW, 2000);
   osmd.render();
   return osmd;
@@ -82,7 +82,7 @@ const interpolate = (
 };
 
 export const Score = (props: {
-  xmlTxt: string;
+  xmlTxt: Document;
   scoreInfo: ScoreInfo;
   getTime: () => Promise<any>;
 }) => {
