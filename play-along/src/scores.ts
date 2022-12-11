@@ -755,6 +755,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Luchtballon",
     name: "10.000 luchtballonnen - K3",
   },
+  {
+    videoId: "aNgjX8y_HHU",
+    measureMap: { 15.5: 1, 50: 16, 134.5: 53 },
+    fileName: "Chlini",
+    name: "Chlini Händ - Kunz",
+  },
 ];
 
 const DEBUG = true;
