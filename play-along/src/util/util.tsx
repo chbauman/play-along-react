@@ -80,8 +80,6 @@ export const transpose = (xml: Document, pitch: string) => {
   const newFifths = fifthsNum + fifths;
   fifthsEl.textContent = `${newFifths}`;
   const usedScale = newFifths >= 0 ? sharpScale : flatScale;
-  console.log(usedScale);
-  console.log(xml);
 
   const elements = xml.getElementsByTagName("note");
   for (let i = 0; i < elements.length; ++i) {
