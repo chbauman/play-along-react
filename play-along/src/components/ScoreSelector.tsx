@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { scores } from "../scores";
 import ContactForm from "./FormSpree";
+import { NavBar } from "./NavBar";
 import { NewestScores } from "./NewestScores";
 import { PartSelector } from "./PartSelector";
 
@@ -10,15 +11,11 @@ export const ScoreSelector = () => {
   const [scoreIdx, setScoreIdx] = useState<number | null>(null);
 
   let scoreComp = <></>;
-  let scoreName = <Navbar.Brand>Youtube Play Along</Navbar.Brand>;
+  let title = undefined;
   if (scoreIdx !== null) {
     const scoreInfo = scores[scoreIdx];
-    scoreName = <Navbar.Brand>{scoreInfo.name}</Navbar.Brand>;
-    scoreComp = (
-      <>
-        <PartSelector scoreInfo={scoreInfo}></PartSelector>
-      </>
-    );
+    title = scoreInfo.name;
+    scoreComp = <PartSelector scoreInfo={scoreInfo}></PartSelector>;
   } else {
     scoreComp = (
       <Container className="mt-3">
@@ -29,59 +26,12 @@ export const ScoreSelector = () => {
       </Container>
     );
   }
-  const scoresWithIndex = scores.map((score, idx) => {
-    return { score, idx };
-  });
-  const scoreCopy = [...scoresWithIndex];
-  scoreCopy.sort((a, b) => {
-    if (a.score.name < b.score.name) {
-      return -1;
-    } else if (a.score.name > b.score.name) {
-      return 1;
-    }
-    return 0;
-  });
+
+  const navBar = <NavBar title={title} setScoreIdx={setScoreIdx} />;
 
   return (
     <>
-      <Navbar bg="light" expand="lg">
-        <Container>
-          <Navbar.Brand className="mt-0 p-0" onClick={() => setScoreIdx(null)}>
-            <img
-              src="/logo512.png"
-              width="45"
-              height="45"
-              className="d-inline-block align-top"
-              alt="React Bootstrap logo"
-            />
-          </Navbar.Brand>
-          {scoreName}
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse
-            className="justify-content-end"
-            id="basic-navbar-nav"
-          >
-            <Nav>
-              <NavDropdown
-                align="end"
-                title="Select Score"
-                id="basic-nav-dropdown"
-              >
-                {scoreCopy.map((el) => {
-                  return (
-                    <NavDropdown.Item
-                      key={el.idx}
-                      onClick={() => setScoreIdx(el.idx)}
-                    >
-                      {el.score.name}
-                    </NavDropdown.Item>
-                  );
-                })}
-              </NavDropdown>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+      {navBar}
       {scoreComp}
     </>
   );
