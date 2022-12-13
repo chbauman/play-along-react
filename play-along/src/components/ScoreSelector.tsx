@@ -1,33 +1,42 @@
-import { useState } from "react";
 import { Container } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 import { scores } from "../scores";
 import ContactForm from "./FormSpree";
 import { NavBar } from "./NavBar";
 import { NewestScores } from "./NewestScores";
 import { PartSelector } from "./PartSelector";
 
-/** Lets the user select the score and displays it. */
-export const ScoreSelector = () => {
-  const [scoreIdx, setScoreIdx] = useState<number | null>(null);
+export const ScoreRoute = () => {
+  let { scoreId } = useParams();
 
-  let scoreComp = <></>;
-  let title = undefined;
-  if (scoreIdx !== null) {
-    const scoreInfo = scores[scoreIdx];
-    title = scoreInfo.name;
-    scoreComp = <PartSelector scoreInfo={scoreInfo}></PartSelector>;
-  } else {
-    scoreComp = (
-      <Container className="mt-3">
-        <h4>Getting Started</h4>
-        <p>Start by selecting a score using the menu above on the right.</p>
-        <NewestScores setScore={setScoreIdx} />
-        <ContactForm />
-      </Container>
-    );
+  const scoreInfoCand = scores.filter((el) => el.videoId === scoreId);
+  if (scoreInfoCand.length === 0) {
+    return <h3>Score not found :(</h3>;
   }
+  const scoreInfo = scoreInfoCand[0];
+  const navBar = <NavBar title={scoreInfo.name} />;
+  const partSel = <PartSelector scoreInfo={scoreInfo}></PartSelector>;
 
-  const navBar = <NavBar title={title} setScoreIdx={setScoreIdx} />;
+  return (
+    <>
+      {navBar}
+      {partSel}
+    </>
+  );
+};
+
+/** Lets the user select the score and displays it. */
+export const Home = () => {
+  const scoreComp = (
+    <Container className="mt-3">
+      <h4>Getting Started</h4>
+      <p>Start by selecting a score using the menu above on the right.</p>
+      <NewestScores />
+      <ContactForm />
+    </Container>
+  );
+
+  const navBar = <NavBar />;
 
   return (
     <>

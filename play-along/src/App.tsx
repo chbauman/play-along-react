@@ -1,12 +1,21 @@
 import "./App.css";
-import { ScoreSelector } from "./components/ScoreSelector";
+import { ScoreRoute, Home } from "./components/ScoreSelector";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <div className="App">
+        <Home />
+      </div>
+    ),
+  },
+  { path: "/:scoreId", element: <ScoreRoute /> },
+]);
 
 function App() {
-  return (
-    <div className="App">
-      <ScoreSelector />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

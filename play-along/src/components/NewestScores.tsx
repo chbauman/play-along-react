@@ -1,13 +1,12 @@
 import { Button, Col, Row } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import { scores } from "../scores";
 
 const nMostRecentSongs = 5;
 
-export const NewestScores = ({
-  setScore,
-}: {
-  setScore: (idx: number) => void;
-}) => {
+export const NewestScores = () => {
+  const navigate = useNavigate();
+
   const scoreAndIdx = scores.map((scoreInfo, idx) => {
     return { scoreInfo, idx };
   });
@@ -17,12 +16,15 @@ export const NewestScores = ({
     .map((el) => {
       const nameAndArtist = el.scoreInfo.name;
       const [name, artist] = nameAndArtist.split(" - ");
+      const onClick = () => {
+        navigate(`/${el.scoreInfo.videoId}`);
+      };
       return (
         <Row key={el.idx} className="mt-1">
           <Col xs="4">{name}</Col>
           <Col xs="4">{artist}</Col>
           <Col xs="4">
-            <Button onClick={() => setScore(el.idx)}>Play Along</Button>
+            <Button onClick={onClick}>Play Along</Button>
           </Col>
         </Row>
       );

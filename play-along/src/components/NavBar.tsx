@@ -1,4 +1,5 @@
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { scores } from "../scores";
 
 export const getSortedScores = () => {
@@ -17,17 +18,11 @@ export const getSortedScores = () => {
   return scoreCopy;
 };
 
-export const NavBar = ({
-  title,
-  setScoreIdx,
-}: {
-  title?: string;
-  setScoreIdx: (idx: number | null) => void;
-}) => {
+export const NavBar = ({ title }: { title?: string }) => {
   const defTitle = title === undefined ? "Youtube Play Along" : title;
   const navBrand = <Navbar.Brand>{defTitle}</Navbar.Brand>;
   const navLogo = (
-    <Navbar.Brand className="mt-0 p-0" onClick={() => setScoreIdx(null)}>
+    <Navbar.Brand className="mt-0 p-0" as={Link} to="/">
       <img
         src="/logo512.png"
         width="45"
@@ -56,8 +51,9 @@ export const NavBar = ({
               {scoreCopy.map((el) => {
                 return (
                   <NavDropdown.Item
+                    as={Link}
+                    to={`/${el.score.videoId}`}
                     key={el.idx}
-                    onClick={() => setScoreIdx(el.idx)}
                   >
                     {el.score.name}
                   </NavDropdown.Item>
