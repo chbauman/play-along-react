@@ -1,10 +1,6 @@
 import YouTube from "react-youtube";
 import React, { useCallback, useRef } from "react";
 
-const playerSize = {
-  height: "390",
-  width: "640",
-};
 export const playerSizePx = {
   height: "390px",
   width: "640px",
@@ -18,7 +14,7 @@ export const YoutubePlayer = ({
   playerRef: any;
 }) => {
   const opts = {
-    ...playerSize,
+    ...playerSizePx,
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 1,

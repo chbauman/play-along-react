@@ -166,9 +166,10 @@ export const PartSelector = (props: { scoreInfo: ScoreInfo }) => {
           <div className="d-flex">{partSelectorDD}</div>
         </div>
         <Score
-          xmlTxt={origXmlAndParts.xml}
+          xml={origXmlAndParts.xml}
           scoreInfo={props.scoreInfo}
           getTime={getTime}
+          key={props.scoreInfo.videoId}
         ></Score>
       </>
     );

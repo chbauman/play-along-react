@@ -1,14 +1,15 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { OpenSheetMusicDisplay } from "opensheetmusicdisplay";
 import { MeasureMap, ScoreInfo } from "../scores";
 import Spline from "typescript-cubic-spline";
 
 const fullW = 40000;
 const screenAnchorFactor = 0.3;
+const osmdId = "osmd";
 
-/** Load the score from the xml text string. */
+/** Load the score from the xml. */
 const loadOsmd = async (xml: Document) => {
-  const osmd = new OpenSheetMusicDisplay("osmd", {
+  const osmd = new OpenSheetMusicDisplay(osmdId, {
     drawCredits: false,
     drawPartNames: false,
   });
@@ -19,14 +20,11 @@ const loadOsmd = async (xml: Document) => {
   return osmd;
 };
 
-/** Interpolates from seconds to x position. */
-const interpolate = (
-  osmd: OpenSheetMusicDisplay | null,
+/** Creates an interpolator function that maps from seconds to x position. */
+const getInterpolator = (
+  osmd: OpenSheetMusicDisplay,
   measureMap: MeasureMap
 ) => {
-  if (!osmd) {
-    return null;
-  }
   const measureList = osmd.GraphicSheet.MeasureList;
   const measureXList = measureList.map((el) => (el[0] as any)?.stave.x);
 
@@ -42,7 +40,7 @@ const interpolate = (
   const nEntries = mmEntries.length;
   const getFromEntry = (idx: number) => {
     const [secStr, measIdx] = mmEntries[idx];
-    return [parseInt(secStr), measIdx];
+    return [parseFloat(secStr), measIdx];
   };
   let [currSec, currMeasIdx] = getFromEntry(0);
 
@@ -81,53 +79,54 @@ const interpolate = (
   };
 };
 
+/** The sheet music component. */
 export const Score = (props: {
-  xmlTxt: Document;
+  xml: Document;
   scoreInfo: ScoreInfo;
-  getTime: () => Promise<any>;
+  getTime: () => Promise<number>;
 }) => {
-  const osmdRef = useRef<any>();
-
   const [currXPos, setCurrXPos] = useState(0);
-  const [osmdSet, setOsmdSet] = useState(false);
+  const [ipOrNull, setIpOrNull] = useState<{
+    ip: (n: number) => number;
+  } | null>(null);
 
+  const { getTime, scoreInfo, xml } = props;
   useEffect(() => {
+    // Load the sheet music display and create interpolator.
     const loadLocal = async () => {
-      const osmd = await loadOsmd(props.xmlTxt);
-      osmdRef.current = osmd;
-      setOsmdSet(true);
+      const osmd = await loadOsmd(xml);
+      const ipObj = getInterpolator(osmd, scoreInfo.measureMap);
+      setIpOrNull({ ip: ipObj });
     };
     loadLocal();
     return () => {
-      setOsmdSet(false);
-      osmdRef.current = null;
+      setIpOrNull(null);
     };
-  }, [props.xmlTxt]);
+  }, [xml, scoreInfo.measureMap]);
 
-  const { innerWidth: width } = window;
-  const marginRight = Math.round(fullW - currXPos - width);
+  const marginRight = Math.round(fullW - currXPos - window.innerWidth);
 
-  const { getTime, scoreInfo } = props;
   useEffect(() => {
-    const ipObj = interpolate(osmdRef.current, scoreInfo.measureMap);
-    const interval = setInterval(async () => {
-      if (ipObj) {
+    // Register callback that adjusts the sheet according to the video
+    if (ipOrNull !== null) {
+      const ipObj = ipOrNull.ip;
+      const interval = setInterval(async () => {
         const elapsedSec = await getTime();
         const xPos = ipObj(elapsedSec);
         setCurrXPos(xPos);
-      }
-    }, 20); // ms refresh.
+      }, 20); // ms refresh.
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, [getTime, scoreInfo, osmdSet]);
+      return () => {
+        clearInterval(interval);
+      };
+    }
+  }, [getTime, ipOrNull]);
 
   return (
     <>
       <div style={{ overflow: "hidden" }}>
         <div
-          id="osmd"
+          id={osmdId}
           style={{
             height: "200px",
             width: `${fullW}px`,
