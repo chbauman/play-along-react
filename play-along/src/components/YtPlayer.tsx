@@ -6,6 +6,7 @@ export const playerSizePx = {
   width: "640px",
 };
 
+/** Youtube video player component. */
 export const YoutubePlayer = ({
   videoId,
   playerRef,

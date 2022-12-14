@@ -80,7 +80,7 @@ const getInterpolator = (
 };
 
 /** The sheet music component. */
-export const Score = (props: {
+export const MovingSheet = (props: {
   xml: Document;
   scoreInfo: ScoreInfo;
   getTime: () => Promise<number>;

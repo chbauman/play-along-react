@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ButtonGroup, Dropdown, DropdownButton } from "react-bootstrap";
 import { ScoreInfo } from "../scores";
 import { getSingleXml, parseXml, transpose, transposeKeys } from "../util/util";
-import { Score } from "./Score";
+import { MovingSheet } from "./Score";
 import { useYoutubePlayer, playerSizePx } from "./YtPlayer";
 
 type PartSelectorState = {
@@ -69,19 +69,16 @@ export const getParts = (xml: Document) => {
   return parts;
 };
 
-export const PartSelector = (props: { scoreInfo: ScoreInfo }) => {
+export const PartSelector = ({ scoreInfo }: { scoreInfo: ScoreInfo }) => {
   const [origXmlAndParts, setOrigXmlAndParts] =
     useState<null | PartSelectorState>(null);
 
   useEffect(() => {
-    const scoreInfo = props.scoreInfo;
-
+    // Load XML sheet music from musicxml file and initialize state
     const loadLocal = async () => {
       const fileName = `./scores/${scoreInfo.fileName}.musicxml`;
       const xmlTxt = await loadXmlFile(fileName);
-
       const parsedXML = parseXml(xmlTxt);
-
       const parts = getParts(parsedXML);
 
       const baseState = {
@@ -97,16 +94,16 @@ export const PartSelector = (props: { scoreInfo: ScoreInfo }) => {
       });
     };
     loadLocal();
-  }, [props.scoreInfo]);
+  }, [scoreInfo]);
 
-  const { youtubeComp, getTime } = useYoutubePlayer(props.scoreInfo.videoId);
+  const { youtubeComp, getTime } = useYoutubePlayer(scoreInfo.videoId);
 
   if (origXmlAndParts !== null) {
+    const currPitch = origXmlAndParts.pitch;
+    const currPartIdx = origXmlAndParts.currPartIdx;
+
     const setPart = (newPartIdx: number, newPitch: string) => {
-      if (
-        newPartIdx === origXmlAndParts.currPartIdx &&
-        newPitch === origXmlAndParts.pitch
-      ) {
+      if (newPartIdx === currPartIdx && newPitch === currPitch) {
         return;
       }
       const newXmlAndParts = {
@@ -122,12 +119,13 @@ export const PartSelector = (props: { scoreInfo: ScoreInfo }) => {
       });
     };
     const allParts = origXmlAndParts.parts;
-    const currPart = allParts[origXmlAndParts.currPartIdx];
-    const currPitch = origXmlAndParts.pitch;
+    const currPart = allParts[currPartIdx];
+
+    // Only add part chooser dropdown if there are at least two parts.
     const partChooser =
       allParts.length <= 1 ? null : (
         <DropdownButton id="choose-part" title="Select Part" as={ButtonGroup}>
-          {origXmlAndParts.parts.map((el, idx) => {
+          {allParts.map((el, idx) => {
             return (
               <Dropdown.Item key={idx} onClick={() => setPart(idx, currPitch)}>
                 {el.name}
@@ -142,10 +140,7 @@ export const PartSelector = (props: { scoreInfo: ScoreInfo }) => {
         <DropdownButton id="choose-key" title="Select Pitch" as={ButtonGroup}>
           {transposeKeys.map((el) => {
             return (
-              <Dropdown.Item
-                key={el}
-                onClick={() => setPart(origXmlAndParts.currPartIdx, el)}
-              >
+              <Dropdown.Item key={el} onClick={() => setPart(currPartIdx, el)}>
                 {el}
               </Dropdown.Item>
             );
@@ -153,24 +148,36 @@ export const PartSelector = (props: { scoreInfo: ScoreInfo }) => {
         </DropdownButton>
       </ButtonGroup>
     );
+
+    // Sheet music
+    const score = (
+      <MovingSheet
+        xml={origXmlAndParts.xml}
+        scoreInfo={scoreInfo}
+        getTime={getTime}
+        key={scoreInfo.videoId}
+      ></MovingSheet>
+    );
+
+    // Info about current part and pitch and dropdown for changing
+    const partInfo = (
+      <div
+        className="d-flex justify-content-between mt-1 mb-1"
+        style={{ width: playerSizePx.width, margin: "auto" }}
+      >
+        <h4>
+          Part: {currPart.name}, {currPitch}
+        </h4>
+        <div className="d-flex">{partSelectorDD}</div>
+      </div>
+    );
+
+    // Put all together
     return (
       <>
         {youtubeComp}
-        <div
-          className="d-flex justify-content-between mt-1 mb-1"
-          style={{ width: playerSizePx.width, margin: "auto" }}
-        >
-          <h4>
-            Part: {currPart.name}, {currPitch}
-          </h4>
-          <div className="d-flex">{partSelectorDD}</div>
-        </div>
-        <Score
-          xml={origXmlAndParts.xml}
-          scoreInfo={props.scoreInfo}
-          getTime={getTime}
-          key={props.scoreInfo.videoId}
-        ></Score>
+        {partInfo}
+        {score}
       </>
     );
   }
