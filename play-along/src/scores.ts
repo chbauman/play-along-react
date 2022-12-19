@@ -769,6 +769,12 @@ export const scores: ScoreInfo[] = [
     fileName: "People_Shit",
     name: "People Equals Shit - Richard Cheese",
   },
+  {
+    videoId: "TR3Vdo5etCQ",
+    measureMap: { 30: 1, 235: 66 },
+    fileName: "Dont_Speak",
+    name: "Don't Speak - No Doubt",
+  },
 ];
 
 if (DEBUG) {
