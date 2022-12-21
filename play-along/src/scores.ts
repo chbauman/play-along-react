@@ -781,6 +781,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Dont_Speak",
     name: "Don't Speak - No Doubt",
   },
+  {
+    videoId: "y8ndu0CYwGU",
+    measureMap: { 64: 2, 120: 46 },
+    fileName: "Feeling_Good",
+    name: "Feeling Good - Ibrahim Maalouf & Dear Silas",
+  },
 ];
 
 if (DEBUG) {
