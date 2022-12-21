@@ -43,7 +43,7 @@ def reduce_file(path: Path):
     tree = ET.parse(path)
     root = tree.getroot()
     for el_name in REMOVE_ELEMENTS:
-        for el in root.findall(f".//*[{el_name}]"):
+        for el in root.findall(f".//*/..[{el_name}]"):
             for sub_el in el.findall(el_name):
                 el.remove(sub_el)
 
