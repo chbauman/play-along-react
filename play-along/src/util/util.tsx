@@ -114,7 +114,7 @@ export const transpose = (xml: Document, pitch: string) => {
       el.appendChild(newEl);
     }
 
-    // Remove any accidentals
+    // Remove any accidentals, they are handled by the "alter" element.
     const acc = noteEl.getElementsByTagName("accidental")[0];
     if (acc) {
       noteEl.removeChild(acc);

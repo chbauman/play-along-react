@@ -755,7 +755,7 @@ export const scores: ScoreInfo[] = [
     videoId: "6fMwrdWmExg",
     measureMap: { 12: 6, 113: 51, 205: 92 },
     fileName: "Luchtballon",
-    name: "10.000 luchtballonnen - K3",
+    name: "10.000 Luchtballonnen - K3",
   },
   {
     videoId: "aNgjX8y_HHU",
