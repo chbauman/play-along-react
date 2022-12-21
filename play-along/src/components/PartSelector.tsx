@@ -69,6 +69,19 @@ export const getParts = (xml: Document) => {
   return parts;
 };
 
+const pitchStorageKey = "pitch";
+const getPitch = () => {
+  const pitch = localStorage.getItem(pitchStorageKey);
+  if (pitch === null || !Object.hasOwn(transposeKeys, pitch)) {
+    return transposeKeys[0];
+  }
+  return pitch;
+};
+
+const setPitch = (pitch: string) => {
+  localStorage.setItem(pitchStorageKey, pitch);
+};
+
 export const PartSelector = ({ scoreInfo }: { scoreInfo: ScoreInfo }) => {
   const [origXmlAndParts, setOrigXmlAndParts] =
     useState<null | PartSelectorState>(null);
@@ -86,7 +99,7 @@ export const PartSelector = ({ scoreInfo }: { scoreInfo: ScoreInfo }) => {
         parts,
         currPartIdx: 0,
         origXml: parsedXML,
-        pitch: transposeKeys[0],
+        pitch: getPitch(),
       };
       setOrigXmlAndParts({
         ...baseState,
@@ -105,6 +118,9 @@ export const PartSelector = ({ scoreInfo }: { scoreInfo: ScoreInfo }) => {
     const setPart = (newPartIdx: number, newPitch: string) => {
       if (newPartIdx === currPartIdx && newPitch === currPitch) {
         return;
+      }
+      if (newPitch !== currPitch) {
+        setPitch(newPitch);
       }
       const newXmlAndParts = {
         ...origXmlAndParts,
