@@ -37,7 +37,7 @@ XML_DEC = """<?xml version="1.0" encoding="UTF-8"?>
 """
 
 
-def reduce_file(path: Path) -> None:
+def reduce_file(path: Path):
     """Removes some unneeded tags from the xml."""
 
     tree = ET.parse(path)
@@ -58,7 +58,7 @@ def reduce_file(path: Path) -> None:
         tree.write(f, encoding="UTF-8")
 
 
-def main() -> None:
+def main():
     """Main function."""
 
     # Find all scores
