@@ -340,15 +340,15 @@ const deprecatedScores: ScoreInfo[] = [
     fileName: "Ameno",
     name: "Ameno - ERA",
   },
+];
+
+export const scores: ScoreInfo[] = [
   {
     videoId: "XEEasR7hVhA",
     measureMap: tddiMM,
     fileName: "The_Devil_In_I",
     name: "The Devil in I - Slipknot",
   },
-];
-
-export const scores: ScoreInfo[] = [
   {
     videoId: "lDQ7hXMLxGc",
     measureMap: matchDataSovietMarch,
