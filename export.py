@@ -13,7 +13,6 @@ MSCZ_SCORE_PATH = Path("C:/Users/Chrigi/Documents/GitHub/compositions/PlayAlong"
 MUSESCORE_EXE_PATH = Path("C:/Program Files/MuseScore 3/bin/MuseScore3.exe")
 PUBLIC_PATH = Path("play-along/public")
 XML_SCORES_PATH = PUBLIC_PATH / "scores"
-XML_SCORES_PATH = PUBLIC_PATH / "reduced"
 
 assert MSCZ_SCORE_PATH.exists, f"Score directory {MSCZ_SCORE_PATH} not found!"
 assert MUSESCORE_EXE_PATH.exists(), f"Musescore not found at {MUSESCORE_EXE_PATH}!"
