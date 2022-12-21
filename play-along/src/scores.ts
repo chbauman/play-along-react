@@ -740,16 +740,22 @@ export const scores: ScoreInfo[] = [
     name: "Die Immer Lacht - Stereoact ft. Kerstin Ott",
   },
   {
-    videoId: "aQUlA8Hcv4s",
-    measureMap: mrBlueMM,
-    fileName: "Mr_Blue_Sky",
-    name: "Mr. Blue Sky - Electric Light Orchestra",
+    videoId: "F9Y9u0rAp9o",
+    measureMap: { 4: 3, 144: 73, 176: 89 },
+    fileName: "Detached_Motion",
+    name: "Detached Motion - Worakls",
   },
   {
     videoId: "CVbTtJ2tbyg",
     measureMap: loveOnRaveMM,
     fileName: "Love_On_Rave",
     name: "Love On Rave - ДЕТИ RAVE",
+  },
+  {
+    videoId: "aQUlA8Hcv4s",
+    measureMap: mrBlueMM,
+    fileName: "Mr_Blue_Sky",
+    name: "Mr. Blue Sky - Electric Light Orchestra",
   },
   {
     videoId: "6fMwrdWmExg",
