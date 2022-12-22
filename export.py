@@ -25,6 +25,7 @@ REMOVE_ELEMENTS = [
     "work",
     "midi-device",
     "midi-instrument",
+    "encoding-date",
     "sound",
     "voice",
     # "type", # Needed for small notes
