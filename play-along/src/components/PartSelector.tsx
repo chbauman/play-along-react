@@ -72,7 +72,7 @@ export const getParts = (xml: Document) => {
 const pitchStorageKey = "pitch";
 const getPitch = () => {
   const pitch = localStorage.getItem(pitchStorageKey);
-  if (pitch === null || !Object.hasOwn(transposeKeys, pitch)) {
+  if (pitch === null || !transposeKeys.includes(pitch)) {
     return transposeKeys[0];
   }
   return pitch;
