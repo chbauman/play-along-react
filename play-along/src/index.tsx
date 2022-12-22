@@ -6,9 +6,9 @@ import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const container = document.getElementById("root");
-
 const root = createRoot(container!);
-const USE_STRICT = false;
+
+const USE_STRICT = false; // Fuck off strict-mode!
 
 let app = <App />;
 if (USE_STRICT) {

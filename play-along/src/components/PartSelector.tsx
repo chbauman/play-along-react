@@ -33,7 +33,8 @@ const removeUnused = (
   });
 };
 
-const clodeDoc = (doc: Document) => {
+/** Copy XML object. */
+const cloneDoc = (doc: Document) => {
   const newDoc: any = doc.cloneNode(true);
   newDoc.xmlStandalone = (doc as any).xmlStandalone;
   return newDoc as Document;
@@ -42,7 +43,7 @@ const clodeDoc = (doc: Document) => {
 const extractPartXml = (state: PartSelectorState) => {
   const partId = state.parts[state.currPartIdx].id;
 
-  const parsedXML = clodeDoc(state.origXml);
+  const parsedXML = cloneDoc(state.origXml);
 
   // Remove all but current part from part-list
   removeUnused(parsedXML, "part-list", "score-part", partId);
@@ -56,6 +57,7 @@ const extractPartXml = (state: PartSelectorState) => {
   return parsedXML;
 };
 
+/** Extracts a list with the part information from the XML score. */
 export const getParts = (xml: Document) => {
   const scorePwXml = getSingleXml(xml, "score-partwise");
   const parts = [];
@@ -70,6 +72,8 @@ export const getParts = (xml: Document) => {
 };
 
 const pitchStorageKey = "pitch";
+
+/** Load pitch information from localStorage. */
 const getPitch = () => {
   const pitch = localStorage.getItem(pitchStorageKey);
   if (pitch === null || !transposeKeys.includes(pitch)) {
@@ -114,6 +118,7 @@ export const PartSelector = ({ scoreInfo }: { scoreInfo: ScoreInfo }) => {
     const currPitch = origXmlAndParts.pitch;
     const currPartIdx = origXmlAndParts.currPartIdx;
 
+    // Part changer
     const setPart = (newPartIdx: number, newPitch: string) => {
       if (newPartIdx === currPartIdx && newPitch === currPitch) {
         return;
@@ -149,6 +154,8 @@ export const PartSelector = ({ scoreInfo }: { scoreInfo: ScoreInfo }) => {
           })}
         </DropdownButton>
       );
+
+    // (Part and) pitch selector dropdowns
     const partSelectorDD = (
       <ButtonGroup>
         {partChooser}

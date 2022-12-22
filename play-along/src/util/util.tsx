@@ -70,6 +70,7 @@ const increase = (
   return [newPitch, newAlter, newOct] as const;
 };
 
+/** Transpose score to desired pitch. */
 export const transpose = (xml: Document, pitch: string) => {
   const [chrom, fifths] = transposeOptions[pitch];
   const measures = xml.getElementsByTagName("measure");
