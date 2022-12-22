@@ -787,6 +787,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Feeling_Good",
     name: "Feeling Good - Ibrahim Maalouf & Dear Silas",
   },
+  {
+    videoId: "YyolLXRWsxc",
+    measureMap: { 54: 3, 110: 35, 175: 72 },
+    fileName: "Kirschen",
+    name: "Kirschenblüten Jodler - Takeo Ischi & Rudy Schneyder",
+  },
 ];
 
 if (DEBUG) {
