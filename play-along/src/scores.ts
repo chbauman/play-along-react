@@ -793,6 +793,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Kirschen",
     name: "Kirschenblüten Jodler - Takeo Ischi & Rudy Schneyder",
   },
+  {
+    videoId: "2SjAexwwtBA",
+    measureMap: { 6: 5, 145: 99 },
+    fileName: "Confetti",
+    name: "Confetti in m'n Sokken - Gekkenhuys ft. Fleur",
+  },
 ];
 
 if (DEBUG) {
