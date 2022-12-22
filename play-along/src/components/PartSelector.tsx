@@ -92,11 +92,10 @@ export const PartSelector = ({ scoreInfo }: { scoreInfo: ScoreInfo }) => {
       const fileName = `./scores/${scoreInfo.fileName}.musicxml`;
       const xmlTxt = await loadXmlFile(fileName);
       const parsedXML = parseXml(xmlTxt);
-      const parts = getParts(parsedXML);
 
       const baseState = {
         xml: parsedXML,
-        parts,
+        parts: getParts(parsedXML),
         currPartIdx: 0,
         origXml: parsedXML,
         pitch: getPitch(),

@@ -27,7 +27,7 @@ export const YoutubePlayer = ({
     videoId,
     opts,
     ref: playerRef,
-    onReady: () => console.log("I'm ready!"),
+    onReady: () => console.log(`I'm ready, loaded ${videoId}!`),
   });
   return <div style={{ ...playerSizePx, margin: "auto" }}>{yt}</div>;
 };
