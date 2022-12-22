@@ -65,6 +65,8 @@ def main():
     # Find all scores
     all_paths = list(MSCZ_SCORE_PATH.rglob("*.mscz"))
     tot = len(all_paths)
+    all_paths = reversed(sorted(all_paths, key=lambda p: p.lstat().st_mtime))
+
     for ct, mscz_path in enumerate(all_paths):
 
         out_path = XML_SCORES_PATH / f"{mscz_path.stem}.musicxml"
