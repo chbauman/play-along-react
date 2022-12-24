@@ -799,6 +799,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Confetti",
     name: "Confetti in m'n Sokken - Gekkenhuys ft. Fleur",
   },
+  {
+    videoId: "KQRaj1vcnrs",
+    measureMap: { 6: 5, 159: 109 },
+    fileName: "Major_Tom",
+    name: "Major Tom - Peter Schilling",
+  },
 ];
 
 if (DEBUG) {
