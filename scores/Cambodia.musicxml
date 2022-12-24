@@ -32,6 +32,12 @@
           <line>2</line>
           </clef>
         </attributes>
+      <harmony print-frame="no">
+        <root>
+          <root-step>D</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note dynamics="83.33">
         <pitch>
           <step>D</step>
@@ -327,6 +333,12 @@
         </barline>
       </measure>
     <measure number="5">
+      <harmony print-frame="no">
+        <root>
+          <root-step>D</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note dynamics="85.56">
         <pitch>
           <step>B</step>
@@ -448,6 +460,12 @@
         </note>
       </measure>
     <measure number="7">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note dynamics="87.78">
         <pitch>
           <step>B</step>
@@ -581,6 +599,13 @@
         </note>
       </measure>
     <measure number="9">
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note dynamics="81.11">
         <pitch>
           <step>D</step>
@@ -598,6 +623,13 @@
         <duration>4</duration>
         <type>half</type>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>A</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        <offset>2</offset>
+        </harmony>
       <note>
         <rest />
         <duration>4</duration>
@@ -605,6 +637,12 @@
         </note>
       </measure>
     <measure number="10">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <rest />
         <duration>4</duration>
@@ -647,6 +685,12 @@
         </barline>
       </measure>
     <measure number="11">
+      <harmony print-frame="no">
+        <root>
+          <root-step>D</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note dynamics="100.00">
         <pitch>
           <step>B</step>
@@ -768,6 +812,12 @@
         </note>
       </measure>
     <measure number="13">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note dynamics="103.33">
         <pitch>
           <step>B</step>
@@ -901,19 +951,37 @@
         </note>
       </measure>
     <measure number="15">
-      <note dynamics="95.56">
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
+      <note dynamics="81.11">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>4</duration>
+        <type>half</type>
+        </note>
+      <note dynamics="81.11">
+        <chord />
         <pitch>
           <step>G</step>
           <octave>4</octave>
           </pitch>
-        <duration>2</duration>
-        <type>quarter</type>
+        <duration>4</duration>
+        <type>half</type>
         </note>
-      <note>
-        <rest />
-        <duration>2</duration>
-        <type>quarter</type>
-        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>A</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        <offset>2</offset>
+        </harmony>
       <note>
         <rest />
         <duration>4</duration>
@@ -921,15 +989,29 @@
         </note>
       </measure>
     <measure number="16">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
-        <rest measure="yes" />
+        <rest />
         <duration>8</duration>
+        <type>whole</type>
         </note>
       </measure>
     <measure number="17">
+      <harmony print-frame="no">
+        <root>
+          <root-step>D</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
-        <rest measure="yes" />
+        <rest />
         <duration>8</duration>
+        <type>whole</type>
         </note>
       </measure>
     <measure number="18">
@@ -970,8 +1052,17 @@
         <type>eighth</type>
         <beam number="1">end</beam>
         </note>
+      <barline location="right">
+        <bar-style>light-light</bar-style>
+        </barline>
       </measure>
     <measure number="19">
+      <harmony print-frame="no">
+        <root>
+          <root-step>D</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note dynamics="86.67">
         <pitch>
           <step>B</step>
@@ -1125,6 +1216,12 @@
         </note>
       </measure>
     <measure number="21">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note dynamics="88.89">
         <pitch>
           <step>B</step>
@@ -1278,6 +1375,12 @@
         </note>
       </measure>
     <measure number="23">
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note dynamics="85.56">
         <pitch>
           <step>A</step>
@@ -1424,6 +1527,12 @@
         </note>
       </measure>
     <measure number="25">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note dynamics="85.56">
         <pitch>
           <step>A</step>
@@ -1500,6 +1609,12 @@
         </note>
       </measure>
     <measure number="26">
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note dynamics="82.22">
         <pitch>
           <step>F</step>
@@ -1579,6 +1694,12 @@
         </note>
       </measure>
     <measure number="27">
+      <harmony print-frame="no">
+        <root>
+          <root-step>D</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note dynamics="101.11">
         <pitch>
           <step>B</step>
@@ -1744,6 +1865,12 @@
         </note>
       </measure>
     <measure number="29">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note dynamics="102.22">
         <pitch>
           <step>B</step>
@@ -1897,6 +2024,12 @@
         </note>
       </measure>
     <measure number="31">
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note dynamics="100.00">
         <pitch>
           <step>A</step>
@@ -2050,6 +2183,12 @@
         </note>
       </measure>
     <measure number="33">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note dynamics="100.00">
         <pitch>
           <step>A</step>
@@ -2108,6 +2247,12 @@
         </note>
       </measure>
     <measure number="34">
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note dynamics="98.89">
         <pitch>
           <step>G</step>
@@ -2157,6 +2302,12 @@
         </barline>
       </measure>
     <measure number="35">
+      <harmony print-frame="no">
+        <root>
+          <root-step>D</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note dynamics="114.44">
         <pitch>
           <step>A</step>
@@ -2256,6 +2407,12 @@
         </note>
       </measure>
     <measure number="37">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note dynamics="128.89">
         <pitch>
           <step>C</step>
@@ -2283,6 +2440,12 @@
         </note>
       </measure>
     <measure number="38">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note dynamics="117.78">
         <pitch>
           <step>B</step>
@@ -2320,6 +2483,12 @@
         <type size="cue">eighth</type>
         <beam number="1">end</beam>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>A</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note dynamics="112.22">
         <pitch>
           <step>G</step>
@@ -2358,6 +2527,12 @@
         </note>
       </measure>
     <measure number="39">
+      <harmony print-frame="no">
+        <root>
+          <root-step>D</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note dynamics="124.44">
         <pitch>
           <step>A</step>
@@ -2446,6 +2621,12 @@
         </note>
       </measure>
     <measure number="41">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note dynamics="128.89">
         <pitch>
           <step>C</step>
@@ -2473,6 +2654,12 @@
         </note>
       </measure>
     <measure number="42">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note dynamics="117.78">
         <pitch>
           <step>B</step>
@@ -2510,6 +2697,12 @@
         <type size="cue">eighth</type>
         <beam number="1">end</beam>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>A</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note dynamics="112.22">
         <pitch>
           <step>G</step>
@@ -2548,6 +2741,12 @@
         </note>
       </measure>
     <measure number="43">
+      <harmony print-frame="no">
+        <root>
+          <root-step>D</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note dynamics="102.22">
         <pitch>
           <step>D</step>
@@ -2600,6 +2799,12 @@
         </barline>
       </measure>
     <measure number="45">
+      <harmony print-frame="no">
+        <root>
+          <root-step>D</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note dynamics="86.67">
         <pitch>
           <step>B</step>
@@ -2753,6 +2958,12 @@
         </note>
       </measure>
     <measure number="47">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note dynamics="88.89">
         <pitch>
           <step>B</step>
@@ -2906,6 +3117,12 @@
         </note>
       </measure>
     <measure number="49">
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note dynamics="85.56">
         <pitch>
           <step>A</step>
@@ -3052,6 +3269,12 @@
         </note>
       </measure>
     <measure number="51">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note dynamics="85.56">
         <pitch>
           <step>A</step>
@@ -3138,6 +3361,12 @@
         </note>
       </measure>
     <measure number="52">
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note dynamics="82.22">
         <pitch>
           <step>F</step>
@@ -3217,6 +3446,12 @@
         </note>
       </measure>
     <measure number="53">
+      <harmony print-frame="no">
+        <root>
+          <root-step>D</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note dynamics="101.11">
         <pitch>
           <step>B</step>
@@ -3382,6 +3617,12 @@
         </note>
       </measure>
     <measure number="55">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note dynamics="102.22">
         <pitch>
           <step>B</step>
@@ -3535,6 +3776,12 @@
         </note>
       </measure>
     <measure number="57">
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note dynamics="100.00">
         <pitch>
           <step>A</step>
@@ -3687,6 +3934,12 @@
         </note>
       </measure>
     <measure number="59">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note dynamics="100.00">
         <pitch>
           <step>A</step>
@@ -3745,6 +3998,12 @@
         </note>
       </measure>
     <measure number="60">
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note dynamics="98.89">
         <pitch>
           <step>G</step>
@@ -3804,6 +4063,12 @@
         </barline>
       </measure>
     <measure number="61">
+      <harmony print-frame="no">
+        <root>
+          <root-step>D</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note dynamics="114.44">
         <pitch>
           <step>A</step>
@@ -3903,6 +4168,12 @@
         </note>
       </measure>
     <measure number="63">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note dynamics="128.89">
         <pitch>
           <step>C</step>
@@ -3930,6 +4201,12 @@
         </note>
       </measure>
     <measure number="64">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note dynamics="117.78">
         <pitch>
           <step>B</step>
@@ -3967,6 +4244,12 @@
         <type size="cue">eighth</type>
         <beam number="1">end</beam>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>A</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note dynamics="112.22">
         <pitch>
           <step>G</step>
@@ -4005,6 +4288,12 @@
         </note>
       </measure>
     <measure number="65">
+      <harmony print-frame="no">
+        <root>
+          <root-step>D</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note dynamics="124.44">
         <pitch>
           <step>A</step>
@@ -4093,6 +4382,12 @@
         </note>
       </measure>
     <measure number="67">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note dynamics="128.89">
         <pitch>
           <step>C</step>
@@ -4120,6 +4415,12 @@
         </note>
       </measure>
     <measure number="68">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note dynamics="117.78">
         <pitch>
           <step>B</step>
@@ -4157,6 +4458,12 @@
         <type size="cue">eighth</type>
         <beam number="1">end</beam>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>A</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note dynamics="112.22">
         <pitch>
           <step>G</step>
@@ -4195,6 +4502,12 @@
         </note>
       </measure>
     <measure number="69">
+      <harmony print-frame="no">
+        <root>
+          <root-step>D</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note dynamics="102.22">
         <pitch>
           <step>D</step>
