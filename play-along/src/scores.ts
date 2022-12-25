@@ -811,6 +811,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Fallen_Leaves",
     name: "Fallen Leaves - Billy Talent",
   },
+  {
+    videoId: "x-64CaD8GXw",
+    measureMap: { 10: 3, 47: 23 },
+    fileName: "Shipping_Up",
+    name: "I'm Shipping Up To Boson - Dropkick Murphys",
+  },
 ];
 
 if (DEBUG) {
