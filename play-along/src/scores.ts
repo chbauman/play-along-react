@@ -805,6 +805,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Major_Tom",
     name: "Major Tom - Peter Schilling",
   },
+  {
+    videoId: "9BXNKyoW_Ow",
+    measureMap: { 8: 5, 172: 93 },
+    fileName: "Fallen_Leaves",
+    name: "Fallen Leaves - Billy Talent",
+  },
 ];
 
 if (DEBUG) {
