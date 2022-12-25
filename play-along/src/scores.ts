@@ -807,7 +807,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "9BXNKyoW_Ow",
-    measureMap: { 8: 5, 172: 93 },
+    measureMap: { 8: 5, 51: 27, 94: 49, 141: 73, 180: 93 },
     fileName: "Fallen_Leaves",
     name: "Fallen Leaves - Billy Talent",
   },
