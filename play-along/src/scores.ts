@@ -800,6 +800,12 @@ export const scores: ScoreInfo[] = [
     name: "Confetti in m'n Sokken - Gekkenhuys ft. Fleur",
   },
   {
+    videoId: "x-64CaD8GXw",
+    measureMap: { 10: 3, 47: 23 },
+    fileName: "Shipping_Up",
+    name: "I'm Shipping Up To Boson - Dropkick Murphys",
+  },
+  {
     videoId: "KQRaj1vcnrs",
     measureMap: { 6: 5, 159: 109 },
     fileName: "Major_Tom",
@@ -812,10 +818,16 @@ export const scores: ScoreInfo[] = [
     name: "Fallen Leaves - Billy Talent",
   },
   {
-    videoId: "x-64CaD8GXw",
-    measureMap: { 10: 3, 47: 23 },
-    fileName: "Shipping_Up",
-    name: "I'm Shipping Up To Boson - Dropkick Murphys",
+    videoId: "lLocq-Yulro",
+    measureMap: { 12: 8, 79: 40 },
+    fileName: "Gigue",
+    name: "Water Music: Gigue - G.F. Händel",
+  },
+  {
+    videoId: "9d8SzG4FPyM",
+    measureMap: { 3: 1, 90: 40 },
+    fileName: "Rose_Tattoo",
+    name: "Rose Tattoo - Dropkick Murphys",
   },
 ];
 
