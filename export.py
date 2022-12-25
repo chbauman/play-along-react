@@ -4,7 +4,9 @@ It uses the MuseScore executable to export .mscz files to .musicxml
 and then reduces the exported XML files by removing certain tags 
 and attributes from the XML document.
 """
+import argparse
 import subprocess
+from typing import Optional
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -59,7 +61,7 @@ def reduce_file(path: Path):
         tree.write(f, encoding="UTF-8")
 
 
-def main():
+def main(n_process: Optional[int]):
     """Main function."""
 
     # Find all scores
@@ -68,6 +70,9 @@ def main():
     all_paths = reversed(sorted(all_paths, key=lambda p: p.lstat().st_mtime))
 
     for ct, mscz_path in enumerate(all_paths):
+        if n_process is not None and ct == n_process:
+            print("Stopping")
+            break
 
         out_path = XML_SCORES_PATH / f"{mscz_path.stem}.musicxml"
 
@@ -82,5 +87,17 @@ def main():
         print(f"Processed [{ct + 1} / {tot}] {out_path.stem}")
 
 
+def check_positive(value):
+    ivalue = int(value)
+    if ivalue <= 0:
+        raise argparse.ArgumentTypeError("%s is an invalid positive int value" % value)
+    return ivalue
+
+
+parser = argparse.ArgumentParser("Export script")
+parser.add_argument("n", type=check_positive, default=None)
+
+
 if __name__ == "__main__":
-    main()
+    args = parser.parse_args()
+    main(args.n)
