@@ -1,7 +1,6 @@
 import { Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { scores } from "../scores";
-import ContactForm from "./FormSpree";
 import { NavBar } from "./NavBar";
 import { NewestScores } from "./NewestScores";
 import { PartSelector } from "./PartSelector";
@@ -31,8 +30,7 @@ export const Home = () => {
     <Container className="mt-3">
       <h4>Getting Started</h4>
       <p>Start by selecting a score using the menu above on the right.</p>
-      <NewestScores />
-      <ContactForm />
+      <NewestScores nMostRecentSongs={10} />
     </Container>
   );
 

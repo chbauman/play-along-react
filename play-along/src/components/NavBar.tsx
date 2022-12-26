@@ -1,4 +1,4 @@
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Container, Nav, Navbar, NavDropdown, NavLink } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { scores } from "../scores";
 
@@ -43,6 +43,9 @@ export const NavBar = ({ title }: { title?: string }) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
           <Nav>
+            <NavLink as={Link} to="/settings">
+              Settings
+            </NavLink>
             <NavDropdown
               align="end"
               title="Select Score"

@@ -89,6 +89,44 @@ const setPitch = (pitch: string) => {
   localStorage.setItem(pitchStorageKey, pitch);
 };
 
+export const PitchSetting = ({ title }: { title?: string }) => {
+  const [pitch, setPitch] = useState(getPitch());
+
+  return (
+    <PitchSelectorDD currPitch={pitch} pitchSetter={setPitch} title={title} />
+  );
+};
+
+const PitchSelectorDD = ({
+  currPitch,
+  pitchSetter,
+  title,
+}: {
+  currPitch: string;
+  pitchSetter: (el: string) => void;
+  title?: string;
+}) => {
+  const ddTitle =
+    title === undefined ? `Pitch: ${currPitch}` : `${title}${currPitch}`;
+  return (
+    <DropdownButton id="choose-pitch" title={ddTitle} as={ButtonGroup}>
+      {transposeKeys.map((el) => {
+        return (
+          <Dropdown.Item
+            key={el}
+            onClick={() => {
+              setPitch(el);
+              pitchSetter(el);
+            }}
+          >
+            {el}
+          </Dropdown.Item>
+        );
+      })}
+    </DropdownButton>
+  );
+};
+
 export const PartSelector = ({ scoreInfo }: { scoreInfo: ScoreInfo }) => {
   const [origXmlAndParts, setOrigXmlAndParts] =
     useState<null | PartSelectorState>(null);
@@ -137,9 +175,6 @@ export const PartSelector = ({ scoreInfo }: { scoreInfo: ScoreInfo }) => {
         newOctave === currOctave
       ) {
         return;
-      }
-      if (newPitch !== currPitch) {
-        setPitch(newPitch);
       }
       const newXmlAndParts = {
         ...origXmlAndParts,
@@ -191,26 +226,29 @@ export const PartSelector = ({ scoreInfo }: { scoreInfo: ScoreInfo }) => {
       </DropdownButton>
     );
 
+    // Pitch selector dropdown
+    const pitchSetter = (el: string) => setPart(currPartIdx, el, currOctave);
+    const pitchSelector = (
+      <DropdownButton
+        id="choose-key"
+        title={`Pitch: ${currPitch}`}
+        as={ButtonGroup}
+      >
+        {transposeKeys.map((el) => {
+          return (
+            <Dropdown.Item key={el} onClick={() => pitchSetter(el)}>
+              {el}
+            </Dropdown.Item>
+          );
+        })}
+      </DropdownButton>
+    );
+
     // (Part and) pitch selector dropdowns
     const partSelectorDD = (
       <ButtonGroup>
         {partChooser}
-        <DropdownButton
-          id="choose-key"
-          title={`Pitch: ${currPitch}`}
-          as={ButtonGroup}
-        >
-          {transposeKeys.map((el) => {
-            return (
-              <Dropdown.Item
-                key={el}
-                onClick={() => setPart(currPartIdx, el, currOctave)}
-              >
-                {el}
-              </Dropdown.Item>
-            );
-          })}
-        </DropdownButton>
+        {pitchSelector}
         {octaveChooser}
       </ButtonGroup>
     );

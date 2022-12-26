@@ -2,9 +2,11 @@ import { Button, Col, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { scores } from "../scores";
 
-const nMostRecentSongs = 5;
-
-export const NewestScores = () => {
+export const NewestScores = ({
+  nMostRecentSongs = 5,
+}: {
+  nMostRecentSongs: number;
+}) => {
   const navigate = useNavigate();
 
   const scoreAndIdx = scores.map((scoreInfo, idx) => {
