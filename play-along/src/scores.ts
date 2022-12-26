@@ -806,6 +806,12 @@ export const scores: ScoreInfo[] = [
     name: "I'm Shipping Up To Boson - Dropkick Murphys",
   },
   {
+    videoId: "1rPAnxsSk40",
+    measureMap: { 2: 2, 107: 57 },
+    fileName: "Ku_Ku_Jodel",
+    name: "Ku Ku Jodel - Oesch's die Dritten",
+  },
+  {
     videoId: "KQRaj1vcnrs",
     measureMap: { 6: 5, 159: 109 },
     fileName: "Major_Tom",
