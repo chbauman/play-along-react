@@ -829,6 +829,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Rose_Tattoo",
     name: "Rose Tattoo - Dropkick Murphys",
   },
+  {
+    videoId: "RAOnUF8t20w",
+    measureMap: { 12: 5, 240: 88 },
+    fileName: "Rusted",
+    name: "Rusted From The Rain - Billy Talent",
+  },
 ];
 
 if (DEBUG) {
