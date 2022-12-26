@@ -776,6 +776,12 @@ export const scores: ScoreInfo[] = [
     name: "People Equals Shit - Richard Cheese",
   },
   {
+    videoId: "2SjAexwwtBA",
+    measureMap: { 6: 5, 145: 99 },
+    fileName: "Confetti",
+    name: "Confetti in m'n Sokken - Gekkenhuys ft. Fleur",
+  },
+  {
     videoId: "6fMwrdWmExg",
     measureMap: { 12: 6, 113: 51, 205: 92 },
     fileName: "Luchtballon",
@@ -806,12 +812,6 @@ export const scores: ScoreInfo[] = [
     name: "Feeling Good - Ibrahim Maalouf & Dear Silas",
   },
   {
-    videoId: "2SjAexwwtBA",
-    measureMap: { 6: 5, 145: 99 },
-    fileName: "Confetti",
-    name: "Confetti in m'n Sokken - Gekkenhuys ft. Fleur",
-  },
-  {
     videoId: "KQRaj1vcnrs",
     measureMap: { 6: 5, 159: 109 },
     fileName: "Major_Tom",
@@ -840,6 +840,12 @@ export const scores: ScoreInfo[] = [
     measureMap: { 12: 5, 240: 88 },
     fileName: "Rusted",
     name: "Rusted From The Rain - Billy Talent",
+  },
+  {
+    videoId: "4VQwQzoGF_o",
+    measureMap: { 2: 4, 116: 160 },
+    fileName: "La_Valse_des_Monstres",
+    name: "La Valse des Monstres - Yann Tiersen",
   },
 ];
 
