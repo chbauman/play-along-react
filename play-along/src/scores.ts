@@ -752,10 +752,28 @@ export const scores: ScoreInfo[] = [
     name: "Love On Rave - ДЕТИ RAVE",
   },
   {
-    videoId: "aQUlA8Hcv4s",
-    measureMap: mrBlueMM,
-    fileName: "Mr_Blue_Sky",
-    name: "Mr. Blue Sky - Electric Light Orchestra",
+    videoId: "x-64CaD8GXw",
+    measureMap: { 10: 3, 47: 23 },
+    fileName: "Shipping_Up",
+    name: "I'm Shipping Up To Boson - Dropkick Murphys",
+  },
+  {
+    videoId: "1rPAnxsSk40",
+    measureMap: { 2: 2, 107: 57 },
+    fileName: "Ku_Ku_Jodel",
+    name: "Ku Ku Jodel - Oesch's die Dritten",
+  },
+  {
+    videoId: "YyolLXRWsxc",
+    measureMap: { 54: 3, 110: 35, 175: 72 },
+    fileName: "Kirschen",
+    name: "Kirschenblüten Jodler - Takeo Ischi & Rudy Schneyder",
+  },
+  {
+    videoId: "ZqcXgODTeOU",
+    measureMap: { 1.5: 1, 59: 37, 77: 48 },
+    fileName: "People_Shit",
+    name: "People Equals Shit - Richard Cheese",
   },
   {
     videoId: "6fMwrdWmExg",
@@ -764,16 +782,16 @@ export const scores: ScoreInfo[] = [
     name: "10.000 Luchtballonnen - K3",
   },
   {
+    videoId: "aQUlA8Hcv4s",
+    measureMap: mrBlueMM,
+    fileName: "Mr_Blue_Sky",
+    name: "Mr. Blue Sky - Electric Light Orchestra",
+  },
+  {
     videoId: "aNgjX8y_HHU",
     measureMap: { 15: 1, 50: 16, 134.5: 53 },
     fileName: "Chlini",
     name: "Chlini Händ - Kunz",
-  },
-  {
-    videoId: "ZqcXgODTeOU",
-    measureMap: { 1.5: 1, 59: 37, 77: 48 },
-    fileName: "People_Shit",
-    name: "People Equals Shit - Richard Cheese",
   },
   {
     videoId: "TR3Vdo5etCQ",
@@ -788,28 +806,10 @@ export const scores: ScoreInfo[] = [
     name: "Feeling Good - Ibrahim Maalouf & Dear Silas",
   },
   {
-    videoId: "YyolLXRWsxc",
-    measureMap: { 54: 3, 110: 35, 175: 72 },
-    fileName: "Kirschen",
-    name: "Kirschenblüten Jodler - Takeo Ischi & Rudy Schneyder",
-  },
-  {
     videoId: "2SjAexwwtBA",
     measureMap: { 6: 5, 145: 99 },
     fileName: "Confetti",
     name: "Confetti in m'n Sokken - Gekkenhuys ft. Fleur",
-  },
-  {
-    videoId: "x-64CaD8GXw",
-    measureMap: { 10: 3, 47: 23 },
-    fileName: "Shipping_Up",
-    name: "I'm Shipping Up To Boson - Dropkick Murphys",
-  },
-  {
-    videoId: "1rPAnxsSk40",
-    measureMap: { 2: 2, 107: 57 },
-    fileName: "Ku_Ku_Jodel",
-    name: "Ku Ku Jodel - Oesch's die Dritten",
   },
   {
     videoId: "KQRaj1vcnrs",
