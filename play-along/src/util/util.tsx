@@ -76,10 +76,11 @@ const getScaleUpdate = (measure: any, fifths: number) => {
   if (!attrs) {
     return null;
   }
-  const fifthsEl = attrs.getElementsByTagName("fifths")[0];
-  if (!fifthsEl) {
+  const fifthsEls = attrs.getElementsByTagName("fifths");
+  if (fifthsEls.length === 0) {
     return null;
   }
+  const fifthsEl = fifthsEls[0];
   const fifthsNum = parseInt(fifthsEl.textContent!);
   const newFifths = fifthsNum + fifths;
   fifthsEl.textContent = `${newFifths}`;
@@ -92,15 +93,14 @@ export const transpose = (xml: Document, pitch: string, octave: number) => {
   const [chrom, fifths] = transposeOptions[pitch];
   const measures = xml.getElementsByTagName("measure");
 
-  let usedScale = getScaleUpdate(measures[0], fifths);
-  console.assert(usedScale !== null, "Invalid scale!");
-
+  let usedScale = null;
   for (let measI = 0; measI < measures.length; ++measI) {
     const currMeas = measures[measI];
     const newScaleOrNull = getScaleUpdate(currMeas, fifths);
     if (newScaleOrNull !== null) {
       usedScale = newScaleOrNull;
     }
+    console.assert(usedScale !== null, "Invalid scale!");
 
     const elements = currMeas.getElementsByTagName("note");
     for (let i = 0; i < elements.length; ++i) {
