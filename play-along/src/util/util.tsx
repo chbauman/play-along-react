@@ -70,55 +70,76 @@ const increase = (
   return [newPitch, newAlter, newOct] as const;
 };
 
-/** Transpose score to desired pitch. */
-export const transpose = (xml: Document, pitch: string) => {
-  const [chrom, fifths] = transposeOptions[pitch];
-  const measures = xml.getElementsByTagName("measure");
-  const attrs = measures[0].getElementsByTagName("attributes")[0];
-
+/** Find the scale of the given measure if present. */
+const getScaleUpdate = (measure: any, fifths: number) => {
+  const attrs = measure.getElementsByTagName("attributes")[0];
+  if (!attrs) {
+    return null;
+  }
   const fifthsEl = attrs.getElementsByTagName("fifths")[0];
+  if (!fifthsEl) {
+    return null;
+  }
   const fifthsNum = parseInt(fifthsEl.textContent!);
   const newFifths = fifthsNum + fifths;
   fifthsEl.textContent = `${newFifths}`;
   const usedScale = newFifths >= 0 ? sharpScale : flatScale;
+  return usedScale;
+};
 
-  const elements = xml.getElementsByTagName("note");
-  for (let i = 0; i < elements.length; ++i) {
-    const noteEl = elements[i];
-    const el = noteEl.getElementsByTagName("pitch")[0];
-    if (!el) {
-      continue;
+/** Transpose score to desired pitch. */
+export const transpose = (xml: Document, pitch: string) => {
+  const [chrom, fifths] = transposeOptions[pitch];
+  const measures = xml.getElementsByTagName("measure");
+
+  let usedScale = getScaleUpdate(measures[0], fifths);
+  console.assert(usedScale !== null, "Invalid scale!");
+
+  for (let measI = 0; measI < measures.length; ++measI) {
+    const currMeas = measures[measI];
+    const newScaleOrNull = getScaleUpdate(currMeas, fifths);
+    if (newScaleOrNull !== null) {
+      usedScale = newScaleOrNull;
     }
-    const step = el.getElementsByTagName("step")[0];
-    const oct = el.getElementsByTagName("octave")[0];
-    const alter = el.getElementsByTagName("alter")[0];
-    const alterNum = alter ? Number.parseInt(alter.textContent!) : 0;
-    const octNum = Number.parseInt(oct.textContent!);
-    const [newPitch, newAlter, newOct] = increase(
-      step.textContent!,
-      octNum,
-      alterNum,
-      chrom,
-      usedScale
-    );
-    step.textContent = newPitch;
-    oct.textContent = newOct.toString();
-    if (alter) {
-      if (newAlter !== 0) {
-        alter.textContent = newAlter.toString();
-      } else {
-        el.removeChild(alter);
+
+    const elements = currMeas.getElementsByTagName("note");
+    for (let i = 0; i < elements.length; ++i) {
+      const noteEl = elements[i];
+      const el = noteEl.getElementsByTagName("pitch")[0];
+      if (!el) {
+        continue;
       }
-    } else if (newAlter !== 0) {
-      const newEl = xml.createElement("alter");
-      newEl.textContent = newAlter.toString();
-      el.appendChild(newEl);
-    }
+      const step = el.getElementsByTagName("step")[0];
+      const oct = el.getElementsByTagName("octave")[0];
+      const alter = el.getElementsByTagName("alter")[0];
+      const alterNum = alter ? Number.parseInt(alter.textContent!) : 0;
+      const octNum = Number.parseInt(oct.textContent!);
+      const [newPitch, newAlter, newOct] = increase(
+        step.textContent!,
+        octNum,
+        alterNum,
+        chrom,
+        usedScale
+      );
+      step.textContent = newPitch;
+      oct.textContent = newOct.toString();
+      if (alter) {
+        if (newAlter !== 0) {
+          alter.textContent = newAlter.toString();
+        } else {
+          el.removeChild(alter);
+        }
+      } else if (newAlter !== 0) {
+        const newEl = xml.createElement("alter");
+        newEl.textContent = newAlter.toString();
+        el.appendChild(newEl);
+      }
 
-    // Remove any accidentals, they are handled by the "alter" element.
-    const acc = noteEl.getElementsByTagName("accidental")[0];
-    if (acc) {
-      noteEl.removeChild(acc);
+      // Remove any accidentals, they are handled by the "alter" element.
+      const acc = noteEl.getElementsByTagName("accidental")[0];
+      if (acc) {
+        noteEl.removeChild(acc);
+      }
     }
   }
 };
