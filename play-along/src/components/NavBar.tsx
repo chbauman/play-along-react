@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import { Container, Nav, Navbar, NavDropdown, NavLink } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { scores } from "../scores";
@@ -18,9 +19,8 @@ export const getSortedScores = () => {
   return scoreCopy;
 };
 
-export const NavBar = ({ title }: { title?: string }) => {
-  const defTitle = title === undefined ? "Youtube Play Along" : title;
-  const navBrand = <Navbar.Brand>{defTitle}</Navbar.Brand>;
+const NavBar = ({ title }: { title: string }) => {
+  const navBrand = <Navbar.Brand>{title}</Navbar.Brand>;
   const navLogo = (
     <Navbar.Brand className="mt-0 p-0" as={Link} to="/">
       <img
@@ -67,5 +67,24 @@ export const NavBar = ({ title }: { title?: string }) => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+  );
+};
+
+export const wrapWithNav = (
+  comp: ReactElement,
+  navTitle = "Youtube Play Along",
+  wrapInCont = true
+) => {
+  const navBar = <NavBar title={navTitle} />;
+  const cmp = wrapInCont ? (
+    <Container className="mt-3 mb-5">{comp}</Container>
+  ) : (
+    <div className="mt-3 mb-5">{comp}</div>
+  );
+  return (
+    <>
+      {navBar}
+      {cmp}
+    </>
   );
 };

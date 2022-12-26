@@ -1,10 +1,9 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import ContactForm from "./FormSpree";
-import { NavBar } from "./NavBar";
+import { wrapWithNav } from "./NavBar";
 import { PitchSetting } from "./PartSelector";
 
 export const Settings = () => {
-  const navBar = <NavBar title="Settings" />;
   const contact = <ContactForm />;
   const pitchSelector = (
     <>
@@ -17,13 +16,11 @@ export const Settings = () => {
       </Row>
     </>
   );
-  return (
+  const fullComp = (
     <>
-      {navBar}
-      <Container className="mt-3">
-        {pitchSelector}
-        {contact}
-      </Container>
+      {pitchSelector}
+      {contact}
     </>
   );
+  return wrapWithNav(fullComp, "Settings");
 };
