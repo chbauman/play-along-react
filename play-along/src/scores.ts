@@ -819,7 +819,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "lLocq-Yulro",
-    measureMap: { 12: 8, 79: 40 },
+    measureMap: { 3: 3, 12: 8, 79: 40 },
     fileName: "Gigue",
     name: "Water Music: Gigue - G.F. Händel",
   },
