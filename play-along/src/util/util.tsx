@@ -88,7 +88,7 @@ const getScaleUpdate = (measure: any, fifths: number) => {
 };
 
 /** Transpose score to desired pitch. */
-export const transpose = (xml: Document, pitch: string) => {
+export const transpose = (xml: Document, pitch: string, octave: number) => {
   const [chrom, fifths] = transposeOptions[pitch];
   const measures = xml.getElementsByTagName("measure");
 
@@ -116,7 +116,7 @@ export const transpose = (xml: Document, pitch: string) => {
       const octNum = Number.parseInt(oct.textContent!);
       const [newPitch, newAlter, newOct] = increase(
         step.textContent!,
-        octNum,
+        octNum + octave,
         alterNum,
         chrom,
         usedScale

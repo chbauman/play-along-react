@@ -11,7 +11,10 @@ type PartSelectorState = {
   parts: { id: string; name: string }[];
   currPartIdx: number;
   pitch: string;
+  octave: number;
 };
+
+const allOctaves = [1, 0, -1];
 
 /** Loads a local xml file. */
 const loadXmlFile = async (fileName: string) => {
@@ -52,7 +55,7 @@ const extractPartXml = (state: PartSelectorState) => {
   removeUnused(parsedXML, "score-partwise", "part", partId);
 
   // Transpose
-  transpose(parsedXML, state.pitch);
+  transpose(parsedXML, state.pitch, state.octave);
 
   return parsedXML;
 };
@@ -103,6 +106,7 @@ export const PartSelector = ({ scoreInfo }: { scoreInfo: ScoreInfo }) => {
         currPartIdx: 0,
         origXml: parsedXML,
         pitch: getPitch(),
+        octave: 0,
       };
       setOrigXmlAndParts({
         ...baseState,
@@ -117,10 +121,21 @@ export const PartSelector = ({ scoreInfo }: { scoreInfo: ScoreInfo }) => {
   if (origXmlAndParts !== null) {
     const currPitch = origXmlAndParts.pitch;
     const currPartIdx = origXmlAndParts.currPartIdx;
+    const allParts = origXmlAndParts.parts;
+    const currPart = allParts[currPartIdx];
+    const currOctave = origXmlAndParts.octave;
 
     // Part changer
-    const setPart = (newPartIdx: number, newPitch: string) => {
-      if (newPartIdx === currPartIdx && newPitch === currPitch) {
+    const setPart = (
+      newPartIdx: number,
+      newPitch: string,
+      newOctave: number
+    ) => {
+      if (
+        newPartIdx === currPartIdx &&
+        newPitch === currPitch &&
+        newOctave === currOctave
+      ) {
         return;
       }
       if (newPitch !== currPitch) {
@@ -130,6 +145,7 @@ export const PartSelector = ({ scoreInfo }: { scoreInfo: ScoreInfo }) => {
         ...origXmlAndParts,
         currPartIdx: newPartIdx,
         pitch: newPitch,
+        octave: newOctave,
       };
       const xml = extractPartXml(newXmlAndParts);
       setOrigXmlAndParts({
@@ -138,8 +154,6 @@ export const PartSelector = ({ scoreInfo }: { scoreInfo: ScoreInfo }) => {
         currPartIdx: newPartIdx,
       });
     };
-    const allParts = origXmlAndParts.parts;
-    const currPart = allParts[currPartIdx];
 
     // Only add part chooser dropdown if there are at least two parts.
     const partChooser =
@@ -147,7 +161,10 @@ export const PartSelector = ({ scoreInfo }: { scoreInfo: ScoreInfo }) => {
         <DropdownButton id="choose-part" title="Select Part" as={ButtonGroup}>
           {allParts.map((el, idx) => {
             return (
-              <Dropdown.Item key={idx} onClick={() => setPart(idx, currPitch)}>
+              <Dropdown.Item
+                key={idx}
+                onClick={() => setPart(idx, currPitch, currOctave)}
+              >
                 {el.name}
               </Dropdown.Item>
             );
@@ -155,19 +172,46 @@ export const PartSelector = ({ scoreInfo }: { scoreInfo: ScoreInfo }) => {
         </DropdownButton>
       );
 
+    // Only add part chooser dropdown if there are at least two parts.
+    const octToStr = (el: number) => (el > 0 ? `+${el}` : `${el}`);
+    const octTitle =
+      currOctave === 0 ? "Octave" : `Octave ${octToStr(currOctave)}`;
+    const octaveChooser = (
+      <DropdownButton id="choose-octave" title={octTitle} as={ButtonGroup}>
+        {allOctaves.map((el) => {
+          return (
+            <Dropdown.Item
+              key={el}
+              onClick={() => setPart(currPartIdx, currPitch, el)}
+            >
+              {octToStr(el)}
+            </Dropdown.Item>
+          );
+        })}
+      </DropdownButton>
+    );
+
     // (Part and) pitch selector dropdowns
     const partSelectorDD = (
       <ButtonGroup>
         {partChooser}
-        <DropdownButton id="choose-key" title="Select Pitch" as={ButtonGroup}>
+        <DropdownButton
+          id="choose-key"
+          title={`Pitch: ${currPitch}`}
+          as={ButtonGroup}
+        >
           {transposeKeys.map((el) => {
             return (
-              <Dropdown.Item key={el} onClick={() => setPart(currPartIdx, el)}>
+              <Dropdown.Item
+                key={el}
+                onClick={() => setPart(currPartIdx, el, currOctave)}
+              >
                 {el}
               </Dropdown.Item>
             );
           })}
         </DropdownButton>
+        {octaveChooser}
       </ButtonGroup>
     );
 
@@ -187,9 +231,7 @@ export const PartSelector = ({ scoreInfo }: { scoreInfo: ScoreInfo }) => {
         className="d-flex justify-content-between mt-1 mb-1"
         style={{ width: playerSizePx.width, margin: "auto" }}
       >
-        <h4>
-          Part: {currPart.name}, {currPitch}
-        </h4>
+        <h4>Part: {currPart.name}</h4>
         <div className="d-flex">{partSelectorDD}</div>
       </div>
     );
