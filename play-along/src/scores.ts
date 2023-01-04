@@ -865,6 +865,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Firebird",
     name: "Tale of the Firebird - Derek Fiechter",
   },
+  {
+    videoId: "qP-7GNoDJ5c",
+    measureMap: { 3: 2, 71: 29 },
+    fileName: "Wellerman",
+    name: "Wellerman - Nathan Evans",
+  },
 ];
 
 if (DEBUG) {
