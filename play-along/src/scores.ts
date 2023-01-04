@@ -859,6 +859,12 @@ export const scores: ScoreInfo[] = [
     fileName: "La_Noyee",
     name: "La Noyee - Yann Tiersen",
   },
+  {
+    videoId: "A6VV7__LaHU",
+    measureMap: { 16: 9, 104: 56 },
+    fileName: "Firebird",
+    name: "Tale of the Firebird - Derek Fiechter",
+  },
 ];
 
 if (DEBUG) {
