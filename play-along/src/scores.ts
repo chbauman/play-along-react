@@ -853,6 +853,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Shadows",
     name: "Shadows - Lindsey Stirling",
   },
+  {
+    videoId: "okE6M78TL_0",
+    measureMap: { 14: 11, 92: 71 },
+    fileName: "La_Noyee",
+    name: "La Noyee - Yann Tiersen",
+  },
 ];
 
 if (DEBUG) {
