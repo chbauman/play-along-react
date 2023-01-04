@@ -25,9 +25,20 @@ export const ScoreRoute = () => {
 export const Home = () => {
   const scoreComp = (
     <>
-      <h4>Getting Started</h4>
-      <p>Start by selecting a score using the menu above on the right.</p>
+      <p>
+        Welcome to our sheet music website! We are pleased to offer a wide
+        variety of sheet music for a variety of musical styles and instruments.
+        Our website features interactive sheet music that is synced with
+        corresponding music videos, allowing you to play along with the video as
+        you practice. Whether you are a seasoned musician or a beginner looking
+        to learn a new instrument, we have something for everyone.
+      </p>
       <NewestScores nMostRecentSongs={10} />
+      <p>
+        We hope you enjoy using our website and that it helps you improve your
+        musical skills. If you have any questions or suggestions, please don't
+        hesitate to contact us. Happy playing!
+      </p>
     </>
   );
 

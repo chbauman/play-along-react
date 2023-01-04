@@ -34,8 +34,11 @@ export const NewestScores = ({
 
   return (
     <div className="mb-3">
-      <h4>Newest Scores</h4>
-      <p>The most recently added songs are listed below.</p>
+      <h4>Recent Scores</h4>
+      <p>
+        The most recently added pieces are listed below. Choose a song by
+        clicking on the button on the right and start playing right away.
+      </p>
       <Row className="mt-1">
         <Col xs="4">
           <h5>Name</h5>
