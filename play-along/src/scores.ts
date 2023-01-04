@@ -847,6 +847,12 @@ export const scores: ScoreInfo[] = [
     fileName: "La_Valse_des_Monstres",
     name: "La Valse des Monstres - Yann Tiersen",
   },
+  {
+    videoId: "JGCsyshUU-A",
+    measureMap: { 4: 3, 72.5: 39 },
+    fileName: "Shadows",
+    name: "Shadows - Lindsey Stirling",
+  },
 ];
 
 if (DEBUG) {
