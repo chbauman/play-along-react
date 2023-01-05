@@ -116,7 +116,11 @@ export const ListScores = () => {
       <tbody>
         {scores.map((el) => {
           return (
-            <tr key={el.linkId} onClick={() => navi(`/${el.linkId}`)}>
+            <tr
+              key={el.linkId}
+              onClick={() => navi(`/${el.linkId}`)}
+              style={{ cursor: "pointer" }}
+            >
               <td className="col-6">{el.name?.trim()}</td>
               <td className="col-6">{el.artist?.trim()}</td>
             </tr>
