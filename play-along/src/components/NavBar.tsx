@@ -2,6 +2,7 @@ import { ReactElement } from "react";
 import { Container, Nav, Navbar, NavDropdown, NavLink } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { scores } from "../scores";
+import { MdHelp, MdSettings } from "react-icons/md";
 
 export const getSortedScores = () => {
   const scoresWithIndex = scores.map((score, idx) => {
@@ -44,7 +45,10 @@ const NavBar = ({ title }: { title: string }) => {
         <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
           <Nav>
             <NavLink as={Link} to="/settings">
-              Settings
+              <MdSettings />
+            </NavLink>
+            <NavLink as={Link} to="/help">
+              <MdHelp />
             </NavLink>
             <NavDropdown
               align="end"
