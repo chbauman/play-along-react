@@ -17,8 +17,11 @@ export default function ContactForm() {
       <Row>
         <h4>Contact</h4>
         <p>
-          Use the form below to contact the creator of this application. Any
-          feedback is welcome.
+          If you have any questions, need assistance, or want to provide us with
+          helpful feedback, please don't hesitate to use the following contact
+          form. Simply provide your name, email address, and a brief message
+          describing your inquiry, and we will get back to you as soon as
+          possible.
         </p>
       </Row>
       <Row>
