@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { scores } from "../scores";
 import { wrapWithNav } from "./NavBar";
 import { NewestScores } from "./NewestScores";
@@ -23,6 +23,7 @@ export const ScoreRoute = () => {
 
 /** Lets the user select the score and displays it. */
 export const Home = () => {
+  const nScores = scores.length;
   const scoreComp = (
     <>
       <p>
@@ -32,6 +33,12 @@ export const Home = () => {
         corresponding music videos, allowing you to play along with the video as
         you practice. Whether you are a seasoned musician or a beginner looking
         to learn a new instrument, we have something for everyone.
+      </p>
+      <h4>All Scores</h4>
+      <p>
+        There is a total of {nScores} scores available for playing along
+        including the corresponding sheet music. They all can be accessed under{" "}
+        <Link to="/listall">All Scores</Link>.
       </p>
       <NewestScores nMostRecentSongs={10} />
       <p>
