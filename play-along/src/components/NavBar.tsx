@@ -1,8 +1,7 @@
 import { ReactElement } from "react";
-import { Container, Nav, Navbar, NavDropdown, NavLink } from "react-bootstrap";
+import { Container, Nav, Navbar, NavLink } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { MdHelp, MdList, MdSettings } from "react-icons/md";
-import { getSortedScores } from "../util/util";
 
 const NavBar = ({ title }: { title: string }) => {
   const navBrand = <Navbar.Brand>{title}</Navbar.Brand>;
@@ -18,7 +17,6 @@ const NavBar = ({ title }: { title: string }) => {
     </Navbar.Brand>
   );
 
-  const scoreCopy = getSortedScores();
   const buttSize = 26;
 
   return (
@@ -38,23 +36,6 @@ const NavBar = ({ title }: { title: string }) => {
             <NavLink as={Link} to="/help">
               <MdHelp size={buttSize} />
             </NavLink>
-            <NavDropdown
-              align="end"
-              title="Select Score"
-              id="basic-nav-dropdown"
-            >
-              {scoreCopy.map((el) => {
-                return (
-                  <NavDropdown.Item
-                    as={Link}
-                    to={`/${el.score.videoId}`}
-                    key={el.idx}
-                  >
-                    {el.score.name}
-                  </NavDropdown.Item>
-                );
-              })}
-            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Container>

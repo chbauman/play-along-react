@@ -146,18 +146,10 @@ export const transpose = (xml: Document, pitch: string, octave: number) => {
   }
 };
 
-export const getSortedScores = () => {
-  const scoresWithIndex = scores.map((score, idx) => {
-    return { score, idx };
+export const getCopiedScores = () => {
+  const scoresWithIndex = scores.map((score) => {
+    const [name, artist] = score.name.split("-");
+    return { linkId: score.videoId, name, artist };
   });
-  const scoreCopy = [...scoresWithIndex];
-  scoreCopy.sort((a, b) => {
-    if (a.score.name < b.score.name) {
-      return -1;
-    } else if (a.score.name > b.score.name) {
-      return 1;
-    }
-    return 0;
-  });
-  return scoreCopy;
+  return [...scoresWithIndex];
 };

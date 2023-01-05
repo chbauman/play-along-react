@@ -6,11 +6,10 @@ import {
   DropdownButton,
   Form,
   Row,
-  Table,
 } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-import { getSortedScores } from "../util/util";
+import { getCopiedScores } from "../util/util";
 import { wrapWithNav } from "./NavBar";
+import { ScoreTable } from "./ScoreTable";
 
 const sortBy = ["name", "artist"] as const;
 const sortByNames = { name: "Song Name", artist: "Artist" };
@@ -81,11 +80,7 @@ const useProcessedScores = () => {
     </>
   );
 
-  const scoreCopy = getSortedScores();
-  let scores = scoreCopy.map((el) => {
-    const [name, artist] = el.score.name.split("-");
-    return { name, artist, linkId: el.score.videoId };
-  });
+  let scores = getCopiedScores();
   if (filterS) {
     // Apply filter
     const fLow = filterS.toLocaleLowerCase();
@@ -102,33 +97,9 @@ const useProcessedScores = () => {
 
 /** Lists all available scores. */
 export const ListScores = () => {
-  const navi = useNavigate();
   const { scores, comp } = useProcessedScores();
+  const scoreTable = <ScoreTable scores={scores} />;
 
-  const scoreTable = (
-    <Table striped bordered hover>
-      <thead>
-        <tr>
-          <th>Song Name</th>
-          <th>Artist</th>
-        </tr>
-      </thead>
-      <tbody>
-        {scores.map((el) => {
-          return (
-            <tr
-              key={el.linkId}
-              onClick={() => navi(`/${el.linkId}`)}
-              style={{ cursor: "pointer" }}
-            >
-              <td className="col-6">{el.name?.trim()}</td>
-              <td className="col-6">{el.artist?.trim()}</td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </Table>
-  );
   const fullComp = (
     <>
       {comp}
