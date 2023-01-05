@@ -871,6 +871,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Wellerman",
     name: "Wellerman - Nathan Evans",
   },
+  {
+    videoId: "LNBjMRvOB5M",
+    measureMap: { 4: 1, 157: 79 },
+    fileName: "Go_West",
+    name: "Go West - Pet Shop Boys",
+  },
 ];
 
 if (DEBUG) {
