@@ -3,6 +3,7 @@ import { ScoreRoute, Home } from "./components/ScoreSelector";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import { Settings } from "./components/Settings";
 import { Help } from "./components/Help";
+import { ListScores } from "./components/ListScores";
 
 const router = createHashRouter([
   {
@@ -16,6 +17,7 @@ const router = createHashRouter([
   { path: "/:scoreId", element: <ScoreRoute /> },
   { path: "/settings", element: <Settings /> },
   { path: "/help", element: <Help /> },
+  { path: "/listall", element: <ListScores /> },
 ]);
 
 function App() {

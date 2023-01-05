@@ -1,3 +1,5 @@
+import { scores } from "../scores";
+
 export const DEBUG = false;
 
 export const parseXml = (xmlStr: string) => {
@@ -142,4 +144,20 @@ export const transpose = (xml: Document, pitch: string, octave: number) => {
       }
     }
   }
+};
+
+export const getSortedScores = () => {
+  const scoresWithIndex = scores.map((score, idx) => {
+    return { score, idx };
+  });
+  const scoreCopy = [...scoresWithIndex];
+  scoreCopy.sort((a, b) => {
+    if (a.score.name < b.score.name) {
+      return -1;
+    } else if (a.score.name > b.score.name) {
+      return 1;
+    }
+    return 0;
+  });
+  return scoreCopy;
 };

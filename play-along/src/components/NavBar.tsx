@@ -1,24 +1,8 @@
 import { ReactElement } from "react";
 import { Container, Nav, Navbar, NavDropdown, NavLink } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { scores } from "../scores";
-import { MdHelp, MdSettings } from "react-icons/md";
-
-export const getSortedScores = () => {
-  const scoresWithIndex = scores.map((score, idx) => {
-    return { score, idx };
-  });
-  const scoreCopy = [...scoresWithIndex];
-  scoreCopy.sort((a, b) => {
-    if (a.score.name < b.score.name) {
-      return -1;
-    } else if (a.score.name > b.score.name) {
-      return 1;
-    }
-    return 0;
-  });
-  return scoreCopy;
-};
+import { MdHelp, MdList, MdSettings } from "react-icons/md";
+import { getSortedScores } from "../util/util";
 
 const NavBar = ({ title }: { title: string }) => {
   const navBrand = <Navbar.Brand>{title}</Navbar.Brand>;
@@ -35,6 +19,7 @@ const NavBar = ({ title }: { title: string }) => {
   );
 
   const scoreCopy = getSortedScores();
+  const buttSize = 26;
 
   return (
     <Navbar bg="light" expand="lg">
@@ -44,11 +29,14 @@ const NavBar = ({ title }: { title: string }) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
           <Nav>
+            <NavLink as={Link} to="/listall">
+              <MdList size={buttSize} />
+            </NavLink>
             <NavLink as={Link} to="/settings">
-              <MdSettings />
+              <MdSettings size={buttSize} />
             </NavLink>
             <NavLink as={Link} to="/help">
-              <MdHelp />
+              <MdHelp size={buttSize} />
             </NavLink>
             <NavDropdown
               align="end"
