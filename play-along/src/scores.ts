@@ -877,6 +877,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Go_West",
     name: "Go West - Pet Shop Boys",
   },
+  {
+    videoId: "0J2QdDbelmY",
+    measureMap: { 3: 1, 122: 62 },
+    fileName: "Seven_Nation_Army",
+    name: "Seven Nation Army - The White Stripes",
+  },
 ];
 
 if (DEBUG) {
