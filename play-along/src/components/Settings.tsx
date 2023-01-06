@@ -6,7 +6,7 @@ export const Settings = () => {
   const pitchSelector = (
     <>
       <Row>
-        <Col>Choose default pitch</Col>
+        <Col>Default pitch</Col>
         <Col>
           <PitchSetting title="" />
         </Col>
