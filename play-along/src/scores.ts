@@ -879,7 +879,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "0J2QdDbelmY",
-    measureMap: { 3: 1, 122: 62 },
+    measureMap: { 3: 1, 122: 62, 176: 89, 227: 115 },
     fileName: "Seven_Nation_Army",
     name: "Seven Nation Army - The White Stripes",
   },
