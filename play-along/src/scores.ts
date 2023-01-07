@@ -849,7 +849,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "JGCsyshUU-A",
-    measureMap: { 4: 3, 72.5: 39 },
+    measureMap: { 4: 3, 149: 79, 212: 112 },
     fileName: "Shadows",
     name: "Shadows - Lindsey Stirling",
   },
