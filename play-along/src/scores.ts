@@ -861,7 +861,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "A6VV7__LaHU",
-    measureMap: { 16: 9, 104: 56 },
+    measureMap: { 16: 9, 104: 56, 179: 96 },
     fileName: "Firebird",
     name: "Tale of the Firebird - Derek Fiechter",
   },
