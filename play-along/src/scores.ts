@@ -883,6 +883,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Seven_Nation_Army",
     name: "Seven Nation Army - The White Stripes",
   },
+  {
+    videoId: "wTCpQdsoKOc",
+    measureMap: { 5: 5, 103: 85, 162: 134 },
+    fileName: "La_Valette",
+    name: "La Valette - Perły i Łotry",
+  },
 ];
 
 if (DEBUG) {
