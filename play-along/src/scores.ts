@@ -242,7 +242,6 @@ const freundMM = {
   219: 205,
   249: 236,
 };
-const cahiMM = { 5: 1, 44: 29, 81: 55, 107: 73 };
 const kingMM = { 9: 2, 47: 26, 105: 62, 156: 94 };
 const rockCivMM = { 159: 2, 249: 58 };
 const rightNowMM = { 13: 9, 192: 121 };
@@ -465,7 +464,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "7wW33aOPAqs",
-    measureMap: cahiMM,
+    measureMap: { 5: 1, 44: 29, 81: 55, 107: 73, 141: 97 },
     fileName: "Cahi_En_La",
     name: "Cahi en la Trampa - Manu Chao",
   },
