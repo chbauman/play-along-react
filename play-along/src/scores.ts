@@ -888,6 +888,12 @@ export const scores: ScoreInfo[] = [
     fileName: "La_Valette",
     name: "La Valette - Perły i Łotry",
   },
+  {
+    videoId: "j09hpp3AxIE",
+    measureMap: { 11: 5, 257: 105 },
+    fileName: "Tage_Wie_Diese",
+    name: "Tage wie diese - Die Toten Hosen",
+  },
 ];
 
 if (DEBUG) {
