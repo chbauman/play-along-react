@@ -894,6 +894,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Tage_Wie_Diese",
     name: "Tage wie diese - Die Toten Hosen",
   },
+  {
+    videoId: "fqwIpH6phJs",
+    measureMap: { 8: 4, 106: 42, 109: 43 },
+    fileName: "Java",
+    name: "Java - Al Hirt",
+  },
 ];
 
 if (DEBUG) {
