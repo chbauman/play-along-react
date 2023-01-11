@@ -255,7 +255,6 @@ const blosEMM = {
 };
 const champsMM = { 3: 2, 21: 10, 57: 26, 93: 42, 129: 58 };
 const ukrAnthMM = { 6: 2, 65: 19, 110: 32, 115: 33 };
-const sambaMM = { 16: 2, 59: 26, 96: 47, 128: 65 };
 const hochMM = { 11: 2, 30: 9, 50: 21, 116: 61 };
 const laylMM = { 8: 6, 160: 90 };
 const wwwMM = { 1: 2, 94: 72 };
@@ -506,7 +505,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "HAiHEQblKeQ",
-    measureMap: sambaMM,
+    measureMap: { 16: 2, 59: 26, 96: 47, 128: 65, 164: 85 },
     fileName: "Samba_De_Janeiro",
     name: "Samba de Janeiro - Bellini",
   },
