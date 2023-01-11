@@ -222,7 +222,6 @@ const youtheoneMM = {
   179: 106,
   202: 120,
 };
-const oskarMM = { 12: 5, 46: 17, 104: 37 };
 const brainsMM = { 10: 7, 96: 59, 202: 123 };
 const klangMM = { 11: 1, 84: 55, 103: 69 };
 const imalrMM = { 8: 9, 106: 105, 112: 110 };
@@ -439,7 +438,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "Uxk4tw9dWUE",
-    measureMap: oskarMM,
+    measureMap: { 12: 5, 46: 17, 104: 37, 159: 56 },
     fileName: "Oskar_der_Elefant",
     name: "Oskar der Elefant - K.I.Z",
   },
