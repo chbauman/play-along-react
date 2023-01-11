@@ -286,7 +286,6 @@ const badTouchMM = { 17: 3, 110.5: 51 };
 const happyMM = { 7: 2, 100: 64 };
 const crazyFrogMM = { 7: 2, 75: 41 };
 const uprisingMM = { 6: 2, 107: 56 };
-const cambodiaMM = { 11: 5, 150: 69 };
 const ievanMM = { 11: 9, 157: 154 };
 const santianoMM = { 12: 3, 56: 45, 104: 92 };
 const choristesMM = { 3: 3, 94: 38, 128: 51 };
@@ -702,7 +701,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "BERFZja9wb0",
-    measureMap: cambodiaMM,
+    measureMap: { 11: 5, 150: 69, 226: 104 },
     fileName: "Cambodia",
     name: "Cambodia - Kim Wilde",
   },
