@@ -862,7 +862,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "qP-7GNoDJ5c",
-    measureMap: { 3: 2, 71: 29 },
+    measureMap: { 3: 2, 71: 29, 151: 61 },
     fileName: "Wellerman",
     name: "Wellerman - Nathan Evans",
   },
