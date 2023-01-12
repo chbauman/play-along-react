@@ -285,13 +285,7 @@ const rhythmIsAMM = { 2: 3, 31: 18, 62: 34, 108: 58, 123.5: 66 };
 const badTouchMM = { 17: 3, 110.5: 51 };
 const happyMM = { 7: 2, 100: 64 };
 const crazyFrogMM = { 7: 2, 75: 41 };
-const uprisingMM = { 6: 2, 107: 56 };
-const ievanMM = { 11: 9, 157: 154 };
-const santianoMM = { 12: 3, 56: 45, 104: 92 };
-const choristesMM = { 3: 3, 94: 38, 128: 51 };
 const sombToLoveMM = { 7: 2, 18: 6, 26: 8, 33: 10, 56: 17, 95: 29, 129: 39 };
-const mrBlueMM = { 22: 2, 91: 52, 231: 156, 237: 160 };
-const loveOnRaveMM = { 5: 5, 101: 81 };
 const deprecatedScores: ScoreInfo[] = [
   {
     videoId: "5AWltYjY1y4",
@@ -694,7 +688,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "w8KQmps-Sog",
-    measureMap: uprisingMM,
+    measureMap: { 6: 2, 107: 56 },
     fileName: "Uprising",
     name: "Uprising - Muse",
   },
@@ -706,19 +700,19 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "S4nwKLxEboo",
-    measureMap: ievanMM,
+    measureMap: { 11: 9, 157: 154 },
     fileName: "Ievan_Polkka",
     name: "Ievan Polkka - Loituma",
   },
   {
     videoId: "qYyaKNvcKEA",
-    measureMap: santianoMM,
+    measureMap: { 12: 3, 56: 45, 104: 92 },
     fileName: "Santiano",
     name: "Santiano - Les Marins D'Iroise",
   },
   {
     videoId: "9lfgOfMY2FI",
-    measureMap: choristesMM,
+    measureMap: { 3: 3, 94: 38, 128: 51 },
     fileName: "Les_Choristes",
     name: "Les Choristes - Bruno Coulais",
   },
@@ -742,7 +736,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "CVbTtJ2tbyg",
-    measureMap: loveOnRaveMM,
+    measureMap: { 5: 5, 101: 81 },
     fileName: "Love_On_Rave",
     name: "Love On Rave - ДЕТИ RAVE",
   },
@@ -784,7 +778,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "aQUlA8Hcv4s",
-    measureMap: mrBlueMM,
+    measureMap: { 22: 2, 91: 52, 231: 156, 237: 160 },
     fileName: "Mr_Blue_Sky",
     name: "Mr. Blue Sky - Electric Light Orchestra",
   },
@@ -835,6 +829,12 @@ export const scores: ScoreInfo[] = [
     measureMap: { 12: 5, 240: 88 },
     fileName: "Rusted",
     name: "Rusted From The Rain - Billy Talent",
+  },
+  {
+    videoId: "luodBWXwneg",
+    measureMap: { 20: 1, 299: 181 },
+    fileName: "Raging_Shadows",
+    name: "Raging Shadows - JDX ft. Alizay",
   },
   {
     videoId: "4VQwQzoGF_o",
