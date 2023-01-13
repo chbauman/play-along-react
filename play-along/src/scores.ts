@@ -902,6 +902,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Aldapan_Gora",
     name: "Aldapan Gora - Huntza",
   },
+  {
+    videoId: "zOvsyamoEDg",
+    measureMap: { 12: 3, 31: 12, 111: 50, 250: 116 },
+    fileName: "Federkleid",
+    name: "Federkleid - Faun",
+  },
 ];
 
 if (DEBUG) {
