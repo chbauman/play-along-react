@@ -896,6 +896,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Java",
     name: "Java - Al Hirt",
   },
+  {
+    videoId: "ONsp-SMT6is",
+    measureMap: { 7: 10, 192: 241 },
+    fileName: "Aldapan_Gora",
+    name: "Aldapan Gora - Huntza",
+  },
 ];
 
 if (DEBUG) {
