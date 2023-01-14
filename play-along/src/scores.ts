@@ -914,6 +914,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Like_A_Prayer",
     name: "Like A Prayer - Madonna",
   },
+  {
+    videoId: "-9pySXuNO5A",
+    measureMap: { 4: 3, 102: 65, 110: 70, 114: 73 },
+    fileName: "Randy_Dandy",
+    name: "Randy Dandy Oh - The Dreadnoughts",
+  },
 ];
 
 if (DEBUG) {
