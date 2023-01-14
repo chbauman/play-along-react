@@ -920,6 +920,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Randy_Dandy",
     name: "Randy Dandy Oh - The Dreadnoughts",
   },
+  {
+    videoId: "ql9-82oV2JE",
+    measureMap: { 19: 1, 190: 91 },
+    fileName: "Go_Far_Kid",
+    name: "You're Gonna Go Far, Kid - The Offspring",
+  },
 ];
 
 if (DEBUG) {
