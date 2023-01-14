@@ -926,6 +926,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Go_Far_Kid",
     name: "You're Gonna Go Far, Kid - The Offspring",
   },
+  {
+    videoId: "6Cp6mKbRTQY",
+    measureMap: { 4: 3, 246: 134 },
+    fileName: "Hey_Brother",
+    name: "Hey Brother - Avicii",
+  },
 ];
 
 if (DEBUG) {
