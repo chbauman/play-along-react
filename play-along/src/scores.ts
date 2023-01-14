@@ -908,6 +908,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Federkleid",
     name: "Federkleid - Faun",
   },
+  {
+    videoId: "79fzeNUqQbQ",
+    measureMap: { 14: 1, 42: 14, 299: 134 },
+    fileName: "Like_A_Prayer",
+    name: "Like A Prayer - Madonna",
+  },
 ];
 
 if (DEBUG) {
