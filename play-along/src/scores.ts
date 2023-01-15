@@ -932,6 +932,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Hey_Brother",
     name: "Hey Brother - Avicii",
   },
+  {
+    videoId: "oRoEo7lZO6s",
+    measureMap: {13: 9,  231: 148, 234:150,  238:152  },
+    fileName: "Hornpipe",
+    name: "Water Music in D: Hornpipe - G. F. Händel",
+  },
 ];
 
 if (DEBUG) {
