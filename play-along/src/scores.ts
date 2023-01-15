@@ -270,7 +270,6 @@ const savageMM = { 4: 2, 64: 39, 131: 81 };
 const yesterdayMM = { 26: 2, 79: 24, 115: 39 };
 const misirlouMM = { 4: 2, 67: 25, 150: 55 };
 const dropTahtMM = { 4: 4, 72: 40 };
-const bootyMM = { 9: 6, 43: 22, 58: 29, 94: 46 };
 const cordulaMM = { 9.5: 5, 70: 36, 185: 95 };
 const sunMM = { 10: 6, 136: 57 };
 const vicSongMM = { 5: 2, 103: 43, 151: 63 };
@@ -602,7 +601,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "Eco4z98nIQY",
-    measureMap: bootyMM,
+    measureMap: { 9: 6, 43: 22, 58: 29, 94: 46, 181: 87 },
     fileName: "Booty_Swing",
     name: "Booty Swing - Parov Stelar",
   },
@@ -941,6 +940,12 @@ export const scores: ScoreInfo[] = [
     measureMap: { 4: 3, 99: 55, 100: 56, 180: 100, 181: 101, 262: 146 },
     fileName: "Moskau",
     name: "Moskau - Dschingis Khan",
+  },
+  {
+    videoId: "J_e9BUGVc08",
+    measureMap: { 3: 3, 109: 54 },
+    fileName: "Rejouissance",
+    name: "Music for the Royal Firework: La réjouissance - G. F. Händel",
   },
 ];
 
