@@ -76,13 +76,7 @@ const waterfallMM = {
   133: 78,
   145: 85,
 };
-const sfMM = {
-  6: 3,
-  42: 20,
-  79: 37,
-  110: 52,
-  143: 67,
-};
+const sfMM = { 6: 3, 42: 20, 79: 37, 110: 52, 143: 67 };
 
 const zirkusMM = {
   8: 2,
@@ -234,24 +228,11 @@ const destMM = {
   107: 36,
   131: 51,
 };
-const freundMM = {
-  40: 15,
-  145: 127,
-  213: 199,
-  219: 205,
-  249: 236,
-};
+const freundMM = { 40: 15, 145: 127, 213: 199, 219: 205, 249: 236 };
 const kingMM = { 9: 2, 47: 26, 105: 62, 156: 94 };
 const rockCivMM = { 159: 2, 249: 58 };
 const rightNowMM = { 13: 9, 192: 121 };
-const blosEMM = {
-  22: 12,
-  59: 30,
-  100: 50,
-  132: 66,
-  146: 73,
-  152: 76,
-};
+const blosEMM = { 22: 12, 59: 30, 100: 50, 132: 66, 146: 73, 152: 76 };
 const champsMM = { 3: 2, 21: 10, 57: 26, 93: 42, 129: 58 };
 const ukrAnthMM = { 6: 2, 65: 19, 110: 32, 115: 33 };
 const hochMM = { 11: 2, 30: 9, 50: 21, 116: 61 };
@@ -265,20 +246,14 @@ const fightMM = { 74: 3, 183: 71 };
 const poundingMM = { 107: 2, 142: 24, 152: 28, 240: 83 };
 const canCanMM = { 12: 5, 41: 44, 81: 98, 104: 129 };
 const savageMM = { 4: 2, 64: 39, 131: 81 };
-const yesterdayMM = { 26: 2, 79: 24, 115: 39 };
 const misirlouMM = { 4: 2, 67: 25, 150: 55 };
 const dropTahtMM = { 4: 4, 72: 40 };
 const cordulaMM = { 9.5: 5, 70: 36, 185: 95 };
-const sunMM = { 10: 6, 136: 57 };
 const vicSongMM = { 5: 2, 103: 43, 151: 63 };
 const sweetMM = { 8: 5, 50: 27, 92: 49, 134: 71, 149.5: 79 };
 const chickenMM = { 6: 7, 142: 118 };
-const tequilaMM = { 8: 7, 104: 79 };
-const cumbancheroMM = { 7: 6, 57: 37 };
-const freedMM = { 13: 9, 80: 45 };
 const soulSplitMM = { 9: 6, 58: 25, 105: 61, 115: 69, 131: 75 };
 const rhythmIsAMM = { 2: 3, 31: 18, 62: 34, 108: 58, 123.5: 66 };
-const happyMM = { 7: 2, 100: 64 };
 const sombToLoveMM = { 7: 2, 18: 6, 26: 8, 33: 10, 56: 17, 95: 29, 129: 39 };
 const deprecatedScores: ScoreInfo[] = [
   {
@@ -580,7 +555,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "wXTJBr9tt8Q",
-    measureMap: yesterdayMM,
+    measureMap: { 26: 2, 79: 24, 115: 39, 132: 46 },
     fileName: "Yesterday",
     name: "Yesterday - The Beatles",
   },
@@ -610,7 +585,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "sKyK1Mme9Sc",
-    measureMap: sunMM,
+    measureMap: { 10: 6, 136: 57 },
     fileName: "Sun",
     name: "Sun - Two Door Cinema Club",
   },
@@ -640,19 +615,19 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "U_JFLb1IItM",
-    measureMap: tequilaMM,
+    measureMap: { 8: 7, 104: 79 },
     fileName: "Tequila",
     name: "Tequila - The Champs",
   },
   {
     videoId: "sZn1GXdzY9g",
-    measureMap: cumbancheroMM,
+    measureMap: { 7: 6, 57: 37 },
     fileName: "El_Cumbanchero",
     name: "El Cumbanchero - Daniel Santos",
   },
   {
     videoId: "p3l7fgvrEKM",
-    measureMap: freedMM,
+    measureMap: { 13: 9, 80: 45 },
     fileName: "Freed",
     name: "Freed From Desire - GALA",
   },
@@ -670,7 +645,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "ZbZSe6N_BXs",
-    measureMap: happyMM,
+    measureMap: { 7: 2, 100: 64 },
     fileName: "Happy",
     name: "Happy - Pharrell Williams",
   },
