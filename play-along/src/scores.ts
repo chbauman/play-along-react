@@ -282,7 +282,6 @@ const recalledMM = { 13: 6, 79: 46, 92: 54 };
 const freedMM = { 13: 9, 80: 45 };
 const soulSplitMM = { 9: 6, 58: 25, 105: 61, 115: 69, 131: 75 };
 const rhythmIsAMM = { 2: 3, 31: 18, 62: 34, 108: 58, 123.5: 66 };
-const badTouchMM = { 17: 3, 110.5: 51 };
 const happyMM = { 7: 2, 100: 64 };
 const crazyFrogMM = { 7: 2, 75: 41 };
 const sombToLoveMM = { 7: 2, 18: 6, 26: 8, 33: 10, 56: 17, 95: 29, 129: 39 };
@@ -670,7 +669,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "xat1GVnl8-k",
-    measureMap: badTouchMM,
+    measureMap: { 17: 3, 110.5: 51, 242: 118 },
     fileName: "The_Bad_Touch",
     name: "The Bad Touch - Bloodhound Gang",
   },
