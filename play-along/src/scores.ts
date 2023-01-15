@@ -278,7 +278,6 @@ const sweetMM = { 8: 5, 50: 27, 92: 49, 134: 71, 149.5: 79 };
 const chickenMM = { 6: 7, 142: 118 };
 const tequilaMM = { 8: 7, 104: 79 };
 const cumbancheroMM = { 7: 6, 57: 37 };
-const recalledMM = { 13: 6, 79: 46, 92: 54 };
 const freedMM = { 13: 9, 80: 45 };
 const soulSplitMM = { 9: 6, 58: 25, 105: 61, 115: 69, 131: 75 };
 const rhythmIsAMM = { 2: 3, 31: 18, 62: 34, 108: 58, 123.5: 66 };
@@ -609,7 +608,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "GKARuQGhrO4",
-    measureMap: recalledMM,
+    measureMap: { 13: 10, 79: 50, 92: 58, 161: 100 },
     fileName: "Recalled",
     name: "Recalled To Life - Dutch Master",
   },
