@@ -264,7 +264,6 @@ const richiMM = { 7: 6, 120: 68 };
 const fightMM = { 74: 3, 183: 71 };
 const poundingMM = { 107: 2, 142: 24, 152: 28, 240: 83 };
 const canCanMM = { 12: 5, 41: 44, 81: 98, 104: 129 };
-const beatItMM = { 53: 2, 88: 22, 107: 33, 164: 66 };
 const savageMM = { 4: 2, 64: 39, 131: 81 };
 const yesterdayMM = { 26: 2, 79: 24, 115: 39 };
 const misirlouMM = { 4: 2, 67: 25, 150: 55 };
@@ -564,7 +563,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "oRdxUFDoQe0",
-    measureMap: beatItMM,
+    measureMap: { 53: 2, 88: 22, 107: 33, 164: 66, 290: 137 },
     fileName: "Beat_It",
     name: "Beat It - Michael Jackson",
   },
