@@ -260,7 +260,6 @@ const wwwMM = { 1: 2, 94: 72 };
 const partypMM = { 2: 3, 180: 98 };
 const ownTheNightMM = { 2: 3, 41: 27, 108: 68, 222: 138 };
 const oliviaMM = { 8: 6, 72: 44, 170: 102 };
-const botAnnaMM = { 1: 3, 203: 121 };
 const richiMM = { 7: 6, 120: 68 };
 const fightMM = { 74: 3, 183: 71 };
 const poundingMM = { 107: 2, 142: 24, 152: 28, 240: 83 };
@@ -535,7 +534,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "1XK5-n4rR7Q",
-    measureMap: botAnnaMM,
+    measureMap: { 1: 3, 203: 121 },
     fileName: "Boten_Anna",
     name: "Boten Anna - Basshunter",
   },
@@ -952,6 +951,12 @@ export const scores: ScoreInfo[] = [
     measureMap: { 7: 1, 216: 109, 228: 115 },
     fileName: "Firework",
     name: "Firework - Katy Perry",
+  },
+  {
+    videoId: "98WtmW-lfeE",
+    measureMap: { 4: 3, 218: 110 },
+    fileName: "Teenage_Dream",
+    name: "Teenage Dream - Katy Perry",
   },
 ];
 
