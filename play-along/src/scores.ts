@@ -938,6 +938,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Hornpipe",
     name: "Water Music in D: Hornpipe - G. F. Händel",
   },
+  {
+    videoId: "i0xOSxgs6w8",
+    measureMap: { 4: 3, 99: 55, 100: 56, 180: 100, 181: 101, 262: 146 },
+    fileName: "Moskau",
+    name: "Moskau - Dschingis Khan",
+  },
 ];
 
 if (DEBUG) {
