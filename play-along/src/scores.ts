@@ -816,7 +816,7 @@ export const scores: ScoreInfo[] = [
     videoId: "lLocq-Yulro",
     measureMap: { 3: 3, 12: 8, 79: 40 },
     fileName: "Gigue",
-    name: "Water Music: Gigue - G.F. Händel",
+    name: "Water Music in G: Gigue - G. F. Händel",
   },
   {
     videoId: "9d8SzG4FPyM",
@@ -934,7 +934,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "oRoEo7lZO6s",
-    measureMap: {13: 9,  231: 148, 234:150,  238:152  },
+    measureMap: { 13: 9, 231: 148, 234: 150, 238: 152 },
     fileName: "Hornpipe",
     name: "Water Music in D: Hornpipe - G. F. Händel",
   },
