@@ -279,7 +279,6 @@ const freedMM = { 13: 9, 80: 45 };
 const soulSplitMM = { 9: 6, 58: 25, 105: 61, 115: 69, 131: 75 };
 const rhythmIsAMM = { 2: 3, 31: 18, 62: 34, 108: 58, 123.5: 66 };
 const happyMM = { 7: 2, 100: 64 };
-const crazyFrogMM = { 7: 2, 75: 41 };
 const sombToLoveMM = { 7: 2, 18: 6, 26: 8, 33: 10, 56: 17, 95: 29, 129: 39 };
 const deprecatedScores: ScoreInfo[] = [
   {
@@ -677,7 +676,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "k85mRPqvMbE",
-    measureMap: crazyFrogMM,
+    measureMap: { 7: 2, 75: 41, 160: 90 },
     fileName: "Crazy_Frog",
     name: "Axel F - Crazy Frog",
   },
