@@ -903,7 +903,7 @@ export const scores: ScoreInfo[] = [
     videoId: "zOvsyamoEDg",
     measureMap: { 12: 3, 31: 12, 111: 50, 250: 116 },
     fileName: "Federkleid",
-    name: "Federkleid - Faun",
+    name: "Federkleid - FAUN",
   },
   {
     videoId: "79fzeNUqQbQ",
@@ -946,6 +946,12 @@ export const scores: ScoreInfo[] = [
     measureMap: { 3: 3, 109: 54 },
     fileName: "Rejouissance",
     name: "Music for the Royal Firework: La réjouissance - G. F. Händel",
+  },
+  {
+    videoId: "QGJuMBdaqIw",
+    measureMap: { 7: 1, 216: 109, 228: 115 },
+    fileName: "Firework",
+    name: "Firework - Katy Perry",
   },
 ];
 
