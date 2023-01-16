@@ -930,6 +930,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Teenage_Dream",
     name: "Teenage Dream - Katy Perry",
   },
+  {
+    videoId: "OkShTJdNBjc",
+    measureMap: { 1: 2, 118: 128 },
+    fileName: "Tarantella_Napoletana",
+    name: "Tarantella Napoletana - Yuri Sazonoff & Jerry Caringi",
+  },
 ];
 
 if (DEBUG) {
