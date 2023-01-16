@@ -250,7 +250,6 @@ const misirlouMM = { 4: 2, 67: 25, 150: 55 };
 const dropTahtMM = { 4: 4, 72: 40 };
 const cordulaMM = { 9.5: 5, 70: 36, 185: 95 };
 const vicSongMM = { 5: 2, 103: 43, 151: 63 };
-const sweetMM = { 8: 5, 50: 27, 92: 49, 134: 71, 149.5: 79 };
 const chickenMM = { 6: 7, 142: 118 };
 const soulSplitMM = { 9: 6, 58: 25, 105: 61, 115: 69, 131: 75 };
 const rhythmIsAMM = { 2: 3, 31: 18, 62: 34, 108: 58, 123.5: 66 };
@@ -603,7 +602,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "qeMFqkcPYcg",
-    measureMap: sweetMM,
+    measureMap: { 8: 5, 50: 27, 92: 49, 134: 71, 149.5: 79, 207: 109 },
     fileName: "Sweet_Dreams",
     name: "Sweet Dreams - Eurhythmics",
   },
