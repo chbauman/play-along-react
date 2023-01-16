@@ -584,7 +584,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "sKyK1Mme9Sc",
-    measureMap: { 10: 6, 136: 57 },
+    measureMap: { 10: 6, 136: 57, 178: 74 },
     fileName: "Sun",
     name: "Sun - Two Door Cinema Club",
   },
