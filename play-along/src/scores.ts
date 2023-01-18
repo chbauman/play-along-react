@@ -634,7 +634,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "p3l7fgvrEKM",
-    measureMap: { 13: 9, 80: 45 },
+    measureMap: { 13: 9, 80: 45, 205: 112 },
     fileName: "Freed",
     name: "Freed From Desire - GALA",
   },
