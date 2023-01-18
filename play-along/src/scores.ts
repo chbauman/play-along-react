@@ -251,7 +251,6 @@ const dropTahtMM = { 4: 4, 72: 40 };
 const cordulaMM = { 9.5: 5, 70: 36, 185: 95 };
 const vicSongMM = { 5: 2, 103: 43, 151: 63 };
 const chickenMM = { 6: 7, 142: 118 };
-const soulSplitMM = { 9: 6, 58: 25, 105: 61, 115: 69, 131: 75 };
 const rhythmIsAMM = { 2: 3, 31: 18, 62: 34, 108: 58, 123.5: 66 };
 const sombToLoveMM = { 7: 2, 18: 6, 26: 8, 33: 10, 56: 17, 95: 29, 129: 39 };
 const deprecatedScores: ScoreInfo[] = [
@@ -590,7 +589,16 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "1LEfacrCU9M",
-    measureMap: soulSplitMM,
+    measureMap: {
+      9: 6,
+      58: 25,
+      105: 61,
+      115: 69,
+      131: 75,
+      136: 77,
+      173: 105,
+      180: 108,
+    },
     fileName: "Soul_Split",
     name: "Soul Split - Irradiate",
   },
