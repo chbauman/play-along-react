@@ -219,15 +219,6 @@ const youtheoneMM = {
 const brainsMM = { 10: 7, 96: 59, 202: 123 };
 const klangMM = { 11: 1, 84: 55, 103: 69 };
 const imalrMM = { 8: 9, 106: 105, 112: 110 };
-const destMM = {
-  27: 1,
-  64: 13,
-  70: 15,
-  92: 29,
-  100: 34,
-  107: 36,
-  131: 51,
-};
 const freundMM = { 40: 15, 145: 127, 213: 199, 219: 205, 249: 236 };
 const kingMM = { 9: 2, 47: 26, 105: 62, 156: 94 };
 const rockCivMM = { 159: 2, 249: 58 };
@@ -409,7 +400,16 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "dv2NtTtwVVY",
-    measureMap: destMM,
+    measureMap: {
+      27: 1,
+      64: 13,
+      70: 15,
+      92: 29,
+      100: 34,
+      107: 36,
+      131: 51,
+      200: 94,
+    },
     fileName: "Destiny",
     name: "Destiny - Headhunterz",
   },
