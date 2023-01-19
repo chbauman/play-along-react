@@ -946,7 +946,7 @@ export const scores: ScoreInfo[] = [
     videoId: "NjGpEqt_hws",
     measureMap: { 7: 5, 144: 82 },
     fileName: "Bergbauern",
-    name: "Florian Andreas - Bergbauern-Style",
+    name: "Bergbauern Style - Florian Andreas",
   },
 ];
 
