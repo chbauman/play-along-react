@@ -236,7 +236,6 @@ const richiMM = { 7: 6, 120: 68 };
 const fightMM = { 74: 3, 183: 71 };
 const poundingMM = { 107: 2, 142: 24, 152: 28, 240: 83 };
 const canCanMM = { 12: 5, 41: 44, 81: 98, 104: 129 };
-const savageMM = { 4: 2, 64: 39, 131: 81 };
 const misirlouMM = { 4: 2, 67: 25, 150: 55 };
 const dropTahtMM = { 4: 4, 72: 40 };
 const cordulaMM = { 9.5: 5, 70: 36, 185: 95 };
@@ -541,7 +540,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "sQR2-Q-k_9Y",
-    measureMap: savageMM,
+    measureMap: { 4: 2, 64: 39, 131: 81, 168: 104 },
     fileName: "Savage_Love",
     name: "Savage Love - Jason Derulo",
   },
