@@ -742,7 +742,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "2SjAexwwtBA",
-    measureMap: { 6: 5, 145: 99 },
+    measureMap: { 6: 5, 145: 99, 178: 121 },
     fileName: "Confetti",
     name: "Confetti in m'n Sokken - Gekkenhuys ft. Fleur",
   },
