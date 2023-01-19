@@ -131,18 +131,6 @@ const wbdMM = {
   219: 73,
 };
 
-const zeitMM = {
-  6: 1,
-  37: 17,
-  84: 41,
-  98: 48,
-  101: 50,
-  117: 58,
-  133: 66,
-  146: 73,
-  160: 80,
-  189: 95,
-};
 const saufiSaufiMM = {
   2: 1,
   14: 8,
@@ -333,7 +321,18 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "EbHGS_bVkXY",
-    measureMap: zeitMM,
+    measureMap: {
+      6: 1,
+      37: 16,
+      84: 41,
+      101: 50,
+      117: 58,
+      133: 65,
+      148: 73,
+      160: 79,
+      189: 94,
+      289: 145,
+    },
     fileName: "Zeit",
     name: "Zeit - Rammstein",
   },
