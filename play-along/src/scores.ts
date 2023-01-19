@@ -942,6 +942,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Tarantella_Napoletana",
     name: "Tarantella Napoletana - Yuri Sazonoff & Jerry Caringi",
   },
+  {
+    videoId: "NjGpEqt_hws",
+    measureMap: { 7: 5, 144: 82 },
+    fileName: "Bergbauern",
+    name: "Florian Andreas - Bergbauern-Style",
+  },
 ];
 
 if (DEBUG) {
