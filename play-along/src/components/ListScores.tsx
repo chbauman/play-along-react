@@ -52,9 +52,18 @@ const useSortedScores = () => {
     </DropdownButton>
   );
   const sortFun = (a: ScoreNameArtist, b: ScoreNameArtist) => {
-    if (a[sortState] < b[sortState]) {
+    // Put undefined at the end
+    const sa = a[sortState]?.toLowerCase();
+    const sb = b[sortState]?.toLowerCase();
+    if (sa === undefined) {
+      return 1;
+    }
+    if (sb === undefined) {
       return -1;
-    } else if (a[sortState] > b[sortState]) {
+    }
+    if (sa < sb) {
+      return -1;
+    } else if (sa > sb) {
       return 1;
     }
     return 0;

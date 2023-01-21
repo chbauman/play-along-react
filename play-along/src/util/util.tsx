@@ -148,7 +148,12 @@ export const transpose = (xml: Document, pitch: string, octave: number) => {
 
 export const getCopiedScores = () => {
   const scoresWithIndex = scores.map((score) => {
-    const [name, artist] = score.name.split("-");
+    // Score name must NOT contain dashes (-)!!
+    // Artist name may contain dashes.
+    const parts = score.name.split("-");
+    const artistRaw = parts.slice(1).join("-");
+    const name = parts[0].trimStart().trimEnd();
+    const artist = artistRaw?.trimStart().trimEnd();
     return { linkId: score.videoId, name, artist };
   });
   return [...scoresWithIndex];
