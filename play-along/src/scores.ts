@@ -948,6 +948,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Bergbauern",
     name: "Bergbauern Style - Florian Andreas",
   },
+  {
+    videoId: "PJ0u5c9EF1E",
+    measureMap: { 10: 5, 118: 48, 122: 50, 229: 93 },
+    fileName: "Just_The_Two",
+    name: "Just The Two of Us - Grover Washington Jr. ft. Bill Withers",
+  },
 ];
 
 if (DEBUG) {
