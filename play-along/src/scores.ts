@@ -76,7 +76,6 @@ const waterfallMM = {
   133: 78,
   145: 85,
 };
-const sfMM = { 6: 3, 42: 20, 79: 37, 110: 52, 143: 67 };
 
 const zirkusMM = {
   8: 2,
@@ -309,7 +308,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "7I0vkKy504U",
-    measureMap: sfMM,
+    measureMap: { 6: 3, 42: 20, 79: 37, 110: 52, 143: 67, 161: 76 },
     fileName: "San_Francisco",
     name: "San Francisco - Scott McKenzie",
   },
