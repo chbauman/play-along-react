@@ -953,6 +953,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Just_The_Two",
     name: "Just The Two of Us - Grover Washington Jr. ft. Bill Withers",
   },
+  {
+    videoId: "kB_67zLhbEs",
+    measureMap: { 8: 2, 79: 34, 153: 68 },
+    fileName: "Red_Roses",
+    name: "Red roses for a blue lady - Vic Dana",
+  },
 ];
 
 if (DEBUG) {
