@@ -965,6 +965,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Diggy_Hole",
     name: "Diggy Diggy Hole - Wind Rose",
   },
+  {
+    videoId: "07xTvC5a9YQ",
+    measureMap: { 2: 3, 128: 137 },
+    fileName: "Valse_Amelie",
+    name: "La valse d'Amélie - Yann Tiersen",
+  },
 ];
 
 if (DEBUG) {
