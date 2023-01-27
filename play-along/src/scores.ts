@@ -959,6 +959,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Red_Roses",
     name: "Red roses for a blue lady - Vic Dana",
   },
+  {
+    videoId: "34CZjsEI1yU",
+    measureMap: { 14: 1, 29: 9, 294: 147, 302: 151 },
+    fileName: "Diggy_Hole",
+    name: "Diggy Diggy Hole - Wind Rose",
+  },
 ];
 
 if (DEBUG) {
