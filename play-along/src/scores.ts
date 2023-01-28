@@ -971,6 +971,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Valse_Amelie",
     name: "La valse d'Amélie - Yann Tiersen",
   },
+  {
+    videoId: "LtDx3hb-KwI",
+    measureMap: { 9: 3, 208: 155, 211: 157 },
+    fileName: "Ametsetan",
+    name: "Ametsetan - En Tol Sarmiento",
+  },
 ];
 
 if (DEBUG) {
