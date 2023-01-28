@@ -977,6 +977,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Ametsetan",
     name: "Ametsetan - En Tol Sarmiento",
   },
+  {
+    videoId: "4CI3lhyNKfo",
+    measureMap: { 4: 3, 16: 9, 113: 56 },
+    fileName: "Bella_Ciao",
+    name: "Bella Ciao",
+  },
 ];
 
 if (DEBUG) {
