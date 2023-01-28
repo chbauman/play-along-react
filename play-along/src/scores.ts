@@ -983,6 +983,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Bella_Ciao",
     name: "Bella Ciao - Fonola Band",
   },
+  {
+    videoId: "xrBLSmuhTSs",
+    measureMap: { 3: 1, 140: 131 },
+    fileName: "Sak_Polkka",
+    name: "Säkkijärven Polkka - Eemeli",
+  },
 ];
 
 if (DEBUG) {
