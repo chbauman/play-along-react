@@ -625,7 +625,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "sZn1GXdzY9g",
-    measureMap: { 7: 6, 57: 37 },
+    measureMap: { 7: 6, 57: 37, 118: 75, 123: 78 },
     fileName: "El_Cumbanchero",
     name: "El Cumbanchero - Daniel Santos",
   },
