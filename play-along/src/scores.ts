@@ -981,7 +981,7 @@ export const scores: ScoreInfo[] = [
     videoId: "4CI3lhyNKfo",
     measureMap: { 4: 3, 16: 9, 113: 56 },
     fileName: "Bella_Ciao",
-    name: "Bella Ciao",
+    name: "Bella Ciao - Fonola Band",
   },
 ];
 
