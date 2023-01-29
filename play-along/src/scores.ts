@@ -685,7 +685,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "9lfgOfMY2FI",
-    measureMap: { 3: 3, 94: 38, 128: 51 },
+    measureMap: { 3: 3, 94: 38, 128: 51, 141: 56, 151: 59, 193: 90, 197: 93 },
     fileName: "Les_Choristes",
     name: "Les Choristes - Bruno Coulais",
   },
