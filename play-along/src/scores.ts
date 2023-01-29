@@ -995,6 +995,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Ik_Hou_Van",
     name: "Ik Hou Van Holland - Heintje",
   },
+  {
+    videoId: "NmCCQxVBfyM",
+    measureMap: { 5: 4, 82: 52 },
+    fileName: "Tetris",
+    name: "Tetris - Game Boy",
+  },
 ];
 
 if (DEBUG) {
