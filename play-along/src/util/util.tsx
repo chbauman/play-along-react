@@ -1,3 +1,4 @@
+import { getClef } from "../components/Settings";
 import { scores } from "../scores";
 
 export const DEBUG = false;
@@ -94,6 +95,22 @@ const getScaleUpdate = (measure: any, fifths: number) => {
 export const transpose = (xml: Document, pitch: string, octave: number) => {
   const [chrom, fifths] = transposeOptions[pitch];
   const measures = xml.getElementsByTagName("measure");
+
+  // Handle bass clef
+  const clef = getClef();
+  if (clef === "Bass") {
+    octave = octave - 1;
+    const clefEl = xml.getElementsByTagName("clef")[0];
+    for (let k = 0; k < clefEl.children.length; ++k) {
+      const childEl = clefEl.children[k];
+      const currTag = childEl.tagName;
+      if (currTag === "sign") {
+        childEl.textContent = "F";
+      } else if (currTag === "line") {
+        childEl.textContent = "4";
+      }
+    }
+  }
 
   let usedScale = null;
   for (let measI = 0; measI < measures.length; ++measI) {
