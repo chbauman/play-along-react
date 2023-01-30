@@ -11,13 +11,14 @@ const clefs: { [key: string]: ReactElement } = {
 };
 const clefKey = "clef";
 
+/** Returns the currently selected clef from local storage. */
 export const getClef = () => {
   const ret = localStorage.getItem(clefKey);
   return ret ? ret : Object.keys(clefs)[0];
 };
 
+/** Dropdown for choosing the clef. */
 const ClefSetting = () => {
-  // Only add part chooser dropdown if there are at least two parts.
   const [clef, setClef] = useState(getClef());
   const set = (newClef: string) => {
     localStorage.setItem(clefKey, newClef);
@@ -42,6 +43,7 @@ const ClefSetting = () => {
   );
 };
 
+/** Setting component. */
 export const Settings = () => {
   const pitchSelector = (
     <>

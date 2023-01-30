@@ -99,8 +99,8 @@ export const transpose = (xml: Document, pitch: string, octave: number) => {
   // Handle bass clef
   const clef = getClef();
   if (clef === "Bass") {
-    octave = octave - 1;
-    const clefEl = xml.getElementsByTagName("clef")[0];
+    octave = octave - 1; // Set score one octave lower for bass clef
+    const clefEl = xml.getElementsByTagName("clef")[0]; // Assuming only one clef!
     for (let k = 0; k < clefEl.children.length; ++k) {
       const childEl = clefEl.children[k];
       const currTag = childEl.tagName;
