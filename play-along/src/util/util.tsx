@@ -52,9 +52,9 @@ const flatScale = [
 ];
 const transposeOptions: { [key: string]: [number, number] } = {
   C: [0, 0],
-  Bb: [2, 2],
+  "B♭": [2, 2],
   F: [7, 1],
-  Eb: [9, 3],
+  "E♭": [9, 3],
 };
 export const transposeKeys = Object.keys(transposeOptions);
 const sLen = flatScale.length;
