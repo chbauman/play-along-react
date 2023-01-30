@@ -1,14 +1,19 @@
-import { useState } from "react";
+import { ReactElement, useState } from "react";
 import { Col, Dropdown, DropdownButton, Row } from "react-bootstrap";
 import { wrapWithNav } from "./NavBar";
 import { PitchSetting } from "./PartSelector";
+import { ReactComponent as BassClef } from "../img/bass.svg";
+import { ReactComponent as TrebleClef } from "../img/treble.svg";
 
-const clefs = ["Treble", "Bass"];
+const clefs: { [key: string]: ReactElement } = {
+  Treble: <TrebleClef height={"3em"} />,
+  Bass: <BassClef height={"3em"} />,
+};
 const clefKey = "clef";
 
 export const getClef = () => {
   const ret = localStorage.getItem(clefKey);
-  return ret ? ret : clefs[0];
+  return ret ? ret : Object.keys(clefs)[0];
 };
 
 const ClefSetting = () => {
@@ -19,12 +24,17 @@ const ClefSetting = () => {
     setClef(newClef);
   };
 
+  const titleComp = (
+    <>
+      {clef} {clefs[clef]}
+    </>
+  );
   return (
-    <DropdownButton id="choose-clef" title={clef}>
-      {clefs.map((el, idx) => {
+    <DropdownButton id="choose-clef" title={titleComp}>
+      {Object.entries(clefs).map((el, idx) => {
         return (
-          <Dropdown.Item key={idx} onClick={() => set(el)}>
-            {el}
+          <Dropdown.Item key={idx} onClick={() => set(el[0])}>
+            {el[0]} {el[1]}
           </Dropdown.Item>
         );
       })}
