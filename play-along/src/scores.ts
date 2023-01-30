@@ -1001,6 +1001,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Tetris",
     name: "Tetris - Game Boy",
   },
+  {
+    videoId: "djV11Xbc914",
+    measureMap: { 9: 1, 20: 9, 208: 141 },
+    fileName: "Take_On_Me",
+    name: "Take On Me - A-HA",
+  },
 ];
 
 if (DEBUG) {
