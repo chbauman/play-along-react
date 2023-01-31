@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { ButtonGroup, Dropdown, DropdownButton } from "react-bootstrap";
-import { ScoreInfo } from "../scores";
+import { MeasureMap, ScoreInfo } from "../scores";
 import { getSingleXml, parseXml, transpose, transposeKeys } from "../util/util";
-import { MovingSheet } from "./Score";
-import { useYoutubePlayer, playerSizePx } from "./YtPlayer";
+import { MovingSheet } from "./MovingSheet";
+import { playerSizePx } from "./player/YtPlayer";
+import { Player } from "./player/util";
 
 type PartSelectorState = {
   xml: Document;
@@ -127,14 +128,22 @@ const PitchSelectorDD = ({
   );
 };
 
-export const PartSelector = ({ scoreInfo }: { scoreInfo: ScoreInfo }) => {
+/** The moving sheet music including the part selector and the player. */
+export const PartSelector = ({
+  measureMap,
+  player,
+  fileName,
+}: {
+  measureMap: MeasureMap;
+  player: Player;
+  fileName: string;
+}) => {
   const [origXmlAndParts, setOrigXmlAndParts] =
     useState<null | PartSelectorState>(null);
 
   useEffect(() => {
     // Load XML sheet music from musicxml file and initialize state
     const loadLocal = async () => {
-      const fileName = `./scores/${scoreInfo.fileName}.musicxml`;
       const xmlTxt = await loadXmlFile(fileName);
       const parsedXML = parseXml(xmlTxt);
 
@@ -152,9 +161,7 @@ export const PartSelector = ({ scoreInfo }: { scoreInfo: ScoreInfo }) => {
       });
     };
     loadLocal();
-  }, [scoreInfo]);
-
-  const { youtubeComp, getTime } = useYoutubePlayer(scoreInfo.videoId);
+  }, [fileName]);
 
   if (origXmlAndParts !== null) {
     const currPitch = origXmlAndParts.pitch;
@@ -257,9 +264,9 @@ export const PartSelector = ({ scoreInfo }: { scoreInfo: ScoreInfo }) => {
     const score = (
       <MovingSheet
         xml={origXmlAndParts.xml}
-        scoreInfo={scoreInfo}
-        getTime={getTime}
-        key={scoreInfo.videoId}
+        measureMap={measureMap}
+        getTime={player.getTime}
+        key={fileName}
       ></MovingSheet>
     );
 
@@ -277,7 +284,7 @@ export const PartSelector = ({ scoreInfo }: { scoreInfo: ScoreInfo }) => {
     // Put all together
     return (
       <>
-        {youtubeComp}
+        {player.comp}
         {partInfo}
         {score}
       </>

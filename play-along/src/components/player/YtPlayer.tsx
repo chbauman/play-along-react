@@ -1,5 +1,6 @@
 import YouTube from "react-youtube";
 import React, { useCallback, useRef } from "react";
+import { Player } from "./util";
 
 export const playerSizePx = {
   height: "390px",
@@ -44,5 +45,5 @@ export const useYoutubePlayer = (videoId: string) => {
     <YoutubePlayer playerRef={playerRef} videoId={videoId}></YoutubePlayer>
   );
 
-  return { youtubeComp: comp, getTime };
+  return { comp, getTime } as Player;
 };

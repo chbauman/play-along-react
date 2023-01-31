@@ -82,7 +82,7 @@ const getInterpolator = (
 /** The sheet music component. */
 export const MovingSheet = (props: {
   xml: Document;
-  scoreInfo: ScoreInfo;
+  measureMap: MeasureMap;
   getTime: () => Promise<number>;
 }) => {
   const [currXPos, setCurrXPos] = useState(0);
@@ -90,19 +90,19 @@ export const MovingSheet = (props: {
     ip: (n: number) => number;
   } | null>(null);
 
-  const { getTime, scoreInfo, xml } = props;
+  const { getTime, measureMap, xml } = props;
   useEffect(() => {
     // Load the sheet music display and create interpolator.
     const loadLocal = async () => {
       const osmd = await loadOsmd(xml);
-      const ipObj = getInterpolator(osmd, scoreInfo.measureMap);
+      const ipObj = getInterpolator(osmd, measureMap);
       setIpOrNull({ ip: ipObj });
     };
     loadLocal();
     return () => {
       setIpOrNull(null);
     };
-  }, [xml, scoreInfo.measureMap]);
+  }, [xml, measureMap]);
 
   const marginRight = Math.round(fullW - currXPos - window.innerWidth);
 

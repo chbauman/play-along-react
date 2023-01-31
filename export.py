@@ -5,6 +5,7 @@ and then reduces the exported XML files by removing certain tags
 and attributes from the XML document.
 """
 import argparse
+import json
 import subprocess
 from typing import Optional
 import xml.etree.ElementTree as ET
@@ -96,8 +97,78 @@ def check_positive(value):
 
 parser = argparse.ArgumentParser("Export script")
 parser.add_argument("n", type=check_positive, default=None)
+parser.add_argument("-a", "--audio", action="store_true", default=False, required=False)
+
+
+def export_audio():
+    mscz_path = Path(
+        r"C:\Users\Chrigi\Documents\GitHub\compositions\PracticalDozen\Beat_It.mscz"
+    )
+    assert mscz_path.exists()
+
+    XML_AUDIO_PATH = XML_SCORES_PATH.parent / "audio"
+    out_mp3 = XML_AUDIO_PATH / f"{mscz_path.stem}.mp3"
+    out_mxml = XML_AUDIO_PATH / f"{mscz_path.stem}.musicxml"
+    out_json = XML_AUDIO_PATH / f"{mscz_path.stem}.json"
+    # subprocess.run([str(MUSESCORE_EXE_PATH), "-o", str(out_mp3), str(mscz_path)])
+    subprocess.run([str(MUSESCORE_EXE_PATH), "-o", str(out_mxml), str(mscz_path)])
+    assert out_mp3.exists() and out_mxml.exists(), f"Export failed!"
+
+    # Reduce XML file
+    reduce_file(out_mxml)
+
+    tree = ET.parse(out_mxml)
+    root = tree.getroot()
+    measures = root.findall(f".//part[@id='P1']/measure")
+    n_measures = len(measures)
+    print(f"Found {n_measures} measures.")
+
+    curr_n_quarts = 4
+    curr_time = 0
+    curr_meas_idx = 0
+    curr_tempo_bpm = 0
+
+    time_s = []
+    bar_n = []
+
+    for ct, meas in enumerate(measures):
+        tempo = meas.find(".//*/metronome")
+        if tempo is not None:
+            beat_unit = tempo.find("beat-unit").text
+            curr_tempo_bpm = int(tempo.find("per-minute").text)
+            assert beat_unit == "quarter", f"Unit {beat_unit} is not supported!"
+
+        time = meas.find(".//*/time")
+        if time is not None:
+            n_beats = int(time.find("beats").text)
+            beat_type = time.find("beat-type").text
+            assert beat_type == "4"
+
+            curr_time += (ct - curr_meas_idx) * curr_n_quarts * 60 / curr_tempo_bpm
+
+            time_s.append(curr_time)
+            bar_n.append(ct + 1)
+            curr_n_quarts = n_beats
+            curr_meas_idx = ct
+
+    curr_time += (ct - curr_meas_idx) * curr_n_quarts * 60 / curr_tempo_bpm
+    time_s.append(curr_time)
+    bar_n.append(ct + 1)
+
+    json_dat = {
+        "times": time_s,
+        "bars": bar_n,
+    }
+
+    with open(out_json, "w") as f:
+        json.dump(json_dat, f)
+
+    print("Success")
 
 
 if __name__ == "__main__":
     args = parser.parse_args()
+    if args.audio:
+        export_audio()
+
     main(args.n)

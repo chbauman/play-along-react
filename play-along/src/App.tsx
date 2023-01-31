@@ -1,21 +1,17 @@
 import "./App.css";
-import { ScoreRoute, Home } from "./components/ScoreSelector";
+import { ScoreRoute } from "./components/ScoreSelector";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import { Settings } from "./components/Settings";
 import { Help } from "./components/Help";
 import { ListScores } from "./components/ListScores";
+import { AudioPlayer } from "./components/AudioPlayer";
+import { Home } from "./components/Home";
 
 const router = createHashRouter([
-  {
-    path: "/",
-    element: (
-      <div className="App">
-        <Home />
-      </div>
-    ),
-  },
+  { path: "/", element: <Home /> },
   { path: "/:scoreId", element: <ScoreRoute /> },
   { path: "/settings", element: <Settings /> },
+  { path: "/experimental", element: <AudioPlayer /> },
   { path: "/help", element: <Help /> },
   { path: "/listall", element: <ListScores /> },
 ]);
