@@ -102,7 +102,7 @@ parser.add_argument("-a", "--audio", action="store_true", default=False, require
 
 def export_audio():
     mscz_path = Path(
-        r"C:\Users\Chrigi\Documents\GitHub\compositions\PracticalDozen\Beat_It.mscz"
+        r"C:\Users\Chrigi\Documents\GitHub\compositions\Gugge\Blinging.mscz"
     )
     assert mscz_path.exists()
 
@@ -110,7 +110,7 @@ def export_audio():
     out_mp3 = XML_AUDIO_PATH / f"{mscz_path.stem}.mp3"
     out_mxml = XML_AUDIO_PATH / f"{mscz_path.stem}.musicxml"
     out_json = XML_AUDIO_PATH / f"{mscz_path.stem}.json"
-    # subprocess.run([str(MUSESCORE_EXE_PATH), "-o", str(out_mp3), str(mscz_path)])
+    subprocess.run([str(MUSESCORE_EXE_PATH), "-o", str(out_mp3), str(mscz_path)])
     subprocess.run([str(MUSESCORE_EXE_PATH), "-o", str(out_mxml), str(mscz_path)])
     assert out_mp3.exists() and out_mxml.exists(), f"Export failed!"
 

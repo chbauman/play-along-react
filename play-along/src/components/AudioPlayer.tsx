@@ -13,7 +13,7 @@ const audioScores = [
 ];
 
 export const AudioPlayer = () => {
-  const fileName = "Beat_It";
+  const fileName = "Blinging";
   const testFilePath = `audio/${fileName}.mp3`;
   const testMusicXMLPath = `audio/${fileName}.musicxml`;
   const measureJson = `audio/${fileName}.json`;
