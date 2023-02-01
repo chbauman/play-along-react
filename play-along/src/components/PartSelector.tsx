@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ButtonGroup, Dropdown, DropdownButton } from "react-bootstrap";
-import { MeasureMap, ScoreInfo } from "../scores";
+import { MeasureMap } from "../scores";
 import { getSingleXml, parseXml, transpose, transposeKeys } from "../util/util";
 import { MovingSheet } from "./MovingSheet";
 import { playerSizePx } from "./player/YtPlayer";
