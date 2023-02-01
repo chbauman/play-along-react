@@ -8,12 +8,24 @@ import { PartSelector } from "./PartSelector";
 const audioScores = [
   {
     fileName: "Beat_It",
-    name: "Beat It - Michael Jackson",
+    title: "Beat It",
+    interpret: "Michael Jackson",
+  },
+  {
+    fileName: "Blinging",
+    title: "Blinding Lights",
+    interpret: "The Weeknd",
   },
 ];
 
 export const AudioPlayer = () => {
   const fileName = "Blinging";
+
+  const fileInfoCand = audioScores.filter((el) => el.fileName === fileName);
+  console.assert(fileInfoCand.length === 1);
+  const fileInfo = fileInfoCand[0];
+  const title = `${fileInfo.title} - ${fileInfo.interpret}`;
+
   const testFilePath = `audio/${fileName}.mp3`;
   const testMusicXMLPath = `audio/${fileName}.musicxml`;
   const measureJson = `audio/${fileName}.json`;
@@ -32,7 +44,7 @@ export const AudioPlayer = () => {
         }
         setMM(measureMap);
       });
-  }, []);
+  }, [measureJson]);
 
   if (measureMap === null) {
     // Still loading json
@@ -41,12 +53,12 @@ export const AudioPlayer = () => {
 
   let time = 0;
   const comp = (
-    <Container>
+    <Container className="text-center">
       <ReactAudioPlayer
         src={testFilePath}
         autoPlay
         controls
-        listenInterval={50}
+        listenInterval={20}
         onListen={(e: any) => {
           time = e;
         }}
@@ -62,5 +74,5 @@ export const AudioPlayer = () => {
       fileName={testMusicXMLPath}
     ></PartSelector>
   );
-  return wrapWithNav(partSel, fileName, false);
+  return wrapWithNav(partSel, title, false);
 };

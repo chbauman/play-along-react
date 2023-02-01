@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { OpenSheetMusicDisplay } from "opensheetmusicdisplay";
-import { MeasureMap, ScoreInfo } from "../scores";
+import { MeasureMap } from "../scores";
 import Spline from "typescript-cubic-spline";
 
 const fullW = 40000;
