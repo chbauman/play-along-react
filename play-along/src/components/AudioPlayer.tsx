@@ -16,10 +16,20 @@ const audioScores = [
     title: "Blinding Lights",
     interpret: "The Weeknd",
   },
+  {
+    fileName: "Seasons_in_the_Sun",
+    title: "Seasons in the Sun",
+    interpret: "Terry Jacks",
+  },
+  {
+    fileName: "Love_Is_Like_Oxygen",
+    title: "Love Is Like Oxygen",
+    interpret: "Sweet",
+  },
 ];
 
 export const AudioPlayer = () => {
-  const fileName = "Blinging";
+  const fileName = "Love_Is_Like_Oxygen";
 
   const fileInfoCand = audioScores.filter((el) => el.fileName === fileName);
   console.assert(fileInfoCand.length === 1);
