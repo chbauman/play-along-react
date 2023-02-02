@@ -247,8 +247,8 @@ def extract_measure_map(out_mxml: Path):
                 * curr_n_quarts
                 * 60
                 / curr_tempo_bpm
-                / curr_tempo_unit
-                * curr_beat_type
+                * curr_tempo_unit
+                / curr_beat_type
             )
             time_s.append(curr_time)
             bar_n.append(ct + 1)
@@ -276,11 +276,11 @@ def extract_measure_map(out_mxml: Path):
         if time is not None:
             n_beats = int(time.find("beats").text)
             beat_type = int(time.find("beat-type").text)
-            curr_beat_type = beat_type
             print(f"Found time signature change {n_beats}/{curr_beat_type}")
 
             curr_time = _set_anchor(curr_time)
             curr_n_quarts = n_beats
+            curr_beat_type = beat_type
 
     curr_time += (ct - curr_meas_idx) * curr_n_quarts * 60 / curr_tempo_bpm
     time_s.append(curr_time)
