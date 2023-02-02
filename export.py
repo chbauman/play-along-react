@@ -5,6 +5,7 @@ and then reduces the exported XML files by removing certain tags
 and attributes from the XML document.
 """
 import argparse
+import copy
 import json
 import subprocess
 from typing import Optional
@@ -57,7 +58,11 @@ def reduce_file(path: Path):
             pass
 
     # Overwrite file with reduced version
-    with open(path, "wb") as f:
+    write_xml(tree, path)
+
+
+def write_xml(tree: ET, out_path: Path):
+    with open(out_path, "wb") as f:
         f.write(XML_DEC.encode("UTF-8"))
         tree.write(f, encoding="UTF-8")
 
@@ -102,9 +107,11 @@ parser.add_argument("-a", "--audio", action="store_true", default=False, require
 
 audio_files = [
     # "Gugge/Blinging.mscz",
-    "Gugge/Love_Is_Like_Oxygen.mscz",
+    # "Gugge/Love_Is_Like_Oxygen.mscz",
     # "Gugge/Seasons_in_the_Sun.mscz",
     # "PracticalDozen/Beat_It.mscz",
+    # "PracticalDozen/You're_The_one_That_I_Want.mscz",
+    "PlayAlong/Current/Calibration.mscz",
 ]
 
 
@@ -115,6 +122,8 @@ def export_audio():
 
         # Reduce XML file
         reduce_file(out_mxml)
+
+        unroll_repeats(out_mxml)
 
         time_s, bar_n = extract_measure_map(out_mxml)
 
@@ -137,10 +146,75 @@ def export_files(a_file: str):
     out_mp3 = XML_AUDIO_PATH / f"{mscz_path.stem}.mp3"
     out_mxml = XML_AUDIO_PATH / f"{mscz_path.stem}.musicxml"
     out_json = XML_AUDIO_PATH / f"{mscz_path.stem}.json"
-    subprocess.run([str(MUSESCORE_EXE_PATH), "-o", str(out_mp3), str(mscz_path)])
+    # subprocess.run([str(MUSESCORE_EXE_PATH), "-o", str(out_mp3), str(mscz_path)])
     subprocess.run([str(MUSESCORE_EXE_PATH), "-o", str(out_mxml), str(mscz_path)])
     assert out_mp3.exists() and out_mxml.exists(), f"Export failed!"
     return out_mxml, out_json
+
+
+def unroll_repeats(out_mxml: Path):
+    tree = ET.parse(out_mxml)
+    root = tree.getroot()
+
+    measures = root.findall(f".//part[@id='P1']/measure")
+
+    # Search for repetitions in first part
+    reps = []
+    curr_start = None
+    first_house_start = None
+
+    for ct, meas in enumerate(measures):
+        # Handle endings (houses)
+        ending = meas.find(".//ending")
+        if ending is not None:
+            end_attrs = ending.attrib
+            print(f"Found ending: {end_attrs}")
+            if end_attrs["number"] == "1" and end_attrs["type"] == "start":
+                first_house_start = ct
+
+        # Repeats ||:   :||
+        rep = meas.find(".//repeat")
+        if rep is not None:
+            direction = rep.attrib["direction"]
+            if direction == "forward":
+                assert curr_start is None
+                curr_start = ct
+            elif direction == "backward":
+                assert curr_start is not None, f"Backward at {ct}"
+                reps.append((curr_start, first_house_start, ct))
+                curr_start = None
+            else:
+                raise ValueError(f"Unknown direction {direction}!")
+
+    # Nothing to do if there are no repetitions
+    n_reps = len(reps)
+    if n_reps == 0:
+        return
+
+    print(f"Found {n_reps} repetitions: {reps}")
+
+    # Extend all parts
+    parts = root.findall(f".//part")
+    for part in parts:
+
+        print(f"Part {part.attrib['id']}")
+        curr_measures = part.findall(f"./measure")
+
+        curr_offset = 0
+        for rep in reps:
+            start_ct, first_h, end_ct = rep
+            n_measures = curr_offset + end_ct - start_ct + 1
+
+            end_range = end_ct + 1
+            if first_h is not None:
+                end_range = first_h
+            for curr_ct in range(start_ct, end_range):
+                meas_to_dup = curr_measures[curr_ct]
+                new_meas = copy.deepcopy(meas_to_dup)
+                part.insert(curr_ct + n_measures, new_meas)
+            curr_offset += end_range - start_ct
+
+    write_xml(tree, out_mxml)
 
 
 def extract_measure_map(out_mxml: Path):
@@ -154,6 +228,8 @@ def extract_measure_map(out_mxml: Path):
     curr_time = 0
     curr_meas_idx = 0
     curr_tempo_bpm = 120
+    curr_tempo_unit = 4
+    curr_beat_type = 4
 
     time_s = []
     bar_n = []
@@ -166,7 +242,14 @@ def extract_measure_map(out_mxml: Path):
 
             if ct in meas_set:
                 return curr_time
-            curr_time += (ct - curr_meas_idx) * curr_n_quarts * 60 / curr_tempo_bpm
+            curr_time += (
+                (ct - curr_meas_idx)
+                * curr_n_quarts
+                * 60
+                / curr_tempo_bpm
+                / curr_tempo_unit
+                * curr_beat_type
+            )
             time_s.append(curr_time)
             bar_n.append(ct + 1)
             curr_meas_idx = ct
@@ -177,8 +260,13 @@ def extract_measure_map(out_mxml: Path):
         tempo = meas.find(".//*/metronome")
         if tempo is not None:
             beat_unit = tempo.find("beat-unit").text
-            print(f"Found tempo {curr_tempo_bpm}")
-            assert beat_unit == "quarter", f"Unit {beat_unit} is not supported!"
+            print(f"Found tempo {beat_unit}={curr_tempo_bpm}")
+            if beat_unit == "quarter":
+                curr_tempo_unit = 4
+            elif beat_unit == "half":
+                curr_tempo_unit = 2
+            else:
+                raise ValueError(f"Unit {beat_unit} is not supported!")
 
             curr_time = _set_anchor(curr_time)
             curr_tempo_bpm = int(tempo.find("per-minute").text)
@@ -187,8 +275,9 @@ def extract_measure_map(out_mxml: Path):
         time = meas.find(".//*/time")
         if time is not None:
             n_beats = int(time.find("beats").text)
-            beat_type = time.find("beat-type").text
-            assert beat_type == "4"
+            beat_type = int(time.find("beat-type").text)
+            curr_beat_type = beat_type
+            print(f"Found time signature change {n_beats}/{curr_beat_type}")
 
             curr_time = _set_anchor(curr_time)
             curr_n_quarts = n_beats
