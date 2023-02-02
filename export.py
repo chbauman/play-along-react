@@ -110,72 +110,13 @@ audio_files = [
 
 def export_audio():
     for a_file in audio_files:
-        mscz_path = Path(rf"C:\Users\Chrigi\Documents\GitHub\compositions\{a_file}")
-        assert mscz_path.exists()
-
-        XML_AUDIO_PATH = XML_SCORES_PATH.parent / "audio"
-        out_mp3 = XML_AUDIO_PATH / f"{mscz_path.stem}.mp3"
-        out_mxml = XML_AUDIO_PATH / f"{mscz_path.stem}.musicxml"
-        out_json = XML_AUDIO_PATH / f"{mscz_path.stem}.json"
-        # subprocess.run([str(MUSESCORE_EXE_PATH), "-o", str(out_mp3), str(mscz_path)])
-        # subprocess.run([str(MUSESCORE_EXE_PATH), "-o", str(out_mxml), str(mscz_path)])
-        assert out_mp3.exists() and out_mxml.exists(), f"Export failed!"
+        # Export mp3 and musicxml
+        out_mxml, out_json = export_files(a_file)
 
         # Reduce XML file
         reduce_file(out_mxml)
 
-        tree = ET.parse(out_mxml)
-        root = tree.getroot()
-        measures = root.findall(f".//part[@id='P1']/measure")
-        n_measures = len(measures)
-        print(f"Found {n_measures} measures.")
-
-        curr_n_quarts = 4
-        curr_time = 0
-        curr_meas_idx = 0
-        curr_tempo_bpm = 120
-
-        time_s = []
-        bar_n = []
-
-        meas_set = set()
-        for ct, meas in enumerate(measures):
-
-            def _set_anchor(curr_time):
-                nonlocal curr_meas_idx, curr_n_quarts, curr_tempo_bpm
-
-                if ct in meas_set:
-                    return curr_time
-                curr_time += (ct - curr_meas_idx) * curr_n_quarts * 60 / curr_tempo_bpm
-                time_s.append(curr_time)
-                bar_n.append(ct + 1)
-                curr_meas_idx = ct
-                meas_set.add(ct)
-                return curr_time
-
-            # Check if there is a tempo change
-            tempo = meas.find(".//*/metronome")
-            if tempo is not None:
-                beat_unit = tempo.find("beat-unit").text
-                print(f"Found tempo {curr_tempo_bpm}")
-                assert beat_unit == "quarter", f"Unit {beat_unit} is not supported!"
-
-                curr_time = _set_anchor(curr_time)
-                curr_tempo_bpm = int(tempo.find("per-minute").text)
-
-            # Check if time signature changed
-            time = meas.find(".//*/time")
-            if time is not None:
-                n_beats = int(time.find("beats").text)
-                beat_type = time.find("beat-type").text
-                assert beat_type == "4"
-
-                curr_time = _set_anchor(curr_time)
-                curr_n_quarts = n_beats
-
-        curr_time += (ct - curr_meas_idx) * curr_n_quarts * 60 / curr_tempo_bpm
-        time_s.append(curr_time)
-        bar_n.append(ct + 1)
+        time_s, bar_n = extract_measure_map(out_mxml)
 
         json_dat = {
             "times": time_s,
@@ -186,6 +127,76 @@ def export_audio():
             json.dump(json_dat, f)
 
     print("Success")
+
+
+def export_files(a_file: str):
+    mscz_path = Path(rf"C:\Users\Chrigi\Documents\GitHub\compositions\{a_file}")
+    assert mscz_path.exists()
+
+    XML_AUDIO_PATH = XML_SCORES_PATH.parent / "audio"
+    out_mp3 = XML_AUDIO_PATH / f"{mscz_path.stem}.mp3"
+    out_mxml = XML_AUDIO_PATH / f"{mscz_path.stem}.musicxml"
+    out_json = XML_AUDIO_PATH / f"{mscz_path.stem}.json"
+    subprocess.run([str(MUSESCORE_EXE_PATH), "-o", str(out_mp3), str(mscz_path)])
+    subprocess.run([str(MUSESCORE_EXE_PATH), "-o", str(out_mxml), str(mscz_path)])
+    assert out_mp3.exists() and out_mxml.exists(), f"Export failed!"
+    return out_mxml, out_json
+
+
+def extract_measure_map(out_mxml: Path):
+    tree = ET.parse(out_mxml)
+    root = tree.getroot()
+    measures = root.findall(f".//part[@id='P1']/measure")
+    n_measures = len(measures)
+    print(f"Found {n_measures} measures.")
+
+    curr_n_quarts = 4
+    curr_time = 0
+    curr_meas_idx = 0
+    curr_tempo_bpm = 120
+
+    time_s = []
+    bar_n = []
+
+    meas_set = set()
+    for ct, meas in enumerate(measures):
+
+        def _set_anchor(curr_time):
+            nonlocal curr_meas_idx, curr_n_quarts, curr_tempo_bpm
+
+            if ct in meas_set:
+                return curr_time
+            curr_time += (ct - curr_meas_idx) * curr_n_quarts * 60 / curr_tempo_bpm
+            time_s.append(curr_time)
+            bar_n.append(ct + 1)
+            curr_meas_idx = ct
+            meas_set.add(ct)
+            return curr_time
+
+        # Check if there is a tempo change
+        tempo = meas.find(".//*/metronome")
+        if tempo is not None:
+            beat_unit = tempo.find("beat-unit").text
+            print(f"Found tempo {curr_tempo_bpm}")
+            assert beat_unit == "quarter", f"Unit {beat_unit} is not supported!"
+
+            curr_time = _set_anchor(curr_time)
+            curr_tempo_bpm = int(tempo.find("per-minute").text)
+
+        # Check if time signature changed
+        time = meas.find(".//*/time")
+        if time is not None:
+            n_beats = int(time.find("beats").text)
+            beat_type = time.find("beat-type").text
+            assert beat_type == "4"
+
+            curr_time = _set_anchor(curr_time)
+            curr_n_quarts = n_beats
+
+    curr_time += (ct - curr_meas_idx) * curr_n_quarts * 60 / curr_tempo_bpm
+    time_s.append(curr_time)
+    bar_n.append(ct + 1)
+    return time_s, bar_n
 
 
 if __name__ == "__main__":
