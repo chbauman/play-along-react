@@ -12,6 +12,11 @@ const audioScores = [
     interpret: "Michael Jackson",
   },
   {
+    fileName: "You're_The_one_That_I_Want",
+    title: "You're the one that I want",
+    interpret: "Joudas ft. Ranja",
+  },
+  {
     fileName: "Blinging",
     title: "Blinding Lights",
     interpret: "The Weeknd",
@@ -26,10 +31,15 @@ const audioScores = [
     title: "Love Is Like Oxygen",
     interpret: "Sweet",
   },
+  {
+    fileName: "Calibration",
+    title: "Calibration",
+    interpret: "Ch. Baumann",
+  },
 ];
 
 export const AudioPlayer = () => {
-  const fileName = "Love_Is_Like_Oxygen";
+  const fileName = "Calibration";
 
   const fileInfoCand = audioScores.filter((el) => el.fileName === fileName);
   console.assert(fileInfoCand.length === 1);

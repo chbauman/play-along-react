@@ -8,7 +8,7 @@ import argparse
 import copy
 import json
 import subprocess
-from typing import Optional
+from typing import Iterable, Optional
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -17,6 +17,7 @@ MSCZ_SCORE_PATH = Path("C:/Users/Chrigi/Documents/GitHub/compositions/PlayAlong"
 MUSESCORE_EXE_PATH = Path("C:/Program Files/MuseScore 3/bin/MuseScore3.exe")
 PUBLIC_PATH = Path("play-along/public")
 XML_SCORES_PATH = PUBLIC_PATH / "scores"
+AUDIO_PATH = PUBLIC_PATH / "audio"
 
 assert MSCZ_SCORE_PATH.exists, f"Score directory {MSCZ_SCORE_PATH} not found!"
 assert MUSESCORE_EXE_PATH.exists(), f"Musescore not found at {MUSESCORE_EXE_PATH}!"
@@ -105,18 +106,39 @@ parser.add_argument("n", type=check_positive, default=None)
 parser.add_argument("-a", "--audio", action="store_true", default=False, required=False)
 
 
-audio_files = [
-    # "Gugge/Blinging.mscz",
-    # "Gugge/Love_Is_Like_Oxygen.mscz",
-    # "Gugge/Seasons_in_the_Sun.mscz",
-    # "PracticalDozen/Beat_It.mscz",
-    # "PracticalDozen/You're_The_one_That_I_Want.mscz",
-    "PlayAlong/Current/Calibration.mscz",
-]
+def export_audio(n_export: int):
+    # Load JSON with info
+    JSON_AUDIO = "audio.json"
+    with open(JSON_AUDIO, "r") as f:
+        scores = json.load(f)
 
+    with open(AUDIO_PATH / "audio_info.json", "w") as f:
+        json.dump(scores, f)
 
-def export_audio():
-    for a_file in audio_files:
+    # Create a dict mapping relative path to score info
+    path_to_info = {}
+    for score in scores:
+        dir_name, file_name = score["dir"], score["fileName"]
+        a_file = f"{dir_name}/{file_name}.mscz"
+        path_to_info[a_file] = score
+
+    # Sort acc. to most recently modified
+    sorted_names = reversed(
+        sorted(
+            path_to_info.keys(),
+            key=lambda p: Path(rf"C:\Users\Chrigi\Documents\GitHub\compositions\{p}")
+            .lstat()
+            .st_mtime,
+        )
+    )
+    for ct, a_file in enumerate(sorted_names):
+        if ct == n_export:
+            print("Stopping early")
+            break
+
+        print(score)
+        score = path_to_info[a_file]
+
         # Export mp3 and musicxml
         out_mxml, out_json = export_files(a_file)
 
@@ -130,6 +152,7 @@ def export_audio():
         json_dat = {
             "times": time_s,
             "bars": bar_n,
+            **score,
         }
 
         with open(out_json, "w") as f:
@@ -140,12 +163,11 @@ def export_audio():
 
 def export_files(a_file: str):
     mscz_path = Path(rf"C:\Users\Chrigi\Documents\GitHub\compositions\{a_file}")
-    assert mscz_path.exists()
+    assert mscz_path.exists(), f"{mscz_path}"
 
-    XML_AUDIO_PATH = XML_SCORES_PATH.parent / "audio"
-    out_mp3 = XML_AUDIO_PATH / f"{mscz_path.stem}.mp3"
-    out_mxml = XML_AUDIO_PATH / f"{mscz_path.stem}.musicxml"
-    out_json = XML_AUDIO_PATH / f"{mscz_path.stem}.json"
+    out_mp3 = AUDIO_PATH / f"{mscz_path.stem}.mp3"
+    out_mxml = AUDIO_PATH / f"{mscz_path.stem}.musicxml"
+    out_json = AUDIO_PATH / f"{mscz_path.stem}.json"
     # subprocess.run([str(MUSESCORE_EXE_PATH), "-o", str(out_mp3), str(mscz_path)])
     subprocess.run([str(MUSESCORE_EXE_PATH), "-o", str(out_mxml), str(mscz_path)])
     assert out_mp3.exists() and out_mxml.exists(), f"Export failed!"
@@ -156,19 +178,17 @@ def unroll_repeats(out_mxml: Path):
     tree = ET.parse(out_mxml)
     root = tree.getroot()
 
-    measures = root.findall(f".//part[@id='P1']/measure")
-
     # Search for repetitions in first part
     reps = []
     curr_start = None
     first_house_start = None
 
+    measures = root.findall(f".//part[@id='P1']/measure")
     for ct, meas in enumerate(measures):
         # Handle endings (houses)
         ending = meas.find(".//ending")
         if ending is not None:
             end_attrs = ending.attrib
-            print(f"Found ending: {end_attrs}")
             if end_attrs["number"] == "1" and end_attrs["type"] == "start":
                 first_house_start = ct
 
@@ -291,6 +311,6 @@ def extract_measure_map(out_mxml: Path):
 if __name__ == "__main__":
     args = parser.parse_args()
     if args.audio:
-        export_audio()
+        export_audio(args.n)
 
     main(args.n)
