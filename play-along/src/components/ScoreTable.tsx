@@ -3,7 +3,13 @@ import { useNavigate } from "react-router-dom";
 
 type ScoresT = { name?: string; artist?: string; linkId: string }[];
 
-export const ScoreTable = ({ scores }: { scores: ScoresT }) => {
+export const ScoreTable = ({
+  scores,
+  sub,
+}: {
+  scores: ScoresT;
+  sub: string;
+}) => {
   const navi = useNavigate();
   return (
     <Table striped bordered hover>
@@ -18,7 +24,7 @@ export const ScoreTable = ({ scores }: { scores: ScoresT }) => {
           return (
             <tr
               key={el.linkId}
-              onClick={() => navi(`/${el.linkId}`)}
+              onClick={() => navi(`/${sub}/${el.linkId}`)}
               style={{ cursor: "pointer" }}
             >
               <td className="col-6">{el.name?.trim()}</td>

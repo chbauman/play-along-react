@@ -7,7 +7,7 @@ import {
   Form,
   Row,
 } from "react-bootstrap";
-import { getCopiedScores } from "../util/util";
+import { getAudioScores, getCopiedScores } from "../util/util";
 import { wrapWithNav } from "./NavBar";
 import { ScoreTable } from "./ScoreTable";
 
@@ -79,17 +79,18 @@ const useProcessedScores = () => {
   const comp = (
     <>
       <Row className="m-0 p-0 mb-3">
-        <Col className="m-0 p-0">Sort by</Col>
-        <Col className="m-0 p-0">{sortDD}</Col>
-      </Row>
-      <Row className="m-0 p-0 mb-3">
         <Col className="m-0 p-0">Search</Col>
         <Col className="m-0 p-0">{filterForm}</Col>
+      </Row>
+      <Row className="m-0 p-0 mb-3">
+        <Col className="m-0 p-0">Sort by</Col>
+        <Col className="m-0 p-0">{sortDD}</Col>
       </Row>
     </>
   );
 
   let scores = getCopiedScores();
+  let audioScores = getAudioScores();
   if (filterS) {
     // Apply filter
     const fLow = filterS.toLocaleLowerCase();
@@ -98,21 +99,29 @@ const useProcessedScores = () => {
         el.name?.toLocaleLowerCase().includes(fLow) ||
         el.artist?.toLocaleLowerCase().includes(fLow)
     );
+    audioScores = audioScores.filter(
+      (el) =>
+        el.name?.toLocaleLowerCase().includes(fLow) ||
+        el.artist?.toLocaleLowerCase().includes(fLow)
+    );
   }
 
   scores.sort(sortFun);
-  return { scores, comp };
+  audioScores.sort(sortFun);
+  return { scores, audioScores, comp };
 };
 
 /** Lists all available scores. */
 export const ListScores = () => {
-  const { scores, comp } = useProcessedScores();
-  const scoreTable = <ScoreTable scores={scores} />;
+  const { scores, audioScores, comp } = useProcessedScores();
+  const scoreTable = <ScoreTable scores={scores} sub="yt" />;
+  const audioScoreTable = <ScoreTable scores={audioScores} sub="audio" />;
 
   const fullComp = (
     <>
       {comp}
       {scoreTable}
+      {audioScoreTable}
     </>
   );
   return wrapWithNav(fullComp, "All Scores");

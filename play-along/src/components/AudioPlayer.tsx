@@ -4,48 +4,30 @@ import { Container } from "react-bootstrap";
 import { MeasureMap } from "../scores";
 import { wrapWithNav } from "./NavBar";
 import { PartSelector } from "./PartSelector";
+import { useParams } from "react-router-dom";
+import { getAudioScores } from "../util/util";
 
-const audioScores = [
-  {
-    fileName: "Beat_It",
-    title: "Beat It",
-    interpret: "Michael Jackson",
-  },
-  {
-    fileName: "You're_The_one_That_I_Want",
-    title: "You're the one that I want",
-    interpret: "Joudas ft. Ranja",
-  },
-  {
-    fileName: "Blinging",
-    title: "Blinding Lights",
-    interpret: "The Weeknd",
-  },
-  {
-    fileName: "Seasons_in_the_Sun",
-    title: "Seasons in the Sun",
-    interpret: "Terry Jacks",
-  },
-  {
-    fileName: "Love_Is_Like_Oxygen",
-    title: "Love Is Like Oxygen",
-    interpret: "Sweet",
-  },
-  {
-    fileName: "Calibration",
-    title: "Calibration",
-    interpret: "Ch. Baumann",
-  },
-];
+export const AudioScoreRoute = () => {
+  let { scoreId } = useParams();
+  const audioScores = getAudioScores();
 
-export const AudioPlayer = () => {
-  const fileName = "Calibration";
+  const scoreInfoCand = audioScores.filter((el) => el.linkId === scoreId);
+  if (scoreInfoCand.length === 0) {
+    // No match for score ID found in list.
+    const comp = <h3>Score with ID '{scoreId}' not found :(</h3>;
+    return wrapWithNav(comp, "404");
+  }
+  const scoreInfo = scoreInfoCand[0];
+  return <AudioPlayer scoreInfo={scoreInfo} />;
+};
 
-  const fileInfoCand = audioScores.filter((el) => el.fileName === fileName);
-  console.assert(fileInfoCand.length === 1);
-  const fileInfo = fileInfoCand[0];
-  const title = `${fileInfo.title} - ${fileInfo.interpret}`;
-
+export const AudioPlayer = ({
+  scoreInfo,
+}: {
+  scoreInfo: { linkId: string; name: string; artist: string };
+}) => {
+  const title = `${scoreInfo.name} - ${scoreInfo.artist}`;
+  const fileName = scoreInfo.linkId;
   const testFilePath = `audio/${fileName}.mp3`;
   const testMusicXMLPath = `audio/${fileName}.musicxml`;
   const measureJson = `audio/${fileName}.json`;
@@ -53,6 +35,7 @@ export const AudioPlayer = () => {
   const [measureMap, setMM] = useState<null | MeasureMap>(null);
 
   useEffect(() => {
+    // Todo: Rewrite with await
     fetch(measureJson)
       .then((res) => res.json())
       .then((jData) => {

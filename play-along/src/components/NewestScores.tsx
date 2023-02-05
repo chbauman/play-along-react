@@ -13,7 +13,7 @@ export const NewestScores = ({
     (el, idx) => idx > allScores.length - nMostRecentSongs - 1
   );
   scores = scores.reverse();
-  const newestScores = <ScoreTable scores={scores} />;
+  const newestScores = <ScoreTable scores={scores} sub="yt" />;
 
   return (
     <div className="mb-3">
