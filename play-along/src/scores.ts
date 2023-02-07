@@ -1007,6 +1007,18 @@ export const scores: ScoreInfo[] = [
     fileName: "Take_On_Me",
     name: "Take On Me - A-HA",
   },
+  {
+    videoId: "Z8oTvIaWH7s",
+    measureMap: { 4: 3, 147: 91 },
+    fileName: "Poupee",
+    name: "Poupée de cire, poupée de son - France Gall",
+  },
+  {
+    videoId: "UWG7Xe_wlhE",
+    measureMap: { 9: 1, 20: 8, 35: 18, 45: 25, 56: 33, 75: 48, 96: 64 },
+    fileName: "Liberte",
+    name: "Liberté (Sefa & Outsiders Remix) - Parla & Pardoux",
+  },
 ];
 
 if (DEBUG) {
