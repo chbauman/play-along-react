@@ -1019,6 +1019,18 @@ export const scores: ScoreInfo[] = [
     fileName: "Liberte",
     name: "Liberté (Sefa & Outsiders Remix) - Parla & Pardoux",
   },
+  {
+    videoId: "HCyzGuipTd4",
+    measureMap: { 2: 2, 212: 106 },
+    fileName: "Azzurro",
+    name: "Azzurro - Adriano Celentano",
+  },
+  {
+    videoId: "ScO7CZZNR48",
+    measureMap: { 23: 10, 40: 19, 230: 122 },
+    fileName: "Despre_Tine",
+    name: "Despre Tine - O-Zone",
+  },
 ];
 
 if (DEBUG) {
