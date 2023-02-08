@@ -1031,6 +1031,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Despre_Tine",
     name: "Despre Tine - O-Zone",
   },
+  {
+    videoId: "tVrvTPD6OMQ",
+    measureMap: { 5: 3, 266: 132 },
+    fileName: "Lambada",
+    name: "Lambada - Kaoma",
+  },
 ];
 
 if (DEBUG) {
