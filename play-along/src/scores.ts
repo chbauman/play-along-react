@@ -1043,6 +1043,18 @@ export const scores: ScoreInfo[] = [
     fileName: "Hello_Le_Soleil",
     name: "Hello, le soleil brille - Annie Cordy",
   },
+  {
+    videoId: "rIcW_hbNt-I",
+    measureMap: { 6: 5, 190: 132 },
+    fileName: "Wonderful_Days",
+    name: "Wonderful Days - Charly Lownoise ft. Mental Theo",
+  },
+  {
+    videoId: "1uENs8_1r0U",
+    measureMap: { 12: 7, 17: 10, 288: 168 },
+    fileName: "Streghe",
+    name: "La Danza Delle Streghe - Gabry Ponte",
+  },
 ];
 
 if (DEBUG) {
