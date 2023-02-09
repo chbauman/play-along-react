@@ -1037,6 +1037,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Lambada",
     name: "Lambada - Kaoma",
   },
+  {
+    videoId: "n8ZJqoezPaY",
+    measureMap: { 4: 3, 152: 77 },
+    fileName: "Hello_Le_Soleil",
+    name: "Hello, le soleil brille - Annie Cordy",
+  },
 ];
 
 if (DEBUG) {
