@@ -1055,6 +1055,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Streghe",
     name: "La Danza Delle Streghe - Gabry Ponte",
   },
+  {
+    videoId: "s86K-p089R8",
+    measureMap: { 28: 1, 224: 126 },
+    fileName: "Runaway",
+    name: "Runaway - Bon Jovi",
+  },
 ];
 
 if (DEBUG) {
