@@ -1067,6 +1067,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Michao",
     name: "La Jument De Michao - Nolwenn Leroy",
   },
+  {
+    videoId: "uqcpCktA8mo",
+    measureMap: { 13: 9, 141: 89 },
+    fileName: "Cosmos",
+    name: "Cosmos - DJ Blyatman ft. ",
+  },
 ];
 
 if (DEBUG) {
