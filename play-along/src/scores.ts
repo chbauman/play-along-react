@@ -1061,6 +1061,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Runaway",
     name: "Runaway - Bon Jovi",
   },
+  {
+    videoId: "GRrZFL3z0aY",
+    measureMap: { 10: 1, 160: 66 },
+    fileName: "Michao",
+    name: "La Jument De Michao - Nolwenn Leroy",
+  },
 ];
 
 if (DEBUG) {
