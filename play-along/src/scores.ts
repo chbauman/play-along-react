@@ -1071,7 +1071,7 @@ export const scores: ScoreInfo[] = [
     videoId: "uqcpCktA8mo",
     measureMap: { 13: 9, 141: 89 },
     fileName: "Cosmos",
-    name: "Cosmos - DJ Blyatman ft. ",
+    name: "Cosmos - DJ Blyatman ft. О​д​о​л​ж​и Ю​н​о​с​т​ь",
   },
 ];
 
