@@ -6,6 +6,7 @@ import { wrapWithNav } from "./NavBar";
 import { PartSelector } from "./PartSelector";
 import { useParams } from "react-router-dom";
 import { getAudioScores } from "../util/util";
+import { playerSizePx } from "./player/YtPlayer";
 
 export const AudioScoreRoute = () => {
   let { scoreId } = useParams();
@@ -58,6 +59,7 @@ export const AudioPlayer = ({
   const comp = (
     <Container className="text-center">
       <ReactAudioPlayer
+        style={{ width: playerSizePx.width, margin: "auto" }}
         src={testFilePath}
         autoPlay
         controls
