@@ -136,8 +136,9 @@ def export_audio(n_export: int):
             print("Stopping early")
             break
 
-        print(score)
         score = path_to_info[a_file]
+        score_name = score["fileName"]
+        print(f"Processing: {score_name}")
 
         # Export mp3 and musicxml
         out_mxml, out_json = export_files(a_file)
