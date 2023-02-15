@@ -1073,6 +1073,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Cosmos",
     name: "Cosmos - DJ Blyatman ft. О​д​о​л​ж​и Ю​н​о​с​т​ь",
   },
+  {
+    videoId: "ea2hja3hurM",
+    measureMap: { 4: 1, 229: 136 },
+    fileName: "Hymn",
+    name: "Hymn (Radio Trance Mix) - Cabballero",
+  },
 ];
 
 if (DEBUG) {
