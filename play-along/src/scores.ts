@@ -1079,6 +1079,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Hymn",
     name: "Hymn (Radio Trance Mix) - Cabballero",
   },
+  {
+    videoId: "nYMeJSehCe4",
+    measureMap: { 1: 1, 227: 116 },
+    fileName: "Hot_Stuff",
+    name: "Hot Stuff - Donna Summer",
+  },
 ];
 
 if (DEBUG) {
