@@ -1081,7 +1081,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "nYMeJSehCe4",
-    measureMap: { 1: 1, 227: 116 },
+    measureMap: { 1: 1, 227: 116, 305: 155 },
     fileName: "Hot_Stuff",
     name: "Hot Stuff - Donna Summer",
   },
