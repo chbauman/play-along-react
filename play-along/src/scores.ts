@@ -1097,6 +1097,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Blow_The_Man",
     name: "Blow The Man Down",
   },
+  {
+    videoId: "OkpiwHo0Po0",
+    measureMap: { 5: 5, 145: 135 },
+    fileName: "Johnny_I_Hardly_Knew",
+    name: "Johnny I Hardly Knew Ye - The Irish Rovers",
+  },
 ];
 
 if (DEBUG) {
