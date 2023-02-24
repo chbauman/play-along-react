@@ -1077,13 +1077,25 @@ export const scores: ScoreInfo[] = [
     videoId: "ea2hja3hurM",
     measureMap: { 4: 1, 229: 136 },
     fileName: "Hymn",
-    name: "Hymn (Radio Trance Mix) - Cabballero",
+    name: "Hymn - Cabballero",
   },
   {
     videoId: "nYMeJSehCe4",
     measureMap: { 1: 1, 227: 116, 305: 155 },
     fileName: "Hot_Stuff",
     name: "Hot Stuff - Donna Summer",
+  },
+  {
+    videoId: "CGms1r5hqdA",
+    measureMap: { 8: 4, 10: 6, 44: 44, 65: 66 },
+    fileName: "Mexican_Hat",
+    name: "Mexican Hat Dance - The Mariachis (Jarabe Tapatio)",
+  },
+  {
+    videoId: "ItFqjjLPjcA",
+    measureMap: { 5: 5, 155: 168 },
+    fileName: "Blow_The_Man",
+    name: "Blow The Man Down",
   },
 ];
 
