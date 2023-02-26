@@ -1093,7 +1093,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "ItFqjjLPjcA",
-    measureMap: { 5: 5, 155: 168 },
+    measureMap: { 5: 6, 155: 169 },
     fileName: "Blow_The_Man",
     name: "Blow The Man Down",
   },
