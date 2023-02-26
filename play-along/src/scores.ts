@@ -1103,6 +1103,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Johnny_I_Hardly_Knew",
     name: "Johnny I Hardly Knew Ye - The Irish Rovers",
   },
+  {
+    videoId: "lSRLvsMupo8",
+    measureMap: { 4: 1, 143: 80 },
+    fileName: "Polichinelle",
+    name: "Polichinelle - France Gall",
+  },
 ];
 
 if (DEBUG) {
