@@ -1,9 +1,13 @@
 import { ReactElement } from "react";
 import { Container, Nav, Navbar, NavLink } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { MdHelp, MdList, MdSettings } from "react-icons/md";
 
 const NavBar = ({ title }: { title: string }) => {
+  const params = useParams();
+  const audioId = params.audioId;
+  const listUrl = audioId === undefined ? "listall" : audioId;
+
   const navBrand = <Navbar.Brand>{title}</Navbar.Brand>;
   const navLogo = (
     <Navbar.Brand className="mt-0 p-0" as={Link} to="/">
@@ -18,6 +22,12 @@ const NavBar = ({ title }: { title: string }) => {
   );
 
   const buttSize = 26;
+  const getRoute = (base: string) => {
+    if (audioId === undefined) {
+      return `/${base}`;
+    }
+    return `/${audioId}/${base}`;
+  };
 
   return (
     <Navbar bg="light" expand="lg">
@@ -27,13 +37,13 @@ const NavBar = ({ title }: { title: string }) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
           <Nav>
-            <NavLink as={Link} to="/listall">
+            <NavLink as={Link} to={getRoute("listall")}>
               <MdList size={buttSize} />
             </NavLink>
-            <NavLink as={Link} to="/settings">
+            <NavLink as={Link} to={getRoute("settings")}>
               <MdSettings size={buttSize} />
             </NavLink>
-            <NavLink as={Link} to="/help">
+            <NavLink as={Link} to={getRoute("help")}>
               <MdHelp size={buttSize} />
             </NavLink>
           </Nav>

@@ -5,12 +5,12 @@ import { MeasureMap } from "../scores";
 import { wrapWithNav } from "./NavBar";
 import { PartSelector } from "./PartSelector";
 import { useParams } from "react-router-dom";
-import { getAudioScores } from "../util/util";
 import { playerSizePx } from "./player/YtPlayer";
+import { getAudioScores } from "../audio/util";
 
 export const AudioScoreRoute = () => {
-  let { scoreId } = useParams();
-  const audioScores = getAudioScores();
+  let { scoreId, audioId } = useParams();
+  const audioScores = getAudioScores(audioId);
 
   const scoreInfoCand = audioScores.filter((el) => el.linkId === scoreId);
   if (scoreInfoCand.length === 0) {

@@ -11,9 +11,13 @@ const router = createHashRouter([
   { path: "/", element: <Home /> },
   { path: "/yt/:scoreId", element: <ScoreRoute /> },
   { path: "/settings", element: <Settings /> },
-  { path: "/audio/:scoreId", element: <AudioScoreRoute /> },
   { path: "/help", element: <Help /> },
   { path: "/listall", element: <ListScores /> },
+  { path: "/:audioId", element: <ListScores /> },
+  { path: "/:audioId/listall", element: <ListScores /> },
+  { path: "/:audioId/settings", element: <Settings /> },
+  { path: "/:audioId/help", element: <Help /> },
+  { path: "/:audioId/:scoreId", element: <AudioScoreRoute /> },
 ]);
 
 function App() {

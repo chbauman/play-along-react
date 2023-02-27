@@ -7,7 +7,9 @@ import {
   Form,
   Row,
 } from "react-bootstrap";
-import { getAudioScores, getCopiedScores } from "../util/util";
+import { useParams } from "react-router-dom";
+import { getAudioScores } from "../audio/util";
+import { getCopiedScores } from "../util/util";
 import { wrapWithNav } from "./NavBar";
 import { ScoreTable } from "./ScoreTable";
 
@@ -73,7 +75,7 @@ const useSortedScores = () => {
 };
 
 /** Hook for filtering and sorting scores. */
-const useProcessedScores = () => {
+const useProcessedScores = (audio?: string) => {
   const [filterS, filterForm] = useScoreFilter();
   const { sortDD, sortFun } = useSortedScores();
   const comp = (
@@ -89,33 +91,45 @@ const useProcessedScores = () => {
     </>
   );
 
-  let scores = getCopiedScores();
-  let audioScores = getAudioScores();
-  if (filterS) {
-    // Apply filter
-    const fLow = filterS.toLocaleLowerCase();
-    scores = scores.filter(
-      (el) =>
-        el.name?.toLocaleLowerCase().includes(fLow) ||
-        el.artist?.toLocaleLowerCase().includes(fLow)
-    );
-    audioScores = audioScores.filter(
-      (el) =>
-        el.name?.toLocaleLowerCase().includes(fLow) ||
-        el.artist?.toLocaleLowerCase().includes(fLow)
-    );
+  const filterAndSort = (
+    scores: { name: string; artist: string; linkId: string }[]
+  ) => {
+    if (filterS) {
+      // Apply filter
+      const fLow = filterS.toLocaleLowerCase();
+      scores = scores.filter(
+        (el) =>
+          el.name?.toLocaleLowerCase().includes(fLow) ||
+          el.artist?.toLocaleLowerCase().includes(fLow)
+      );
+    }
+    scores.sort(sortFun);
+    return scores;
+  };
+
+  let scores = null;
+  if (audio === undefined) {
+    scores = filterAndSort(getCopiedScores());
   }
 
-  scores.sort(sortFun);
-  audioScores.sort(sortFun);
+  let audioScores = null;
+  if (audio !== undefined) {
+    audioScores = filterAndSort(getAudioScores(audio));
+  }
+
   return { scores, audioScores, comp };
 };
 
 /** Lists all available scores. */
 export const ListScores = () => {
-  const { scores, audioScores, comp } = useProcessedScores();
-  const scoreTable = <ScoreTable scores={scores} sub="yt" />;
-  const audioScoreTable = <ScoreTable scores={audioScores} sub="audio" />;
+  const params = useParams();
+  const audioId = params.audioId;
+
+  const { scores, audioScores, comp } = useProcessedScores(audioId);
+  const scoreTable = scores ? <ScoreTable scores={scores} sub="yt" /> : null;
+  const audioScoreTable = audioScores ? (
+    <ScoreTable scores={audioScores} sub="audio" />
+  ) : null;
 
   const fullComp = (
     <>

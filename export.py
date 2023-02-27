@@ -113,8 +113,16 @@ def export_audio(n_export: int):
     with open(JSON_AUDIO, "r") as f:
         scores = json.load(f)
 
-    with open(AUDIO_PATH / "../../src/audio_info.json", "w") as f:
-        json.dump(scores, f)
+    # Get groups
+    groups = set()
+    for score in scores:
+        groups.add(score["group"])
+
+    # Create a json file for each group
+    for group in groups:
+        rel_scores = list(filter(lambda x: x["group"] == group, scores))
+        with open(AUDIO_PATH / f"../../src/audio/{group}.json", "w") as f:
+            json.dump(rel_scores, f)
 
     # Create a dict mapping relative path to score info
     path_to_info = {}

@@ -1,8 +1,6 @@
 import { getClef } from "../components/Settings";
 import { scores } from "../scores";
 
-import audioScores from "../audio_info.json";
-
 export const DEBUG = false;
 
 export const parseXml = (xmlStr: string) => {
@@ -176,14 +174,4 @@ export const getCopiedScores = () => {
     return { linkId: score.videoId, name, artist };
   });
   return [...scoresWithIndex];
-};
-
-export const getAudioScores = () => {
-  return audioScores.map((el) => {
-    return {
-      linkId: el.fileName,
-      name: el.title,
-      artist: el.interpret,
-    };
-  });
 };
