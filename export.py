@@ -9,6 +9,7 @@ import copy
 import json
 import subprocess
 from typing import Iterable, Optional
+import warnings
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -143,9 +144,9 @@ def export_audio(n_export: int):
         # Export mp3 and musicxml
         out_mxml, out_json = export_files(a_file)
 
-        # Reduce XML file
+        # Edit XML file
         reduce_file(out_mxml)
-
+        transpose_to_c(out_mxml)
         unroll_repeats(out_mxml)
 
         time_s, bar_n = extract_measure_map(out_mxml)
@@ -173,6 +174,64 @@ def export_files(a_file: str):
     subprocess.run([str(MUSESCORE_EXE_PATH), "-o", str(out_mxml), str(mscz_path)])
     assert out_mp3.exists() and out_mxml.exists(), f"Export failed!"
     return out_mxml, out_json
+
+
+def transpose_to_c(out_mxml: Path):
+    tree = ET.parse(out_mxml)
+    root = tree.getroot()
+
+    _SCALE = ["C", "D", "E", "F", "G", "A", "B"]
+    _CHROM = [0, 2, 4, 5, 7, 9, 11]
+    _FIFTH_DIFF = {-2: -2}
+    scale_len = len(_SCALE)
+
+    parts = root.findall(f".//part")
+
+    for part in parts:
+        transposes = part.findall(f".//transpose")
+        n_trp = len(transposes)
+        if n_trp == 1:
+            trp = transposes[0]
+            dia = int(trp.findall(f".//diatonic")[0].text)
+            chrom = int(trp.findall(f".//chromatic")[0].text)
+            print(f"Transposition: Dia: {dia}, chrom: {chrom}")
+
+            # Change keys
+            fifths = part.findall(f".//fifths")
+            for fifth in fifths:
+                f_val = int(fifth.text)
+                fifth.text = str(f_val + _FIFTH_DIFF[chrom])
+
+            # Change individual notes
+            all_pitches = part.findall(f".//pitch")
+            for pitch in all_pitches:
+                step_el = pitch.findall(".//step")[0]
+                oct_el = pitch.findall(".//octave")[0]
+                alt_el = pitch.findall(".//alter")
+                has_alter = len(alt_el) > 0
+                alt_num = int(alt_el[0].text) if has_alter else 0
+                idx = _SCALE.index(step_el.text)
+                new_idx = (idx + dia) % scale_len
+                new_oct = int(oct_el.text) + (idx + dia) // scale_len
+                step_el.text = _SCALE[new_idx]
+                oct_el.text = f"{new_oct}"
+
+                chrom_diff = (_CHROM[new_idx] - _CHROM[idx]) % 12
+                chrom_diff_exp = chrom % 12
+                exp_alter = chrom_diff_exp - chrom_diff
+                if exp_alter != 0:
+                    alt_num += exp_alter
+
+                    if alt_num == 0 and has_alter:
+                        pitch.remove(alt_el[0])
+                    elif alt_num != 0 and has_alter:
+                        alt_el[0].text = f"{alt_num}"
+                    elif alt_num != 0 and not has_alter:
+                        # Add new
+                        alt_el = ET.SubElement(pitch, "alter")
+                        alt_el.text = f"{alt_num}"
+
+    write_xml(tree, out_mxml)
 
 
 def unroll_repeats(out_mxml: Path):
