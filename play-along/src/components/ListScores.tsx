@@ -128,7 +128,7 @@ export const ListScores = () => {
   const { scores, audioScores, comp } = useProcessedScores(audioId);
   const scoreTable = scores ? <ScoreTable scores={scores} sub="yt" /> : null;
   const audioScoreTable = audioScores ? (
-    <ScoreTable scores={audioScores} sub="audio" />
+    <ScoreTable scores={audioScores} sub={audioId!} />
   ) : null;
 
   const fullComp = (

@@ -190,7 +190,7 @@ def transpose_to_c(out_mxml: Path):
 
     _SCALE = ["C", "D", "E", "F", "G", "A", "B"]
     _CHROM = [0, 2, 4, 5, 7, 9, 11]
-    _FIFTH_DIFF = {-2: -2}
+    _FIFTH_DIFF = {-2: -2, -9: -3, -7: -1}
     scale_len = len(_SCALE)
 
     parts = root.findall(f".//part")
@@ -202,6 +202,8 @@ def transpose_to_c(out_mxml: Path):
             trp = transposes[0]
             dia = int(trp.findall(f".//diatonic")[0].text)
             chrom = int(trp.findall(f".//chromatic")[0].text)
+            if chrom == 0:
+                continue
             print(f"Transposition: Dia: {dia}, chrom: {chrom}")
 
             # Change keys
