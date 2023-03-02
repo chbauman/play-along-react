@@ -146,8 +146,7 @@ def export_audio(n_export: int):
             break
 
         score = path_to_info[a_file]
-        score_name = score["fileName"]
-        print(f"Processing: {score_name}")
+        print(f"Processing: {a_file}")
 
         # Export mp3 and musicxml
         out_mxml, out_json = export_files(a_file)
@@ -286,7 +285,6 @@ def unroll_repeats(out_mxml: Path):
     # Extend all parts
     parts = root.findall(f".//part")
     for part in parts:
-
         print(f"Part {part.attrib['id']}")
         curr_measures = part.findall(f"./measure")
 
@@ -314,11 +312,12 @@ def extract_measure_map(out_mxml: Path):
     n_measures = len(measures)
     print(f"Found {n_measures} measures.")
 
-    curr_n_quarts = 4
+    curr_n_beats = 4
     curr_time = 0
     curr_meas_idx = 0
     curr_tempo_bpm = 120
     curr_tempo_unit = 4
+    curr_tempo_unit_dot = False
     curr_beat_type = 4
 
     time_s = []
@@ -327,39 +326,39 @@ def extract_measure_map(out_mxml: Path):
     meas_set = set()
     for ct, meas in enumerate(measures):
 
-        def _set_anchor(curr_time):
-            nonlocal curr_meas_idx, curr_n_quarts, curr_tempo_bpm
+        def _set_anchor(curr_time, _ct=ct):
+            nonlocal curr_meas_idx, curr_n_beats, curr_tempo_bpm, curr_tempo_unit_dot
 
-            if ct in meas_set:
+            if _ct in meas_set:
                 return curr_time
-            curr_time += (
-                (ct - curr_meas_idx)
-                * curr_n_quarts
-                * 60
-                / curr_tempo_bpm
-                * curr_tempo_unit
-                / curr_beat_type
-            )
+            dot_fac = 3 / 2 if curr_tempo_unit_dot else 1
+            beat_diff = _ct - curr_meas_idx
+            time_sig = curr_n_beats * curr_tempo_unit / dot_fac / curr_beat_type
+            dt = beat_diff * 60 / curr_tempo_bpm * time_sig
+            curr_time += dt
             time_s.append(curr_time)
-            bar_n.append(ct + 1)
-            curr_meas_idx = ct
-            meas_set.add(ct)
+            bar_n.append(_ct + 1)
+            curr_meas_idx = _ct
+            meas_set.add(_ct)
             return curr_time
 
         # Check if there is a tempo change
         tempo = meas.find(".//*/metronome")
         if tempo is not None:
+            curr_time = _set_anchor(curr_time)
+
             beat_unit = tempo.find("beat-unit").text
-            print(f"Found tempo {beat_unit}={curr_tempo_bpm}")
+            curr_tempo_bpm = int(tempo.find("per-minute").text)
+            curr_tempo_unit_dot = tempo.find("beat-unit-dot") is not None
+            dot = " dot" if curr_tempo_unit_dot else ""
+            print(f"Found tempo {beat_unit}{dot}={curr_tempo_bpm}")
+
             if beat_unit == "quarter":
                 curr_tempo_unit = 4
             elif beat_unit == "half":
                 curr_tempo_unit = 2
             else:
                 raise ValueError(f"Unit {beat_unit} is not supported!")
-
-            curr_time = _set_anchor(curr_time)
-            curr_tempo_bpm = int(tempo.find("per-minute").text)
 
         # Check if time signature changed
         time = meas.find(".//*/time")
@@ -369,10 +368,10 @@ def extract_measure_map(out_mxml: Path):
             print(f"Found time signature change {n_beats}/{curr_beat_type}")
 
             curr_time = _set_anchor(curr_time)
-            curr_n_quarts = n_beats
+            curr_n_beats = n_beats
             curr_beat_type = beat_type
 
-    curr_time += (ct - curr_meas_idx) * curr_n_quarts * 60 / curr_tempo_bpm
+    curr_time += (ct - curr_meas_idx) * curr_n_beats * 60 / curr_tempo_bpm
     time_s.append(curr_time)
     bar_n.append(ct + 1)
     return time_s, bar_n
