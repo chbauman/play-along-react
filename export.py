@@ -177,7 +177,7 @@ def export_files(a_file: str):
     out_mp3 = AUDIO_PATH / f"{mscz_path.stem}.mp3"
     out_mxml = AUDIO_PATH / f"{mscz_path.stem}.musicxml"
     out_json = AUDIO_PATH / f"{mscz_path.stem}.json"
-    # subprocess.run([str(MUSESCORE_EXE_PATH), "-o", str(out_mp3), str(mscz_path)])
+    subprocess.run([str(MUSESCORE_EXE_PATH), "-o", str(out_mp3), str(mscz_path)])
     subprocess.run([str(MUSESCORE_EXE_PATH), "-o", str(out_mxml), str(mscz_path)])
     assert out_mp3.exists() and out_mxml.exists(), f"Export failed!"
     return out_mxml, out_json
