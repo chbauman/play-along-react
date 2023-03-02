@@ -351,7 +351,7 @@ def extract_measure_map(out_mxml: Path):
             curr_tempo_bpm = int(tempo.find("per-minute").text)
             curr_tempo_unit_dot = tempo.find("beat-unit-dot") is not None
             dot = " dot" if curr_tempo_unit_dot else ""
-            print(f"Found tempo {beat_unit}{dot}={curr_tempo_bpm}")
+            print(f"Measure {ct}: Found tempo {beat_unit}{dot}={curr_tempo_bpm}")
 
             if beat_unit == "quarter":
                 curr_tempo_unit = 4
@@ -365,13 +365,20 @@ def extract_measure_map(out_mxml: Path):
         if time is not None:
             n_beats = int(time.find("beats").text)
             beat_type = int(time.find("beat-type").text)
-            print(f"Found time signature change {n_beats}/{curr_beat_type}")
+            print(
+                f"Measure {ct}: Found time signature change {n_beats}/{curr_beat_type}"
+            )
 
             curr_time = _set_anchor(curr_time)
             curr_n_beats = n_beats
             curr_beat_type = beat_type
 
-    curr_time += (ct - curr_meas_idx) * curr_n_beats * 60 / curr_tempo_bpm
+    # Place last anchor
+    dot_fac = 3 / 2 if curr_tempo_unit_dot else 1
+    beat_diff = ct - curr_meas_idx
+    time_sig = curr_n_beats * curr_tempo_unit / dot_fac / curr_beat_type
+    dt = beat_diff * 60 / curr_tempo_bpm * time_sig
+    curr_time += dt
     time_s.append(curr_time)
     bar_n.append(ct + 1)
     return time_s, bar_n
