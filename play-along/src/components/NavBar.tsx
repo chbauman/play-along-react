@@ -6,7 +6,6 @@ import { MdHelp, MdList, MdSettings } from "react-icons/md";
 const NavBar = ({ title }: { title: string }) => {
   const params = useParams();
   const audioId = params.audioId;
-  const listUrl = audioId === undefined ? "listall" : audioId;
 
   const navBrand = <Navbar.Brand>{title}</Navbar.Brand>;
   const navLogo = (
