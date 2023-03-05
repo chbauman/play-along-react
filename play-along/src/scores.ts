@@ -1121,6 +1121,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Med_Du_Miel",
     name: "Med du miel - Šuma Čovjek",
   },
+  {
+    videoId: "dvgZkm1xWPE",
+    measureMap: { 9: 6, 220: 127 },
+    fileName: "Viva_La_Vida",
+    name: "Viva La Vida - Coldplay",
+  },
 ];
 
 if (DEBUG) {
