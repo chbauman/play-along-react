@@ -1,21 +1,16 @@
 import { useState } from "react";
-import {
-  ButtonGroup,
-  Col,
-  Dropdown,
-  DropdownButton,
-  Form,
-  Row,
-} from "react-bootstrap";
+import { Col, Form, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { getAudioScores } from "../audio/util";
+import { strLatinise } from "../util/sorting";
 import { getCopiedScores } from "../util/util";
 import { wrapWithNav } from "./NavBar";
 import { ScoreTable } from "./ScoreTable";
 
-const sortBy = ["name", "artist"] as const;
-const sortByNames = { name: "Song Name", artist: "Artist" };
-type SortBy = typeof sortBy[number];
+export const sortBy = ["name", "artist"] as const;
+export const sortByNames = { name: "Song Name", artist: "Artist" };
+export type SortBy = typeof sortBy[number];
+type SortSetting = { by: SortBy; ascending: boolean };
 type ScoreNameArtist = typeof sortByNames;
 
 /** Hook providing form to enter text for filtering scores. */
@@ -25,7 +20,7 @@ const useScoreFilter = () => {
     <Form.Control
       type="text"
       placeholder="Enter keyword"
-      onChange={(ev) => setFilterS(ev.target.value)}
+      onChange={(ev: { target: any }) => setFilterS(ev.target.value)}
       value={filterS}
     />
   );
@@ -34,59 +29,52 @@ const useScoreFilter = () => {
 
 /** Hook for sorting the scores. */
 const useSortedScores = () => {
-  const [sortState, setSortState] = useState<SortBy>(sortBy[0]);
+  const [sortSetting, setSortSetting] = useState<SortSetting>({
+    by: "name",
+    ascending: true,
+  });
 
-  const sortStateLabel = sortByNames[sortState];
-  const sortDD = (
-    <DropdownButton id="choose-sort" title={sortStateLabel} as={ButtonGroup}>
-      {sortBy.map((el) => {
-        return (
-          <Dropdown.Item
-            key={el}
-            onClick={() => {
-              setSortState(el);
-            }}
-          >
-            {sortByNames[el]}
-          </Dropdown.Item>
-        );
-      })}
-    </DropdownButton>
-  );
+  const sortClick = (by: SortBy) => {
+    const newSetting = { ...sortSetting };
+    newSetting.ascending = !newSetting.ascending;
+    if (newSetting.by !== by) {
+      newSetting.ascending = true;
+      newSetting.by = by;
+    }
+    setSortSetting(newSetting);
+  };
+
   const sortFun = (a: ScoreNameArtist, b: ScoreNameArtist) => {
     // Put undefined at the end
-    const sa = a[sortState]?.toLowerCase();
-    const sb = b[sortState]?.toLowerCase();
+    const sa = strLatinise(a[sortSetting.by]?.toLowerCase());
+    const sb = strLatinise(b[sortSetting.by]?.toLowerCase());
+    const pos = sortSetting.ascending ? 1 : -1;
     if (sa === undefined) {
-      return 1;
+      return pos;
     }
     if (sb === undefined) {
-      return -1;
+      return -pos;
     }
     if (sa < sb) {
-      return -1;
+      return -pos;
     } else if (sa > sb) {
-      return 1;
+      return pos;
     }
     return 0;
   };
 
-  return { sortDD, sortFun };
+  return { sortFun, sortClick, ...sortSetting };
 };
 
 /** Hook for filtering and sorting scores. */
 const useProcessedScores = (audio?: string) => {
   const [filterS, filterForm] = useScoreFilter();
-  const { sortDD, sortFun } = useSortedScores();
+  const sortInfo = useSortedScores();
   const comp = (
     <>
       <Row className="m-0 p-0 mb-3">
         <Col className="m-0 p-0">Search</Col>
         <Col className="m-0 p-0">{filterForm}</Col>
-      </Row>
-      <Row className="m-0 p-0 mb-3">
-        <Col className="m-0 p-0">Sort by</Col>
-        <Col className="m-0 p-0">{sortDD}</Col>
       </Row>
     </>
   );
@@ -96,14 +84,14 @@ const useProcessedScores = (audio?: string) => {
   ) => {
     if (filterS) {
       // Apply filter
-      const fLow = filterS.toLocaleLowerCase();
+      const fLow = strLatinise(filterS.toLocaleLowerCase());
       scores = scores.filter(
         (el) =>
-          el.name?.toLocaleLowerCase().includes(fLow) ||
-          el.artist?.toLocaleLowerCase().includes(fLow)
+          strLatinise(el.name)?.toLocaleLowerCase().includes(fLow) ||
+          strLatinise(el.artist)?.toLocaleLowerCase().includes(fLow)
       );
     }
-    scores.sort(sortFun);
+    scores.sort(sortInfo.sortFun);
     return scores;
   };
 
@@ -117,7 +105,7 @@ const useProcessedScores = (audio?: string) => {
     audioScores = filterAndSort(getAudioScores(audio));
   }
 
-  return { scores, audioScores, comp };
+  return { scores, audioScores, comp, sortInfo };
 };
 
 /** Lists all available scores. */
@@ -125,10 +113,12 @@ export const ListScores = () => {
   const params = useParams();
   const audioId = params.audioId;
 
-  const { scores, audioScores, comp } = useProcessedScores(audioId);
-  const scoreTable = scores ? <ScoreTable scores={scores} sub="yt" /> : null;
+  const { scores, audioScores, comp, sortInfo } = useProcessedScores(audioId);
+  const scoreTable = scores ? (
+    <ScoreTable scores={scores} sortInfo={sortInfo} sub="yt" />
+  ) : null;
   const audioScoreTable = audioScores ? (
-    <ScoreTable scores={audioScores} sub={audioId!} />
+    <ScoreTable scores={audioScores} sub={audioId!} sortInfo={sortInfo} />
   ) : null;
 
   const fullComp = (
