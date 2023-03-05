@@ -1127,6 +1127,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Viva_La_Vida",
     name: "Viva La Vida - Coldplay",
   },
+  {
+    videoId: "VAa7fnvhryw",
+    measureMap: { 11: 7, 217: 119 },
+    fileName: "Macumba",
+    name: "Macumba - Jean Pierre Mader",
+  },
 ];
 
 if (DEBUG) {
