@@ -1109,6 +1109,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Polichinelle",
     name: "Polichinelle - France Gall",
   },
+  {
+    videoId: "j0sI8pvw2Ts",
+    measureMap: { 15: 17, 110: 117, 145: 154 },
+    fileName: "Dok_Drugi",
+    name: "Dok Drugi Lete - Šuma Čovjek",
+  },
 ];
 
 if (DEBUG) {
