@@ -1145,6 +1145,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Animals",
     name: "Animals - Martin Garrix",
   },
+  {
+    videoId: "vC-R_olORhU",
+    measureMap: { 1: 2, 15: 8, 20: 11, 204: 124 },
+    fileName: "Leev_Marie",
+    name: "Leev Marie - Paveier",
+  },
 ];
 
 if (DEBUG) {
