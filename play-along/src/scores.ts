@@ -1157,6 +1157,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Llovera",
     name: "Lloverá y yo veré - La Pegatina",
   },
+  {
+    videoId: "zrvU78_rkmg",
+    measureMap: { 7: 5, 198: 119 },
+    fileName: "Moonlight_Shadow",
+    name: "Moonlight Shadow - The Italobrothers",
+  },
 ];
 
 if (DEBUG) {
