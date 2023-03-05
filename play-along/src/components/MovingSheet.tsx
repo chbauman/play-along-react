@@ -123,18 +123,16 @@ export const MovingSheet = (props: {
   }, [getTime, ipOrNull]);
 
   return (
-    <>
-      <div style={{ overflow: "hidden" }}>
-        <div
-          id={osmdId}
-          style={{
-            height: "250px",
-            width: `${fullW}px`,
-            marginLeft: `-${currXPos}px`,
-            marginRight: `-${marginRight}px`,
-          }}
-        ></div>
-      </div>
-    </>
+    <div style={{ overflow: "hidden" }}>
+      <div
+        id={osmdId}
+        style={{
+          height: "250px",
+          width: `${fullW}px`,
+          marginLeft: `-${currXPos}px`,
+          marginRight: `-${marginRight}px`,
+        }}
+      ></div>
+    </div>
   );
 };
