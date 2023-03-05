@@ -1133,6 +1133,18 @@ export const scores: ScoreInfo[] = [
     fileName: "Macumba",
     name: "Macumba - Jean Pierre Mader",
   },
+  {
+    videoId: "4G6QDNC4jPs",
+    measureMap: { 7: 2, 195: 113 },
+    fileName: "Everytime_We_Touch",
+    name: "Everytime We Touch - Cascada",
+  },
+  {
+    videoId: "gCYcHz2k5x0",
+    measureMap: { 46: 2, 183: 75 },
+    fileName: "Animals",
+    name: "Animals - Martin Garrix",
+  },
 ];
 
 if (DEBUG) {
