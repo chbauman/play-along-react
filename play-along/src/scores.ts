@@ -1115,6 +1115,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Dok_Drugi",
     name: "Dok Drugi Lete - Šuma Čovjek",
   },
+  {
+    videoId: "Guel4Xycujs",
+    measureMap: { 2: 3, 172: 122 },
+    fileName: "Med_Du_Miel",
+    name: "Med du miel - Šuma Čovjek",
+  },
 ];
 
 if (DEBUG) {
