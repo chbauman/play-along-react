@@ -128,7 +128,7 @@ export const MovingSheet = (props: {
         <div
           id={osmdId}
           style={{
-            height: "200px",
+            height: "250px",
             width: `${fullW}px`,
             marginLeft: `-${currXPos}px`,
             marginRight: `-${marginRight}px`,
