@@ -1151,6 +1151,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Leev_Marie",
     name: "Leev Marie - Paveier",
   },
+  {
+    videoId: "EoD4zkM24tU",
+    measureMap: { 11: 2, 182: 128 },
+    fileName: "Llovera",
+    name: "Lloverá y yo veré - La Pegatina",
+  },
 ];
 
 if (DEBUG) {
