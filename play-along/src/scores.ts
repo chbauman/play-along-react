@@ -1163,6 +1163,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Moonlight_Shadow",
     name: "Moonlight Shadow - The Italobrothers",
   },
+  {
+    videoId: "6reYIbNec00",
+    measureMap: { 6: 5, 108: 79 },
+    fileName: "Fata_Morgana",
+    name: "Fata Morgana - Šuma Čovjek",
+  },
 ];
 
 if (DEBUG) {
