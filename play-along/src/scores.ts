@@ -1169,6 +1169,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Fata_Morgana",
     name: "Fata Morgana - Šuma Čovjek",
   },
+  {
+    videoId: "PsYWewFa3RI",
+    measureMap: { 12: 9, 24: 17, 95: 65, 119: 81 },
+    fileName: "Engel_Der_Nacht",
+    name: "Engel der Nacht - Blümchen",
+  },
 ];
 
 if (DEBUG) {
