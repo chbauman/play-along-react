@@ -672,7 +672,7 @@ export const scores: ScoreInfo[] = [
     name: "Cambodia - Kim Wilde",
   },
   {
-    videoId: "S4nwKLxEboo",
+    videoId: "EwqhI5xaXSQ",
     measureMap: { 11: 9, 157: 154 },
     fileName: "Ievan_Polkka",
     name: "Ievan Polkka - Loituma",
@@ -1174,6 +1174,12 @@ export const scores: ScoreInfo[] = [
     measureMap: { 12: 9, 24: 17, 95: 65, 119: 81 },
     fileName: "Engel_Der_Nacht",
     name: "Engel der Nacht - Blümchen",
+  },
+  {
+    videoId: "-ZYEkBO05vM",
+    measureMap: { 6: 1, 70: 25, 275: 102 },
+    fileName: "Norse_Legends",
+    name: "Norse Legends Come To Life - Wildpath",
   },
 ];
 
