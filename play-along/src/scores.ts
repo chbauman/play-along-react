@@ -1187,6 +1187,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Danza_Dell_Autunno_Rosa",
     name: "Danza dell'Autunno Rosa - Talco",
   },
+  {
+    videoId: "_DoxQkaMNkc",
+    measureMap: { 19: 1, 200: 105 },
+    fileName: "Aukera_Berriak",
+    name: "Aukera Berriak - En Tol Sarmiento",
+  },
 ];
 
 if (DEBUG) {
