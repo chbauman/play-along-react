@@ -1181,6 +1181,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Norse_Legends",
     name: "Norse Legends Come To Life - Wildpath",
   },
+  {
+    videoId: "3SgcaZCLJFk",
+    measureMap: { 5: 2, 270: 191 },
+    fileName: "Danza_Dell_Autunno_Rosa",
+    name: "Danza dell'Autunno Rosa - Talco",
+  },
 ];
 
 if (DEBUG) {
