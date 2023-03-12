@@ -1199,6 +1199,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Geordie",
     name: "Geordie - Gabry Ponte",
   },
+  {
+    videoId: "g6JYzOjglBs",
+    measureMap: { 3: 1, 11: 5, 207: 109, 228: 120 },
+    fileName: "Aufstehn",
+    name: "Aufstehn - Seeed",
+  },
 ];
 
 if (DEBUG) {
