@@ -1193,6 +1193,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Aukera_Berriak",
     name: "Aukera Berriak - En Tol Sarmiento",
   },
+  {
+    videoId: "euVmi2nWXds",
+    measureMap: { 2: 1, 210: 120 },
+    fileName: "Geordie",
+    name: "Geordie - Gabry Ponte",
+  },
 ];
 
 if (DEBUG) {
