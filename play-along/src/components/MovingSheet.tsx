@@ -7,12 +7,24 @@ const fullW = 40000;
 const screenAnchorFactor = 0.3;
 const osmdId = "osmd";
 
+class MyOSMD extends OpenSheetMusicDisplay {
+  setup() {
+    // Fingering below does not seem to work...
+    this.rules.FingeringPosition = 1;
+    this.rules.FingeringOffsetY = 1;
+    this.rules.FingeringPositionFromXML = false;
+    console.log(this.rules);
+  }
+}
+
 /** Load the score from the xml. */
 const loadOsmd = async (xml: Document) => {
-  const osmd = new OpenSheetMusicDisplay(osmdId, {
+  const osmd = new MyOSMD(osmdId, {
     drawCredits: false,
     drawPartNames: false,
+    measureNumberInterval: 4,
   });
+  osmd.setup();
 
   await osmd.load(xml);
   osmd.setCustomPageFormat(fullW, 2000);

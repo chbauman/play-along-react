@@ -4,10 +4,21 @@ import { wrapWithNav } from "./NavBar";
 import { PitchSetting } from "./PartSelector";
 import { ReactComponent as BassClef } from "../img/bass.svg";
 import { ReactComponent as TrebleClef } from "../img/treble.svg";
+import { FingerType } from "../util/util";
 
-const clefs: { [key: string]: ReactElement } = {
-  Treble: <TrebleClef height={"3em"} />,
-  Bass: <BassClef height={"3em"} />,
+type ValToEl = { [key: string]: ReactElement };
+
+const clefs: ValToEl = {
+  Treble: (
+    <>
+      Treble <TrebleClef height={"3em"} />
+    </>
+  ),
+  Bass: (
+    <>
+      Bass <BassClef height={"3em"} />
+    </>
+  ),
 };
 const clefKey = "clef";
 
@@ -17,30 +28,48 @@ export const getClef = () => {
   return ret ? ret : Object.keys(clefs)[0];
 };
 
-/** Dropdown for choosing the clef. */
-const ClefSetting = () => {
-  const [clef, setClef] = useState(getClef());
-  const set = (newClef: string) => {
-    localStorage.setItem(clefKey, newClef);
-    setClef(newClef);
+/** Setting that can be changed by dropdown. */
+const DDSetting = ({
+  settingKey,
+  getter,
+  map,
+}: {
+  settingKey: string;
+  getter: () => string;
+  map: ValToEl;
+}) => {
+  const [val, setClef] = useState(getter());
+  const set = (newVal: string) => {
+    localStorage.setItem(settingKey, newVal);
+    setClef(newVal);
   };
 
-  const titleComp = (
-    <>
-      {clef} {clefs[clef]}
-    </>
-  );
+  const titleComp = <>{map[val]}</>;
   return (
-    <DropdownButton id="choose-clef" title={titleComp}>
-      {Object.entries(clefs).map((el, idx) => {
+    <DropdownButton id={`choose-${settingKey}`} title={titleComp}>
+      {Object.entries(map).map((el, idx) => {
         return (
           <Dropdown.Item key={idx} onClick={() => set(el[0])}>
-            {el[0]} {el[1]}
+            {el[1]}
           </Dropdown.Item>
         );
       })}
     </DropdownButton>
   );
+};
+
+const fingerKey = "finger-mode";
+const fingerMap = {
+  none: <>None</>,
+  valve: <>3 Valves</>,
+  trombone: <>Trombone</>,
+};
+
+/** Returns the currently selected finger mode from local storage. */
+export const getFinger = () => {
+  const ret = localStorage.getItem(fingerKey);
+  const retNotNull = ret ? ret : Object.keys(fingerMap)[0];
+  return retNotNull as FingerType;
 };
 
 /** Setting component. */
@@ -56,7 +85,17 @@ export const Settings = () => {
       <Row className="mt-3">
         <Col>Clef</Col>
         <Col>
-          <ClefSetting />
+          <DDSetting settingKey={clefKey} map={clefs} getter={getClef} />
+        </Col>
+      </Row>
+      <Row className="mt-3">
+        <Col>Fingering</Col>
+        <Col>
+          <DDSetting
+            settingKey={fingerKey}
+            map={fingerMap}
+            getter={getFinger}
+          />
         </Col>
       </Row>
     </>

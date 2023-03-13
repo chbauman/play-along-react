@@ -91,8 +91,44 @@ const getScaleUpdate = (measure: any, fifths: number) => {
   return usedScale;
 };
 
+export type FingerType = "none" | "valve" | "trombone";
+type Fingering = { [key: number]: (string | undefined)[] };
+const valveFingering: Fingering = {
+  3: [
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    "123",
+    "13",
+    "23",
+    "12",
+    "1",
+    "2",
+  ],
+  4: ["0", "123", "13", "23", "12", "1", "2", "0", "23", "12", "1", "2"],
+  5: ["0", "12", "1", "2", "0", "1", "2", "0", "23", "12", "1", "2"],
+  6: ["0", "12", "1"],
+};
+const toTrombone: { [key: string]: string } = {
+  "0": "1",
+  "2": "2",
+  "1": "3",
+  "12": "4",
+  "23": "5",
+  "13": "6",
+  "123": "7",
+};
+
 /** Transpose score to desired pitch. */
-export const transpose = (xml: Document, pitch: string, octave: number) => {
+export const transpose = (
+  xml: Document,
+  pitch: string,
+  octave: number,
+  fingering: FingerType = "trombone"
+) => {
   const [chrom, fifths] = transposeOptions[pitch];
   const measures = xml.getElementsByTagName("measure");
 
@@ -152,6 +188,29 @@ export const transpose = (xml: Document, pitch: string, octave: number) => {
         const newEl = xml.createElement("alter");
         newEl.textContent = newAlter.toString();
         el.appendChild(newEl);
+      }
+      if (fingering !== null) {
+        const idx = pitchMap[newPitch] + newAlter;
+        const oct = clef === "bass" ? newOct + 1 : newOct;
+        const valOct = valveFingering[oct];
+        let val = valOct !== undefined ? valOct[idx] : undefined;
+        if (val !== undefined) {
+          if (fingering === "trombone") {
+            val = toTrombone[val];
+          }
+
+          const notFound = noteEl.getElementsByTagName("notations")[0];
+          const notation = notFound ? notFound : xml.createElement("notations");
+          const tech = xml.createElement("technical");
+          const fing = xml.createElement("fingering");
+
+          fing.textContent = val;
+          notation.appendChild(tech);
+          tech.appendChild(fing);
+          if (!notFound) {
+            noteEl.appendChild(notation);
+          }
+        }
       }
 
       // Remove any accidentals, they are handled by the "alter" element.

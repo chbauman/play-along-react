@@ -5,6 +5,7 @@ import { getSingleXml, parseXml, transpose, transposeKeys } from "../util/util";
 import { MovingSheet } from "./MovingSheet";
 import { playerSizePx } from "./player/YtPlayer";
 import { Player } from "./player/util";
+import { getFinger } from "./Settings";
 
 type PartSelectorState = {
   xml: Document;
@@ -56,7 +57,8 @@ const extractPartXml = (state: PartSelectorState) => {
   removeUnused(parsedXML, "score-partwise", "part", partId);
 
   // Transpose
-  transpose(parsedXML, state.pitch, state.octave);
+  const finger = getFinger();
+  transpose(parsedXML, state.pitch, state.octave, finger);
 
   return parsedXML;
 };
