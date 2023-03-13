@@ -2150,8 +2150,60 @@
       </measure>
     <measure number="37">
       <note>
-        <rest measure="yes" />
-        <duration>24</duration>
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>quarter</type>
+        <notations>
+          <tied type="start" />
+          <technical>
+            <fingering placement="below">0</fingering>
+            </technical>
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="stop" />
+        <type>quarter</type>
+        <notations>
+          <tied type="stop" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>quarter</type>
+        <notations>
+          <slur type="start" placement="above" number="1" />
+          <technical>
+            <fingering placement="below">2</fingering>
+            </technical>
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>C</step>
+          <octave>5</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>quarter</type>
+        <accidental>natural</accidental>
+        <notations>
+          <slur type="stop" number="1" />
+          <technical>
+            <fingering placement="below">0</fingering>
+            </technical>
+          </notations>
         </note>
       </measure>
     <measure number="38">
