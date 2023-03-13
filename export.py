@@ -110,7 +110,7 @@ parser.add_argument("-a", "--audio", action="store_true", default=False, require
 def export_audio(n_export: int):
     # Load JSON with info
     JSON_AUDIO = "audio.json"
-    with open(JSON_AUDIO, "r") as f:
+    with open(JSON_AUDIO, "r", encoding="utf8") as f:
         scores = json.load(f)
 
     # Get groups
@@ -164,8 +164,8 @@ def export_audio(n_export: int):
             **score,
         }
 
-        with open(out_json, "w") as f:
-            json.dump(json_dat, f)
+        with open(out_json, "w", encoding="utf8") as f:
+            json.dump(json_dat, f, ensure_ascii=False)
 
     print("Success")
 
