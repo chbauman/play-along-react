@@ -13,7 +13,6 @@ class MyOSMD extends OpenSheetMusicDisplay {
     this.rules.FingeringPosition = 1;
     this.rules.FingeringOffsetY = 1;
     this.rules.FingeringPositionFromXML = false;
-    console.log(this.rules);
   }
 }
 

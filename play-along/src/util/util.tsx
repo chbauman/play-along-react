@@ -132,11 +132,18 @@ export const transpose = (
   const [chrom, fifths] = transposeOptions[pitch];
   const measures = xml.getElementsByTagName("measure");
 
-  // Handle bass clef
+  // Handle clef
   const clef = getClef();
+  const clefEl = xml.getElementsByTagName("clef")[0]; // Assuming only one clef!
+
+  // Check if clef is changed by an octave
+  const octaveChange =
+    clefEl.getElementsByTagName("clef-octave-change")[0]?.textContent;
+  const fingerOctave = octaveChange ? parseInt(octaveChange) : 0;
+
+  // Change to bass clef if selected in settings
   if (clef === "Bass") {
     octave = octave - 1; // Set score one octave lower for bass clef
-    const clefEl = xml.getElementsByTagName("clef")[0]; // Assuming only one clef!
     for (let k = 0; k < clefEl.children.length; ++k) {
       const childEl = clefEl.children[k];
       const currTag = childEl.tagName;
@@ -147,6 +154,7 @@ export const transpose = (
       }
     }
   }
+  // TODO: Also change to treble if the current clef is a bass clef.
 
   let usedScale = null;
   for (let measI = 0; measI < measures.length; ++measI) {
@@ -192,7 +200,7 @@ export const transpose = (
       if (fingering !== null) {
         const idx = pitchMap[newPitch] + newAlter;
         const oct = clef === "bass" ? newOct + 1 : newOct;
-        const valOct = valveFingering[oct];
+        const valOct = valveFingering[oct - fingerOctave];
         let val = valOct !== undefined ? valOct[idx] : undefined;
         if (val !== undefined) {
           if (fingering === "trombone") {
