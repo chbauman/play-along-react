@@ -1165,7 +1165,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "6reYIbNec00",
-    measureMap: { 6: 5, 108: 79 },
+    measureMap: { 6: 5, 108: 79, 174: 127 },
     fileName: "Fata_Morgana",
     name: "Fata Morgana - Šuma Čovjek",
   },
