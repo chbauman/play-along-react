@@ -1205,6 +1205,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Aufstehn",
     name: "Aufstehn - Seeed",
   },
+  {
+    videoId: "l68QxDXOVbk",
+    measureMap: { 2: 2, 25: 15, 124: 70 },
+    fileName: "Smidje",
+    name: "'t Smidje - Lais",
+  },
 ];
 
 if (DEBUG) {
