@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { scores } from "../scores";
+import { getRandomScore } from "../util/util";
 import { wrapWithNav } from "./NavBar";
 import { NewestScores } from "./NewestScores";
 
@@ -20,7 +21,9 @@ export const Home = () => {
       <p>
         There is a total of {nScores} scores available for playing along
         including the corresponding sheet music. They all can be accessed under{" "}
-        <Link to="/listall">All Scores</Link>.
+        <Link to="/listall">All Scores</Link>. Or just jump right in and let
+        destiny choose a song for you:{" "}
+        <Link to={`/yt/${getRandomScore().videoId}`}>Random Score</Link>.
       </p>
       <NewestScores nMostRecentSongs={10} />
       <p>
