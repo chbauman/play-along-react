@@ -206,18 +206,7 @@ export const transpose = (
           if (fingering === "trombone") {
             val = toTrombone[val];
           }
-
-          const notFound = noteEl.getElementsByTagName("notations")[0];
-          const notation = notFound ? notFound : xml.createElement("notations");
-          const tech = xml.createElement("technical");
-          const fing = xml.createElement("fingering");
-
-          fing.textContent = val;
-          notation.appendChild(tech);
-          tech.appendChild(fing);
-          if (!notFound) {
-            noteEl.appendChild(notation);
-          }
+          addFingering(xml, noteEl, val);
         }
       }
 
@@ -226,6 +215,39 @@ export const transpose = (
       if (acc) {
         noteEl.removeChild(acc);
       }
+    }
+  }
+};
+
+/** Add fingering info to note element.
+ *
+ * @param xml
+ * @param noteEl
+ * @param val
+ */
+const addFingering = (xml: Document, noteEl: Element, val: string) => {
+  const addAsLyrics = false;
+  if (addAsLyrics) {
+    const lyric = xml.createElement("lyric");
+    lyric.setAttribute("number", "1");
+    const text = xml.createElement("text");
+    text.textContent = val;
+    const syl = xml.createElement("syllabic");
+    syl.textContent = "single";
+    lyric.appendChild(syl);
+    lyric.appendChild(text);
+    noteEl.appendChild(lyric);
+  } else {
+    const notFound = noteEl.getElementsByTagName("notations")[0];
+    const notation = notFound ? notFound : xml.createElement("notations");
+    const tech = xml.createElement("technical");
+    const fing = xml.createElement("fingering");
+
+    fing.textContent = val;
+    notation.appendChild(tech);
+    tech.appendChild(fing);
+    if (!notFound) {
+      noteEl.appendChild(notation);
     }
   }
 };
