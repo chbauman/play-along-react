@@ -1211,6 +1211,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Smidje",
     name: "'t Smidje - Lais",
   },
+  {
+    videoId: "-S2QB1emWZo",
+    measureMap: { 5: 3, 169: 85 },
+    fileName: "Alle_Jlaeser",
+    name: "Alle Jläser Huh - Kasalla",
+  },
 ];
 
 if (DEBUG) {
