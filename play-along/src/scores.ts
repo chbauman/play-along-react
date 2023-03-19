@@ -34,22 +34,6 @@ const myMotherMatchData: MeasureMap = {
   188: 68,
   192: 69,
 };
-const kannibalenliedMeasureMap: MeasureMap = {
-  26: 2,
-  35: 6,
-  67: 21,
-  69: 22,
-  86: 30,
-  119: 45,
-  120: 46,
-  137: 54,
-  170: 69,
-  171: 70,
-  189: 78,
-  204: 85,
-  221: 94,
-  245: 105,
-};
 const linksRadSchlagerMM: MeasureMap = {
   14: 2,
   20: 6,
@@ -214,11 +198,7 @@ const blosEMM = { 22: 12, 59: 30, 100: 50, 132: 66, 146: 73, 152: 76 };
 const champsMM = { 3: 2, 21: 10, 57: 26, 93: 42, 129: 58 };
 const ukrAnthMM = { 6: 2, 65: 19, 110: 32, 115: 33 };
 const hochMM = { 11: 2, 30: 9, 50: 21, 116: 61 };
-const laylMM = { 8: 6, 160: 90 };
-const wwwMM = { 1: 2, 94: 72 };
-const partypMM = { 2: 3, 180: 98 };
 const ownTheNightMM = { 2: 3, 41: 27, 108: 68, 222: 138 };
-const oliviaMM = { 8: 6, 72: 44, 170: 102 };
 const richiMM = { 7: 6, 120: 68 };
 const fightMM = { 74: 3, 183: 71 };
 const poundingMM = { 107: 2, 142: 24, 152: 28, 240: 83 };
@@ -227,7 +207,6 @@ const misirlouMM = { 4: 2, 67: 25, 150: 55 };
 const dropTahtMM = { 4: 4, 72: 40 };
 const cordulaMM = { 9.5: 5, 70: 36, 185: 95 };
 const vicSongMM = { 5: 2, 103: 43, 151: 63 };
-const chickenMM = { 6: 7, 142: 118 };
 const rhythmIsAMM = { 2: 3, 31: 18, 62: 34, 108: 58, 123.5: 66 };
 const sombToLoveMM = { 7: 2, 18: 6, 26: 8, 33: 10, 56: 17, 95: 29, 129: 39 };
 const deprecatedScores: ScoreInfo[] = [
@@ -296,7 +275,22 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "bF4TmtNwM_4",
-    measureMap: kannibalenliedMeasureMap,
+    measureMap: {
+      26: 2,
+      35: 6,
+      67: 21,
+      69: 22,
+      86: 30,
+      119: 45,
+      120: 46,
+      137: 54,
+      170: 69,
+      171: 70,
+      189: 78,
+      204: 85,
+      221: 94,
+      245: 105,
+    },
     fileName: "Kannibalenlied",
     name: "Kannibalenlied - K.I.Z.",
   },
@@ -472,19 +466,19 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "2seCB54Bv-c",
-    measureMap: laylMM,
+    measureMap: { 8: 6, 160: 90 },
     fileName: "Lay_All_Your_Love",
     name: "Lay All your Love on Me - ABBA",
   },
   {
     videoId: "WiR-5swzlvE",
-    measureMap: wwwMM,
+    measureMap: { 1: 2, 94: 72 },
     fileName: "Was_Wollen_Wir",
     name: "Was wollen wir trinken - dArtagnan",
   },
   {
     videoId: "-4nB-9dmHoc",
-    measureMap: partypMM,
+    measureMap: { 2: 3, 180: 98 },
     fileName: "Partyplanet",
     name: "Partyplanet - Fäaschtbänkler",
   },
@@ -496,7 +490,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "w0FE4xmAEq4",
-    measureMap: oliviaMM,
+    measureMap: { 8: 6, 72: 44, 170: 102 },
     fileName: "Olivia",
     name: "Olivia - Die Zipfelbuben",
   },
@@ -613,7 +607,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "-xvVsZsvD4c",
-    measureMap: chickenMM,
+    measureMap: { 6: 7, 142: 118 },
     fileName: "Chicken_Dance",
     name: "The Chicken Dance",
   },
