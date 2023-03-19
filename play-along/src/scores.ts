@@ -128,14 +128,7 @@ const saufiSaufiMM = {
   157: 90,
   200: 115,
 };
-const sosMM = {
-  3: 3,
-  37: 33,
-  71: 63,
-  106: 94,
-  140: 125,
-  172: 153,
-};
+const sosMM = { 3: 3, 37: 33, 71: 63, 106: 94, 140: 125, 172: 153 };
 const htrjMM = {
   6: 6,
   25: 20,
@@ -145,7 +138,6 @@ const htrjMM = {
   97: 72,
   114: 84,
 };
-const ritgMM = { 9: 2, 49: 24, 80: 41, 107: 56, 149: 79 };
 const horrMM = { 5: 2, 37: 26, 69: 50, 101: 74, 133: 98 };
 const sidnrMM = {
   1: 1,
@@ -171,42 +163,10 @@ const oktoberMM = {
   115: 62,
 };
 const lolitaMM = { 45: 2, 81: 35, 100: 52, 137: 85, 172: 116 };
-const bambolaMM = {
-  10: 10,
-  41: 36,
-  72: 62,
-  101: 86,
-  124: 106,
-  143: 121,
-};
-const youtheoneMM = {
-  8: 2,
-  46: 25,
-  79: 45,
-  125: 73,
-  179: 106,
-  202: 120,
-};
-const brainsMM = { 10: 7, 96: 59, 202: 123 };
-const klangMM = { 11: 1, 84: 55, 103: 69 };
-const imalrMM = { 8: 9, 106: 105, 112: 110 };
+const bambolaMM = { 10: 10, 41: 36, 72: 62, 101: 86, 124: 106, 143: 121 };
+const youtheoneMM = { 8: 2, 46: 25, 79: 45, 125: 73, 179: 106, 202: 120 };
 const freundMM = { 40: 15, 145: 127, 213: 199, 219: 205, 249: 236 };
-const kingMM = { 9: 2, 47: 26, 105: 62, 156: 94 };
-const rockCivMM = { 159: 2, 249: 58 };
-const rightNowMM = { 13: 9, 192: 121 };
 const blosEMM = { 22: 12, 59: 30, 100: 50, 132: 66, 146: 73, 152: 76 };
-const champsMM = { 3: 2, 21: 10, 57: 26, 93: 42, 129: 58 };
-const ukrAnthMM = { 6: 2, 65: 19, 110: 32, 115: 33 };
-const hochMM = { 11: 2, 30: 9, 50: 21, 116: 61 };
-const ownTheNightMM = { 2: 3, 41: 27, 108: 68, 222: 138 };
-const richiMM = { 7: 6, 120: 68 };
-const fightMM = { 74: 3, 183: 71 };
-const poundingMM = { 107: 2, 142: 24, 152: 28, 240: 83 };
-const canCanMM = { 12: 5, 41: 44, 81: 98, 104: 129 };
-const misirlouMM = { 4: 2, 67: 25, 150: 55 };
-const dropTahtMM = { 4: 4, 72: 40 };
-const cordulaMM = { 9.5: 5, 70: 36, 185: 95 };
-const vicSongMM = { 5: 2, 103: 43, 151: 63 };
 const rhythmIsAMM = { 2: 3, 31: 18, 62: 34, 108: 58, 123.5: 66 };
 const sombToLoveMM = { 7: 2, 18: 6, 26: 8, 33: 10, 56: 17, 95: 29, 129: 39 };
 const deprecatedScores: ScoreInfo[] = [
@@ -236,13 +196,13 @@ const deprecatedScores: ScoreInfo[] = [
   },
   {
     videoId: "XM7BVj_C7PI",
-    measureMap: klangMM,
+    measureMap: { 11: 1, 84: 55, 103: 69 },
     fileName: "Klaangzang",
     name: "Klaangzang - Sefa",
   },
   {
     videoId: "d7eEZrRwc_0",
-    measureMap: brainsMM,
+    measureMap: { 10: 7, 96: 59, 202: 123 },
     fileName: "Brains",
     name: "Brains - Klaypex ft. Kings High",
   },
@@ -349,7 +309,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "LTIOFW7Pwgc",
-    measureMap: ritgMM,
+    measureMap: { 9: 2, 49: 24, 80: 41, 107: 56, 149: 79 },
     fileName: "Rave_In_The_Grave",
     name: "Rave in the Grave - AronChupa & Little Sis Nora",
   },
@@ -385,7 +345,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "ha-edv6PVqY",
-    measureMap: imalrMM,
+    measureMap: { 8: 9, 106: 105, 112: 110 },
     fileName: "Im_Alright",
     name: "I'm Alright - Sportfreunde Stiller",
   },
@@ -418,19 +378,19 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "e1kwr-C78mI",
-    measureMap: kingMM,
+    measureMap: { 9: 2, 47: 26, 105: 62, 156: 94 },
     fileName: "The_King",
     name: "The King - Timmy Trumpet & Vitas",
   },
   {
     videoId: "LotJFb90iZ8",
-    measureMap: rockCivMM,
+    measureMap: { 159: 2, 249: 58 },
     fileName: "Rock_Civilization",
     name: "Rock Civilization - Headhunterz",
   },
   {
     videoId: "USlp4lbJ0kQ",
-    measureMap: rightNowMM,
+    measureMap: { 13: 9, 192: 121 },
     fileName: "Right_Now",
     name: "Right Now - TNT & Sound Rush",
   },
@@ -442,13 +402,13 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "7B4CLQGxHmI",
-    measureMap: champsMM,
+    measureMap: { 3: 2, 21: 10, 57: 26, 93: 42, 129: 58 },
     fileName: "Champs_Elysees",
     name: "Aux Champs Elysées - Joe Dassin (Pomplamoose)",
   },
   {
     videoId: "bHzHlSLhtmM",
-    measureMap: ukrAnthMM,
+    measureMap: { 6: 2, 65: 19, 110: 32, 115: 33 },
     fileName: "Ukrainian_Anthem",
     name: "Ukrainian National Anthem",
   },
@@ -460,7 +420,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "QCTkqF6lX-c",
-    measureMap: hochMM,
+    measureMap: { 11: 2, 30: 9, 50: 21, 116: 61 },
     fileName: "Hoch_Die_Haende",
     name: "Hoch die Hände Wochenende - Fäaschtbänkler, Finch & HBz",
   },
@@ -484,7 +444,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "5b7m5mENslY",
-    measureMap: ownTheNightMM,
+    measureMap: { 2: 3, 41: 27, 108: 68, 222: 138 },
     fileName: "Own_The_Night",
     name: "Own The Night - Showtek ft. MC DV8",
   },
@@ -502,25 +462,25 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "o5aVBKtXWwo",
-    measureMap: richiMM,
+    measureMap: { 7: 6, 120: 68 },
     fileName: "Richi",
     name: "Richi - Stubete Gäng",
   },
   {
     videoId: "I_TKhQ7KK1Y",
-    measureMap: fightMM,
+    measureMap: { 74: 3, 183: 71 },
     fileName: "Fight_The_Resistance",
     name: "Fight The Resistance - Brennan Heart & Zatox",
   },
   {
     videoId: "6BaysTL48SQ",
-    measureMap: poundingMM,
+    measureMap: { 107: 2, 142: 24, 152: 28, 240: 83 },
     fileName: "Pounding_Senses",
     name: "Pounding Senses (deeper inside mix) - Southstylers",
   },
   {
     videoId: "4Diu2N8TGKA",
-    measureMap: canCanMM,
+    measureMap: { 12: 5, 41: 44, 81: 98, 104: 129 },
     fileName: "Can_Can",
     name: "Can Can - Offenbach",
   },
@@ -538,7 +498,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "x4-sfeHGAYU",
-    measureMap: vicSongMM,
+    measureMap: { 5: 2, 103: 43, 151: 63 },
     fileName: "Victory_Song",
     name: "Victory Song - Broken Minds & D-Frek",
   },
@@ -550,13 +510,13 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "Hd8SmiJHEQM",
-    measureMap: misirlouMM,
+    measureMap: { 4: 2, 67: 25, 150: 55 },
     fileName: "Misirlou",
     name: "Misirlou - The Big Band Royale",
   },
   {
     videoId: "souJM4aCk6w",
-    measureMap: dropTahtMM,
+    measureMap: { 4: 4, 72: 40 },
     fileName: "Drop_That",
     name: "Drop That Low - Tujamo",
   },
@@ -595,7 +555,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "Xw-g6X8qob0",
-    measureMap: cordulaMM,
+    measureMap: { 9.5: 5, 70: 36, 185: 95 },
     fileName: "Cordula",
     name: "Cordula Grün - Die Draufgänger",
   },
