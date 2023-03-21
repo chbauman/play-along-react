@@ -103,17 +103,6 @@ const tddiMM = {
   292: 90,
 };
 
-const wbdMM = {
-  3: 2,
-  36: 13,
-  91: 31,
-  115: 39,
-  146: 49,
-  170: 57,
-  194: 65,
-  219: 73,
-};
-
 const saufiSaufiMM = {
   2: 1,
   14: 8,
@@ -267,8 +256,17 @@ export const scores: ScoreInfo[] = [
     name: "San Francisco - Scott McKenzie",
   },
   {
-    videoId: "ERCybZO3BTk",
-    measureMap: wbdMM,
+    videoId: "7Rd5ltFFQDI",
+    measureMap: {
+      3: 2,
+      36: 13,
+      91: 31,
+      115: 39,
+      146: 49,
+      170: 57,
+      194: 65,
+      219: 73,
+    },
     fileName: "Wo_Bist_Du",
     name: "Wo Bist Du - Rammstein",
   },
@@ -866,7 +864,7 @@ export const scores: ScoreInfo[] = [
     name: "Water Music in D: Hornpipe - G. F. Händel",
   },
   {
-    videoId: "i0xOSxgs6w8",
+    videoId: "EPdn9_h2dCY",
     measureMap: { 4: 3, 99: 55, 100: 56, 180: 100, 181: 101, 262: 146 },
     fileName: "Moskau",
     name: "Moskau - Dschingis Khan",
