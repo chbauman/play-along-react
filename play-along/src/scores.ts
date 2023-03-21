@@ -9,16 +9,6 @@ export type ScoreInfo = {
   name: string;
 };
 
-const matchDataSovietMarch: MeasureMap = {
-  0: 1,
-  12: 7,
-  20: 11,
-  39: 21,
-  63: 33,
-  79: 41,
-  95: 49,
-  114: 59,
-};
 const myMotherMatchData: MeasureMap = {
   3: 1,
   16: 6,
@@ -212,7 +202,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "lDQ7hXMLxGc",
-    measureMap: matchDataSovietMarch,
+    measureMap: { 0: 1, 12: 7, 95: 49, 158: 81 },
     fileName: "soviet_march",
     name: "Soviet March - Red Alert 3 Theme",
   },
