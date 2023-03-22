@@ -3165,6 +3165,21 @@
           <words font-style="italic" font-size="11">rit.</words>
           </direction-type>
         </direction>
+      <direction placement="above">
+        <direction-type>
+          <metronome parentheses="no">
+            <beat-unit>quarter</beat-unit>
+            <per-minute>165</per-minute>
+            </metronome>
+          </direction-type>
+        </direction>
+      <direction placement="below">
+        <direction-type>
+          <dynamics>
+            <mf />
+            </dynamics>
+          </direction-type>
+        </direction>
       <note>
         <pitch>
           <step>F</step>
@@ -3176,6 +3191,14 @@
         </note>
       </measure>
     <measure number="86">
+      <direction placement="above">
+        <direction-type>
+          <metronome parentheses="no">
+            <beat-unit>quarter</beat-unit>
+            <per-minute>150</per-minute>
+            </metronome>
+          </direction-type>
+        </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -3193,10 +3216,27 @@
           <octave>4</octave>
           </pitch>
         <duration>6</duration>
+        <tie type="start" />
         <type>half</type>
         <dot />
         <notations>
+          <tied type="start" />
           <fermata type="upright" />
+          </notations>
+        </note>
+      </measure>
+    <measure number="88">
+      <note>
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="stop" />
+        <type>half</type>
+        <dot />
+        <notations>
+          <tied type="stop" />
           </notations>
         </note>
       <barline location="right">
@@ -6389,10 +6429,27 @@
           <octave>3</octave>
           </pitch>
         <duration>6</duration>
+        <tie type="start" />
         <type>half</type>
         <dot />
         <notations>
+          <tied type="start" />
           <fermata type="upright" />
+          </notations>
+        </note>
+      </measure>
+    <measure number="88">
+      <note>
+        <pitch>
+          <step>D</step>
+          <octave>3</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="stop" />
+        <type>half</type>
+        <dot />
+        <notations>
+          <tied type="stop" />
           </notations>
         </note>
       <barline location="right">
@@ -10412,9 +10469,11 @@
           <octave>4</octave>
           </pitch>
         <duration>6</duration>
+        <tie type="start" />
         <type>half</type>
         <dot />
         <notations>
+          <tied type="start" />
           <fermata type="upright" />
           </notations>
         </note>
@@ -10425,8 +10484,12 @@
           <octave>4</octave>
           </pitch>
         <duration>6</duration>
+        <tie type="start" />
         <type>half</type>
         <dot />
+        <notations>
+          <tied type="start" />
+          </notations>
         </note>
       <note>
         <chord />
@@ -10435,8 +10498,55 @@
           <octave>4</octave>
           </pitch>
         <duration>6</duration>
+        <tie type="start" />
         <type>half</type>
         <dot />
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      </measure>
+    <measure number="88">
+      <note>
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="stop" />
+        <type>half</type>
+        <dot />
+        <notations>
+          <tied type="stop" />
+          </notations>
+        </note>
+      <note>
+        <chord />
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="stop" />
+        <type>half</type>
+        <dot />
+        <notations>
+          <tied type="stop" />
+          </notations>
+        </note>
+      <note>
+        <chord />
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="stop" />
+        <type>half</type>
+        <dot />
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <barline location="right">
         <bar-style>light-heavy</bar-style>
