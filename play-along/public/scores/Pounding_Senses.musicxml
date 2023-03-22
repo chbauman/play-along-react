@@ -821,13 +821,6 @@
           </root>
         <kind text="m">minor</kind>
         </harmony>
-      <direction placement="below">
-        <direction-type>
-          <dynamics>
-            <mp />
-            </dynamics>
-          </direction-type>
-        </direction>
       <note>
         <pitch>
           <step>D</step>
@@ -903,9 +896,10 @@
     <measure number="29">
       <harmony print-frame="no">
         <root>
-          <root-step>F</root-step>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
           </root>
-        <kind text="m">minor</kind>
+        <kind text="6">major-sixth</kind>
         </harmony>
       <note>
         <pitch>
@@ -1060,10 +1054,10 @@
     <measure number="31">
       <harmony print-frame="no">
         <root>
-          <root-step>E</root-step>
+          <root-step>G</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -1083,6 +1077,17 @@
         <duration>6</duration>
         <type>quarter</type>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        <degree>
+          <degree-value>4</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+          </degree>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1138,6 +1143,13 @@
         </note>
       </measure>
     <measure number="32">
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -1211,6 +1223,13 @@
         </note>
       </measure>
     <measure number="33">
+      <harmony print-frame="no">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="6">major-sixth</kind>
+        </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -1281,6 +1300,13 @@
         </note>
       </measure>
     <measure number="34">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1355,6 +1381,13 @@
         </note>
       </measure>
     <measure number="35">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1373,6 +1406,17 @@
         <duration>6</duration>
         <type>quarter</type>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        <degree>
+          <degree-value>4</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+          </degree>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1431,13 +1475,13 @@
         </barline>
       </measure>
     <measure number="36">
-      <direction placement="below">
-        <direction-type>
-          <dynamics>
-            <f />
-            </dynamics>
-          </direction-type>
-        </direction>
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -1511,6 +1555,13 @@
         </note>
       </measure>
     <measure number="37">
+      <harmony print-frame="no">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="6">major-sixth</kind>
+        </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -1581,6 +1632,13 @@
         </note>
       </measure>
     <measure number="38">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1655,6 +1713,13 @@
         </note>
       </measure>
     <measure number="39">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1673,6 +1738,17 @@
         <duration>6</duration>
         <type>quarter</type>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        <degree>
+          <degree-value>4</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+          </degree>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1728,6 +1804,13 @@
         </note>
       </measure>
     <measure number="40">
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -1801,6 +1884,13 @@
         </note>
       </measure>
     <measure number="41">
+      <harmony print-frame="no">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="6">major-sixth</kind>
+        </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -1871,6 +1961,13 @@
         </note>
       </measure>
     <measure number="42">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1945,6 +2042,13 @@
         </note>
       </measure>
     <measure number="43">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1963,6 +2067,17 @@
         <duration>6</duration>
         <type>quarter</type>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        <degree>
+          <degree-value>4</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+          </degree>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -2021,13 +2136,13 @@
         </barline>
       </measure>
     <measure number="44">
-      <direction placement="below">
-        <direction-type>
-          <dynamics>
-            <mp />
-            </dynamics>
-          </direction-type>
-        </direction>
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -2224,6 +2339,12 @@
         </note>
       </measure>
     <measure number="46">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -2388,13 +2509,13 @@
         </barline>
       </measure>
     <measure number="48">
-      <direction placement="below">
-        <direction-type>
-          <dynamics>
-            <f />
-            </dynamics>
-          </direction-type>
-        </direction>
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -2468,6 +2589,13 @@
         </note>
       </measure>
     <measure number="49">
+      <harmony print-frame="no">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="6">major-sixth</kind>
+        </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -2538,6 +2666,13 @@
         </note>
       </measure>
     <measure number="50">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -2612,6 +2747,13 @@
         </note>
       </measure>
     <measure number="51">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -2630,6 +2772,17 @@
         <duration>6</duration>
         <type>quarter</type>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        <degree>
+          <degree-value>4</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+          </degree>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -2685,6 +2838,13 @@
         </note>
       </measure>
     <measure number="52">
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -2758,6 +2918,13 @@
         </note>
       </measure>
     <measure number="53">
+      <harmony print-frame="no">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="6">major-sixth</kind>
+        </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -2828,6 +2995,13 @@
         </note>
       </measure>
     <measure number="54">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -2902,6 +3076,13 @@
         </note>
       </measure>
     <measure number="55">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -2920,6 +3101,17 @@
         <duration>6</duration>
         <type>quarter</type>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        <degree>
+          <degree-value>4</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+          </degree>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -2978,6 +3170,13 @@
         </barline>
       </measure>
     <measure number="56">
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -3051,6 +3250,13 @@
         </note>
       </measure>
     <measure number="57">
+      <harmony print-frame="no">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="6">major-sixth</kind>
+        </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -3121,6 +3327,13 @@
         </note>
       </measure>
     <measure number="58">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -3195,6 +3408,13 @@
         </note>
       </measure>
     <measure number="59">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -3213,6 +3433,17 @@
         <duration>6</duration>
         <type>quarter</type>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        <degree>
+          <degree-value>4</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+          </degree>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -3268,6 +3499,13 @@
         </note>
       </measure>
     <measure number="60">
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -3341,6 +3579,13 @@
         </note>
       </measure>
     <measure number="61">
+      <harmony print-frame="no">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="6">major-sixth</kind>
+        </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -3411,6 +3656,13 @@
         </note>
       </measure>
     <measure number="62">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -3485,6 +3737,13 @@
         </note>
       </measure>
     <measure number="63">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -3503,6 +3762,17 @@
         <duration>6</duration>
         <type>quarter</type>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        <degree>
+          <degree-value>4</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+          </degree>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -3561,13 +3831,13 @@
         </barline>
       </measure>
     <measure number="64">
-      <direction placement="below">
-        <direction-type>
-          <dynamics>
-            <mp />
-            </dynamics>
-          </direction-type>
-        </direction>
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -3764,6 +4034,12 @@
         </note>
       </measure>
     <measure number="66">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -3928,13 +4204,13 @@
         </barline>
       </measure>
     <measure number="68">
-      <direction placement="below">
-        <direction-type>
-          <dynamics>
-            <f />
-            </dynamics>
-          </direction-type>
-        </direction>
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -3993,6 +4269,13 @@
         </note>
       </measure>
     <measure number="69">
+      <harmony print-frame="no">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="6">major-sixth</kind>
+        </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -4048,6 +4331,13 @@
         </note>
       </measure>
     <measure number="70">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -4106,6 +4396,13 @@
         </note>
       </measure>
     <measure number="71">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -4124,6 +4421,17 @@
         <duration>6</duration>
         <type>quarter</type>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        <degree>
+          <degree-value>4</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+          </degree>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -4179,6 +4487,13 @@
         </note>
       </measure>
     <measure number="72">
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -4237,6 +4552,13 @@
         </note>
       </measure>
     <measure number="73">
+      <harmony print-frame="no">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="6">major-sixth</kind>
+        </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -4292,6 +4614,13 @@
         </note>
       </measure>
     <measure number="74">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -4350,6 +4679,13 @@
         </note>
       </measure>
     <measure number="75">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -4368,6 +4704,17 @@
         <duration>6</duration>
         <type>quarter</type>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        <degree>
+          <degree-value>4</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+          </degree>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -4426,6 +4773,13 @@
         </barline>
       </measure>
     <measure number="76">
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -4484,6 +4838,13 @@
         </note>
       </measure>
     <measure number="77">
+      <harmony print-frame="no">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="6">major-sixth</kind>
+        </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -4539,6 +4900,13 @@
         </note>
       </measure>
     <measure number="78">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -4597,6 +4965,13 @@
         </note>
       </measure>
     <measure number="79">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -4615,6 +4990,17 @@
         <duration>6</duration>
         <type>quarter</type>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        <degree>
+          <degree-value>4</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+          </degree>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -4670,6 +5056,13 @@
         </note>
       </measure>
     <measure number="80">
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -4728,6 +5121,13 @@
         </note>
       </measure>
     <measure number="81">
+      <harmony print-frame="no">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="6">major-sixth</kind>
+        </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -4783,6 +5183,13 @@
         </note>
       </measure>
     <measure number="82">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -4841,6 +5248,13 @@
         </note>
       </measure>
     <measure number="83">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -4859,6 +5273,17 @@
         <duration>6</duration>
         <type>quarter</type>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        <degree>
+          <degree-value>4</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+          </degree>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
