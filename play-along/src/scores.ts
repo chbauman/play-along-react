@@ -108,15 +108,7 @@ const saufiSaufiMM = {
   200: 115,
 };
 const sosMM = { 3: 3, 37: 33, 71: 63, 106: 94, 140: 125, 172: 153 };
-const htrjMM = {
-  6: 6,
-  25: 20,
-  39: 30,
-  61: 46,
-  78: 58,
-  97: 72,
-  114: 84,
-};
+const htrjMM = { 6: 6, 25: 20, 39: 30, 61: 46, 78: 58, 97: 72, 114: 84 };
 const horrMM = { 5: 2, 37: 26, 69: 50, 101: 74, 133: 98 };
 const sidnrMM = {
   1: 1,
@@ -1158,6 +1150,12 @@ export const scores: ScoreInfo[] = [
     measureMap: { 5: 3, 169: 85 },
     fileName: "Alle_Jlaeser",
     name: "Alle Jläser Huh - Kasalla",
+  },
+  {
+    videoId: "UhZwKNqDXwE",
+    measureMap: { 5: 1, 88: 49, 157: 89, 181: 103, 187: 105, 212: 120 },
+    fileName: "Nie_Mehr_Fastelovend",
+    name: "Nie mehr Fastelovend - Querbeat",
   },
 ];
 
