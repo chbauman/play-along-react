@@ -1157,6 +1157,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Nie_Mehr_Fastelovend",
     name: "Nie mehr Fastelovend - Querbeat",
   },
+  {
+    videoId: "FT10d7tiKsM",
+    measureMap: { 3: 2, 30: 18, 205: 120 },
+    fileName: "Figli",
+    name: "Figli di Pitagora - Gabry Ponte ft. Little Tony",
+  },
 ];
 
 if (DEBUG) {
