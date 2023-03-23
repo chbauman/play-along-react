@@ -174,7 +174,7 @@
         <direction-type>
           <metronome parentheses="no">
             <beat-unit>half</beat-unit>
-            <per-minute>90</per-minute>
+            <per-minute>85</per-minute>
             </metronome>
           </direction-type>
         </direction>
@@ -1639,7 +1639,7 @@
           <metronome parentheses="no">
             <beat-unit>quarter</beat-unit>
             <beat-unit-dot />
-            <per-minute>120</per-minute>
+            <per-minute>110</per-minute>
             </metronome>
           </direction-type>
         </direction>
@@ -2805,7 +2805,7 @@
         <direction-type>
           <metronome parentheses="no">
             <beat-unit>quarter</beat-unit>
-            <per-minute>160</per-minute>
+            <per-minute>150</per-minute>
             </metronome>
           </direction-type>
         </direction>
@@ -3868,7 +3868,7 @@
           <metronome parentheses="no">
             <beat-unit>quarter</beat-unit>
             <beat-unit-dot />
-            <per-minute>120</per-minute>
+            <per-minute>110</per-minute>
             </metronome>
           </direction-type>
         </direction>
@@ -15383,10 +15383,20 @@
         </note>
       </measure>
     <measure number="2">
+      <direction placement="below">
+        <direction-type>
+          <wedge type="crescendo" number="1" />
+          </direction-type>
+        </direction>
       <note>
         <rest measure="yes" />
         <duration>8</duration>
         </note>
+      <direction placement="below">
+        <direction-type>
+          <wedge type="stop" number="1" />
+          </direction-type>
+        </direction>
       <backup>
         <duration>8</duration>
         </backup>
@@ -15472,6 +15482,11 @@
         <instrument id="P5-I39" />
         <type>eighth</type>
         <beam number="1">begin</beam>
+        <notations>
+          <articulations>
+            <accent />
+            </articulations>
+          </notations>
         </note>
       <note>
         <unpitched>
@@ -15497,6 +15512,11 @@
         <instrument id="P5-I39" />
         <type>eighth</type>
         <beam number="1">begin</beam>
+        <notations>
+          <articulations>
+            <accent />
+            </articulations>
+          </notations>
         </note>
       <note>
         <unpitched>
