@@ -1163,6 +1163,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Figli",
     name: "Figli di Pitagora - Gabry Ponte ft. Little Tony",
   },
+  {
+    videoId: "oBf7otSstlw",
+    measureMap: { 13: 13, 162: 147 },
+    fileName: "Puttin_On_The_Ritz",
+    name: "Puttin' On The Ritz - Irving Berlin",
+  },
 ];
 
 if (DEBUG) {
