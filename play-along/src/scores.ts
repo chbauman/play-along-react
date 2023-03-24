@@ -1021,7 +1021,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "CGms1r5hqdA",
-    measureMap: { 8: 4, 10: 6, 44: 44, 65: 66 },
+    measureMap: { 8: 4, 10: 6, 44: 44, 65: 66, 81: 83, 95: 99 },
     fileName: "Mexican_Hat",
     name: "Mexican Hat Dance - The Mariachis (Jarabe Tapatio)",
   },
