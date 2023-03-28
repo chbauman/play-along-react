@@ -368,11 +368,6 @@
           <alter>-1</alter></pitch>
         <duration>2</duration>
         <type>eighth</type>
-        <notations>
-          <articulations>
-            <staccato />
-            </articulations>
-          </notations>
         </note>
       </measure>
     <measure number="7">
@@ -2548,11 +2543,6 @@
           <alter>-1</alter></pitch>
         <duration>2</duration>
         <type>eighth</type>
-        <notations>
-          <articulations>
-            <staccato />
-            </articulations>
-          </notations>
         </note>
       </measure>
     <measure number="7">
@@ -4565,6 +4555,13 @@
         </barline>
       </measure>
     <measure number="29">
+      <direction placement="below">
+        <direction-type>
+          <dynamics>
+            <f />
+            </dynamics>
+          </direction-type>
+        </direction>
       <note>
         <pitch>
           <step>C</step>
