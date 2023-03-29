@@ -1169,6 +1169,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Puttin_On_The_Ritz",
     name: "Puttin' On The Ritz - Irving Berlin",
   },
+  {
+    videoId: "LzIMvHZXjcU",
+    measureMap: { 15: 1, 29: 9, 202: 104 },
+    fileName: "Al_Pacino",
+    name: "Al Pacino - Timmy Trumpet ft. Krunk!",
+  },
 ];
 
 if (DEBUG) {
