@@ -1173,7 +1173,13 @@ export const scores: ScoreInfo[] = [
     videoId: "LzIMvHZXjcU",
     measureMap: { 15: 1, 29: 9, 202: 104 },
     fileName: "Al_Pacino",
-    name: "Al Pacino - Timmy Trumpet ft. Krunk!",
+    name: "Al Pacino - Timmy Trumpet & Krunk!",
+  },
+  {
+    videoId: "yduNsJeia7k",
+    measureMap: { 5: 1, 160: 108, 168: 112, 202: 144 },
+    fileName: "Koelsch",
+    name: "Kölsch statt Käsch - Miljö",
   },
 ];
 
