@@ -1181,6 +1181,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Koelsch",
     name: "Kölsch statt Käsch - Miljö",
   },
+  {
+    videoId: "O4irXQhgMqg",
+    measureMap: { 5: 4, 8: 5, 87: 57 },
+    fileName: "Paint_It_Black",
+    name: "Paint It, Black - The Rolling Stones",
+  },
 ];
 
 if (DEBUG) {
