@@ -1195,9 +1195,15 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "r3HLHf71vK0",
-    measureMap: { 7: 2 , 101: 90, 108: 96},
+    measureMap: { 7: 2, 101: 90, 108: 96 },
     fileName: "Eine_Insel",
     name: "Eine Insel mit zwei Bergen - Jim Knopf & Lukas",
+  },
+  {
+    videoId: "4DNGMoMNLRY",
+    measureMap: { 5: 1, 67: 67, 117: 117, 134: 135 },
+    fileName: "Toreadors",
+    name: "Les Toreadors - Georges Bizet",
   },
 ];
 
