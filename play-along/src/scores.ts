@@ -1187,6 +1187,18 @@ export const scores: ScoreInfo[] = [
     fileName: "Paint_It_Black",
     name: "Paint It, Black - The Rolling Stones",
   },
+  {
+    videoId: "jpZHGYrxj9A",
+    measureMap: { 1: 1, 272: 121 },
+    fileName: "Bello_E_Impossibile",
+    name: "Bello e impossibile - Gianna Nannini",
+  },
+  {
+    videoId: "r3HLHf71vK0",
+    measureMap: { 7: 2 , 101: 90, 108: 96},
+    fileName: "Eine_Insel",
+    name: "Eine Insel mit zwei Bergen - Jim Knopf & Lukas",
+  },
 ];
 
 if (DEBUG) {
