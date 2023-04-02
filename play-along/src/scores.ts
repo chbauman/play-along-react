@@ -1217,6 +1217,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Clap_Your_Hands",
     name: "Clap Your Hands - Kungs",
   },
+  {
+    videoId: "IsUxZC9dUgo",
+    measureMap: { 24: 1, 81: 32 },
+    fileName: "Lipka",
+    name: "Lipka - Rokiczanka",
+  },
 ];
 
 if (DEBUG) {
