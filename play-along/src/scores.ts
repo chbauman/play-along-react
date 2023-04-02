@@ -1205,6 +1205,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Toreadors",
     name: "Les Toreadors - Georges Bizet",
   },
+  {
+    videoId: "tINyMbNZytI",
+    measureMap: { 3: 1, 135: 69 },
+    fileName: "Comment_Dire_Adieu",
+    name: "Comment te dire adieu - Françoise Hardy",
+  },
 ];
 
 if (DEBUG) {
