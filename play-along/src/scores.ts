@@ -1211,6 +1211,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Comment_Dire_Adieu",
     name: "Comment te dire adieu - Françoise Hardy",
   },
+  {
+    videoId: "ZckaCTKFBXU",
+    measureMap: { 10: 1, 178: 88 },
+    fileName: "Clap_Your_Hands",
+    name: "Clap Your Hands - Kungs",
+  },
 ];
 
 if (DEBUG) {
