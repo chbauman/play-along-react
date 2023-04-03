@@ -1223,6 +1223,18 @@ export const scores: ScoreInfo[] = [
     fileName: "Lipka",
     name: "Lipka - Rokiczanka",
   },
+  {
+    videoId: "zpzdgmqIHOQ",
+    measureMap: { 6: 1, 211: 171 },
+    fileName: "La_Isla",
+    name: "La Isla Bonita - Madonna",
+  },
+  {
+    videoId: "pUiAhclmvfE",
+    measureMap: { 9: 1, 57: 35, 139: 93 },
+    fileName: "African_Beat",
+    name: "African Beat - Bert Kaempfert",
+  },
 ];
 
 if (DEBUG) {
