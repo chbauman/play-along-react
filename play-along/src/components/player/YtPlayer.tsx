@@ -40,8 +40,23 @@ const FoundYtScore = ({ scoreInfo }: { scoreInfo: ScoreInfo }) => {
   return wrapWithNav(partSel, scoreInfo.name, false);
 };
 
+/** YouTube player hook. */
+const useYoutubePlayer = (videoId: string) => {
+  const playerRef = useRef<any>();
+
+  const getTime = useCallback(async () => {
+    return await playerRef.current.getInternalPlayer().getCurrentTime();
+  }, [playerRef]);
+
+  const comp = (
+    <YoutubePlayer playerRef={playerRef} videoId={videoId}></YoutubePlayer>
+  );
+
+  return { comp, getTime } as Player;
+};
+
 /** Youtube video player component. */
-export const YoutubePlayer = ({
+const YoutubePlayer = ({
   videoId,
   playerRef,
 }: {
@@ -64,19 +79,4 @@ export const YoutubePlayer = ({
     onReady: () => console.log(`I'm ready, loaded ${videoId}!`),
   });
   return <div style={{ ...playerSizePx, margin: "auto" }}>{yt}</div>;
-};
-
-/** YouTube player hook. */
-export const useYoutubePlayer = (videoId: string) => {
-  const playerRef = useRef<any>();
-
-  const getTime = useCallback(async () => {
-    return await playerRef.current.getInternalPlayer().getCurrentTime();
-  }, [playerRef]);
-
-  const comp = (
-    <YoutubePlayer playerRef={playerRef} videoId={videoId}></YoutubePlayer>
-  );
-
-  return { comp, getTime } as Player;
 };
