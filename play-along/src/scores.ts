@@ -1235,6 +1235,12 @@ export const scores: ScoreInfo[] = [
     fileName: "African_Beat",
     name: "African Beat - Bert Kaempfert",
   },
+  {
+    videoId: "bDygS0a6Tgo",
+    measureMap: { 13: 2, 227: 93 },
+    fileName: "The_Riddle",
+    name: "The Riddle - Nik Kershaw",
+  },
 ];
 
 if (DEBUG) {
