@@ -6,10 +6,12 @@ import { Help } from "./components/Help";
 import { ListScores } from "./components/ListScores";
 import { AudioScoreRoute } from "./components/player/AudioPlayer";
 import { Home } from "./components/Home";
+import { SCScoreRoute } from "./components/player/SoundCloudPlayer";
 
 const router = createHashRouter([
   { path: "/", element: <Home /> },
   { path: "/yt/:scoreId", element: <YtScoreRoute /> },
+  { path: "/sc/:scoreId", element: <SCScoreRoute /> },
   { path: "/settings", element: <Settings /> },
   { path: "/help", element: <Help /> },
   { path: "/listall", element: <ListScores /> },
