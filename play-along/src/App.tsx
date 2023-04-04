@@ -1,5 +1,5 @@
 import "./App.css";
-import { ScoreRoute } from "./components/ScoreSelector";
+import { YtScoreRoute } from "./components/player/YtPlayer";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import { Settings } from "./components/Settings";
 import { Help } from "./components/Help";
@@ -9,7 +9,7 @@ import { Home } from "./components/Home";
 
 const router = createHashRouter([
   { path: "/", element: <Home /> },
-  { path: "/yt/:scoreId", element: <ScoreRoute /> },
+  { path: "/yt/:scoreId", element: <YtScoreRoute /> },
   { path: "/settings", element: <Settings /> },
   { path: "/help", element: <Help /> },
   { path: "/listall", element: <ListScores /> },
