@@ -4,7 +4,7 @@ import { createHashRouter, RouterProvider } from "react-router-dom";
 import { Settings } from "./components/Settings";
 import { Help } from "./components/Help";
 import { ListScores } from "./components/ListScores";
-import { AudioScoreRoute } from "./components/AudioPlayer";
+import { AudioScoreRoute } from "./components/player/AudioPlayer";
 import { Home } from "./components/Home";
 
 const router = createHashRouter([

@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import ReactAudioPlayer from "react-audio-player";
 import { Container } from "react-bootstrap";
-import { MeasureMap } from "../scores";
-import { wrapWithNav } from "./NavBar";
-import { PartSelector } from "./PartSelector";
+import { MeasureMap } from "../../scores";
+import { wrapWithNav } from "../NavBar";
+import { PartSelector } from "../PartSelector";
 import { useParams } from "react-router-dom";
-import { playerSizePx } from "./player/YtPlayer";
-import { getAudioScores } from "../audio/util";
+import { playerSizePx } from "./YtPlayer";
+import { getAudioScores } from "../../audio/util";
 
 export const AudioScoreRoute = () => {
   let { scoreId, audioId } = useParams();
@@ -36,18 +36,18 @@ export const AudioPlayer = ({
   const [measureMap, setMM] = useState<null | MeasureMap>(null);
 
   useEffect(() => {
-    // Todo: Rewrite with await
-    fetch(measureJson)
-      .then((res) => res.json())
-      .then((jData) => {
-        const measureMap: MeasureMap = {};
-        const [times, bars] = [jData.times, jData.bars];
-        const nAnchors = bars.length;
-        for (let k = 0; k < nAnchors; ++k) {
-          measureMap[times[k]] = bars[k];
-        }
-        setMM(measureMap);
-      });
+    const setMeasureMap = async () => {
+      const res = await fetch(measureJson);
+      const jData = await res.json();
+      const measureMap: MeasureMap = {};
+      const [times, bars] = [jData.times, jData.bars];
+      const nAnchors = bars.length;
+      for (let k = 0; k < nAnchors; ++k) {
+        measureMap[times[k]] = bars[k];
+      }
+      setMM(measureMap);
+    };
+    setMeasureMap();
   }, [measureJson]);
 
   if (measureMap === null) {
