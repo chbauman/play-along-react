@@ -8,8 +8,7 @@ import argparse
 import copy
 import json
 import subprocess
-from typing import Iterable, Optional
-import warnings
+from typing import Optional
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
