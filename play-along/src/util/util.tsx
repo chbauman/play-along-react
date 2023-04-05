@@ -202,7 +202,7 @@ export const transpose = (
         const oct = clef === "bass" ? newOct + 1 : newOct;
         const valOct = valveFingering[oct - fingerOctave];
         let val = valOct !== undefined ? valOct[idx] : undefined;
-        if (val !== undefined) {
+        if (val !== undefined && fingering !== "none") {
           if (fingering === "trombone") {
             val = toTrombone[val];
           }
