@@ -6,6 +6,7 @@ import { strLatinise } from "../util/sorting";
 import { getCopiedScores } from "../util/util";
 import { wrapWithNav } from "./NavBar";
 import { ScoreTable } from "./ScoreTable";
+import { getCopiedSCScores } from "./player/SoundCloudPlayer";
 
 export const sortBy = ["name", "artist"] as const;
 export const sortByNames = { name: "Song Name", artist: "Artist" };
@@ -67,7 +68,7 @@ const useSortedScores = () => {
 };
 
 /** Hook for filtering and sorting scores. */
-const useProcessedScores = (audio?: string) => {
+const useProcessedScores = (audioCollId?: string, sub?: string) => {
   const [filterS, filterForm] = useScoreFilter();
   const sortInfo = useSortedScores();
   const comp = (
@@ -96,36 +97,35 @@ const useProcessedScores = (audio?: string) => {
   };
 
   let scores = null;
-  if (audio === undefined) {
-    scores = filterAndSort(getCopiedScores());
+  if (audioCollId !== undefined) {
+    scores = filterAndSort(getAudioScores(audioCollId));
+  } else {
+    if (sub === "yt") {
+      scores = filterAndSort(getCopiedScores());
+    } else {
+      console.assert(sub === "sc");
+      scores = filterAndSort(getCopiedSCScores());
+    }
   }
 
-  let audioScores = null;
-  if (audio !== undefined) {
-    audioScores = filterAndSort(getAudioScores(audio));
-  }
-
-  return { scores, audioScores, comp, sortInfo };
+  return { scores, comp, sortInfo };
 };
 
 /** Lists all available scores. */
-export const ListScores = () => {
+export const ListScores = ({ sub }: { sub?: string }) => {
   const params = useParams();
   const audioId = params.audioId;
 
-  const { scores, audioScores, comp, sortInfo } = useProcessedScores(audioId);
-  const scoreTable = scores ? (
-    <ScoreTable scores={scores} sortInfo={sortInfo} sub="yt" />
-  ) : null;
-  const audioScoreTable = audioScores ? (
-    <ScoreTable scores={audioScores} sub={audioId!} sortInfo={sortInfo} />
-  ) : null;
+  const { scores, comp, sortInfo } = useProcessedScores(audioId, sub);
+  const subNN = sub ? sub : audioId;
+  const scoreTable = (
+    <ScoreTable scores={scores} sortInfo={sortInfo} sub={subNN!} />
+  );
 
   const fullComp = (
     <>
       {comp}
       {scoreTable}
-      {audioScoreTable}
     </>
   );
   return wrapWithNav(fullComp, "All Scores");

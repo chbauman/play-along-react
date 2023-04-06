@@ -1,5 +1,5 @@
 import { getClef } from "../components/Settings";
-import { scores } from "../scores";
+import { ScoreInfo, scores } from "../scores";
 
 export const DEBUG = false;
 
@@ -252,8 +252,9 @@ const addFingering = (xml: Document, noteEl: Element, val: string) => {
   }
 };
 
-export const getCopiedScores = () => {
-  const scoresWithIndex = scores.map((score) => {
+export const getCopiedScores = (scoreList?: ScoreInfo[]) => {
+  const scoreNotNull = scoreList ? scoreList : scores;
+  const scoresWithIndex = scoreNotNull.map((score) => {
     // Score name must NOT contain dashes (-)!!
     // Artist name may contain dashes.
     const parts = score.name.split("-");

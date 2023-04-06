@@ -6,6 +6,7 @@ import { Player } from "./util";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { SC } from "../../util/sc.js";
 import { playerSizePx } from "./YtPlayer";
+import { getCopiedScores } from "../../util/util";
 
 const soundCloudScores: ScoreInfo[] = [
   {
@@ -16,6 +17,9 @@ const soundCloudScores: ScoreInfo[] = [
   },
 ];
 
+export const getCopiedSCScores = () => {
+  return getCopiedScores(soundCloudScores);
+};
 export const SCScoreRoute = () => {
   let { scoreId } = useParams();
 
