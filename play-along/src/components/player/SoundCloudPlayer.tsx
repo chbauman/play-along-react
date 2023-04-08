@@ -11,7 +11,7 @@ import { getCopiedScores } from "../../util/util";
 const soundCloudScores: ScoreInfo[] = [
   {
     videoId: "1422120235",
-    measureMap: { 3: 1, 33: 15, 65: 30, 123: 57 },
+    measureMap: { 3: 1, 33: 15, 65: 30, 123: 57, 162: 75, 222: 103 },
     fileName: "Foerderband",
     name: "Foerderband - Codenzi",
   },

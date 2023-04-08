@@ -96,16 +96,14 @@ const useProcessedScores = (audioCollId?: string, sub?: string) => {
     return scores;
   };
 
+  const subNN = sub ? sub : audioCollId;
   let scores = null;
-  if (audioCollId !== undefined) {
-    scores = filterAndSort(getAudioScores(audioCollId));
+  if (subNN === "yt") {
+    scores = filterAndSort(getCopiedScores());
+  } else if (subNN === "sc") {
+    scores = filterAndSort(getCopiedSCScores());
   } else {
-    if (sub === "yt") {
-      scores = filterAndSort(getCopiedScores());
-    } else {
-      console.assert(sub === "sc");
-      scores = filterAndSort(getCopiedSCScores());
-    }
+    scores = filterAndSort(getAudioScores(audioCollId));
   }
 
   return { scores, comp, sortInfo };
