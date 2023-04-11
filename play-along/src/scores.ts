@@ -400,7 +400,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "QCTkqF6lX-c",
-    measureMap: { 11: 2, 30: 9, 50: 21, 116: 61 },
+    measureMap: { 11: 2, 30: 9, 50: 21, 116: 61, 182: 101 },
     fileName: "Hoch_Die_Haende",
     name: "Hoch die Hände Wochenende - Fäaschtbänkler, Finch & HBz",
   },
