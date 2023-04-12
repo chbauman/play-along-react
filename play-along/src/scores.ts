@@ -1241,6 +1241,12 @@ export const scores: ScoreInfo[] = [
     fileName: "The_Riddle",
     name: "The Riddle - Nik Kershaw",
   },
+  {
+    videoId: "zL3DVhH21h0",
+    measureMap: { 5:4, 184: 130 },
+    fileName: "Quellkartoffel",
+    name: "Quellkartoffel und Dupp Dupp - Adam & Die Mickys",
+  },
 ];
 
 if (DEBUG) {
