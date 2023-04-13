@@ -1243,7 +1243,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "zL3DVhH21h0",
-    measureMap: { 5:4, 184: 130 },
+    measureMap: { 5: 4, 184: 130 },
     fileName: "Quellkartoffel",
     name: "Quellkartoffel und Dupp Dupp - Adam & Die Mickys",
   },
@@ -1252,6 +1252,12 @@ export const scores: ScoreInfo[] = [
     measureMap: { 16: 10, 256: 145 },
     fileName: "Tobogan",
     name: "Tobogan - Zoo",
+  },
+  {
+    videoId: "Qq4j1LtCdww",
+    measureMap: { 9: 1, 83: 37, 183: 86, 252: 121 },
+    fileName: "Poison",
+    name: "Poison - Alice Cooper",
   },
 ];
 
