@@ -1259,6 +1259,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Poison",
     name: "Poison - Alice Cooper",
   },
+  {
+    videoId: "JatPVNqLm-A",
+    measureMap: { 4: 1, 136: 119 },
+    fileName: "Scotland_The_Brave",
+    name: "Scotland The Brave - John McDermott",
+  },
 ];
 
 if (DEBUG) {
