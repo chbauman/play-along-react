@@ -1247,6 +1247,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Quellkartoffel",
     name: "Quellkartoffel und Dupp Dupp - Adam & Die Mickys",
   },
+  {
+    videoId: "_osKWtnL8sU",
+    measureMap: { 16: 10, 256: 145 },
+    fileName: "Tobogan",
+    name: "Tobogan - Zoo",
+  },
 ];
 
 if (DEBUG) {
