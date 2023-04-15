@@ -1271,6 +1271,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Viva_Espana",
     name: "Y Viva Espana - Los Altos Barcelona",
   },
+  {
+    videoId: "odWKEfp2QMY",
+    measureMap: { 16: 1, 20: 3, 249: 127 },
+    fileName: "The_Lonliest",
+    name: "The Lonliest - Måneskin",
+  },
 ];
 
 if (DEBUG) {
