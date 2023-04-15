@@ -1265,6 +1265,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Scotland_The_Brave",
     name: "Scotland The Brave - John McDermott",
   },
+  {
+    videoId: "m2tQUKg90dg",
+    measureMap: { 8: 9, 199: 215 },
+    fileName: "Viva_Espana",
+    name: "Y Viva Espana - Los Altos Barcelona",
+  },
 ];
 
 if (DEBUG) {
