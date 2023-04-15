@@ -1277,6 +1277,12 @@ export const scores: ScoreInfo[] = [
     fileName: "The_Lonliest",
     name: "The Lonliest - Måneskin",
   },
+  {
+    videoId: "pIgZ7gMze7A",
+    measureMap: { 1: 2, 200: 137 },
+    fileName: "Wake_Me_Up",
+    name: "Wake Me Up Before You Go Go - Wham!",
+  },
 ];
 
 if (DEBUG) {
