@@ -1289,6 +1289,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Every_Breath_You_Take",
     name: "Every Breath You Take - The Police",
   },
+  {
+    videoId: "5mU-240ogJE",
+    measureMap: { 4: 3, 120: 95, 191: 151, 202: 160 },
+    fileName: "Feel_Alive",
+    name: "Feel Alive - Re-Style ft. Cammie Robinson",
+  },
 ];
 
 if (DEBUG) {
