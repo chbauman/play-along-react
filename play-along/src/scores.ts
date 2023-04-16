@@ -1283,6 +1283,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Wake_Me_Up",
     name: "Wake Me Up Before You Go Go - Wham!",
   },
+  {
+    videoId: "OMOGaugKpzs",
+    measureMap: { 5: 3, 83: 41, 179: 88, 220: 108 },
+    fileName: "Every_Breath_You_Take",
+    name: "Every Breath You Take - The Police",
+  },
 ];
 
 if (DEBUG) {
