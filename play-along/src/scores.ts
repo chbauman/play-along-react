@@ -1295,6 +1295,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Feel_Alive",
     name: "Feel Alive - Re-Style ft. Cammie Robinson",
   },
+  {
+    videoId: "n3I5qjTbpww",
+    measureMap: { 4: 3, 188: 118 },
+    fileName: "Trinity_Till_Infinity",
+    name: "Trinity Till Infinity - Sub Zero Project & Devin Wild",
+  },
 ];
 
 if (DEBUG) {
