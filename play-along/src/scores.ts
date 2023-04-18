@@ -1261,7 +1261,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "JatPVNqLm-A",
-    measureMap: { 4: 1, 136: 119 },
+    measureMap: { 4: 1, 136: 120 },
     fileName: "Scotland_The_Brave",
     name: "Scotland The Brave - John McDermott",
   },
@@ -1300,6 +1300,12 @@ export const scores: ScoreInfo[] = [
     measureMap: { 4: 3, 188: 118 },
     fileName: "Trinity_Till_Infinity",
     name: "Trinity Till Infinity - Sub Zero Project & Devin Wild",
+  },
+  {
+    videoId: "nyRcYvxiJnE",
+    measureMap: { 2: 2, 180: 96 },
+    fileName: "Helele",
+    name: "Helele - Safari Duo",
   },
 ];
 
