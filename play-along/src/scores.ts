@@ -1319,6 +1319,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Une_Fleur",
     name: "Une fleur dans le cœur - Therion",
   },
+  {
+    videoId: "yCC_b5WHLX0",
+    measureMap: { 4: 2, 216: 78 },
+    fileName: "Listen_To_Your_Heart",
+    name: "Listen To Your Heart - Roxette",
+  },
 ];
 
 if (DEBUG) {
