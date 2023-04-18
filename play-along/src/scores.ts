@@ -1307,6 +1307,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Helele",
     name: "Helele - Safari Duo",
   },
+  {
+    videoId: "-GmGgiCzNzY",
+    measureMap: { 2: 2, 203: 117 },
+    fileName: "Drei_Weisse_Tauben",
+    name: "Drei Weisse Tauben - EAV",
+  },
 ];
 
 if (DEBUG) {
