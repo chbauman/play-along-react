@@ -1313,6 +1313,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Drei_Weisse_Tauben",
     name: "Drei Weisse Tauben - EAV",
   },
+  {
+    videoId: "VISZZ4DwQbI",
+    measureMap: { 2: 2, 171: 96, 175: 98 },
+    fileName: "Une_Fleur",
+    name: "Une fleur dans le cœur - Therion",
+  },
 ];
 
 if (DEBUG) {
