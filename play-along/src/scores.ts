@@ -1325,6 +1325,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Listen_To_Your_Heart",
     name: "Listen To Your Heart - Roxette",
   },
+  {
+    videoId: "ZmUdd8G0ToA",
+    measureMap: { 14: 8, 60: 31, 149: 75 },
+    fileName: "Sway",
+    name: "Sway - Dean Martin",
+  },
 ];
 
 if (DEBUG) {
