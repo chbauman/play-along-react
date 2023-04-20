@@ -1305,7 +1305,7 @@ export const scores: ScoreInfo[] = [
     videoId: "nyRcYvxiJnE",
     measureMap: { 2: 2, 180: 96 },
     fileName: "Helele",
-    name: "Helele - Safari Duo",
+    name: "Helele - Safri Duo",
   },
   {
     videoId: "-GmGgiCzNzY",
