@@ -1337,6 +1337,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Pinocchio",
     name: "Pinocchio: Viaggio In Groppa Al Tonno - Fiorenzo Carpi",
   },
+  {
+    videoId: "FenKVtzRr0I",
+    measureMap: { 5: 4, 225: 132 },
+    fileName: "Freedom",
+    name: "Freedom - Dj BoBo",
+  },
 ];
 
 if (DEBUG) {
