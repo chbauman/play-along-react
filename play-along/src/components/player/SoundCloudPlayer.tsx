@@ -20,6 +20,9 @@ const soundCloudScores: ScoreInfo[] = [
       222: 103,
       273: 127,
       333: 155,
+      385: 179,
+      1226: 192,
+      1362: 256
     },
     fileName: "Foerderband",
     name: "Foerderband - Codenzi",
