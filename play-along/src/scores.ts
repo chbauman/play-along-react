@@ -1331,6 +1331,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Sway",
     name: "Sway - Dean Martin",
   },
+  {
+    videoId: "0gdYwKDQKq0",
+    measureMap: { 3: 3, 87: 97 },
+    fileName: "Pinocchio",
+    name: "Pinocchio: Viaggio In Groppa Al Tonno - Fiorenzo Carpi",
+  },
 ];
 
 if (DEBUG) {
