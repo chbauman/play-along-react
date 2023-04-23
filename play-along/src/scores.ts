@@ -1343,6 +1343,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Freedom",
     name: "Freedom - Dj BoBo",
   },
+  {
+    videoId: "mT__1G54qNo",
+    measureMap: { 5: 1, 149: 78 },
+    fileName: "Humpa_Humpa",
+    name: "Humpa Humpa - Fäaschtbänkler",
+  },
 ];
 
 if (DEBUG) {
