@@ -613,7 +613,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "qYyaKNvcKEA",
-    measureMap: { 12: 3, 56: 45, 104: 92 },
+    measureMap: { 12: 3, 56: 45, 104: 91 },
     fileName: "Santiano",
     name: "Santiano - Les Marins D'Iroise",
   },
