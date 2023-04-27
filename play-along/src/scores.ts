@@ -1349,6 +1349,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Humpa_Humpa",
     name: "Humpa Humpa - Fäaschtbänkler",
   },
+  {
+    videoId: "W8d46CCOlyU",
+    measureMap: { 5: 3, 148: 64, 259: 112, 324: 140 },
+    fileName: "Marinero",
+    name: "Marinero - Milva",
+  },
 ];
 
 if (DEBUG) {
