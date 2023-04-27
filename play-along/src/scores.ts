@@ -1355,6 +1355,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Marinero",
     name: "Marinero - Milva",
   },
+  {
+    videoId: "Sj1PwJO15j4",
+    measureMap: { 5: 5, 69: 71 },
+    fileName: "Poland",
+    name: "Poland - Derek Fiechter",
+  },
 ];
 
 if (DEBUG) {
