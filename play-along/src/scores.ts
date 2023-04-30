@@ -1357,7 +1357,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "Sj1PwJO15j4",
-    measureMap: { 5: 5, 69: 71 },
+    measureMap: { 5: 5, 185: 191 },
     fileName: "Poland",
     name: "Poland - Derek Fiechter",
   },
