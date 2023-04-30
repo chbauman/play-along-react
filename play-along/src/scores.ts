@@ -1361,6 +1361,18 @@ export const scores: ScoreInfo[] = [
     fileName: "Poland",
     name: "Poland - Derek Fiechter",
   },
+  {
+    videoId: "UvmWtbY6z5g",
+    measureMap: { 1: 2, 190: 105 },
+    fileName: "Handjes",
+    name: "Handjes Draaien - K3",
+  },
+  {
+    videoId: "Zp40yUFNXqs",
+    measureMap: { 1: 2, 251: 158 },
+    fileName: "Entre_Poetas_Y_Presos",
+    name: "Entre Poetas y Presos - La Raíz",
+  },
 ];
 
 if (DEBUG) {
