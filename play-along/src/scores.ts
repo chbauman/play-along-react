@@ -1373,6 +1373,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Entre_Poetas_Y_Presos",
     name: "Entre Poetas y Presos - La Raíz",
   },
+  {
+    videoId: "bnLgP-Ge6CI",
+    measureMap: { 2: 2, 194: 102 },
+    fileName: "Goeschene_Airolo",
+    name: "Göschene Airolo - Stubete Gäng",
+  },
 ];
 
 if (DEBUG) {
