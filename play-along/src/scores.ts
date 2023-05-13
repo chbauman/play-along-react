@@ -1379,6 +1379,18 @@ export const scores: ScoreInfo[] = [
     fileName: "Goeschene_Airolo",
     name: "Göschene Airolo - Stubete Gäng",
   },
+  {
+    videoId: "ZUtAe5PUKtE",
+    measureMap: { 11: 5, 171: 63 },
+    fileName: "Mad_World",
+    name: "Mad World - Gary Jules",
+  },
+  {
+    videoId: "GcG4vXi4eqc",
+    measureMap: { 3: 2, 199: 115 },
+    fileName: "Rumadai",
+    name: "Rumadai - Arsenium",
+  },
 ];
 
 if (DEBUG) {
