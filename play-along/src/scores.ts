@@ -1391,6 +1391,18 @@ export const scores: ScoreInfo[] = [
     fileName: "Rumadai",
     name: "Rumadai - Arsenium",
   },
+  {
+    videoId: "7cjL-31ZQRA",
+    measureMap: { 20: 2, 231: 121 },
+    fileName: "Lets_Talk",
+    name: "Let's Talk About A Man - Prezioso ft. Marvin",
+  },
+  {
+    videoId: "XZVpR3Pk-r8",
+    measureMap: { 7: 6, 139: 85 },
+    fileName: "Tainted_Love",
+    name: "Tainted Love - Soft Cell",
+  },
 ];
 
 if (DEBUG) {
