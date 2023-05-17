@@ -1403,6 +1403,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Tainted_Love",
     name: "Tainted Love - Soft Cell",
   },
+  {
+    videoId: "t72sFTaIQwM",
+    measureMap: {2:1, 192: 102 },
+    fileName: "Johnny_Blue",
+    name: "Johnny Blue - Gestört aber GeiL",
+  },
 ];
 
 if (DEBUG) {
