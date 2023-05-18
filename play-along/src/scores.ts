@@ -1405,9 +1405,15 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "t72sFTaIQwM",
-    measureMap: {2:1, 192: 102 },
+    measureMap: { 2: 1, 192: 102 },
     fileName: "Johnny_Blue",
     name: "Johnny Blue - Gestört aber GeiL",
+  },
+  {
+    videoId: "JiqDOoghs50",
+    measureMap: { 12: 1, 83: 24, 85: 25, 211: 66 },
+    fileName: "Life_Goes_On",
+    name: "Life Goes On - Ed Sheeran",
   },
 ];
 
