@@ -1415,6 +1415,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Life_Goes_On",
     name: "Life Goes On - Ed Sheeran",
   },
+  {
+    videoId: "vFKr2k5gYzM",
+    measureMap: { 10: 13, 53: 67, 133: 167, 181: 227 },
+    fileName: "Vogelwiese_Hbz",
+    name: "Auf Der Vogelwiese (Oktoberfest Remix) - HBz",
+  },
 ];
 
 if (DEBUG) {
