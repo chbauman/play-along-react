@@ -1421,6 +1421,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Vogelwiese_Hbz",
     name: "Auf Der Vogelwiese (Oktoberfest Remix) - HBz",
   },
+  {
+    videoId: "ntXJJwEk1NA",
+    measureMap: { 8: 2, 106: 56 },
+    fileName: "Indiana_Jones",
+    name: "Indiana Jones (Main Theme) - John Williams",
+  },
 ];
 
 if (DEBUG) {
