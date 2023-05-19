@@ -1405,7 +1405,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "t72sFTaIQwM",
-    measureMap: { 2: 1, 192: 102 },
+    measureMap: { 2: 1, 192: 101 },
     fileName: "Johnny_Blue",
     name: "Johnny Blue - Gestört aber GeiL",
   },
@@ -1423,7 +1423,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "ntXJJwEk1NA",
-    measureMap: { 8: 2, 106: 56 },
+    measureMap: { 8: 5, 106: 59 },
     fileName: "Indiana_Jones",
     name: "Indiana Jones (Main Theme) - John Williams",
   },
@@ -1431,7 +1431,7 @@ export const scores: ScoreInfo[] = [
     videoId: "Zowt0s4Vsxc",
     measureMap: { 25: 8, 226: 64 },
     fileName: "Lux_Aeterna",
-    name: "Lux Aeterna - Clint Mansell",
+    name: "Lux Aeterna (Requiem for a Dream) - Clint Mansell",
   },
 ];
 
