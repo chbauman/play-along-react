@@ -1427,6 +1427,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Indiana_Jones",
     name: "Indiana Jones (Main Theme) - John Williams",
   },
+  {
+    videoId: "Zowt0s4Vsxc",
+    measureMap: { 25: 8, 226: 64 },
+    fileName: "Lux_Aeterna",
+    name: "Lux Aeterna - Clint Mansell",
+  },
 ];
 
 if (DEBUG) {
