@@ -1433,6 +1433,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Lux_Aeterna",
     name: "Lux Aeterna (Requiem for a Dream) - Clint Mansell",
   },
+  {
+    videoId: "4-43lLKaqBQ",
+    measureMap: { 10: 9, 95: 67 },
+    fileName: "House_of_the_Rising_Sun",
+    name: "House of the Rising Sun - The Animals",
+  },
 ];
 
 if (DEBUG) {
