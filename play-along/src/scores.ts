@@ -1439,6 +1439,12 @@ export const scores: ScoreInfo[] = [
     fileName: "House_of_the_Rising_Sun",
     name: "House of the Rising Sun - The Animals",
   },
+  {
+    videoId: "IC6uXVGVnq0",
+    measureMap: { 9: 5, 29: 15, 61: 31, 128: 66 },
+    fileName: "Dont_Let_Me_Be_Misunderstood",
+    name: "Don't Let Me Be Misunderstood - The Animals",
+  },
 ];
 
 if (DEBUG) {
