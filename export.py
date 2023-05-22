@@ -12,14 +12,14 @@ from typing import Optional
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+from mxlpy import Paths, get_unrolled_measure_indices
+
 # PATHS
-MSCZ_SCORE_PATH = Path("C:/Users/Chrigi/Documents/GitHub/compositions/PlayAlong")
 MUSESCORE_EXE_PATH = Path("C:/Program Files/MuseScore 3/bin/MuseScore3.exe")
 PUBLIC_PATH = Path("play-along/public")
 XML_SCORES_PATH = PUBLIC_PATH / "scores"
 AUDIO_PATH = PUBLIC_PATH / "audio"
 
-assert MSCZ_SCORE_PATH.exists, f"Score directory {MSCZ_SCORE_PATH} not found!"
 assert MUSESCORE_EXE_PATH.exists(), f"Musescore not found at {MUSESCORE_EXE_PATH}!"
 assert XML_SCORES_PATH, f"XML output dir {XML_SCORES_PATH} does not exist!"
 
@@ -72,7 +72,7 @@ def main(n_process: Optional[int]):
     """Main function."""
 
     # Find all scores
-    all_paths = list(MSCZ_SCORE_PATH.rglob("*.mscz"))
+    all_paths = list(Paths.MSCZ_SCORE_PATH.rglob("*.mscz"))
     tot = len(all_paths)
     all_paths = reversed(sorted(all_paths, key=lambda p: p.lstat().st_mtime))
 
@@ -246,60 +246,25 @@ def unroll_repeats(out_mxml: Path):
     tree = ET.parse(out_mxml)
     root = tree.getroot()
 
-    # Search for repetitions in first part
-    reps = []
-    curr_start = None
-    first_house_start = None
-
     measures = root.findall(f".//part[@id='P1']/measure")
-    for ct, meas in enumerate(measures):
-        # Handle endings (houses)
-        ending = meas.find(".//ending")
-        if ending is not None:
-            end_attrs = ending.attrib
-            if end_attrs["number"] == "1" and end_attrs["type"] == "start":
-                first_house_start = ct
-
-        # Repeats ||:   :||
-        rep = meas.find(".//repeat")
-        if rep is not None:
-            direction = rep.attrib["direction"]
-            if direction == "forward":
-                assert curr_start is None
-                curr_start = ct
-            elif direction == "backward":
-                assert curr_start is not None, f"Backward at {ct}"
-                reps.append((curr_start, first_house_start, ct))
-                curr_start = None
-            else:
-                raise ValueError(f"Unknown direction {direction}!")
-
-    # Nothing to do if there are no repetitions
-    n_reps = len(reps)
-    if n_reps == 0:
-        return
-
-    print(f"Found {n_reps} repetitions: {reps}")
+    measure_indices = get_unrolled_measure_indices(measures)
 
     # Extend all parts
     parts = root.findall(f".//part")
     for part in parts:
         print(f"Part {part.attrib['id']}")
         curr_measures = part.findall(f"./measure")
+        n_meas = len(curr_measures)
 
-        curr_offset = 0
-        for rep in reps:
-            start_ct, first_h, end_ct = rep
-            n_measures = curr_offset + end_ct - start_ct + 1
+        # Insert new elements according to measure indices
+        for ct, extra_ct in enumerate(measure_indices):
+            meas_to_dup = curr_measures[extra_ct]
+            new_meas = copy.deepcopy(meas_to_dup)
+            part.insert(n_meas + ct, new_meas)
 
-            end_range = end_ct + 1
-            if first_h is not None:
-                end_range = first_h
-            for curr_ct in range(start_ct, end_range):
-                meas_to_dup = curr_measures[curr_ct]
-                new_meas = copy.deepcopy(meas_to_dup)
-                part.insert(curr_ct + n_measures, new_meas)
-            curr_offset += end_range - start_ct
+        # Remove original (linear) measures
+        for el in curr_measures:
+            part.remove(el)
 
     write_xml(tree, out_mxml)
 
