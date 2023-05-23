@@ -1,7 +1,7 @@
 """Musicxml python package."""
 from pathlib import Path
 import subprocess
-from typing import Dict, List
+from typing import Dict, List, Set
 import xml.etree.ElementTree as ET
 
 from mxlpy.repeat_analyzer import RepeatAnalyzer
@@ -69,20 +69,57 @@ def find_next_coda(measures: List[ET.Element], curr_ct: int) -> int:
     return curr_ct
 
 
+def clear_repeats(indices: List[int]) -> List[int]:
+    rev_idx = []
+    curr_min = indices[-1] + 1
+    for idx in reversed(indices):
+        if idx < curr_min:
+            curr_min = idx
+            rev_idx.append(idx)
+
+    return list(reversed(rev_idx))
+
+
+def handle_jump_back(
+    curr_indices: List[int], to_idx: int, end_idx: int, with_repeats: bool
+):
+    found_ct = None
+    first_end_encounter = None
+    last_end_encounter = None
+    for ct, idx in enumerate(curr_indices):
+        if idx == to_idx and found_ct is None:
+            found_ct = ct
+        if idx == end_idx:
+            if first_end_encounter is None:
+                first_end_encounter = ct
+            last_end_encounter = ct
+
+    end = last_end_encounter if with_repeats else first_end_encounter
+    if end is None:
+        end = len(curr_indices) - 1
+
+    add_indices = curr_indices[found_ct : (end + 1)]
+    if not with_repeats:
+        add_indices = clear_repeats(add_indices)
+    return [*curr_indices] + add_indices
+
+
 def get_unrolled_measure_indices(measures: List[ET.Element]) -> List[int]:
     rep_start_idx = 0
     rep_end_idx = None
     done_repeats = {}
+
     done_houses = set()
 
     done_backward_jumps = set()
-    enabled_coda_jumps_or_fine = set()
-    found_to_coda_or_fine = {}
     last_segno = None
     ds_dc_no_repeat = False
 
     analyzer = RepeatAnalyzer()
     analyzer.analyze_measures(measures)
+
+    to_coda = None
+    fine = None
 
     measure_indices = []
     ct = 0
@@ -117,48 +154,36 @@ def get_unrolled_measure_indices(measures: List[ET.Element]) -> List[int]:
                 if jump_kind is not None:
                     words.text = _to_std_map[jump_kind]
 
+        if jump_kind == "fine":
+            fine = ct
+        elif jump_kind == "tocoda":
+            to_coda = ct
+
         if jump_kind is not None and ct not in done_backward_jumps:
-            if jump_kind.startswith("dacapo"):
+            is_da_capo = jump_kind.startswith("dacapo")
+            is_dal_segno = jump_kind.startswith("dalsegno")
+            if is_da_capo:
                 jump = 0
-                done_backward_jumps.add(ct)
-                ds_dc_no_repeat = not with_rep
-                done_repeats = {}
-                done_houses = set()
-            if jump_kind.startswith("dalsegno"):
+            if is_dal_segno:
                 jump = last_segno
-                done_backward_jumps.add(ct)
-                ds_dc_no_repeat = not with_rep
                 last_segno = None
-                done_repeats = {}
-                done_houses = set()
+            if is_da_capo or is_dal_segno:
+                done_backward_jumps.add(ct)
+                end_idx = fine if fine is not None else to_coda
+                measure_indices.append(ct)
+                new_indices = handle_jump_back(measure_indices, jump, end_idx, with_rep)
+                measure_indices = new_indices
 
-        if jump is not None:
-            for to_coda in found_to_coda_or_fine:
-                if jump < to_coda <= ct:
-                    enabled_coda_jumps_or_fine.add(to_coda)
-
-        # Fine or coda jumps
-        if jump_kind in ["fine", "tocoda"]:
-            execute_jump = False
-            if ct in enabled_coda_jumps_or_fine:
-                if ds_dc_no_repeat:
-                    execute_jump = True
-                else:
-                    found_to_coda_or_fine[ct] -= 1
-                    execute_jump = found_to_coda_or_fine[ct] == 0
-            else:
-                # Cound number of time that measure was passed
-                if ct not in found_to_coda_or_fine:
-                    found_to_coda_or_fine[ct] = 1
-                else:
-                    found_to_coda_or_fine[ct] += 1
-
-            if execute_jump:
-                if jump_kind == "fine":
-                    print(f"Fine {ct}")
-                    measure_indices.append(ct)
+                if fine is not None:
+                    print(f"Fine")
                     return measure_indices
-                jump = find_next_coda(measures, ct)
+                if to_coda is not None:
+                    ct = find_next_coda(measures, ct)
+                else:
+                    ct += 1
+                to_coda = None
+                fine = None
+                continue
 
         # Repeats ||:   :||
         reps = meas.findall(".//repeat")

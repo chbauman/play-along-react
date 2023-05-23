@@ -1,5 +1,5 @@
 from unittest import TestCase
-from mxlpy import get_unrolled_measure_indices
+from mxlpy import clear_repeats, get_unrolled_measure_indices
 
 from tests.util import find_measures
 
@@ -24,6 +24,10 @@ class TestUnroll(TestCase):
         )
 
         self._cmp_indices(indices, expected_indices)
+
+    def test_clear_repeats(self):
+        self._cmp_indices(clear_repeats([0, 1, 2, 1, 2, 3]), [0, 1, 2, 3])
+        self._cmp_indices(clear_repeats([0, 1, 0, 2, 3]), [0, 2, 3])
 
     def test_unroll_jumps(self):
         measures = find_measures("Coda")
