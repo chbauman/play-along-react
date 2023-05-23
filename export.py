@@ -12,15 +12,13 @@ from typing import Optional
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-from mxlpy import Paths, get_unrolled_measure_indices
+from mxlpy import Paths, export_mscz, get_unrolled_measure_indices
 
 # PATHS
-MUSESCORE_EXE_PATH = Path("C:/Program Files/MuseScore 3/bin/MuseScore3.exe")
 PUBLIC_PATH = Path("play-along/public")
 XML_SCORES_PATH = PUBLIC_PATH / "scores"
 AUDIO_PATH = PUBLIC_PATH / "audio"
 
-assert MUSESCORE_EXE_PATH.exists(), f"Musescore not found at {MUSESCORE_EXE_PATH}!"
 assert XML_SCORES_PATH, f"XML output dir {XML_SCORES_PATH} does not exist!"
 
 REMOVE_ELEMENTS = [
@@ -84,8 +82,7 @@ def main(n_process: Optional[int]):
         out_path = XML_SCORES_PATH / f"{mscz_path.stem}.musicxml"
 
         # Export to musicxml
-        subprocess.run([str(MUSESCORE_EXE_PATH), "-o", str(out_path), str(mscz_path)])
-        assert out_path.exists(), f"Export failed!"
+        export_mscz(mscz_path, out_path)
 
         # Reduce XML file
         reduce_file(out_path)
@@ -176,9 +173,9 @@ def export_files(a_file: str):
     out_mp3 = AUDIO_PATH / f"{mscz_path.stem}.mp3"
     out_mxml = AUDIO_PATH / f"{mscz_path.stem}.musicxml"
     out_json = AUDIO_PATH / f"{mscz_path.stem}.json"
-    subprocess.run([str(MUSESCORE_EXE_PATH), "-o", str(out_mp3), str(mscz_path)])
-    subprocess.run([str(MUSESCORE_EXE_PATH), "-o", str(out_mxml), str(mscz_path)])
-    assert out_mp3.exists() and out_mxml.exists(), f"Export failed!"
+    
+    export_mscz(mscz_path, out_mp3)
+    export_mscz(mscz_path, out_mxml)
     return out_mxml, out_json
 
 
