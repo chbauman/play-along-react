@@ -101,9 +101,12 @@ def check_positive(value):
 parser = argparse.ArgumentParser("Export script")
 parser.add_argument("n", type=check_positive, default=None)
 parser.add_argument("-a", "--audio", action="store_true", default=False, required=False)
+parser.add_argument(
+    "-m", "--no-mp3", action="store_true", default=False, required=False
+)
 
 
-def export_audio(n_export: int):
+def export_audio(n_export: int, export_mp3: bool = True):
     # Load JSON with info
     JSON_AUDIO = "audio.json"
     with open(JSON_AUDIO, "r", encoding="utf8") as f:
@@ -145,7 +148,7 @@ def export_audio(n_export: int):
         print(f"Processing: {a_file}")
 
         # Export mp3 and musicxml
-        out_mxml, out_json = export_files(a_file)
+        out_mxml, out_json = export_files(a_file, export_mp3)
 
         # Edit XML file
         reduce_file(out_mxml)
@@ -166,15 +169,16 @@ def export_audio(n_export: int):
     print("Success")
 
 
-def export_files(a_file: str):
+def export_files(a_file: str, export_mp3: bool = True):
     mscz_path = Path(rf"C:\Users\Chrigi\Documents\GitHub\compositions\{a_file}")
     assert mscz_path.exists(), f"{mscz_path}"
 
     out_mp3 = AUDIO_PATH / f"{mscz_path.stem}.mp3"
     out_mxml = AUDIO_PATH / f"{mscz_path.stem}.musicxml"
     out_json = AUDIO_PATH / f"{mscz_path.stem}.json"
-    
-    export_mscz(mscz_path, out_mp3)
+
+    if export_mp3:
+        export_mscz(mscz_path, out_mp3)
     export_mscz(mscz_path, out_mxml)
     return out_mxml, out_json
 
@@ -348,6 +352,6 @@ def extract_measure_map(out_mxml: Path):
 if __name__ == "__main__":
     args = parser.parse_args()
     if args.audio:
-        export_audio(args.n)
+        export_audio(args.n, not args.no_mp3)
 
     main(args.n)
