@@ -1445,6 +1445,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Dont_Let_Me_Be_Misunderstood",
     name: "Don't Let Me Be Misunderstood - The Animals",
   },
+  {
+    videoId: "RDRj1tx7N4Y",
+    measureMap: { 16: 9, 172: 88 },
+    fileName: "Canto_del_Pilon",
+    name: "Canto del Pilón - Milk & Sugar ft. Maria Marquez",
+  },
 ];
 
 if (DEBUG) {
