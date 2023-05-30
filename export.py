@@ -8,7 +8,7 @@ import argparse
 import copy
 import json
 import subprocess
-from typing import Optional
+from typing import Dict, Optional
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -106,6 +106,16 @@ parser.add_argument(
 )
 
 
+def _group_includes(target_grp: str) -> bool:
+    def _inner(x: Dict):
+        grp = x["group"]
+        if isinstance(grp, str):
+            return grp == target_grp
+        return target_grp in grp
+
+    return _inner
+
+
 def export_audio(n_export: int, export_mp3: bool = True):
     # Load JSON with info
     JSON_AUDIO = "audio.json"
@@ -115,11 +125,16 @@ def export_audio(n_export: int, export_mp3: bool = True):
     # Get groups
     groups = set()
     for score in scores:
-        groups.add(score["group"])
+        grp = score["group"]
+        if isinstance(grp, str):
+            groups.add(grp)
+        else:
+            for g in grp:
+                groups.add(g)
 
     # Create a json file for each group
     for group in groups:
-        rel_scores = list(filter(lambda x: x["group"] == group, scores))
+        rel_scores = list(filter(_group_includes(group), scores))
         with open(AUDIO_PATH / f"../../src/audio/{group}.json", "w") as f:
             json.dump(rel_scores, f)
 

@@ -2,6 +2,7 @@ import streetBandScores from "./street-band.json";
 import artRoseScores from "./art-rose.json";
 import debugScores from "./debug.json";
 import bauSteiScores from "./bau-stei.json";
+import bauSteiBaslerScores from "./bau-stei-basler.json";
 
 export const getAudioScores = (audioId?: string) => {
   let scores = null;
@@ -14,6 +15,8 @@ export const getAudioScores = (audioId?: string) => {
     scores = bauSteiScores;
   } else if (audioId === "street-band") {
     scores = streetBandScores;
+  } else if (audioId === "bau-stei-basler") {
+    scores = bauSteiBaslerScores;
   }
 
   if (scores === null) {
