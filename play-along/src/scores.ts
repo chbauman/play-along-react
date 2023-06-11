@@ -1450,6 +1450,18 @@ export const scores: ScoreInfo[] = [
     measureMap: { 16: 9, 172: 88 },
     fileName: "Canto_del_Pilon",
     name: "Canto del Pilón - Milk & Sugar ft. Maria Marquez",
+  }, 
+  {
+    videoId: "7wqGcB06DL4",
+    measureMap: { 11: 1, 124: 73 },
+    fileName: "Brennholz",
+    name: "Brennholz - Mono & Nikitaman",
+  },
+  {
+    videoId: "lmc21V-zBq0",
+    measureMap: { 2: 1, 16: 9, 104: 58 },
+    fileName: "Run_Boy_Run",
+    name: "Run Boy Run - Woodkid",
   },
 ];
 
