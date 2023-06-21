@@ -1450,7 +1450,7 @@ export const scores: ScoreInfo[] = [
     measureMap: { 16: 9, 172: 88 },
     fileName: "Canto_del_Pilon",
     name: "Canto del Pilón - Milk & Sugar ft. Maria Marquez",
-  }, 
+  },
   {
     videoId: "7wqGcB06DL4",
     measureMap: { 11: 1, 124: 73 },
@@ -1462,6 +1462,18 @@ export const scores: ScoreInfo[] = [
     measureMap: { 2: 1, 16: 9, 104: 58 },
     fileName: "Run_Boy_Run",
     name: "Run Boy Run - Woodkid",
+  },
+  {
+    videoId: "6X9CEi8wkBc",
+    measureMap: { 6: 5, 79: 56, 136: 96, 188: 133, 196: 138 },
+    fileName: "Schrei_Nach_Liebe",
+    name: "Schrei nach Liebe - Die Ärzte",
+  },
+  {
+    videoId: "yMR45cZbvDw",
+    measureMap: { 6: 5, 146: 98 },
+    fileName: "Alles_Nur_Geklaut",
+    name: "Alles nur geklaut - Die Prinzen",
   },
 ];
 
