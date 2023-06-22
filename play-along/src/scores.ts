@@ -1475,6 +1475,18 @@ export const scores: ScoreInfo[] = [
     fileName: "Alles_Nur_Geklaut",
     name: "Alles nur geklaut - Die Prinzen",
   },
+  {
+    videoId: "WoxfGViboYw",
+    measureMap: { 1: 2, 179: 112 },
+    fileName: "La_Nonchalante",
+    name: "La nonchalante - Emmanuel Pariselle",
+  },
+  {
+    videoId: "pTdihu-mp90",
+    measureMap: { 2: 2, 138: 84, 158: 95 },
+    fileName: "I_Got_You",
+    name: "I Got You (I Feel Good) - James Brown",
+  },
 ];
 
 if (DEBUG) {
