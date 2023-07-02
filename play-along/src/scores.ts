@@ -1487,6 +1487,18 @@ export const scores: ScoreInfo[] = [
     fileName: "I_Got_You",
     name: "I Got You (I Feel Good) - James Brown",
   },
+  {
+    videoId: "6dOwHzCHfgA",
+    measureMap: { 3: 1, 175: 90 },
+    fileName: "Died_In_Your_Arms",
+    name: "(I Just) Died In Your Arms - Cutting Crew",
+  },
+  {
+    videoId: "7s8glZ-efMg",
+    measureMap: { 1: 1, 225: 108 },
+    fileName: "Twist_In_My_Sobriety",
+    name: "Twist In My Sobriety - Tanita Tikaram",
+  },
 ];
 
 if (DEBUG) {
