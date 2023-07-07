@@ -1499,6 +1499,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Twist_In_My_Sobriety",
     name: "Twist In My Sobriety - Tanita Tikaram",
   },
+  {
+    videoId: "YDPJtbcsV_I",
+    measureMap: { 15: 1, 188: 90 },
+    fileName: "Balkan_Bang",
+    name: "Balkan Bang - Betty Booom",
+  },
 ];
 
 if (DEBUG) {
