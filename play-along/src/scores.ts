@@ -393,7 +393,7 @@ export const scores: ScoreInfo[] = [
     name: "Ukrainian National Anthem",
   },
   {
-    videoId: "HAiHEQblKeQ",
+    videoId: "qm3vCvNGQZI",
     measureMap: { 16: 2, 59: 26, 96: 47, 128: 65, 164: 85 },
     fileName: "Samba_De_Janeiro",
     name: "Samba de Janeiro - Bellini",
@@ -1504,6 +1504,12 @@ export const scores: ScoreInfo[] = [
     measureMap: { 15: 1, 188: 90 },
     fileName: "Balkan_Bang",
     name: "Balkan Bang - Betty Booom",
+  },
+  {
+    videoId: "K9Qs8-BkiLw",
+    measureMap: { 23: 9, 178: 65 },
+    fileName: "Boat_On_The_River",
+    name: "Boat On The River - Styx",
   },
 ];
 
