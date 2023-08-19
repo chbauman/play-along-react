@@ -1511,6 +1511,30 @@ export const scores: ScoreInfo[] = [
     fileName: "Boat_On_The_River",
     name: "Boat On The River - Styx",
   },
+  {
+    videoId: "Jx_VYLoJjlA",
+    measureMap: { 2: 2, 97: 50, 212: 108, 222: 113 },
+    fileName: "Litaliano",
+    name: "L'italiano - Toto Cutugno",
+  },
+  {
+    videoId: "F9E8nIKjkYc",
+    measureMap: { 4: 3, 59: 29, 131: 63, 212: 101 },
+    fileName: "Felicita",
+    name: "Felicita - Al Bano",
+  },
+  {
+    videoId: "huEslFAw4NI",
+    measureMap: { 21: 6, 244: 62 },
+    fileName: "Ti_Amo",
+    name: "Ti amo - Umberto Tozzi",
+  },
+  {
+    videoId: "iTeO1gXxDmc",
+    measureMap: { 1: 1, 160: 82 },
+    fileName: "Sara_Perche_Ti_Amo",
+    name: "Sarà perché ti amo - Ricchi E Poveri",
+  },
 ];
 
 if (DEBUG) {
