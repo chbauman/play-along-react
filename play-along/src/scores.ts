@@ -1535,6 +1535,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Sara_Perche_Ti_Amo",
     name: "Sarà perché ti amo - Ricchi E Poveri",
   },
+  {
+    videoId: "n4RjJKxsamQ",
+    measureMap: { 21: 8, 49: 18, 100: 35, 125: 42, 241: 80 },
+    fileName: "Wind_Of_Change",
+    name: "Wind Of Change - Scorpions",
+  },
 ];
 
 if (DEBUG) {
