@@ -1565,6 +1565,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Never_Gonna",
     name: "Never Gonna Give You Up - Rick Astley",
   },
+  {
+    videoId: "ujNeHIo7oTE",
+    measureMap: { 1: 1, 217: 100 },
+    fileName: "With_Or_Without_You",
+    name: "With Or Without You - U2",
+  },
 ];
 
 if (DEBUG) {
