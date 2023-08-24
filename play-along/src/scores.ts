@@ -1547,6 +1547,24 @@ export const scores: ScoreInfo[] = [
     fileName: "Petra_Sturzenegger",
     name: "Petra Sturzenegger - Stubete Gäng",
   },
+  {
+    videoId: "GCsQZSB1gZg",
+    measureMap: { 6: 1, 188: 78 },
+    fileName: "Adiemus",
+    name: "Adiemus - Karl Jenkins",
+  },
+  {
+    videoId: "Ruc-Fof6Alk",
+    measureMap: { 21: 1, 255: 165 },
+    fileName: "Come_Take_My_Hand",
+    name: "Come Take My Hand - 2 Brothers on the 4th Floor",
+  },
+  {
+    videoId: "dQw4w9WgXcQ",
+    measureMap: { 2: 1, 206: 98 },
+    fileName: "Never_Gonna",
+    name: "Never Gonna Give You Up - Rick Astley",
+  },
 ];
 
 if (DEBUG) {
