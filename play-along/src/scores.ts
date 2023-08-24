@@ -1541,6 +1541,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Wind_Of_Change",
     name: "Wind Of Change - Scorpions",
   },
+  {
+    videoId: "VpXqb0TwwxA",
+    measureMap: { 1: 1, 157: 97 },
+    fileName: "Petra_Sturzenegger",
+    name: "Petra Sturzenegger - Stubete Gäng",
+  },
 ];
 
 if (DEBUG) {
