@@ -85,7 +85,14 @@ const getScaleUpdate = (measure: any, fifths: number) => {
   }
   const fifthsEl = fifthsEls[0];
   const fifthsNum = parseInt(fifthsEl.textContent!);
-  const newFifths = fifthsNum + fifths;
+  let newFifths = fifthsNum + fifths;
+
+  // Use scale with least sharps / flats
+  if (newFifths > 6) {
+    newFifths -= 12;
+  } else if (newFifths < -6) {
+    newFifths += 12;
+  }
   fifthsEl.textContent = `${newFifths}`;
   const usedScale = newFifths >= 0 ? sharpScale : flatScale;
   return usedScale;
