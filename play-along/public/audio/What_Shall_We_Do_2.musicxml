@@ -684,15 +684,6 @@
         <type>quarter</type>
         </note>
       <note>
-        <chord />
-        <pitch>
-          <step>C</step>
-          <octave>5</octave>
-          </pitch>
-        <duration>2</duration>
-        <type size="cue">quarter</type>
-        </note>
-      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -701,30 +692,12 @@
         <type>quarter</type>
         </note>
       <note>
-        <chord />
-        <pitch>
-          <step>D</step>
-          <octave>5</octave>
-          </pitch>
-        <duration>2</duration>
-        <type size="cue">quarter</type>
-        </note>
-      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
           </pitch>
         <duration>2</duration>
         <type>quarter</type>
-        </note>
-      <note>
-        <chord />
-        <pitch>
-          <step>E</step>
-          <octave>5</octave>
-          </pitch>
-        <duration>2</duration>
-        <type size="cue">quarter</type>
         </note>
       </measure>
     <measure number="18">
@@ -737,30 +710,12 @@
         <type>half</type>
         </note>
       <note>
-        <chord />
-        <pitch>
-          <step>D</step>
-          <octave>5</octave>
-          </pitch>
-        <duration>4</duration>
-        <type size="cue">half</type>
-        </note>
-      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
           </pitch>
         <duration>4</duration>
         <type>half</type>
-        </note>
-      <note>
-        <chord />
-        <pitch>
-          <step>D</step>
-          <octave>5</octave>
-          </pitch>
-        <duration>4</duration>
-        <type size="cue">half</type>
         </note>
       </measure>
     <measure number="19">
@@ -1293,6 +1248,9 @@
         <duration>1</duration>
         <type>eighth</type>
         <beam number="1">begin</beam>
+        <notations>
+          <slur type="start" placement="below" number="1" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -1321,6 +1279,9 @@
         <type>eighth</type>
         <accidental>natural</accidental>
         <beam number="1">end</beam>
+        <notations>
+          <slur type="stop" number="1" />
+          </notations>
         </note>
       </measure>
     <measure number="33">
@@ -1911,6 +1872,9 @@
         <duration>1</duration>
         <type>eighth</type>
         <beam number="1">begin</beam>
+        <notations>
+          <slur type="start" placement="below" number="1" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -1939,6 +1903,9 @@
         <type>eighth</type>
         <accidental>natural</accidental>
         <beam number="1">end</beam>
+        <notations>
+          <slur type="stop" number="1" />
+          </notations>
         </note>
       </measure>
     <measure number="33">
@@ -2106,6 +2073,17 @@
         </note>
       </measure>
     <measure number="37">
+      <direction placement="above">
+        <direction-type>
+          <metronome parentheses="no">
+            <beat-unit>half</beat-unit>
+            <per-minute>97</per-minute>
+            </metronome>
+          </direction-type>
+        <direction-type>
+          <words font-weight="bold" font-size="12">.5</words>
+          </direction-type>
+        </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -2290,6 +2268,17 @@
         </note>
       </measure>
     <measure number="41">
+      <direction placement="above">
+        <direction-type>
+          <metronome parentheses="no">
+            <beat-unit>half</beat-unit>
+            <per-minute>102</per-minute>
+            </metronome>
+          </direction-type>
+        <direction-type>
+          <words font-weight="bold" font-size="12">.5</words>
+          </direction-type>
+        </direction>
       <note>
         <pitch>
           <step>A</step>
@@ -2411,6 +2400,17 @@
         </note>
       </measure>
     <measure number="45">
+      <direction placement="above">
+        <direction-type>
+          <metronome parentheses="no">
+            <beat-unit>half</beat-unit>
+            <per-minute>107</per-minute>
+            </metronome>
+          </direction-type>
+        <direction-type>
+          <words font-weight="bold" font-size="12">.5</words>
+          </direction-type>
+        </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -2507,6 +2507,17 @@
         </note>
       </measure>
     <measure number="48">
+      <direction placement="above">
+        <direction-type>
+          <metronome parentheses="no">
+            <beat-unit>half</beat-unit>
+            <per-minute>112</per-minute>
+            </metronome>
+          </direction-type>
+        <direction-type>
+          <words font-weight="bold" font-size="12">.5</words>
+          </direction-type>
+        </direction>
       <note>
         <pitch>
           <step>D</step>
@@ -2583,6 +2594,17 @@
         </note>
       </measure>
     <measure number="50">
+      <direction placement="above">
+        <direction-type>
+          <metronome parentheses="no">
+            <beat-unit>half</beat-unit>
+            <per-minute>117</per-minute>
+            </metronome>
+          </direction-type>
+        <direction-type>
+          <words font-weight="bold" font-size="12">.5</words>
+          </direction-type>
+        </direction>
       <note>
         <pitch>
           <step>A</step>
@@ -3117,6 +3139,9 @@
         </note>
       </measure>
     <measure number="65">
+      <barline location="left">
+        <ending number="1" type="start" />
+        </barline>
       <note>
         <pitch>
           <step>C</step>
@@ -3169,6 +3194,7 @@
         </note>
       <barline location="right">
         <bar-style>light-heavy</bar-style>
+        <ending number="1" type="stop" />
         <repeat direction="backward" />
         </barline>
       </measure>
@@ -3688,7 +3714,10 @@
         <type>quarter</type>
         </note>
       </measure>
-    <measure number="65">
+    <measure number="67">
+      <barline location="left">
+        <ending number="2" type="start" />
+        </barline>
       <note>
         <pitch>
           <step>C</step>
@@ -3706,12 +3735,30 @@
         <type>quarter</type>
         </note>
       <note>
+        <chord />
+        <pitch>
+          <step>C</step>
+          <octave>5</octave>
+          </pitch>
+        <duration>2</duration>
+        <type size="cue">quarter</type>
+        </note>
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
           </pitch>
         <duration>2</duration>
         <type>quarter</type>
+        </note>
+      <note>
+        <chord />
+        <pitch>
+          <step>D</step>
+          <octave>5</octave>
+          </pitch>
+        <duration>2</duration>
+        <type size="cue">quarter</type>
         </note>
       <note>
         <pitch>
@@ -3721,8 +3768,17 @@
         <duration>2</duration>
         <type>quarter</type>
         </note>
+      <note>
+        <chord />
+        <pitch>
+          <step>E</step>
+          <octave>5</octave>
+          </pitch>
+        <duration>2</duration>
+        <type size="cue">quarter</type>
+        </note>
       </measure>
-    <measure number="66">
+    <measure number="68">
       <note>
         <pitch>
           <step>D</step>
@@ -3732,16 +3788,34 @@
         <type>half</type>
         </note>
       <note>
+        <chord />
+        <pitch>
+          <step>D</step>
+          <octave>5</octave>
+          </pitch>
+        <duration>4</duration>
+        <type size="cue">half</type>
+        </note>
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
           </pitch>
         <duration>4</duration>
         <type>half</type>
+        </note>
+      <note>
+        <chord />
+        <pitch>
+          <step>D</step>
+          <octave>5</octave>
+          </pitch>
+        <duration>4</duration>
+        <type size="cue">half</type>
         </note>
       <barline location="right">
         <bar-style>light-heavy</bar-style>
-        <repeat direction="backward" />
+        <ending number="2" type="stop" />
         </barline>
       </measure>
     </part>
@@ -4305,30 +4379,12 @@
         <type>quarter</type>
         </note>
       <note>
-        <chord />
-        <pitch>
-          <step>D</step>
-          <octave>4</octave>
-          </pitch>
-        <duration>2</duration>
-        <type size="cue">quarter</type>
-        </note>
-      <note>
         <pitch>
           <step>C</step>
           <octave>4</octave>
           </pitch>
         <duration>2</duration>
         <type>quarter</type>
-        </note>
-      <note>
-        <chord />
-        <pitch>
-          <step>E</step>
-          <octave>4</octave>
-          </pitch>
-        <duration>2</duration>
-        <type size="cue">quarter</type>
         </note>
       </measure>
     <measure number="18">
@@ -4341,30 +4397,12 @@
         <type>half</type>
         </note>
       <note>
-        <chord />
-        <pitch>
-          <step>D</step>
-          <octave>4</octave>
-          </pitch>
-        <duration>4</duration>
-        <type size="cue">half</type>
-        </note>
-      <note>
         <pitch>
           <step>A</step>
           <octave>3</octave>
           </pitch>
         <duration>4</duration>
         <type>half</type>
-        </note>
-      <note>
-        <chord />
-        <pitch>
-          <step>D</step>
-          <octave>4</octave>
-          </pitch>
-        <duration>4</duration>
-        <type size="cue">half</type>
         </note>
       </measure>
     <measure number="19">
@@ -4465,6 +4503,9 @@
         <duration>1</duration>
         <type size="cue">eighth</type>
         <beam number="1">begin</beam>
+        <notations>
+          <slur type="start" placement="above" number="1" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -4474,6 +4515,9 @@
         <duration>1</duration>
         <type size="cue">eighth</type>
         <beam number="1">continue</beam>
+        <notations>
+          <slur type="stop" number="1" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -4874,6 +4918,9 @@
         <duration>1</duration>
         <type size="cue">eighth</type>
         <beam number="1">begin</beam>
+        <notations>
+          <slur type="start" placement="above" number="1" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -4883,6 +4930,9 @@
         <duration>1</duration>
         <type size="cue">eighth</type>
         <beam number="1">continue</beam>
+        <notations>
+          <slur type="stop" number="1" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -4995,6 +5045,9 @@
         <duration>1</duration>
         <type size="cue">eighth</type>
         <beam number="1">begin</beam>
+        <notations>
+          <slur type="start" placement="above" number="1" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -5004,6 +5057,9 @@
         <duration>1</duration>
         <type size="cue">eighth</type>
         <beam number="1">continue</beam>
+        <notations>
+          <slur type="stop" number="1" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -5124,6 +5180,9 @@
         <duration>1</duration>
         <type size="cue">eighth</type>
         <beam number="1">begin</beam>
+        <notations>
+          <slur type="start" placement="above" number="1" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -5133,6 +5192,9 @@
         <duration>1</duration>
         <type size="cue">eighth</type>
         <beam number="1">continue</beam>
+        <notations>
+          <slur type="stop" number="1" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -5160,6 +5222,9 @@
         <duration>1</duration>
         <type size="cue">eighth</type>
         <beam number="1">begin</beam>
+        <notations>
+          <slur type="start" placement="above" number="1" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -5169,6 +5234,9 @@
         <duration>1</duration>
         <type size="cue">eighth</type>
         <beam number="1">continue</beam>
+        <notations>
+          <slur type="stop" number="1" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -5362,6 +5430,9 @@
         <duration>1</duration>
         <type size="cue">eighth</type>
         <beam number="1">begin</beam>
+        <notations>
+          <slur type="start" placement="above" number="1" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -5371,6 +5442,9 @@
         <duration>1</duration>
         <type size="cue">eighth</type>
         <beam number="1">continue</beam>
+        <notations>
+          <slur type="stop" number="1" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -5771,6 +5845,9 @@
         <duration>1</duration>
         <type size="cue">eighth</type>
         <beam number="1">begin</beam>
+        <notations>
+          <slur type="start" placement="above" number="1" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -5780,6 +5857,9 @@
         <duration>1</duration>
         <type size="cue">eighth</type>
         <beam number="1">continue</beam>
+        <notations>
+          <slur type="stop" number="1" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -5892,6 +5972,9 @@
         <duration>1</duration>
         <type size="cue">eighth</type>
         <beam number="1">begin</beam>
+        <notations>
+          <slur type="start" placement="above" number="1" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -5901,6 +5984,9 @@
         <duration>1</duration>
         <type size="cue">eighth</type>
         <beam number="1">continue</beam>
+        <notations>
+          <slur type="stop" number="1" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -6021,6 +6107,9 @@
         <duration>1</duration>
         <type size="cue">eighth</type>
         <beam number="1">begin</beam>
+        <notations>
+          <slur type="start" placement="above" number="1" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -6030,6 +6119,9 @@
         <duration>1</duration>
         <type size="cue">eighth</type>
         <beam number="1">continue</beam>
+        <notations>
+          <slur type="stop" number="1" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -6057,6 +6149,9 @@
         <duration>1</duration>
         <type size="cue">eighth</type>
         <beam number="1">begin</beam>
+        <notations>
+          <slur type="start" placement="above" number="1" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -6066,6 +6161,9 @@
         <duration>1</duration>
         <type size="cue">eighth</type>
         <beam number="1">continue</beam>
+        <notations>
+          <slur type="stop" number="1" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -7198,6 +7296,9 @@
         </note>
       </measure>
     <measure number="65">
+      <barline location="left">
+        <ending number="1" type="start" />
+        </barline>
       <note>
         <pitch>
           <step>F</step>
@@ -7258,6 +7359,7 @@
         </note>
       <barline location="right">
         <bar-style>light-heavy</bar-style>
+        <ending number="1" type="stop" />
         <repeat direction="backward" />
         </barline>
       </measure>
@@ -7741,7 +7843,10 @@
         <type>quarter</type>
         </note>
       </measure>
-    <measure number="65">
+    <measure number="67">
+      <barline location="left">
+        <ending number="2" type="start" />
+        </barline>
       <note>
         <pitch>
           <step>F</step>
@@ -7775,7 +7880,7 @@
         <type>quarter</type>
         </note>
       </measure>
-    <measure number="66">
+    <measure number="68">
       <note>
         <pitch>
           <step>D</step>
@@ -7802,7 +7907,7 @@
         </note>
       <barline location="right">
         <bar-style>light-heavy</bar-style>
-        <repeat direction="backward" />
+        <ending number="2" type="stop" />
         </barline>
       </measure>
     </part>
@@ -11656,6 +11761,9 @@
         </note>
       </measure>
     <measure number="65">
+      <barline location="left">
+        <ending number="1" type="start" />
+        </barline>
       <harmony print-frame="no">
         <root>
           <root-step>F</root-step>
@@ -11762,6 +11870,7 @@
         </note>
       <barline location="right">
         <bar-style>light-heavy</bar-style>
+        <ending number="1" type="stop" />
         <repeat direction="backward" />
         </barline>
       </measure>
@@ -12681,7 +12790,10 @@
         <type>quarter</type>
         </note>
       </measure>
-    <measure number="65">
+    <measure number="67">
+      <barline location="left">
+        <ending number="2" type="start" />
+        </barline>
       <harmony print-frame="no">
         <root>
           <root-step>F</root-step>
@@ -12763,7 +12875,7 @@
         <type>quarter</type>
         </note>
       </measure>
-    <measure number="66">
+    <measure number="68">
       <harmony print-frame="no">
         <root>
           <root-step>D</root-step>
@@ -12788,7 +12900,7 @@
         </note>
       <barline location="right">
         <bar-style>light-heavy</bar-style>
-        <repeat direction="backward" />
+        <ending number="2" type="stop" />
         </barline>
       </measure>
     </part>
@@ -14552,6 +14664,9 @@
         </note>
       </measure>
     <measure number="65">
+      <barline location="left">
+        <ending number="1" type="start" />
+        </barline>
       <note>
         <pitch>
           <step>C</step>
@@ -14588,6 +14703,7 @@
         </note>
       <barline location="right">
         <bar-style>light-heavy</bar-style>
+        <ending number="1" type="stop" />
         <repeat direction="backward" />
         </barline>
       </measure>
@@ -14847,7 +14963,10 @@
         <type>half</type>
         </note>
       </measure>
-    <measure number="65">
+    <measure number="67">
+      <barline location="left">
+        <ending number="2" type="start" />
+        </barline>
       <note>
         <pitch>
           <step>C</step>
@@ -14865,7 +14984,7 @@
         <type>half</type>
         </note>
       </measure>
-    <measure number="66">
+    <measure number="68">
       <note>
         <pitch>
           <step>D</step>
@@ -14884,7 +15003,7 @@
         </note>
       <barline location="right">
         <bar-style>light-heavy</bar-style>
-        <repeat direction="backward" />
+        <ending number="2" type="stop" />
         </barline>
       </measure>
     </part>
@@ -14904,6 +15023,13 @@
           <line>2</line>
           </clef>
         </attributes>
+      <direction placement="below">
+        <direction-type>
+          <dynamics>
+            <mp />
+            </dynamics>
+          </direction-type>
+        </direction>
       <note>
         <unpitched>
           <display-step>C</display-step>
@@ -14988,6 +15114,13 @@
         </barline>
       </measure>
     <measure number="3">
+      <direction placement="below">
+        <direction-type>
+          <dynamics>
+            <mf />
+            </dynamics>
+          </direction-type>
+        </direction>
       <note>
         <unpitched>
           <display-step>A</display-step>
@@ -15038,14 +15171,30 @@
         <type>quarter</type>
         </note>
       <note>
-        <rest />
+        <chord />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>2</duration>
+        <instrument id="P5-I43" />
         <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <rest />
         <duration>2</duration>
         <type>quarter</type>
+        </note>
+      <note>
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I43" />
+        <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       </measure>
     <measure number="4">
@@ -15080,9 +15229,14 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>2</duration>
+        <instrument id="P5-I43" />
         <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <rest />
@@ -15090,9 +15244,15 @@
         <type>quarter</type>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>1</duration>
+        <instrument id="P5-I43" />
         <type>eighth</type>
+        <notehead>x</notehead>
+        <beam number="1">begin</beam>
         </note>
       <note>
         <unpitched>
@@ -15103,6 +15263,18 @@
         <instrument id="P5-I57" />
         <type>eighth</type>
         <notehead>inverted triangle</notehead>
+        <beam number="1">end</beam>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>1</duration>
+        <instrument id="P5-I43" />
+        <type>eighth</type>
+        <notehead>x</notehead>
         </note>
       </measure>
     <measure number="5">
@@ -15156,14 +15328,30 @@
         <type>quarter</type>
         </note>
       <note>
-        <rest />
+        <chord />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>2</duration>
+        <instrument id="P5-I43" />
         <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <rest />
         <duration>2</duration>
         <type>quarter</type>
+        </note>
+      <note>
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I43" />
+        <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       </measure>
     <measure number="6">
@@ -15198,9 +15386,14 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>2</duration>
+        <instrument id="P5-I43" />
         <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <rest />
@@ -15208,9 +15401,15 @@
         <type>quarter</type>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>1</duration>
+        <instrument id="P5-I43" />
         <type>eighth</type>
+        <notehead>x</notehead>
+        <beam number="1">begin</beam>
         </note>
       <note>
         <unpitched>
@@ -15221,6 +15420,18 @@
         <instrument id="P5-I57" />
         <type>eighth</type>
         <notehead>inverted triangle</notehead>
+        <beam number="1">end</beam>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>1</duration>
+        <instrument id="P5-I43" />
+        <type>eighth</type>
+        <notehead>x</notehead>
         </note>
       </measure>
     <measure number="7">
@@ -15274,14 +15485,30 @@
         <type>quarter</type>
         </note>
       <note>
-        <rest />
+        <chord />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>2</duration>
+        <instrument id="P5-I43" />
         <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <rest />
         <duration>2</duration>
         <type>quarter</type>
+        </note>
+      <note>
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I43" />
+        <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       </measure>
     <measure number="8">
@@ -15316,9 +15543,14 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>2</duration>
+        <instrument id="P5-I43" />
         <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <rest />
@@ -15326,9 +15558,15 @@
         <type>quarter</type>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>1</duration>
+        <instrument id="P5-I43" />
         <type>eighth</type>
+        <notehead>x</notehead>
+        <beam number="1">begin</beam>
         </note>
       <note>
         <unpitched>
@@ -15339,6 +15577,18 @@
         <instrument id="P5-I57" />
         <type>eighth</type>
         <notehead>inverted triangle</notehead>
+        <beam number="1">end</beam>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>1</duration>
+        <instrument id="P5-I43" />
+        <type>eighth</type>
+        <notehead>x</notehead>
         </note>
       </measure>
     <measure number="9">
@@ -15373,6 +15623,17 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
+        <chord />
+        <unpitched>
+          <display-step>B</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I53" />
+        <type>quarter</type>
+        <notehead>x</notehead>
+        </note>
+      <note>
         <unpitched>
           <display-step>A</display-step>
           <display-octave>4</display-octave>
@@ -15409,6 +15670,17 @@
         <duration>2</duration>
         <instrument id="P5-I41" />
         <type>quarter</type>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>B</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I53" />
+        <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <unpitched>
@@ -15556,9 +15828,14 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>2</duration>
+        <instrument id="P5-I43" />
         <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <rest />
@@ -15566,9 +15843,15 @@
         <type>quarter</type>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>1</duration>
+        <instrument id="P5-I43" />
         <type>eighth</type>
+        <notehead>x</notehead>
+        <beam number="1">begin</beam>
         </note>
       <note>
         <unpitched>
@@ -15579,6 +15862,18 @@
         <instrument id="P5-I57" />
         <type>eighth</type>
         <notehead>inverted triangle</notehead>
+        <beam number="1">end</beam>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>1</duration>
+        <instrument id="P5-I43" />
+        <type>eighth</type>
+        <notehead>x</notehead>
         </note>
       </measure>
     <measure number="12">
@@ -15613,9 +15908,14 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>2</duration>
+        <instrument id="P5-I43" />
         <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <unpitched>
@@ -15665,6 +15965,17 @@
         <duration>2</duration>
         <instrument id="P5-I41" />
         <type>quarter</type>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I43" />
+        <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       </measure>
     <measure number="13">
@@ -15699,9 +16010,14 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>2</duration>
+        <instrument id="P5-I43" />
         <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <rest />
@@ -15709,9 +16025,15 @@
         <type>quarter</type>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>1</duration>
+        <instrument id="P5-I43" />
         <type>eighth</type>
+        <notehead>x</notehead>
+        <beam number="1">begin</beam>
         </note>
       <note>
         <unpitched>
@@ -15722,6 +16044,18 @@
         <instrument id="P5-I57" />
         <type>eighth</type>
         <notehead>inverted triangle</notehead>
+        <beam number="1">end</beam>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>1</duration>
+        <instrument id="P5-I43" />
+        <type>eighth</type>
+        <notehead>x</notehead>
         </note>
       </measure>
     <measure number="14">
@@ -15756,9 +16090,14 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>2</duration>
+        <instrument id="P5-I43" />
         <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <unpitched>
@@ -15808,6 +16147,17 @@
         <duration>2</duration>
         <instrument id="P5-I41" />
         <type>quarter</type>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I43" />
+        <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       </measure>
     <measure number="15">
@@ -15842,9 +16192,14 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>2</duration>
+        <instrument id="P5-I43" />
         <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <rest />
@@ -15852,9 +16207,15 @@
         <type>quarter</type>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>1</duration>
+        <instrument id="P5-I43" />
         <type>eighth</type>
+        <notehead>x</notehead>
+        <beam number="1">begin</beam>
         </note>
       <note>
         <unpitched>
@@ -15865,6 +16226,18 @@
         <instrument id="P5-I57" />
         <type>eighth</type>
         <notehead>inverted triangle</notehead>
+        <beam number="1">end</beam>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>1</duration>
+        <instrument id="P5-I43" />
+        <type>eighth</type>
+        <notehead>x</notehead>
         </note>
       </measure>
     <measure number="16">
@@ -15899,9 +16272,14 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>2</duration>
+        <instrument id="P5-I43" />
         <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <unpitched>
@@ -15951,6 +16329,17 @@
         <duration>2</duration>
         <instrument id="P5-I41" />
         <type>quarter</type>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I43" />
+        <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       </measure>
     <measure number="17">
@@ -15985,6 +16374,17 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
+        <chord />
+        <unpitched>
+          <display-step>B</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I53" />
+        <type>quarter</type>
+        <notehead>x</notehead>
+        </note>
+      <note>
         <unpitched>
           <display-step>A</display-step>
           <display-octave>4</display-octave>
@@ -16021,6 +16421,17 @@
         <duration>2</duration>
         <instrument id="P5-I41" />
         <type>quarter</type>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>B</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I53" />
+        <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <unpitched>
@@ -16579,6 +16990,17 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
+        <chord />
+        <unpitched>
+          <display-step>B</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I53" />
+        <type>quarter</type>
+        <notehead>x</notehead>
+        </note>
+      <note>
         <unpitched>
           <display-step>C</display-step>
           <display-octave>5</display-octave>
@@ -16631,6 +17053,17 @@
           </unpitched>
         <duration>2</duration>
         <instrument id="P5-I43" />
+        <type>quarter</type>
+        <notehead>x</notehead>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>B</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I53" />
         <type>quarter</type>
         <notehead>x</notehead>
         </note>
@@ -17182,6 +17615,17 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
+        <chord />
+        <unpitched>
+          <display-step>B</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I53" />
+        <type>quarter</type>
+        <notehead>x</notehead>
+        </note>
+      <note>
         <unpitched>
           <display-step>C</display-step>
           <display-octave>5</display-octave>
@@ -17234,6 +17678,17 @@
           </unpitched>
         <duration>2</duration>
         <instrument id="P5-I43" />
+        <type>quarter</type>
+        <notehead>x</notehead>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>B</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I53" />
         <type>quarter</type>
         <notehead>x</notehead>
         </note>
@@ -17793,6 +18248,17 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
+        <chord />
+        <unpitched>
+          <display-step>B</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I53" />
+        <type>quarter</type>
+        <notehead>x</notehead>
+        </note>
+      <note>
         <unpitched>
           <display-step>C</display-step>
           <display-octave>5</display-octave>
@@ -17845,6 +18311,17 @@
           </unpitched>
         <duration>2</duration>
         <instrument id="P5-I43" />
+        <type>quarter</type>
+        <notehead>x</notehead>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>B</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I53" />
         <type>quarter</type>
         <notehead>x</notehead>
         </note>
@@ -18396,6 +18873,17 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
+        <chord />
+        <unpitched>
+          <display-step>B</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I53" />
+        <type>quarter</type>
+        <notehead>x</notehead>
+        </note>
+      <note>
         <unpitched>
           <display-step>C</display-step>
           <display-octave>5</display-octave>
@@ -18448,6 +18936,17 @@
           </unpitched>
         <duration>2</duration>
         <instrument id="P5-I43" />
+        <type>quarter</type>
+        <notehead>x</notehead>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>B</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I53" />
         <type>quarter</type>
         <notehead>x</notehead>
         </note>
@@ -18615,14 +19114,30 @@
         <type>quarter</type>
         </note>
       <note>
-        <rest />
+        <chord />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>2</duration>
+        <instrument id="P5-I43" />
         <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <rest />
         <duration>2</duration>
         <type>quarter</type>
+        </note>
+      <note>
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I43" />
+        <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       </measure>
     <measure number="36">
@@ -18657,9 +19172,14 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>2</duration>
+        <instrument id="P5-I43" />
         <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <rest />
@@ -18667,9 +19187,15 @@
         <type>quarter</type>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>1</duration>
+        <instrument id="P5-I43" />
         <type>eighth</type>
+        <notehead>x</notehead>
+        <beam number="1">begin</beam>
         </note>
       <note>
         <unpitched>
@@ -18680,6 +19206,18 @@
         <instrument id="P5-I57" />
         <type>eighth</type>
         <notehead>inverted triangle</notehead>
+        <beam number="1">end</beam>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>1</duration>
+        <instrument id="P5-I43" />
+        <type>eighth</type>
+        <notehead>x</notehead>
         </note>
       </measure>
     <measure number="37">
@@ -18733,14 +19271,30 @@
         <type>quarter</type>
         </note>
       <note>
-        <rest />
+        <chord />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>2</duration>
+        <instrument id="P5-I43" />
         <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <rest />
         <duration>2</duration>
         <type>quarter</type>
+        </note>
+      <note>
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I43" />
+        <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       </measure>
     <measure number="38">
@@ -18775,9 +19329,14 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>2</duration>
+        <instrument id="P5-I43" />
         <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <rest />
@@ -18785,9 +19344,15 @@
         <type>quarter</type>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>1</duration>
+        <instrument id="P5-I43" />
         <type>eighth</type>
+        <notehead>x</notehead>
+        <beam number="1">begin</beam>
         </note>
       <note>
         <unpitched>
@@ -18798,6 +19363,18 @@
         <instrument id="P5-I57" />
         <type>eighth</type>
         <notehead>inverted triangle</notehead>
+        <beam number="1">end</beam>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>1</duration>
+        <instrument id="P5-I43" />
+        <type>eighth</type>
+        <notehead>x</notehead>
         </note>
       </measure>
     <measure number="39">
@@ -18851,14 +19428,30 @@
         <type>quarter</type>
         </note>
       <note>
-        <rest />
+        <chord />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>2</duration>
+        <instrument id="P5-I43" />
         <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <rest />
         <duration>2</duration>
         <type>quarter</type>
+        </note>
+      <note>
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I43" />
+        <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       </measure>
     <measure number="40">
@@ -18893,9 +19486,14 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>2</duration>
+        <instrument id="P5-I43" />
         <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <rest />
@@ -18903,9 +19501,15 @@
         <type>quarter</type>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>1</duration>
+        <instrument id="P5-I43" />
         <type>eighth</type>
+        <notehead>x</notehead>
+        <beam number="1">begin</beam>
         </note>
       <note>
         <unpitched>
@@ -18916,6 +19520,18 @@
         <instrument id="P5-I57" />
         <type>eighth</type>
         <notehead>inverted triangle</notehead>
+        <beam number="1">end</beam>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>1</duration>
+        <instrument id="P5-I43" />
+        <type>eighth</type>
+        <notehead>x</notehead>
         </note>
       </measure>
     <measure number="41">
@@ -18950,6 +19566,17 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
+        <chord />
+        <unpitched>
+          <display-step>B</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I53" />
+        <type>quarter</type>
+        <notehead>x</notehead>
+        </note>
+      <note>
         <unpitched>
           <display-step>A</display-step>
           <display-octave>4</display-octave>
@@ -18986,6 +19613,17 @@
         <duration>2</duration>
         <instrument id="P5-I41" />
         <type>quarter</type>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>B</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I53" />
+        <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <unpitched>
@@ -19133,9 +19771,14 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>2</duration>
+        <instrument id="P5-I43" />
         <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <unpitched>
@@ -19168,9 +19811,15 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>1</duration>
+        <instrument id="P5-I43" />
         <type>eighth</type>
+        <notehead>x</notehead>
+        <beam number="1">begin</beam>
         </note>
       <note>
         <unpitched>
@@ -19181,6 +19830,18 @@
         <instrument id="P5-I57" />
         <type>eighth</type>
         <notehead>inverted triangle</notehead>
+        <beam number="1">end</beam>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>1</duration>
+        <instrument id="P5-I43" />
+        <type>eighth</type>
+        <notehead>x</notehead>
         </note>
       <backup>
         <duration>8</duration>
@@ -19237,9 +19898,14 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>2</duration>
+        <instrument id="P5-I43" />
         <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <unpitched>
@@ -19289,6 +19955,17 @@
         <duration>2</duration>
         <instrument id="P5-I41" />
         <type>quarter</type>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I43" />
+        <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <backup>
         <duration>8</duration>
@@ -19345,9 +20022,14 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>2</duration>
+        <instrument id="P5-I43" />
         <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <unpitched>
@@ -19380,9 +20062,15 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>1</duration>
+        <instrument id="P5-I43" />
         <type>eighth</type>
+        <notehead>x</notehead>
+        <beam number="1">begin</beam>
         </note>
       <note>
         <unpitched>
@@ -19393,6 +20081,18 @@
         <instrument id="P5-I57" />
         <type>eighth</type>
         <notehead>inverted triangle</notehead>
+        <beam number="1">end</beam>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>1</duration>
+        <instrument id="P5-I43" />
+        <type>eighth</type>
+        <notehead>x</notehead>
         </note>
       <backup>
         <duration>8</duration>
@@ -19449,9 +20149,14 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>2</duration>
+        <instrument id="P5-I43" />
         <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <unpitched>
@@ -19501,6 +20206,17 @@
         <duration>2</duration>
         <instrument id="P5-I41" />
         <type>quarter</type>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I43" />
+        <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <backup>
         <duration>8</duration>
@@ -19557,9 +20273,14 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>2</duration>
+        <instrument id="P5-I43" />
         <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <unpitched>
@@ -19592,9 +20313,15 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>1</duration>
+        <instrument id="P5-I43" />
         <type>eighth</type>
+        <notehead>x</notehead>
+        <beam number="1">begin</beam>
         </note>
       <note>
         <unpitched>
@@ -19605,6 +20332,18 @@
         <instrument id="P5-I57" />
         <type>eighth</type>
         <notehead>inverted triangle</notehead>
+        <beam number="1">end</beam>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>1</duration>
+        <instrument id="P5-I43" />
+        <type>eighth</type>
+        <notehead>x</notehead>
         </note>
       <backup>
         <duration>8</duration>
@@ -19661,9 +20400,14 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
-        <rest />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
         <duration>2</duration>
+        <instrument id="P5-I43" />
         <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <unpitched>
@@ -19713,6 +20457,17 @@
         <duration>2</duration>
         <instrument id="P5-I41" />
         <type>quarter</type>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I43" />
+        <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <backup>
         <duration>8</duration>
@@ -19769,6 +20524,17 @@
         <notehead>inverted triangle</notehead>
         </note>
       <note>
+        <chord />
+        <unpitched>
+          <display-step>B</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I53" />
+        <type>quarter</type>
+        <notehead>x</notehead>
+        </note>
+      <note>
         <unpitched>
           <display-step>A</display-step>
           <display-octave>4</display-octave>
@@ -19807,6 +20573,17 @@
         <type>quarter</type>
         </note>
       <note>
+        <chord />
+        <unpitched>
+          <display-step>B</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I53" />
+        <type>quarter</type>
+        <notehead>x</notehead>
+        </note>
+      <note>
         <unpitched>
           <display-step>A</display-step>
           <display-octave>4</display-octave>
@@ -19824,6 +20601,17 @@
         <duration>2</duration>
         <instrument id="P5-I41" />
         <type>quarter</type>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>B</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I53" />
+        <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <backup>
         <duration>8</duration>
@@ -19978,6 +20766,13 @@
         <bar-style>heavy-light</bar-style>
         <repeat direction="forward" />
         </barline>
+      <direction placement="below">
+        <direction-type>
+          <dynamics>
+            <f />
+            </dynamics>
+          </direction-type>
+        </direction>
       <note>
         <unpitched>
           <display-step>A</display-step>
@@ -19996,6 +20791,17 @@
         <duration>2</duration>
         <instrument id="P5-I41" />
         <type>quarter</type>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>B</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I56" />
+        <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <unpitched>
@@ -20505,6 +21311,17 @@
         </backup>
       <note>
         <unpitched>
+          <display-step>D</display-step>
+          <display-octave>4</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I45" />
+        <type>quarter</type>
+        <notehead>x</notehead>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
           <display-step>F</display-step>
           <display-octave>4</display-octave>
           </unpitched>
@@ -20727,6 +21544,17 @@
         </backup>
       <note>
         <unpitched>
+          <display-step>D</display-step>
+          <display-octave>4</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I45" />
+        <type>quarter</type>
+        <notehead>x</notehead>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
           <display-step>F</display-step>
           <display-octave>4</display-octave>
           </unpitched>
@@ -20942,6 +21770,17 @@
         <duration>8</duration>
         </backup>
       <note>
+        <unpitched>
+          <display-step>D</display-step>
+          <display-octave>4</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I45" />
+        <type>quarter</type>
+        <notehead>x</notehead>
+        </note>
+      <note>
+        <chord />
         <unpitched>
           <display-step>F</display-step>
           <display-octave>4</display-octave>
@@ -21165,6 +22004,17 @@
         </backup>
       <note>
         <unpitched>
+          <display-step>D</display-step>
+          <display-octave>4</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I45" />
+        <type>quarter</type>
+        <notehead>x</notehead>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
           <display-step>F</display-step>
           <display-octave>4</display-octave>
           </unpitched>
@@ -21387,6 +22237,17 @@
         </backup>
       <note>
         <unpitched>
+          <display-step>D</display-step>
+          <display-octave>4</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I45" />
+        <type>quarter</type>
+        <notehead>x</notehead>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
           <display-step>F</display-step>
           <display-octave>4</display-octave>
           </unpitched>
@@ -21526,6 +22387,9 @@
         </note>
       </measure>
     <measure number="65">
+      <barline location="left">
+        <ending number="1" type="start" />
+        </barline>
       <note>
         <unpitched>
           <display-step>A</display-step>
@@ -21608,6 +22472,17 @@
         <duration>8</duration>
         </backup>
       <note>
+        <unpitched>
+          <display-step>D</display-step>
+          <display-octave>4</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I45" />
+        <type>quarter</type>
+        <notehead>x</notehead>
+        </note>
+      <note>
+        <chord />
         <unpitched>
           <display-step>F</display-step>
           <display-octave>4</display-octave>
@@ -21637,6 +22512,13 @@
         </note>
       </measure>
     <measure number="66">
+      <direction placement="below">
+        <direction-type>
+          <dynamics>
+            <ff />
+            </dynamics>
+          </direction-type>
+        </direction>
       <note>
         <unpitched>
           <display-step>A</display-step>
@@ -21668,19 +22550,20 @@
         <type>quarter</type>
         <notehead>x</notehead>
         </note>
-      <note>
-        <rest />
-        <duration>2</duration>
-        <type>quarter</type>
-        </note>
+      <direction placement="below">
+        <direction-type>
+          <wedge type="crescendo" number="1" />
+          </direction-type>
+        </direction>
       <note>
         <unpitched>
-          <display-step>A</display-step>
-          <display-octave>4</display-octave>
+          <display-step>C</display-step>
+          <display-octave>5</display-octave>
           </unpitched>
-        <duration>2</duration>
-        <instrument id="P5-I42" />
-        <type>quarter</type>
+        <duration>1</duration>
+        <instrument id="P5-I41" />
+        <type>eighth</type>
+        <beam number="1">begin</beam>
         </note>
       <note>
         <chord />
@@ -21688,10 +22571,46 @@
           <display-step>E</display-step>
           <display-octave>5</display-octave>
           </unpitched>
-        <duration>2</duration>
-        <instrument id="P5-I47" />
-        <type>quarter</type>
-        <notehead>x</notehead>
+        <duration>1</duration>
+        <instrument id="P5-I57" />
+        <type>eighth</type>
+        <notehead>inverted triangle</notehead>
+        </note>
+      <note>
+        <unpitched>
+          <display-step>C</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>1</duration>
+        <instrument id="P5-I39" />
+        <type>eighth</type>
+        <beam number="1">end</beam>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>E</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>1</duration>
+        <instrument id="P5-I57" />
+        <type>eighth</type>
+        <notehead>inverted triangle</notehead>
+        </note>
+      <note>
+        <unpitched>
+          <display-step>C</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>1</duration>
+        <instrument id="P5-I41" />
+        <type>eighth</type>
+        <beam number="1">begin</beam>
+        <notations>
+          <articulations>
+            <accent />
+            </articulations>
+          </notations>
         </note>
       <note>
         <chord />
@@ -21699,15 +22618,74 @@
           <display-step>A</display-step>
           <display-octave>5</display-octave>
           </unpitched>
-        <duration>2</duration>
+        <duration>1</duration>
         <instrument id="P5-I50" />
-        <type>quarter</type>
+        <type>eighth</type>
         <notehead>x</notehead>
         </note>
       <note>
-        <rest />
-        <duration>2</duration>
-        <type>quarter</type>
+        <unpitched>
+          <display-step>C</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>1</duration>
+        <instrument id="P5-I39" />
+        <type>eighth</type>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>E</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>1</duration>
+        <instrument id="P5-I57" />
+        <type>eighth</type>
+        <notehead>inverted triangle</notehead>
+        </note>
+      <direction placement="below">
+        <direction-type>
+          <wedge type="stop" number="1" relative-x="-5.05" />
+          </direction-type>
+        </direction>
+      <note>
+        <unpitched>
+          <display-step>C</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>1</duration>
+        <instrument id="P5-I41" />
+        <type>eighth</type>
+        <beam number="1">continue</beam>
+        </note>
+      <direction placement="below">
+        <direction-type>
+          <dynamics>
+            <fff />
+            </dynamics>
+          </direction-type>
+        </direction>
+      <note>
+        <unpitched>
+          <display-step>C</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>1</duration>
+        <instrument id="P5-I39" />
+        <type>eighth</type>
+        <beam number="1">end</beam>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>E</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>1</duration>
+        <instrument id="P5-I57" />
+        <type>eighth</type>
+        <notehead>inverted triangle</notehead>
         </note>
       <backup>
         <duration>8</duration>
@@ -21727,21 +22705,13 @@
         <type>quarter</type>
         </note>
       <note>
-        <unpitched>
-          <display-step>F</display-step>
-          <display-octave>4</display-octave>
-          </unpitched>
-        <duration>2</duration>
-        <instrument id="P5-I36" />
-        <type>quarter</type>
-        </note>
-      <note>
         <rest />
-        <duration>2</duration>
-        <type>quarter</type>
+        <duration>4</duration>
+        <type>half</type>
         </note>
       <barline location="right">
         <bar-style>light-heavy</bar-style>
+        <ending number="1" type="stop" />
         <repeat direction="backward" />
         </barline>
       </measure>
@@ -21750,6 +22720,13 @@
         <bar-style>heavy-light</bar-style>
         <repeat direction="forward" />
         </barline>
+      <direction placement="below">
+        <direction-type>
+          <dynamics>
+            <f />
+            </dynamics>
+          </direction-type>
+        </direction>
       <note>
         <unpitched>
           <display-step>A</display-step>
@@ -21768,6 +22745,17 @@
         <duration>2</duration>
         <instrument id="P5-I41" />
         <type>quarter</type>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>B</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I56" />
+        <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <unpitched>
@@ -22277,6 +23265,17 @@
         </backup>
       <note>
         <unpitched>
+          <display-step>D</display-step>
+          <display-octave>4</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I45" />
+        <type>quarter</type>
+        <notehead>x</notehead>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
           <display-step>F</display-step>
           <display-octave>4</display-octave>
           </unpitched>
@@ -22499,6 +23498,17 @@
         </backup>
       <note>
         <unpitched>
+          <display-step>D</display-step>
+          <display-octave>4</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I45" />
+        <type>quarter</type>
+        <notehead>x</notehead>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
           <display-step>F</display-step>
           <display-octave>4</display-octave>
           </unpitched>
@@ -22714,6 +23724,17 @@
         <duration>8</duration>
         </backup>
       <note>
+        <unpitched>
+          <display-step>D</display-step>
+          <display-octave>4</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I45" />
+        <type>quarter</type>
+        <notehead>x</notehead>
+        </note>
+      <note>
+        <chord />
         <unpitched>
           <display-step>F</display-step>
           <display-octave>4</display-octave>
@@ -22937,6 +23958,17 @@
         </backup>
       <note>
         <unpitched>
+          <display-step>D</display-step>
+          <display-octave>4</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I45" />
+        <type>quarter</type>
+        <notehead>x</notehead>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
           <display-step>F</display-step>
           <display-octave>4</display-octave>
           </unpitched>
@@ -23159,6 +24191,17 @@
         </backup>
       <note>
         <unpitched>
+          <display-step>D</display-step>
+          <display-octave>4</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I45" />
+        <type>quarter</type>
+        <notehead>x</notehead>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
           <display-step>F</display-step>
           <display-octave>4</display-octave>
           </unpitched>
@@ -23297,7 +24340,10 @@
         <type>quarter</type>
         </note>
       </measure>
-    <measure number="65">
+    <measure number="67">
+      <barline location="left">
+        <ending number="2" type="start" />
+        </barline>
       <note>
         <unpitched>
           <display-step>A</display-step>
@@ -23316,6 +24362,17 @@
         <duration>2</duration>
         <instrument id="P5-I41" />
         <type>quarter</type>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>A</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I50" />
+        <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <unpitched>
@@ -23355,6 +24412,17 @@
         <duration>2</duration>
         <instrument id="P5-I41" />
         <type>quarter</type>
+        </note>
+      <note>
+        <chord />
+        <unpitched>
+          <display-step>A</display-step>
+          <display-octave>5</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I50" />
+        <type>quarter</type>
+        <notehead>x</notehead>
         </note>
       <note>
         <unpitched>
@@ -23380,6 +24448,17 @@
         <duration>8</duration>
         </backup>
       <note>
+        <unpitched>
+          <display-step>D</display-step>
+          <display-octave>4</display-octave>
+          </unpitched>
+        <duration>2</duration>
+        <instrument id="P5-I45" />
+        <type>quarter</type>
+        <notehead>x</notehead>
+        </note>
+      <note>
+        <chord />
         <unpitched>
           <display-step>F</display-step>
           <display-octave>4</display-octave>
@@ -23408,7 +24487,7 @@
         <type>quarter</type>
         </note>
       </measure>
-    <measure number="66">
+    <measure number="68">
       <note>
         <unpitched>
           <display-step>A</display-step>
@@ -23514,7 +24593,7 @@
         </note>
       <barline location="right">
         <bar-style>light-heavy</bar-style>
-        <repeat direction="backward" />
+        <ending number="2" type="stop" />
         </barline>
       </measure>
     </part>
