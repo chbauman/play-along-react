@@ -1571,6 +1571,12 @@ export const scores: ScoreInfo[] = [
     fileName: "With_Or_Without_You",
     name: "With Or Without You - U2",
   },
+  {
+    videoId: "4Pcf5hb82Ts",
+    measureMap: { 4: 4, 231: 148 },
+    fileName: "Valle_Kosovare",
+    name: "Valle Kosovare - Shpat Kasapi",
+  },
 ];
 
 if (DEBUG) {
