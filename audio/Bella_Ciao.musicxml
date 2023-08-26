@@ -10899,7 +10899,7 @@
       <direction placement="below">
         <direction-type>
           <dynamics>
-            <f />
+            <mp />
             </dynamics>
           </direction-type>
         </direction>
@@ -11015,6 +11015,13 @@
         </barline>
       </measure>
     <measure number="5">
+      <direction placement="below">
+        <direction-type>
+          <dynamics>
+            <f />
+            </dynamics>
+          </direction-type>
+        </direction>
       <note>
         <pitch>
           <step>D</step>
@@ -11850,6 +11857,11 @@
           </pitch>
         <duration>4</duration>
         <type>quarter</type>
+        <notations>
+          <articulations>
+            <staccato />
+            </articulations>
+          </notations>
         </note>
       <note>
         <rest />
@@ -11889,6 +11901,11 @@
           </pitch>
         <duration>4</duration>
         <type>quarter</type>
+        <notations>
+          <articulations>
+            <staccato />
+            </articulations>
+          </notations>
         </note>
       <note>
         <rest />
@@ -12171,6 +12188,11 @@
           </pitch>
         <duration>4</duration>
         <type>quarter</type>
+        <notations>
+          <articulations>
+            <staccato />
+            </articulations>
+          </notations>
         </note>
       <note>
         <rest />
@@ -12210,6 +12232,11 @@
           </pitch>
         <duration>4</duration>
         <type>quarter</type>
+        <notations>
+          <articulations>
+            <staccato />
+            </articulations>
+          </notations>
         </note>
       <note>
         <rest />
@@ -13718,6 +13745,13 @@
           <line>2</line>
           </clef>
         </attributes>
+      <direction placement="below">
+        <direction-type>
+          <dynamics>
+            <mp />
+            </dynamics>
+          </direction-type>
+        </direction>
       <note>
         <unpitched>
           <display-step>C</display-step>
@@ -13856,6 +13890,13 @@
         </barline>
       </measure>
     <measure number="5">
+      <direction placement="below">
+        <direction-type>
+          <dynamics>
+            <f />
+            </dynamics>
+          </direction-type>
+        </direction>
       <note>
         <unpitched>
           <display-step>G</display-step>
