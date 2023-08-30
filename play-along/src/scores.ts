@@ -1577,6 +1577,36 @@ export const scores: ScoreInfo[] = [
     fileName: "Valle_Kosovare",
     name: "Valle Kosovare - Shpat Kasapi",
   },
+  {
+    videoId: "bWcASV2sey0",
+    measureMap: { 7: 1, 248: 151 },
+    fileName: "Holding_Out",
+    name: "Holding Out For A Hero - Bonnie Tyler",
+  },
+  {
+    videoId: "ta-Z_psXODw",
+    measureMap: { 5: 5, 218: 200 },
+    fileName: "Keelhauled",
+    name: "Keelhauled - Alestorm",
+  },
+  {
+    videoId: "D4kfhy5Kzkk",
+    measureMap: { 3: 1, 177: 66 },
+    fileName: "March_of_Steel_Torrent",
+    name: "March of Steel Torrent - Chinese Military",
+  },
+  {
+    videoId: "Zqcf1r1zBxc",
+    measureMap: { 8: 5, 35: 19, 42: 21, 78: 39, 182: 91 },
+    fileName: "Money_Money_Money",
+    name: "Money Money Money - ABBA",
+  },
+  {
+    videoId: "0a5BJxrarL0",
+    measureMap: { 6: 5, 42: 26, 48: 28, 199: 116 },
+    fileName: "USA",
+    name: "U.S.A. - Dubioza kolektiv",
+  },
 ];
 
 if (DEBUG) {
