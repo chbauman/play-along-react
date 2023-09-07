@@ -1607,6 +1607,12 @@ export const scores: ScoreInfo[] = [
     fileName: "USA",
     name: "U.S.A. - Dubioza kolektiv",
   },
+  {
+    videoId: "q0hyYWKXF0Q",
+    measureMap: { 15: 1, 221: 85 },
+    fileName: "Dance_Monkey",
+    name: "Dance Monkey - Tones And I",
+  },
 ];
 
 if (DEBUG) {
