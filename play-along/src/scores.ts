@@ -1613,6 +1613,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Dance_Monkey",
     name: "Dance Monkey - Tones And I",
   },
+  {
+    videoId: "sKT68BcpIiY",
+    measureMap: { 10: 1, 164: 95 },
+    fileName: "Hey_Luise",
+    name: "Hey Luise - Die Draufgänger",
+  },
 ];
 
 if (DEBUG) {
