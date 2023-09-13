@@ -1619,6 +1619,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Hey_Luise",
     name: "Hey Luise - Die Draufgänger",
   },
+  {
+    videoId: "1vrEljMfXYo",
+    measureMap: { 7: 5, 182: 125 },
+    fileName: "Country_Roads",
+    name: "Take Me Home, Country Roads - John Denver",
+  },
 ];
 
 if (DEBUG) {
