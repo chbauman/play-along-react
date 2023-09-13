@@ -1625,6 +1625,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Country_Roads",
     name: "Take Me Home, Country Roads - John Denver",
   },
+  {
+    videoId: "4NRXx6U8ABQ",
+    measureMap: { 40: 1, 143: 75, 153: 76, 219: 123 },
+    fileName: "Blinding_Lights",
+    name: "Blinding Lights - The Weeknd",
+  },
 ];
 
 if (DEBUG) {
