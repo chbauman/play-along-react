@@ -1637,6 +1637,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Here_Comes_The_Sun",
     name: "Here Comes The Sun - The Beatles",
   },
+  {
+    videoId: "9Ht5RZpzPqw",
+    measureMap: { 4: 2, 161: 99 },
+    fileName: "All_The_Small_Things",
+    name: "All The Small Things - Blink-182",
+  },
 ];
 
 if (DEBUG) {
