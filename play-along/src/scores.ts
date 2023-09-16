@@ -618,7 +618,7 @@ export const scores: ScoreInfo[] = [
     name: "Santiano - Les Marins D'Iroise",
   },
   {
-    videoId: "9lfgOfMY2FI",
+    videoId: "aSO5fQTmHNY",
     measureMap: { 3: 3, 94: 38, 128: 51, 141: 56, 151: 59, 193: 90, 197: 93 },
     fileName: "Les_Choristes",
     name: "Les Choristes - Bruno Coulais",
@@ -1630,6 +1630,12 @@ export const scores: ScoreInfo[] = [
     measureMap: { 40: 1, 143: 75, 153: 76, 219: 123 },
     fileName: "Blinding_Lights",
     name: "Blinding Lights - The Weeknd",
+  },
+  {
+    videoId: "KQetemT1sWc",
+    measureMap: { 2: 2, 82: 45 },
+    fileName: "Here_Comes_The_Sun",
+    name: "Here Comes The Sun - The Beatles",
   },
 ];
 
