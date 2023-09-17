@@ -571,7 +571,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "JYIaWeVL1JM",
-    measureMap: rhythmIsAMM,
+    measureMap: { 2: 3, 31: 18, 62: 34, 108: 58, 201: 106, 215: 113 },
     fileName: "Rhythm_Is_A_Dancer",
     name: "Rhythm Is A Dancer - Snap!",
   },
