@@ -1642,6 +1642,12 @@ export const scores: ScoreInfo[] = [
     fileName: "All_The_Small_Things",
     name: "All The Small Things - Blink-182",
   },
+  {
+    videoId: "vVy9Lgpg1m8",
+    measureMap: { 17: 1, 112: 77, 191: 140 },
+    fileName: "First_Date",
+    name: "First Date - Blink-182",
+  },
 ];
 
 if (DEBUG) {
