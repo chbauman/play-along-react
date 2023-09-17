@@ -1648,6 +1648,12 @@ export const scores: ScoreInfo[] = [
     fileName: "First_Date",
     name: "First Date - Blink-182",
   },
+  {
+    videoId: "tG7fk_DUz5g",
+    measureMap: { 13: 5, 212: 68 },
+    fileName: "Valhalla_Calling",
+    name: "Valhalla Calling - Miracle Of Sound",
+  },
 ];
 
 if (DEBUG) {
