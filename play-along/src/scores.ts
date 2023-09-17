@@ -138,7 +138,6 @@ const bambolaMM = { 10: 10, 41: 36, 72: 62, 101: 86, 124: 106, 143: 121 };
 const youtheoneMM = { 8: 2, 46: 25, 79: 45, 125: 73, 179: 106, 202: 120 };
 const freundMM = { 40: 15, 145: 127, 213: 199, 219: 205, 249: 236 };
 const blosEMM = { 22: 12, 59: 30, 100: 50, 132: 66, 146: 73, 152: 76 };
-const rhythmIsAMM = { 2: 3, 31: 18, 62: 34, 108: 58, 123.5: 66 };
 const sombToLoveMM = { 7: 2, 18: 6, 26: 8, 33: 10, 56: 17, 95: 29, 129: 39 };
 const deprecatedScores: ScoreInfo[] = [
   {
