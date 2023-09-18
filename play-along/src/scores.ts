@@ -1654,6 +1654,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Valhalla_Calling",
     name: "Valhalla Calling - Miracle Of Sound",
   },
+  {
+    videoId: "8s3P5NYsnio",
+    measureMap: { 12: 1, 17: 3, 112: 43 },
+    fileName: "Battle_Hymn",
+    name: "Battle Hymn Of The Republic - Mitch Miller",
+  },
 ];
 
 if (DEBUG) {
