@@ -1660,6 +1660,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Battle_Hymn",
     name: "Battle Hymn Of The Republic - Mitch Miller",
   },
+  {
+    videoId: "tcFRF5ZaGns",
+    measureMap: { 5: 2, 9: 4, 78: 41, 120: 65, 161: 89, 188: 101, 207: 113 },
+    fileName: "So_ein_schoener_Tag",
+    name: "Fliegerlied (So ein Schöner Tag) - Donikkl",
+  },
 ];
 
 if (DEBUG) {
