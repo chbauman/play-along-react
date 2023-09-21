@@ -1666,6 +1666,12 @@ export const scores: ScoreInfo[] = [
     fileName: "So_ein_schoener_Tag",
     name: "Fliegerlied (So ein Schöner Tag) - Donikkl",
   },
+  {
+    videoId: "6NXnxTNIWkc",
+    measureMap: { 17: 2, 114: 56, 263: 140, 287: 152 },
+    fileName: "Whats_Up",
+    name: "What's Up - 4 Non Blondes",
+  },
 ];
 
 if (DEBUG) {
