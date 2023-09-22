@@ -1672,6 +1672,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Whats_Up",
     name: "What's Up - 4 Non Blondes",
   },
+  {
+    videoId: "8WQFqRO3Xzg",
+    measureMap: { 7: 5, 218: 122 },
+    fileName: "Wahnsinn",
+    name: "Wahnsinn - Wolfgang Petry",
+  },
 ];
 
 if (DEBUG) {
