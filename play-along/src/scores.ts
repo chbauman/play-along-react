@@ -1678,6 +1678,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Wahnsinn",
     name: "Wahnsinn - Wolfgang Petry",
   },
+  {
+    videoId: "CdTGSD1Mooo",
+    measureMap: { 9: 5, 36: 17, 94: 43, 146: 67, 166: 77 },
+    fileName: "Ruzice_Rumena",
+    name: "Oj, Ružice Rumena - Traditional",
+  },
 ];
 
 if (DEBUG) {
