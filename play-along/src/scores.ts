@@ -1684,6 +1684,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Ruzice_Rumena",
     name: "Oj, Ružice Rumena - Traditional",
   },
+  {
+    videoId: "apP448jksho",
+    measureMap: { 7: 4, 234: 74 },
+    fileName: "Heaven",
+    name: "Heaven - Gotthard",
+  },
 ];
 
 if (DEBUG) {
