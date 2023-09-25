@@ -960,7 +960,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "ScO7CZZNR48",
-    measureMap: { 23: 10, 40: 19, 230: 122 },
+    measureMap: { 10: 3, 23: 10, 40: 19, 230: 122 },
     fileName: "Despre_Tine",
     name: "Despre Tine - O-Zone",
   },
@@ -1224,7 +1224,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "zpzdgmqIHOQ",
-    measureMap: { 6: 1, 211: 171 },
+    measureMap: { 6: 1, 211: 172 },
     fileName: "La_Isla",
     name: "La Isla Bonita - Madonna",
   },
@@ -1308,7 +1308,7 @@ export const scores: ScoreInfo[] = [
   },
   {
     videoId: "-GmGgiCzNzY",
-    measureMap: { 2: 2, 203: 117 },
+    measureMap: { 2: 2, 203: 116 },
     fileName: "Drei_Weisse_Tauben",
     name: "Drei Weisse Tauben - EAV",
   },

@@ -842,7 +842,7 @@
         <root>
           <root-step>E</root-step>
           </root>
-        <kind />
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -875,12 +875,6 @@
           <slur type="start" placement="above" number="1" />
           </notations>
         </note>
-      <harmony print-frame="no">
-        <root>
-          <root-step text="">C</root-step>
-          </root>
-        <kind text="">none</kind>
-        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -2155,11 +2149,6 @@
         <type>half</type>
         </note>
       <note>
-        <rest />
-        <duration>2</duration>
-        <type>eighth</type>
-        </note>
-      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -2172,8 +2161,9 @@
           <step>B</step>
           <octave>4</octave>
           </pitch>
-        <duration>4</duration>
+        <duration>6</duration>
         <type>quarter</type>
+        <dot />
         </note>
       </measure>
     <measure number="43">
@@ -2709,26 +2699,22 @@
           <octave>4</octave>
           </pitch>
         <duration>2</duration>
+        <tie type="start" />
         <type>eighth</type>
         <notations>
-          <slur type="start" placement="above" number="1" />
+          <tied type="start" />
           </notations>
         </note>
-      <harmony print-frame="no">
-        <root>
-          <root-step text="">C</root-step>
-          </root>
-        <kind text="">none</kind>
-        </harmony>
       <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
           </pitch>
         <duration>4</duration>
+        <tie type="stop" />
         <type>quarter</type>
         <notations>
-          <slur type="stop" number="1" />
+          <tied type="stop" />
           </notations>
         </note>
       <note>
@@ -4068,11 +4054,6 @@
         <type>half</type>
         </note>
       <note>
-        <rest />
-        <duration>2</duration>
-        <type>eighth</type>
-        </note>
-      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -4085,8 +4066,9 @@
           <step>B</step>
           <octave>4</octave>
           </pitch>
-        <duration>4</duration>
+        <duration>6</duration>
         <type>quarter</type>
+        <dot />
         </note>
       </measure>
     <measure number="81">
