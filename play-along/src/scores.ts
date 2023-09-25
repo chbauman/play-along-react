@@ -1690,6 +1690,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Heaven",
     name: "Heaven - Gotthard",
   },
+  {
+    videoId: "hAQfsJDotfY",
+    measureMap: { 5: 3, 206: 107, 255: 132 },
+    fileName: "Horela_Lipka",
+    name: "Horela ľipka - Hrdza",
+  },
 ];
 
 if (DEBUG) {
