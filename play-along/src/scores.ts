@@ -1696,6 +1696,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Horela_Lipka",
     name: "Horela ľipka - Hrdza",
   },
+  {
+    videoId: "N1XsgCDUbcE",
+    measureMap: { 1: 2, 199: 111 },
+    fileName: "Hurra_die_Gams",
+    name: "Hurra die Gams - Matty Valentino",
+  },
 ];
 
 if (DEBUG) {
