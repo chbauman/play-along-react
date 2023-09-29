@@ -1708,6 +1708,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Bandit_Radio",
     name: "Bandit Radio - S.T.A.L.K.E.R.: Clear Sky",
   },
+  {
+    videoId: "KZ3E7kIYtR0",
+    measureMap: { 10: 1, 91: 24, 190: 53, 199: 55 },
+    fileName: "Danny_Boy",
+    name: "Danny Boy - GENTRI",
+  },
 ];
 
 if (DEBUG) {
