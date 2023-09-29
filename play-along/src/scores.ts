@@ -1714,6 +1714,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Danny_Boy",
     name: "Danny Boy - GENTRI",
   },
+  {
+    videoId: "r1dvJkz15mc",
+    measureMap: { 1: 1, 61: 30, 120: 58, 203: 97 },
+    fileName: "Die_Internationale",
+    name: "Die Internationale - Hannes Wader",
+  },
 ];
 
 if (DEBUG) {
