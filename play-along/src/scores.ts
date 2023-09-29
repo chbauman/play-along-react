@@ -1720,6 +1720,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Die_Internationale",
     name: "Die Internationale - Hannes Wader",
   },
+  {
+    videoId: "pKtLNYNWbBw",
+    measureMap: { 16: 9, 173: 87 },
+    fileName: "Stand_By_Me",
+    name: "Stand By Me - Ben E. King",
+  },
 ];
 
 if (DEBUG) {
