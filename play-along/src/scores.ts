@@ -1702,6 +1702,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Hurra_die_Gams",
     name: "Hurra die Gams - Matty Valentino",
   },
+  {
+    videoId: "j_podzD4cSA",
+    measureMap: { 13: 8, 109: 60 },
+    fileName: "Bandit_Radio",
+    name: "Bandit Radio - S.T.A.L.K.E.R.: Clear Sky",
+  },
 ];
 
 if (DEBUG) {
