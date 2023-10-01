@@ -1726,6 +1726,18 @@ export const scores: ScoreInfo[] = [
     fileName: "Stand_By_Me",
     name: "Stand By Me - Ben E. King",
   },
+  {
+    videoId: "9wxI4KK9ZYo",
+    measureMap: { 11: 3, 71: 15, 78: 17, 206: 43 },
+    fileName: "Perfect_Day",
+    name: "Perfect Day - Lou Reed",
+  },
+  {
+    videoId: "W8r-tXRLazs",
+    measureMap: { 2: 1, 167: 91, 193: 105 },
+    fileName: "Video_Killed_The_Radio_Star",
+    name: "Video Killed The Radio Star - The Buggles",
+  },
 ];
 
 if (DEBUG) {
