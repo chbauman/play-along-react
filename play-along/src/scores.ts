@@ -1738,6 +1738,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Video_Killed_The_Radio_Star",
     name: "Video Killed The Radio Star - The Buggles",
   },
+  {
+    videoId: "r59VQnhHeIk",
+    measureMap: { 4: 1, 18: 9, 34: 13, 218: 119 },
+    fileName: "Peter_Pan",
+    name: "Peter Pan - Julian Sommer & Mia Julia",
+  },
 ];
 
 if (DEBUG) {
