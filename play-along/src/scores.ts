@@ -1744,6 +1744,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Peter_Pan",
     name: "Peter Pan - Julian Sommer & Mia Julia",
   },
+  {
+    videoId: "6pJvvpjdG2w",
+    measureMap: { 5: 1, 152: 90 },
+    fileName: "Maschine",
+    name: "Maschine - Lorenz Büffel",
+  },
 ];
 
 if (DEBUG) {
