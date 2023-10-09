@@ -1750,6 +1750,18 @@ export const scores: ScoreInfo[] = [
     fileName: "Maschine",
     name: "Maschine - Lorenz Büffel",
   },
+  {
+    videoId: "8jW11gHd2-I",
+    measureMap: { 12: 7, 190: 100 },
+    fileName: "Eisbaeren",
+    name: "Hey, wir woll'n die Eisbären seh'n - Sound Convoy",
+  },
+  {
+    videoId: "j11MOncimNQ",
+    measureMap: { 27: 2, 134: 116 },
+    fileName: "Beer_Barrel_Polka",
+    name: "Beer Barrel Polka - West Coast Prost",
+  },
 ];
 
 if (DEBUG) {
