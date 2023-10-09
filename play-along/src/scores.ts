@@ -1762,6 +1762,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Beer_Barrel_Polka",
     name: "Beer Barrel Polka - West Coast Prost",
   },
+  {
+    videoId: "itNajyD2mVs",
+    measureMap: { 2: 2, 131: 72, 139: 76 },
+    fileName: "Gloryland",
+    name: "Just Over In The Gloryland - Craig Duncan",
+  },
 ];
 
 if (DEBUG) {
