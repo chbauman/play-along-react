@@ -1768,6 +1768,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Gloryland",
     name: "Just Over In The Gloryland - Craig Duncan",
   },
+  {
+    videoId: "azdwsXLmrHE",
+    measureMap: { 24: 1, 62: 19, 319: 139 },
+    fileName: "Radio_Gaga",
+    name: "Radio Ga Ga - Queen",
+  },
 ];
 
 if (DEBUG) {
