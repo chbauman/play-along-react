@@ -1774,6 +1774,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Radio_Gaga",
     name: "Radio Ga Ga - Queen",
   },
+  {
+    videoId: "ZEcqHA7dbwM",
+    measureMap: { 8: 1, 143: 68 },
+    fileName: "Fly_Me_To_The_Moon",
+    name: "Fly Me To The Moon - Frank Sinatra",
+  },
 ];
 
 if (DEBUG) {
