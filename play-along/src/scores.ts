@@ -1786,6 +1786,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Godfather_Theme",
     name: "Speak Softly, Love (The Godfather Theme) - David Davidson",
   },
+  {
+    videoId: "nTcsXE0QC6k",
+    measureMap: { 20: 15, 127: 91 },
+    fileName: "Viva_Jujuy",
+    name: "Viva Jujuy - Mercedes Sosa",
+  },
 ];
 
 if (DEBUG) {
