@@ -1792,6 +1792,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Viva_Jujuy",
     name: "Viva Jujuy - Mercedes Sosa",
   },
+  {
+    videoId: "JNPWPWucNOM",
+    measureMap: { 3: 1, 220: 73 },
+    fileName: "Kunterbunt",
+    name: "Kunterbunt - Le Shuuk",
+  },
 ];
 
 if (DEBUG) {
