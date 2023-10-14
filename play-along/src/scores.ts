@@ -1780,6 +1780,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Fly_Me_To_The_Moon",
     name: "Fly Me To The Moon - Frank Sinatra",
   },
+  {
+    videoId: "ZJcCPmPKlPQ",
+    measureMap: { 8: 1, 156: 42 },
+    fileName: "Godfather_Theme",
+    name: "Speak Softly, Love (The Godfather Theme) - David Davidson",
+  },
 ];
 
 if (DEBUG) {
