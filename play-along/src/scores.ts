@@ -1798,6 +1798,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Kunterbunt",
     name: "Kunterbunt - Le Shuuk",
   },
+  {
+    videoId: "kBna0zRQseQ",
+    measureMap: { 1: 1, 166: 139 },
+    fileName: "Musica_Fantasia",
+    name: "Musica Fantasia - Rondò Veneziano",
+  },
 ];
 
 if (DEBUG) {
