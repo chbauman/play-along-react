@@ -1804,6 +1804,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Musica_Fantasia",
     name: "Musica Fantasia - Rondò Veneziano",
   },
+  {
+    videoId: "RaBPXIw0rqs",
+    measureMap: { 21: 1, 36: 7, 203: 76, 211: 78 },
+    fileName: "Quizas_Quizas_Quizas",
+    name: "Quizás, Quizás, Quizás - Gaby Moreno",
+  },
 ];
 
 if (DEBUG) {
