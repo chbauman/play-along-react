@@ -1810,6 +1810,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Quizas_Quizas_Quizas",
     name: "Quizás, Quizás, Quizás - Gaby Moreno",
   },
+  {
+    videoId: "DeumyOzKqgI",
+    measureMap: { 8: 1, 34: 9, 263: 81, 266: 82 },
+    fileName: "Skyfall",
+    name: "Skyfall - Adele",
+  },
 ];
 
 if (DEBUG) {
