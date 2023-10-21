@@ -396,7 +396,7 @@
         </note>
       <note dynamics="106.67">
         <pitch>
-          <step>D</step>
+          <step>C</step>
           <octave>5</octave>
           </pitch>
         <duration>2</duration>
@@ -412,21 +412,12 @@
         </harmony>
       <note dynamics="106.67">
         <pitch>
-          <step>C</step>
-          <octave>5</octave>
+          <step>B</step>
+          <octave>4</octave>
           </pitch>
         <duration>1</duration>
         <type>eighth</type>
         <beam number="1">begin</beam>
-        </note>
-      <note dynamics="106.67">
-        <pitch>
-          <step>D</step>
-          <octave>5</octave>
-          </pitch>
-        <duration>1</duration>
-        <type>eighth</type>
-        <beam number="1">continue</beam>
         </note>
       <note dynamics="106.67">
         <pitch>
@@ -444,7 +435,7 @@
           </pitch>
         <duration>1</duration>
         <type>eighth</type>
-        <beam number="1">end</beam>
+        <beam number="1">continue</beam>
         </note>
       <note dynamics="106.67">
         <pitch>
@@ -453,6 +444,17 @@
           </pitch>
         <duration>1</duration>
         <type>eighth</type>
+        <beam number="1">end</beam>
+        </note>
+      <note dynamics="106.67">
+        <pitch>
+          <step>G</step>
+          <alter>1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>1</duration>
+        <type>eighth</type>
+        <accidental>sharp</accidental>
         </note>
       <note>
         <rest />
@@ -461,13 +463,11 @@
         </note>
       <note>
         <pitch>
-          <step>G</step>
-          <alter>1</alter>
+          <step>E</step>
           <octave>4</octave>
           </pitch>
         <duration>2</duration>
         <type>quarter</type>
-        <accidental>sharp</accidental>
         </note>
       </measure>
     <measure number="9">
@@ -816,7 +816,7 @@
         </note>
       <note dynamics="106.67">
         <pitch>
-          <step>D</step>
+          <step>C</step>
           <octave>5</octave>
           </pitch>
         <duration>2</duration>
@@ -832,8 +832,8 @@
         </harmony>
       <note dynamics="106.67">
         <pitch>
-          <step>C</step>
-          <octave>5</octave>
+          <step>B</step>
+          <octave>4</octave>
           </pitch>
         <duration>1</duration>
         <type>eighth</type>
