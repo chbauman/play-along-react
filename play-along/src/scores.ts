@@ -1816,6 +1816,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Skyfall",
     name: "Skyfall - Adele",
   },
+  {
+    videoId: "hjIZjyqtQD0",
+    measureMap: { 11: 9, 65: 49, 128: 96, 189: 143, 195: 147 },
+    fileName: "Joshua",
+    name: "Joshua Fit De Battle of Jericho - Sidney Bechet",
+  },
 ];
 
 if (DEBUG) {
