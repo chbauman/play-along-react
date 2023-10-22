@@ -1828,6 +1828,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Back_To_Black",
     name: "Back To Black - Amy Winehouse",
   },
+  {
+    videoId: "0G3_kG5FFfQ",
+    measureMap: { 5: 1, 228: 67 },
+    fileName: "When_Youre_Gone",
+    name: "When You're Gone - Avril Lavigne",
+  },
 ];
 
 if (DEBUG) {
