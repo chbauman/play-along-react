@@ -1846,6 +1846,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Crocodile_Rock",
     name: "Crocodile Rock - Elton John",
   },
+  {
+    videoId: "MMFj8uDubsE",
+    measureMap: { 4: 2, 44: 32, 97: 71 },
+    fileName: "Blowin_in_the_wind",
+    name: "Blowin' in the Wind - Bob Dylan",
+  },
 ];
 
 if (DEBUG) {
