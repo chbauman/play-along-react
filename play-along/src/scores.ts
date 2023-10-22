@@ -1834,6 +1834,12 @@ export const scores: ScoreInfo[] = [
     fileName: "When_Youre_Gone",
     name: "When You're Gone - Avril Lavigne",
   },
+  {
+    videoId: "XpqqjU7u5Yc",
+    measureMap: { 18: 9, 234: 103 },
+    fileName: "How_Deep_Is_Your_Love",
+    name: "How Deep Is Your Love - Bee Gees",
+  },
 ];
 
 if (DEBUG) {
