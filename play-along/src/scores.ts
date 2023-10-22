@@ -1822,6 +1822,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Joshua",
     name: "Joshua Fit De Battle of Jericho - Sidney Bechet",
   },
+  {
+    videoId: "TJAfLE39ZZ8",
+    measureMap: { 16: 9, 156: 81, 202: 103, 233: 119 },
+    fileName: "Back_To_Black",
+    name: "Back To Black - Amy Winehouse",
+  },
 ];
 
 if (DEBUG) {
