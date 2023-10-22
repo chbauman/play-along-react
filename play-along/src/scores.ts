@@ -1840,6 +1840,12 @@ export const scores: ScoreInfo[] = [
     fileName: "How_Deep_Is_Your_Love",
     name: "How Deep Is Your Love - Bee Gees",
   },
+  {
+    videoId: "75r0nQu-hMs",
+    measureMap: { 3: 1, 196: 121, 231: 143 },
+    fileName: "Crocodile_Rock",
+    name: "Crocodile Rock - Elton John",
+  },
 ];
 
 if (DEBUG) {
