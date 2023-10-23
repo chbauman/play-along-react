@@ -1852,6 +1852,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Blowin_in_the_wind",
     name: "Blowin' in the Wind - Bob Dylan",
   },
+  {
+    videoId: "qT9u9STPD7U",
+    measureMap: { 5: 1, 9: 3, 193: 101 },
+    fileName: "Ma_Cherie",
+    name: "Ma Chérie - DJ Antoine ft. The Beat Shakers",
+  },
 ];
 
 if (DEBUG) {
