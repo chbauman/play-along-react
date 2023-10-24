@@ -1864,6 +1864,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Auld_Lang_Syne",
     name: "Auld Lang Syne - The Tenors",
   },
+  {
+    videoId: "d9KcHGm1Qog",
+    measureMap: { 2: 2, 181: 125 },
+    fileName: "Du_schreibst_Geschichte",
+    name: "Du schreibst Geschichte - Madsen",
+  },
 ];
 
 if (DEBUG) {
