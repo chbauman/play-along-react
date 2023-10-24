@@ -2736,9 +2736,8 @@
           <step>D</step>
           <octave>4</octave>
           </pitch>
-        <duration>1</duration>
-        <type>eighth</type>
-        <beam number="1">begin</beam>
+        <duration>2</duration>
+        <type>quarter</type>
         </note>
       <note>
         <pitch>
@@ -2748,16 +2747,17 @@
           </pitch>
         <duration>1</duration>
         <type>eighth</type>
-        <beam number="1">end</beam>
+        <beam number="1">begin</beam>
         </note>
       <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
           </pitch>
-        <duration>2</duration>
+        <duration>1</duration>
         <tie type="start" />
-        <type>quarter</type>
+        <type>eighth</type>
+        <beam number="1">end</beam>
         <notations>
           <tied type="start" />
           </notations>

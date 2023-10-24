@@ -1858,6 +1858,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Ma_Cherie",
     name: "Ma Chérie - DJ Antoine ft. The Beat Shakers",
   },
+  {
+    videoId: "6lMlGDZ5xBo",
+    measureMap: { 1: 1, 123: 35, 208: 59, 213: 60 },
+    fileName: "Auld_Lang_Syne",
+    name: "Auld Lang Syne - The Tenors",
+  },
 ];
 
 if (DEBUG) {
