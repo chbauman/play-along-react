@@ -1870,6 +1870,18 @@ export const scores: ScoreInfo[] = [
     fileName: "Du_schreibst_Geschichte",
     name: "Du schreibst Geschichte - Madsen",
   },
+  {
+    videoId: "WZ8j-X1hq1I",
+    measureMap: { 5: 3, 80: 39, 160: 77 },
+    fileName: "Moon_River",
+    name: "Moon River - Henry Mancini",
+  },
+  {
+    videoId: "qObzgUfCl28",
+    measureMap: { 6: 1, 157: 60, 167: 62, 197: 74 },
+    fileName: "Ruby",
+    name: "Ruby - Kaiser Chiefs",
+  },
 ];
 
 if (DEBUG) {
