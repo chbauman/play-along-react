@@ -1882,6 +1882,12 @@ export const scores: ScoreInfo[] = [
     fileName: "Ruby",
     name: "Ruby - Kaiser Chiefs",
   },
+  {
+    videoId: "GemKqzILV4w",
+    measureMap: { 3: 2, 213: 93 },
+    fileName: "Chasing_Cars",
+    name: "Chasing Cars - Snow Patrol",
+  },
 ];
 
 if (DEBUG) {
