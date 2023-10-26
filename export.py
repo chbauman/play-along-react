@@ -7,63 +7,13 @@ and attributes from the XML document.
 import argparse
 import copy
 import json
-import subprocess
 from typing import Dict, Optional
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
 from mxlpy import Paths, export_mscz, get_unrolled_measure_indices
-
-# PATHS
-PUBLIC_PATH = Path("play-along/public")
-XML_SCORES_PATH = PUBLIC_PATH / "scores"
-AUDIO_PATH = PUBLIC_PATH / "audio"
-
-assert XML_SCORES_PATH, f"XML output dir {XML_SCORES_PATH} does not exist!"
-
-REMOVE_ELEMENTS = [
-    "defaults",
-    "credit",
-    "print",
-    "work",
-    "midi-device",
-    "midi-instrument",
-    "encoding-date",
-    "sound",
-    "voice",
-    # "type", # Needed for small notes
-    # "beam", # Beams are not added automatically
-    "stem",
-]
-REMOVE_ATRS = ["default-x", "default-y", "width", "relative-y"]
-XML_DEC = """<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
-"""
-
-
-def reduce_file(path: Path):
-    """Removes some unneeded tags from the xml."""
-
-    tree = ET.parse(path)
-    root = tree.getroot()
-    for el_name in REMOVE_ELEMENTS:
-        for el in root.findall(f".//*/..[{el_name}]"):
-            for sub_el in el.findall(el_name):
-                el.remove(sub_el)
-
-    for attr_name in REMOVE_ATRS:
-        for el in root.findall(f".//*[@{attr_name}]"):
-            el.attrib.pop(attr_name)
-            pass
-
-    # Overwrite file with reduced version
-    write_xml(tree, path)
-
-
-def write_xml(tree: ET, out_path: Path):
-    with open(out_path, "wb") as f:
-        f.write(XML_DEC.encode("UTF-8"))
-        tree.write(f, encoding="UTF-8")
+from mxlpy.clean_xml import reduce_file
+from mxlpy.util import write_xml
 
 
 def main(n_process: Optional[int]):
@@ -79,7 +29,7 @@ def main(n_process: Optional[int]):
             print("Stopping")
             break
 
-        out_path = XML_SCORES_PATH / f"{mscz_path.stem}.musicxml"
+        out_path = Paths.XML_SCORES_PATH / f"{mscz_path.stem}.musicxml"
 
         # Export to musicxml
         export_mscz(mscz_path, out_path)
@@ -135,7 +85,7 @@ def export_audio(n_export: int, export_mp3: bool = True):
     # Create a json file for each group
     for group in groups:
         rel_scores = list(filter(_group_includes(group), scores))
-        with open(AUDIO_PATH / f"../../src/audio/{group}.json", "w") as f:
+        with open(Paths.SRC_PATH / f"audio/{group}.json", "w") as f:
             json.dump(rel_scores, f)
 
     # Create a dict mapping relative path to score info
@@ -149,9 +99,7 @@ def export_audio(n_export: int, export_mp3: bool = True):
     sorted_names = reversed(
         sorted(
             path_to_info.keys(),
-            key=lambda p: Path(rf"C:\Users\Chrigi\Documents\GitHub\compositions\{p}")
-            .lstat()
-            .st_mtime,
+            key=lambda p: (Paths.COMPOSITIONS_PATH / p).lstat().st_mtime,
         )
     )
     for ct, a_file in enumerate(sorted_names):
@@ -185,17 +133,29 @@ def export_audio(n_export: int, export_mp3: bool = True):
 
 
 def export_files(a_file: str, export_mp3: bool = True):
-    mscz_path = Path(rf"C:\Users\Chrigi\Documents\GitHub\compositions\{a_file}")
+    mscz_path = Paths.COMPOSITIONS_PATH / a_file
     assert mscz_path.exists(), f"{mscz_path}"
 
-    out_mp3 = AUDIO_PATH / f"{mscz_path.stem}.mp3"
-    out_mxml = AUDIO_PATH / f"{mscz_path.stem}.musicxml"
-    out_json = AUDIO_PATH / f"{mscz_path.stem}.json"
+    out_mp3 = Paths.AUDIO_PATH / f"{mscz_path.stem}.mp3"
+    out_mxml = Paths.AUDIO_PATH / f"{mscz_path.stem}.musicxml"
+    out_json = Paths.AUDIO_PATH / f"{mscz_path.stem}.json"
 
     if export_mp3:
         export_mscz(mscz_path, out_mp3)
     export_mscz(mscz_path, out_mxml)
     return out_mxml, out_json
+
+
+def extract_info(xml: Path):
+    """Extract information from the score."""
+    tree = ET.parse(xml)
+    root = tree.getroot()
+
+    # Find keys
+    fifths = root.findall(f".//fifths")
+    all_keys = [int(fifth.text) for fifth in fifths]
+
+    return {"keys": all_keys}
 
 
 def transpose_to_c(out_mxml: Path):

@@ -1,25 +1,12 @@
 """Musicxml python package."""
 from pathlib import Path
 import subprocess
-from typing import Dict, List, Set
+from typing import List
 import xml.etree.ElementTree as ET
 
-from mxlpy.repeat_analyzer import RepeatAnalyzer
-
-
-class Paths:
-    """Static class holding some paths."""
-
-    MUSESCORE_EXE_PATH = Path("C:/Program Files/MuseScore 3/bin/MuseScore3.exe")
-    COMPOSITIONS_PATH = Path("C:/Users/Chrigi/Documents/GitHub/compositions")
-    MSCZ_SCORE_PATH = COMPOSITIONS_PATH / "PlayAlong"
-    MXLPY_PATH = Path(__file__).parent.resolve()
-    PROJ_BASE_PATH = MXLPY_PATH.parent
-    PLAY_ALONG_PATH = PROJ_BASE_PATH / "play-along"
-    AUDIO_PATH = PLAY_ALONG_PATH / "public" / "audio"
-
-    assert MSCZ_SCORE_PATH.exists, f"Score directory {MSCZ_SCORE_PATH} not found!"
-    assert MUSESCORE_EXE_PATH.exists(), f"Musescore not found at {MUSESCORE_EXE_PATH}!"
+from mxlpy.repeat_analyzer import RepeatAnalyzer, find_next_coda, handle_jump_back
+from mxlpy.util import Paths
+from mxlpy.clean_xml import reduce_file
 
 
 def export_mscz(mscz_src: Path, out_path: Path) -> None:
@@ -59,49 +46,6 @@ def _parse_txt(txt: str):
 
     print(f"Did not understand {txt}")
     return None, False
-
-
-def find_next_coda(measures: List[ET.Element], curr_ct: int) -> int:
-    for ct, meas in enumerate(measures[curr_ct:]):
-        coda = meas.find(".//coda")
-        if coda is not None:
-            return ct + curr_ct
-    return curr_ct
-
-
-def clear_repeats(indices: List[int]) -> List[int]:
-    rev_idx = []
-    curr_min = indices[-1] + 1
-    for idx in reversed(indices):
-        if idx < curr_min:
-            curr_min = idx
-            rev_idx.append(idx)
-
-    return list(reversed(rev_idx))
-
-
-def handle_jump_back(
-    curr_indices: List[int], to_idx: int, end_idx: int, with_repeats: bool
-):
-    found_ct = None
-    first_end_encounter = None
-    last_end_encounter = None
-    for ct, idx in enumerate(curr_indices):
-        if idx == to_idx and found_ct is None:
-            found_ct = ct
-        if idx == end_idx:
-            if first_end_encounter is None:
-                first_end_encounter = ct
-            last_end_encounter = ct
-
-    end = last_end_encounter if with_repeats else first_end_encounter
-    if end is None:
-        end = len(curr_indices) - 1
-
-    add_indices = curr_indices[found_ct : (end + 1)]
-    if not with_repeats:
-        add_indices = clear_repeats(add_indices)
-    return [*curr_indices] + add_indices
 
 
 def get_unrolled_measure_indices(measures: List[ET.Element]) -> List[int]:
@@ -217,3 +161,6 @@ def get_unrolled_measure_indices(measures: List[ET.Element]) -> List[int]:
             ct += 1
 
     return measure_indices
+
+
+__all__ = ["Paths", "get_unrolled_measure_indices", "export_mscz", "reduce_file"]

@@ -2,7 +2,52 @@ import xml.etree.ElementTree as ET
 from typing import List, Dict
 
 
+def find_next_coda(measures: List[ET.Element], curr_ct: int) -> int:
+    for ct, meas in enumerate(measures[curr_ct:]):
+        coda = meas.find(".//coda")
+        if coda is not None:
+            return ct + curr_ct
+    return curr_ct
+
+
+def clear_repeats(indices: List[int]) -> List[int]:
+    rev_idx = []
+    curr_min = indices[-1] + 1
+    for idx in reversed(indices):
+        if idx < curr_min:
+            curr_min = idx
+            rev_idx.append(idx)
+
+    return list(reversed(rev_idx))
+
+
+def handle_jump_back(
+    curr_indices: List[int], to_idx: int, end_idx: int, with_repeats: bool
+):
+    found_ct = None
+    first_end_encounter = None
+    last_end_encounter = None
+    for ct, idx in enumerate(curr_indices):
+        if idx == to_idx and found_ct is None:
+            found_ct = ct
+        if idx == end_idx:
+            if first_end_encounter is None:
+                first_end_encounter = ct
+            last_end_encounter = ct
+
+    end = last_end_encounter if with_repeats else first_end_encounter
+    if end is None:
+        end = len(curr_indices) - 1
+
+    add_indices = curr_indices[found_ct : (end + 1)]
+    if not with_repeats:
+        add_indices = clear_repeats(add_indices)
+    return [*curr_indices] + add_indices
+
+
 class RepeatAnalyzer:
+    """Analyze score for repeats."""
+
     repeats: Dict
 
     last_draw_ct = 0
