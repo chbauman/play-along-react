@@ -3,14 +3,15 @@ import { Col, Form, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { getAudioScores } from "../audio/util";
 import { strLatinise } from "../util/sorting";
-import { getCopiedScores } from "../util/util";
+import { NormalizedScoreInfo, getCopiedScores } from "../util/util";
 import { wrapWithNav } from "./NavBar";
 import { ScoreTable } from "./ScoreTable";
 import { getCopiedSCScores } from "./player/SoundCloudPlayer";
+import ExtendedScoreInfo from "../scoreInfoGenerated.json";
 
 export const sortBy = ["name", "artist"] as const;
 export const sortByNames = { name: "Song Name", artist: "Artist" };
-export type SortBy = typeof sortBy[number];
+export type SortBy = (typeof sortBy)[number];
 type SortSetting = { by: SortBy; ascending: boolean };
 type ScoreNameArtist = typeof sortByNames;
 
@@ -67,22 +68,103 @@ const useSortedScores = () => {
   return { sortFun, sortClick, ...sortSetting };
 };
 
+/** Hook for filtering based on key signature. */
+const useKeyFilter = () => {
+  const flats = [1, 2, 3, 4, 5, 6];
+  const sharps = [1, 2, 3, 4, 5];
+  const negFlats = flats.map((el) => -el);
+  const initValue = [0, ...sharps, ...negFlats];
+  const [chosenKeys, setChosenKeys] = useState<number[]>(initValue);
+
+  const sharpIsSet = (sharpIdx: number) => chosenKeys.includes(sharpIdx);
+  const setSharp = (sharpIdx: number) => {
+    const idx = chosenKeys.indexOf(sharpIdx);
+    if (idx === -1) {
+      setChosenKeys([sharpIdx, ...chosenKeys]);
+    } else {
+      setChosenKeys(chosenKeys.filter((el) => el !== sharpIdx));
+    }
+  };
+  const comp = (
+    <Col>
+      <div className="d-flex justify-content-between">
+        {sharps.map((el) => (
+          <Form.Check
+            type="checkbox"
+            key={`sharp-${el}`}
+            label={`${el} #`}
+            checked={sharpIsSet(el)}
+            onChange={() => setSharp(el)}
+          />
+        ))}
+      </div>
+      <div>
+        <Form.Check
+          type="checkbox"
+          id={`none`}
+          label={`0 ♭ / #`}
+          checked={sharpIsSet(0)}
+          onChange={() => setSharp(0)}
+        />
+      </div>
+      <div className="d-flex justify-content-between">
+        {flats.map((el) => (
+          <Form.Check
+            type="checkbox"
+            key={`flat-${el}`}
+            label={`${el} ♭`}
+            checked={sharpIsSet(-el)}
+            onChange={() => setSharp(-el)}
+          />
+        ))}
+      </div>
+    </Col>
+  );
+  return [chosenKeys, comp] as const;
+};
+
 /** Hook for filtering and sorting scores. */
-const useProcessedScores = (audioCollId?: string, sub?: string) => {
+const useProcessedScores = (
+  extendedScoreInfo: { [key: string]: { keys: number[] } },
+  audioCollId?: string,
+  sub?: string
+) => {
+  const subNN = sub ? sub : audioCollId;
   const [filterS, filterForm] = useScoreFilter();
   const sortInfo = useSortedScores();
+  const [keys, keyFilterComp] = useKeyFilter();
+
+  const enableKeyFiltering = subNN === "yt";
+  const filterComp = enableKeyFiltering && (
+    <>
+      {" "}
+      <Row className="m-0 p-0 mb-3">Filter</Row>
+      <Row className="m-0 p-0 mb-3">
+        <Col className="m-0 p-0">Key Signature</Col>
+        <Col className="m-0 p-0">{keyFilterComp}</Col>
+      </Row>
+    </>
+  );
   const comp = (
     <>
       <Row className="m-0 p-0 mb-3">
         <Col className="m-0 p-0">Search</Col>
         <Col className="m-0 p-0">{filterForm}</Col>
       </Row>
+      {filterComp}
     </>
   );
-
-  const filterAndSort = (
-    scores: { name: string; artist: string; linkId: string }[]
-  ) => {
+  const filterKeys = (el: NormalizedScoreInfo) => {
+    if (el.linkId in extendedScoreInfo) {
+      const currKeys = extendedScoreInfo[el.linkId].keys;
+      const allowedKeys = currKeys.filter((el) => keys.includes(el));
+      if (allowedKeys.length === 0) {
+        return false;
+      }
+    }
+    return true;
+  };
+  const filterAndSort = (scores: NormalizedScoreInfo[]) => {
     if (filterS) {
       // Apply filter
       const fLow = strLatinise(filterS.toLocaleLowerCase());
@@ -96,7 +178,6 @@ const useProcessedScores = (audioCollId?: string, sub?: string) => {
     return scores;
   };
 
-  const subNN = sub ? sub : audioCollId;
   let scores = null;
   if (subNN === "yt") {
     scores = filterAndSort(getCopiedScores());
@@ -105,7 +186,9 @@ const useProcessedScores = (audioCollId?: string, sub?: string) => {
   } else {
     scores = filterAndSort(getAudioScores(audioCollId));
   }
-
+  if (enableKeyFiltering) {
+    scores = scores.filter(filterKeys);
+  }
   return { scores, comp, sortInfo };
 };
 
@@ -113,8 +196,11 @@ const useProcessedScores = (audioCollId?: string, sub?: string) => {
 export const ListScores = ({ sub }: { sub?: string }) => {
   const params = useParams();
   const audioId = params.audioId;
-
-  const { scores, comp, sortInfo } = useProcessedScores(audioId, sub);
+  const { scores, comp, sortInfo } = useProcessedScores(
+    ExtendedScoreInfo,
+    audioId,
+    sub
+  );
   const subNN = sub ? sub : audioId;
   const scoreTable = (
     <ScoreTable scores={scores} sortInfo={sortInfo} sub={subNN!} />
@@ -123,6 +209,7 @@ export const ListScores = ({ sub }: { sub?: string }) => {
   const fullComp = (
     <>
       {comp}
+      <Row className="m-0 p-0 mb-3">Scores in list: {scores.length}</Row>
       {scoreTable}
     </>
   );

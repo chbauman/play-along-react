@@ -259,6 +259,12 @@ const addFingering = (xml: Document, noteEl: Element, val: string) => {
   }
 };
 
+export type NormalizedScoreInfo = {
+  linkId: string;
+  name: string;
+  artist: string;
+};
+
 export const getCopiedScores = (scoreList?: ScoreInfo[]) => {
   const scoreNotNull = scoreList ? scoreList : scores;
   const scoresWithIndex = scoreNotNull.map((score) => {
@@ -270,7 +276,7 @@ export const getCopiedScores = (scoreList?: ScoreInfo[]) => {
     const artist = artistRaw?.trimStart().trimEnd();
     return { linkId: score.videoId, name, artist };
   });
-  return [...scoresWithIndex];
+  return [...scoresWithIndex] as NormalizedScoreInfo[];
 };
 
 /** Returns a random int. within the specified interval.

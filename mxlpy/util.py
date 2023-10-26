@@ -20,7 +20,7 @@ class Paths:
     XML_SCORES_PATH = PUBLIC_PATH / "scores"
     SRC_PATH = PLAY_ALONG_PATH / "src"
     GENERATED_SCORE_INFO_FILE = SRC_PATH / "scoreInfoGenerated.json"
-    SCORE_INFO_FILE = PUBLIC_PATH / "score_info.json"
+    SCORE_INFO_FILE = SRC_PATH / "scoreInfo.json"
 
     assert MSCZ_SCORE_PATH.exists, f"Score directory {MSCZ_SCORE_PATH} not found!"
     assert MUSESCORE_EXE_PATH.exists(), f"Musescore not found at {MUSESCORE_EXE_PATH}!"
