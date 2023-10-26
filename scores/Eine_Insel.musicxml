@@ -27,11 +27,23 @@
         <key>
           <fifths>1</fifths>
           </key>
+        <time symbol="cut">
+          <beats>2</beats>
+          <beat-type>2</beat-type>
+          </time>
         <clef>
           <sign>G</sign>
           <line>2</line>
           </clef>
         </attributes>
+      <direction placement="above">
+        <direction-type>
+          <metronome parentheses="no">
+            <beat-unit>half</beat-unit>
+            <per-minute>80</per-minute>
+            </metronome>
+          </direction-type>
+        </direction>
       <note>
         <rest />
         <duration>2</duration>
