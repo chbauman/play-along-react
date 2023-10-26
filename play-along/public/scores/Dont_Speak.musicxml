@@ -30,6 +30,10 @@
         <key>
           <fifths>-3</fifths>
           </key>
+        <time>
+          <beats>4</beats>
+          <beat-type>4</beat-type>
+          </time>
         <clef>
           <sign>G</sign>
           <line>2</line>
@@ -3455,7 +3459,7 @@
           </pitch>
         <duration>6</duration>
         <type size="cue">16th</type>
-        <beam number="1">continue</beam>
+        <beam number="1">end</beam>
         <beam number="2">end</beam>
         </note>
       <note>
@@ -3469,7 +3473,7 @@
           <actual-notes>3</actual-notes>
           <normal-notes>2</normal-notes>
           </time-modification>
-        <beam number="1">continue</beam>
+        <beam number="1">begin</beam>
         <notations>
           <tuplet type="start" bracket="no" />
           </notations>
@@ -3646,7 +3650,7 @@
           </pitch>
         <duration>6</duration>
         <type size="cue">16th</type>
-        <beam number="1">continue</beam>
+        <beam number="1">end</beam>
         <beam number="2">end</beam>
         </note>
       <note>
@@ -3660,7 +3664,7 @@
           <actual-notes>3</actual-notes>
           <normal-notes>2</normal-notes>
           </time-modification>
-        <beam number="1">continue</beam>
+        <beam number="1">begin</beam>
         <notations>
           <tuplet type="start" bracket="no" />
           </notations>
@@ -4722,7 +4726,7 @@
         <tie type="start" />
         <type>eighth</type>
         <dot />
-        <beam number="1">continue</beam>
+        <beam number="1">end</beam>
         <notations>
           <tied type="start" />
           </notations>
@@ -4736,7 +4740,7 @@
         <tie type="stop" />
         <type>eighth</type>
         <dot />
-        <beam number="1">continue</beam>
+        <beam number="1">begin</beam>
         <notations>
           <tied type="stop" />
           </notations>
