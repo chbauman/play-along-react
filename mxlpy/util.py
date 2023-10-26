@@ -1,5 +1,7 @@
 """MusicXML utility module."""
 
+import json
+from typing import Any
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -18,6 +20,7 @@ class Paths:
     XML_SCORES_PATH = PUBLIC_PATH / "scores"
     SRC_PATH = PLAY_ALONG_PATH / "src"
     GENERATED_SCORE_INFO_FILE = SRC_PATH / "scoreInfoGenerated.json"
+    SCORE_INFO_FILE = PUBLIC_PATH / "score_info.json"
 
     assert MSCZ_SCORE_PATH.exists, f"Score directory {MSCZ_SCORE_PATH} not found!"
     assert MUSESCORE_EXE_PATH.exists(), f"Musescore not found at {MUSESCORE_EXE_PATH}!"
@@ -33,3 +36,15 @@ def write_xml(tree: ET, out_path: Path) -> None:
     with open(out_path, "wb") as f:
         f.write(XML_DEC.encode("UTF-8"))
         tree.write(f, encoding="UTF-8")
+
+
+def read_json(p: Path):
+    """Read data from JSON."""
+    with open(p, "r", encoding="utf8") as f:
+        return json.load(f)
+
+
+def write_json(p: Path, data: Any, **kwargs) -> None:
+    """Write data to JSON."""
+    with open(p, "w", encoding="utf8") as f:
+        json.dump(data, f, **kwargs)

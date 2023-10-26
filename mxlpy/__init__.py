@@ -5,7 +5,8 @@ from pathlib import Path
 from typing import List
 
 from mxlpy.clean_xml import reduce_file
-from mxlpy.repeat_analyzer import RepeatAnalyzer, find_next_coda, handle_jump_back
+from mxlpy.repeat_analyzer import (RepeatAnalyzer, find_next_coda,
+                                   handle_jump_back)
 from mxlpy.util import Paths
 
 
