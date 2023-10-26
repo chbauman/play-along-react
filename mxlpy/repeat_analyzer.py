@@ -1,5 +1,5 @@
 import xml.etree.ElementTree as ET
-from typing import List, Dict
+from typing import Dict, List
 
 
 def find_next_coda(measures: List[ET.Element], curr_ct: int) -> int:

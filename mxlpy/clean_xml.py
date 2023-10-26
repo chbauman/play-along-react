@@ -5,7 +5,6 @@ from pathlib import Path
 
 from mxlpy.util import write_xml
 
-
 REMOVE_ELEMENTS = [
     "defaults",
     "credit",

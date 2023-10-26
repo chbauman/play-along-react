@@ -7,9 +7,9 @@ and attributes from the XML document.
 import argparse
 import copy
 import json
-from typing import Dict, Optional
 import xml.etree.ElementTree as ET
 from pathlib import Path
+from typing import Dict, Optional
 
 from mxlpy import Paths, export_mscz, get_unrolled_measure_indices
 from mxlpy.clean_xml import reduce_file

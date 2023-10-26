@@ -1,12 +1,12 @@
 """Musicxml python package."""
-from pathlib import Path
 import subprocess
-from typing import List
 import xml.etree.ElementTree as ET
+from pathlib import Path
+from typing import List
 
+from mxlpy.clean_xml import reduce_file
 from mxlpy.repeat_analyzer import RepeatAnalyzer, find_next_coda, handle_jump_back
 from mxlpy.util import Paths
-from mxlpy.clean_xml import reduce_file
 
 
 def export_mscz(mscz_src: Path, out_path: Path) -> None:
