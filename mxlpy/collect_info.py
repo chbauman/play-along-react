@@ -23,8 +23,9 @@ def extract_info(xml: Path):
     all_keys = [int(fifth.text) for fifth in fifths]
     all_keys = _make_unique(all_keys)
     assert len(all_keys) > 0, f"Key must be set for {xml.name}"
-    if len(all_keys) == 0:
-        print(f"No key signature: {xml.name}")
+    for key in all_keys:
+        if key > 6 or key < -6:
+            warnings.warn(f"Bad key signature {key} in {xml.name}")
 
     # Find time signatures
     times = []
