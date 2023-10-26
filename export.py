@@ -50,19 +50,18 @@ parser = argparse.ArgumentParser("Export script")
 parser.add_argument("n", type=check_positive)
 parser.add_argument("-a", "--audio", action="store_true", default=False, required=False)
 parser.add_argument(
-    "-e", "--extract-extended", action="store_true", default=False, required=False
-)
-parser.add_argument(
     "-m", "--no-mp3", action="store_true", default=False, required=False
 )
 
 
 if __name__ == "__main__":
     args = parser.parse_args()
-    if args.extract_extended:
-        score_info = read_json(Paths.SCORE_INFO_FILE)
-        extracted_info = extract_all_information(score_info, Paths.XML_SCORES_PATH)
-        write_json(Paths.GENERATED_SCORE_INFO_FILE, extracted_info)
+
+    # Extract info from musicXML directly
+    score_info = read_json(Paths.SCORE_INFO_FILE)
+    extracted_info = extract_all_information(score_info, Paths.XML_SCORES_PATH)
+    write_json(Paths.GENERATED_SCORE_INFO_FILE, extracted_info)
+
     if args.audio:
         export_audio(args.n, not args.no_mp3)
 
