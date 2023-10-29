@@ -5,6 +5,7 @@ and then reduces the exported XML files by removing certain tags
 and attributes from the XML document.
 """
 import argparse
+import json
 from typing import Optional
 
 from mxlpy import Paths, export_mscz
@@ -54,15 +55,29 @@ parser.add_argument(
 )
 
 
+def _write_generated(info: dict) -> None:
+    with open(Paths.GENERATED_SCORE_INFO_FILE, "w") as f:
+        f.write("{\n")
+        n_items = len(info)
+        keys = sorted(info.keys())
+        for ct, score_id in enumerate(keys):
+            sub_dict = info[score_id]
+            f.write(f'  "{score_id}": {json.dumps(sub_dict)}')
+            if ct != n_items - 1:
+                f.write(",")
+            f.write("\n")
+        f.write("}\n")
+
+
 if __name__ == "__main__":
     args = parser.parse_args()
-
-    # Extract info from musicXML directly
-    score_info = read_json(Paths.SCORE_INFO_FILE)
-    extracted_info = extract_all_information(score_info, Paths.XML_SCORES_PATH)
-    write_json(Paths.GENERATED_SCORE_INFO_FILE, extracted_info)
 
     if args.audio:
         export_audio(args.n, not args.no_mp3)
 
     export_yt(args.n)
+
+    # Extract info from musicXML directly
+    score_info = read_json(Paths.SCORE_INFO_FILE)
+    extracted_info = extract_all_information(score_info, Paths.XML_SCORES_PATH)
+    _write_generated(extracted_info)
