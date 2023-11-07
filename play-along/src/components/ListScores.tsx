@@ -119,6 +119,13 @@ const useKeyFilter = () => {
   const comp = (
     <Col>
       <div className="d-flex justify-content-between">
+        <Form.Check
+          type="checkbox"
+          id={`none`}
+          label={`0 #`}
+          checked={sharpIsSet(0)}
+          onChange={() => setSharp(0)}
+        />
         {sharps.map((el) => (
           <Form.Check
             type="checkbox"
@@ -128,15 +135,6 @@ const useKeyFilter = () => {
             onChange={() => setSharp(el)}
           />
         ))}
-      </div>
-      <div>
-        <Form.Check
-          type="checkbox"
-          id={`none`}
-          label={`0 ♭ / #`}
-          checked={sharpIsSet(0)}
-          onChange={() => setSharp(0)}
-        />
       </div>
       <div className="d-flex justify-content-between">
         {flats.map((el) => (
