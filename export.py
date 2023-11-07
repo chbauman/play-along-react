@@ -6,7 +6,7 @@ and attributes from the XML document.
 """
 import argparse
 import json
-from typing import Optional
+from typing import Dict, Optional
 
 from mxlpy import Paths, export_mscz
 from mxlpy.clean_xml import reduce_file
@@ -55,7 +55,7 @@ parser.add_argument(
 )
 
 
-def _write_generated(info: dict) -> None:
+def _write_generated(info: Dict[str, list]) -> None:
     with open(Paths.GENERATED_SCORE_INFO_FILE, "w") as f:
         f.write("{\n")
         n_items = len(info)
@@ -67,6 +67,13 @@ def _write_generated(info: dict) -> None:
                 f.write(",")
             f.write("\n")
         f.write("}\n")
+
+    all_time_signatures = set()
+    for score_info in info.values():
+        for ts in score_info["times"]:
+            all_time_signatures.add(tuple(ts))
+    with open(Paths.TIME_SIGNATURES_FILE, "w") as f:
+        f.write(json.dumps(list(sorted(all_time_signatures))))
 
 
 if __name__ == "__main__":

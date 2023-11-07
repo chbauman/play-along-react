@@ -44,7 +44,7 @@ def extract_info(xml: Path):
 def extract_all_information(score_info: List[Dict[str, str]], base_mxl_dir: Path):
     """Collect information from all scores in the given list."""
 
-    generated_info = {}
+    generated_info: Dict[str, list] = {}
     for score in tqdm(score_info):
         file_name = score["fileName"]
         file_path = base_mxl_dir / f"{file_name}.musicxml"
