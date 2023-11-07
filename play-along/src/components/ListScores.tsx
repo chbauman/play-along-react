@@ -8,6 +8,7 @@ import { wrapWithNav } from "./NavBar";
 import { ScoreTable } from "./ScoreTable";
 import { getCopiedSCScores } from "./player/SoundCloudPlayer";
 import ExtendedScoreInfo from "../scoreInfoGenerated.json";
+import TimeSignatures from "../timeSignatures.json";
 
 export const sortBy = ["name", "artist"] as const;
 export const sortByNames = { name: "Song Name", artist: "Artist" };
@@ -68,6 +69,36 @@ const useSortedScores = () => {
   return { sortFun, sortClick, ...sortSetting };
 };
 
+const useTimeSignatureFilter = () => {
+  const initTimes = TimeSignatures.map(() => true);
+  const [chosenTimes, setChosenTimes] = useState<boolean[]>(initTimes);
+  const comp = (
+    <Col>
+      <div className="d-flex justify-content-between">
+        {TimeSignatures.map((el, idx) => (
+          <Form.Check
+            type="checkbox"
+            key={`time-${el}`}
+            label={`${el[0]}/${el[1]}`}
+            checked={chosenTimes[idx]}
+            onChange={() => {
+              const newTimes = [...chosenTimes];
+              newTimes[idx] = !newTimes[idx];
+              setChosenTimes(newTimes);
+            }}
+          />
+        ))}
+      </div>
+    </Col>
+  );
+  const allowedTimes = new Set(
+    TimeSignatures.filter((_el, idx) => chosenTimes[idx]).map(
+      (el) => `${el[0]},${el[1]}`
+    )
+  );
+  return [comp, allowedTimes] as const;
+};
+
 /** Hook for filtering based on key signature. */
 const useKeyFilter = () => {
   const flats = [1, 2, 3, 4, 5, 6];
@@ -125,7 +156,7 @@ const useKeyFilter = () => {
 
 /** Hook for filtering and sorting scores. */
 const useProcessedScores = (
-  extendedScoreInfo: { [key: string]: { keys: number[] } },
+  extendedScoreInfo: { [key: string]: { keys: number[]; times: number[][] } },
   audioCollId?: string,
   sub?: string
 ) => {
@@ -133,6 +164,7 @@ const useProcessedScores = (
   const [filterS, filterForm] = useScoreFilter();
   const sortInfo = useSortedScores();
   const [keys, keyFilterComp] = useKeyFilter();
+  const [timeFilterComp, times] = useTimeSignatureFilter();
 
   const enableKeyFiltering = subNN === "yt";
   const filterComp = enableKeyFiltering && (
@@ -142,6 +174,10 @@ const useProcessedScores = (
       <Row className="m-0 p-0 mb-3">
         <Col className="m-0 p-0">Key Signature</Col>
         <Col className="m-0 p-0">{keyFilterComp}</Col>
+      </Row>
+      <Row className="m-0 p-0 mb-3">
+        <Col className="m-0 p-0">Time Signature</Col>
+        <Col className="m-0 p-0">{timeFilterComp}</Col>
       </Row>
     </>
   );
@@ -157,6 +193,12 @@ const useProcessedScores = (
   const filterKeys = (el: NormalizedScoreInfo) => {
     if (el.linkId in extendedScoreInfo) {
       const currKeys = extendedScoreInfo[el.linkId].keys;
+      const allowedTimes = extendedScoreInfo[el.linkId].times
+        .map((el) => `${el[0]},${el[1]}`)
+        .filter((el) => times.has(el));
+      if (allowedTimes.length == 0) {
+        return false;
+      }
       const allowedKeys = currKeys.filter((el) => keys.includes(el));
       if (allowedKeys.length === 0) {
         return false;
