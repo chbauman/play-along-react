@@ -194,7 +194,7 @@ const useProcessedScores = (
       const allowedTimes = extendedScoreInfo[el.linkId].times
         .map((el) => `${el[0]},${el[1]}`)
         .filter((el) => times.has(el));
-      if (allowedTimes.length == 0) {
+      if (allowedTimes.length === 0) {
         return false;
       }
       const allowedKeys = currKeys.filter((el) => keys.includes(el));
