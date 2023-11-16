@@ -25,7 +25,7 @@ export const Home = () => {
         destiny choose a song for you:{" "}
         <Link to={`/yt/${getRandomScore().videoId}`}>Random Score</Link>.
       </p>
-      <NewestScores nMostRecentSongs={10} />
+      <NewestScores nMostRecentSongs={20} />
       <p>
         We hope you enjoy using our website and that it helps you improve your
         musical skills. If you have any questions or suggestions, please don't
