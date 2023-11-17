@@ -47,8 +47,16 @@ def extract_all_information(score_info: List[Dict[str, str]], base_mxl_dir: Path
     generated_info: Dict[str, list] = {}
     for score in tqdm(score_info):
         file_name = score["fileName"]
+
+        # Check file exists
         file_path = base_mxl_dir / f"{file_name}.musicxml"
         assert file_path.exists(), f"Did not find file at {file_path}"
+
+        # Check correct capitalization which is important on linux.
+        actual_name = file_path.resolve().stem
+        assert (
+            actual_name == file_name
+        ), f"Score info: {file_name}, should be {actual_name}"
 
         generated_info[score["videoId"]] = extract_info(file_path)
     return generated_info
