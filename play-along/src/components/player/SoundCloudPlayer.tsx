@@ -22,10 +22,18 @@ const soundCloudScores: ScoreInfo[] = [
       333: 155,
       385: 179,
       1226: 192,
-      1362: 256
+      1362: 256,
     },
     fileName: "Foerderband",
     name: "Foerderband - Codenzi",
+  },
+  {
+    videoId: "1569996310",
+    measureMap: {
+      100: 49,
+    },
+    fileName: "RADW",
+    name: "RADW - Codenzi",
   },
 ];
 
