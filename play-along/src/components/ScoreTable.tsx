@@ -41,7 +41,10 @@ export const ScoreTable = ({
   return (
     <Table striped bordered hover>
       <thead>
-        <tr>{th}</tr>
+        <tr>
+          <th></th>
+          {th}
+        </tr>
       </thead>
       <tbody>
         {scores.map((el) => {
@@ -51,6 +54,11 @@ export const ScoreTable = ({
               onClick={() => navi(`/${sub}/${el.linkId}`)}
               style={{ cursor: "pointer" }}
             >
+              <td>
+                <img
+                  src={`https://img.youtube.com/vi/${el.linkId}/default.jpg`}
+                ></img>
+              </td>
               {sortBy.map((field) => {
                 return (
                   <td className="col-6" key={`td-${field}`}>
