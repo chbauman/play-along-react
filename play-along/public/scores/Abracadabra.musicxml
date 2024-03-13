@@ -77,13 +77,8 @@
         </note>
       <note>
         <rest />
-        <duration>2</duration>
-        <type>quarter</type>
-        </note>
-      <note>
-        <rest />
-        <duration>2</duration>
-        <type>quarter</type>
+        <duration>4</duration>
+        <type>half</type>
         </note>
       </measure>
     <measure number="2">
@@ -121,13 +116,8 @@
         </note>
       <note>
         <rest />
-        <duration>2</duration>
-        <type>quarter</type>
-        </note>
-      <note>
-        <rest />
-        <duration>2</duration>
-        <type>quarter</type>
+        <duration>4</duration>
+        <type>half</type>
         </note>
       </measure>
     <measure number="3">
@@ -294,13 +284,8 @@
         </note>
       <note>
         <rest />
-        <duration>2</duration>
-        <type>quarter</type>
-        </note>
-      <note>
-        <rest />
-        <duration>2</duration>
-        <type>quarter</type>
+        <duration>4</duration>
+        <type>half</type>
         </note>
       </measure>
     <measure number="6">
@@ -338,13 +323,8 @@
         </note>
       <note>
         <rest />
-        <duration>2</duration>
-        <type>quarter</type>
-        </note>
-      <note>
-        <rest />
-        <duration>2</duration>
-        <type>quarter</type>
+        <duration>4</duration>
+        <type>half</type>
         </note>
       </measure>
     <measure number="7">
@@ -851,8 +831,8 @@
         </harmony>
       <note>
         <rest />
-        <duration>1</duration>
-        <type>eighth</type>
+        <duration>2</duration>
+        <type>quarter</type>
         </note>
       <note dynamics="123.33">
         <pitch>
@@ -883,8 +863,13 @@
         </note>
       <note>
         <rest />
-        <duration>4</duration>
-        <type>half</type>
+        <duration>1</duration>
+        <type>eighth</type>
+        </note>
+      <note>
+        <rest />
+        <duration>2</duration>
+        <type>quarter</type>
         </note>
       </measure>
     <measure number="16">
@@ -2203,6 +2188,7 @@
           </pitch>
         <duration>1</duration>
         <type>eighth</type>
+        <beam number="1">begin</beam>
         </note>
       <note>
         <pitch>
@@ -2211,7 +2197,7 @@
           </pitch>
         <duration>1</duration>
         <type>eighth</type>
-        <beam number="1">begin</beam>
+        <beam number="1">continue</beam>
         <notations>
           <slur type="start" placement="above" number="1" />
           </notations>
@@ -2223,7 +2209,7 @@
           </pitch>
         <duration>1</duration>
         <type>eighth</type>
-        <beam number="1">end</beam>
+        <beam number="1">continue</beam>
         <notations>
           <slur type="stop" number="1" />
           </notations>
@@ -2234,11 +2220,8 @@
           <octave>5</octave>
           </pitch>
         <duration>1</duration>
-        <tie type="start" />
         <type>eighth</type>
-        <notations>
-          <tied type="start" />
-          </notations>
+        <beam number="1">end</beam>
         </note>
       <note>
         <pitch>
@@ -2246,10 +2229,8 @@
           <octave>5</octave>
           </pitch>
         <duration>1</duration>
-        <tie type="stop" />
         <type>eighth</type>
         <notations>
-          <tied type="stop" />
           <slur type="start" placement="above" number="1" />
           </notations>
         </note>
