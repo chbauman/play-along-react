@@ -28,6 +28,7 @@ const NavBar = ({ title }: { title: string }) => {
     return `/${audioId}/${base}`;
   };
 
+  const navTxtStyle = { fontWeight: "500" };
   return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -35,15 +36,15 @@ const NavBar = ({ title }: { title: string }) => {
         {navBrand}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
-          <Nav>
+          <Nav style={navTxtStyle}>
             <NavLink as={Link} to={getRoute("listall")}>
-              <MdList size={buttSize} />
+              <MdList size={buttSize} /> All Scores
             </NavLink>
             <NavLink as={Link} to={getRoute("settings")}>
-              <MdSettings size={buttSize} />
+              <MdSettings size={buttSize} /> Settings
             </NavLink>
             <NavLink as={Link} to={getRoute("help")}>
-              <MdHelp size={buttSize} />
+              <MdHelp size={buttSize} /> Help
             </NavLink>
           </Nav>
         </Navbar.Collapse>
