@@ -1,6 +1,5 @@
 """Collection of information from MusicXML files."""
 
-
 import warnings
 import xml.etree.ElementTree as ET
 from pathlib import Path

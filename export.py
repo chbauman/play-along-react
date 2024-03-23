@@ -4,9 +4,9 @@ It uses the MuseScore executable to export .mscz files to .musicxml
 and then reduces the exported XML files by removing certain tags 
 and attributes from the XML document.
 """
+
 import argparse
 import json
-from typing import Optional
 
 from mxlpy import Paths, export_mscz
 from mxlpy.clean_xml import reduce_file
@@ -15,7 +15,7 @@ from mxlpy.mscz_to_audio import export_audio
 from mxlpy.util import read_json, write_json
 
 
-def export_yt(n_process: Optional[int]):
+def export_yt(n_process: int | None):
     """Export scores corresponding to YouTube videos."""
 
     # Find all scores
