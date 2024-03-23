@@ -1,10 +1,13 @@
 """Collection of information from MusicXML files."""
 
+import json
 import warnings
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
 from tqdm import tqdm
+
+from mxlpy.util import Paths, read_json
 
 
 def _make_unique(inp: list) -> list:
@@ -39,22 +42,63 @@ def extract_info(xml: Path):
     return {"keys": all_keys, "times": times}
 
 
-def extract_all_information(score_info: list[dict[str, str]], base_mxl_dir: Path):
+def extract_all_information():
     """Collect information from all scores in the given list."""
 
+    score_info = read_json(Paths.SCORE_INFO_FILE)
+    audio_info = read_json(Paths.JSON_AUDIO)
+
     generated_info: dict[str, list] = {}
+    yt_xml_dir = Paths.XML_SCORES_PATH
     for score in tqdm(score_info):
         file_name = score["fileName"]
 
-        # Check file exists
-        file_path = base_mxl_dir / f"{file_name}.musicxml"
-        assert file_path.exists(), f"Did not find file at {file_path}"
+        file_path = yt_xml_dir / f"{file_name}.musicxml"
+        generated_info[score["videoId"]] = extract_auto_info(file_path)
 
-        # Check correct capitalization which is important on linux.
-        actual_name = file_path.resolve().stem
-        assert (
-            actual_name == file_name
-        ), f"Score info: {file_name}, should be {actual_name}"
+    audio_xml_dir = Paths.AUDIO_PATH
+    for score in tqdm(audio_info):
+        file_name = score["fileName"]
+        file_path = audio_xml_dir / f"{file_name}.musicxml"
+        generated_info[file_name] = extract_auto_info(file_path)
 
-        generated_info[score["videoId"]] = extract_info(file_path)
-    return generated_info
+    _write_generated(generated_info)
+
+
+def extract_auto_info(score_path: Path):
+    """Automatically extracts information from mscz files.
+
+    Also checcks the path name's capitalization.
+    """
+
+    # Check file exists
+    assert score_path.exists(), f"Did not find file at {score_path}"
+
+    # Check correct capitalization which is important on linux.
+    actual_name = score_path.resolve().stem
+    assert (
+        actual_name == score_path.stem
+    ), f"Score info: {score_path.stem}, should be {actual_name}"
+
+    return extract_info(score_path)
+
+
+def _write_generated(info: dict[str, list]) -> None:
+    with open(Paths.GENERATED_SCORE_INFO_FILE, "w") as f:
+        f.write("{\n")
+        n_items = len(info)
+        keys = sorted(info.keys())
+        for ct, score_id in enumerate(keys):
+            sub_dict = info[score_id]
+            f.write(f'  "{score_id}": {json.dumps(sub_dict)}')
+            if ct != n_items - 1:
+                f.write(",")
+            f.write("\n")
+        f.write("}\n")
+
+    all_time_signatures = set()
+    for score_info in info.values():
+        for ts in score_info["times"]:
+            all_time_signatures.add(tuple(ts))
+    with open(Paths.TIME_SIGNATURES_FILE, "w") as f:
+        f.write(json.dumps(list(sorted(all_time_signatures))))

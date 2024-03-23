@@ -22,6 +22,7 @@ class Paths:
     GENERATED_SCORE_INFO_FILE = SRC_PATH / "scoreInfoGenerated.json"
     TIME_SIGNATURES_FILE = SRC_PATH / "timeSignatures.json"
     SCORE_INFO_FILE = SRC_PATH / "scoreInfo.json"
+    JSON_AUDIO = PROJ_BASE_PATH / "audio.json"
 
     assert MSCZ_SCORE_PATH.exists, f"Score directory {MSCZ_SCORE_PATH} not found!"
     assert MUSESCORE_EXE_PATH.exists(), f"Musescore not found at {MUSESCORE_EXE_PATH}!"

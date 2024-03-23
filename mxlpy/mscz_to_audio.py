@@ -22,8 +22,7 @@ def _group_includes(target_grp: str) -> Callable:
 
 def export_audio(n_export: int, export_mp3: bool = True):
     # Load JSON with info
-    JSON_AUDIO = "audio.json"
-    scores = read_json(JSON_AUDIO)
+    scores = read_json(Paths.JSON_AUDIO)
 
     # Get groups
     groups = set()

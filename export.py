@@ -54,28 +54,6 @@ parser.add_argument(
     "-m", "--no-mp3", action="store_true", default=False, required=False
 )
 
-
-def _write_generated(info: dict[str, list]) -> None:
-    with open(Paths.GENERATED_SCORE_INFO_FILE, "w") as f:
-        f.write("{\n")
-        n_items = len(info)
-        keys = sorted(info.keys())
-        for ct, score_id in enumerate(keys):
-            sub_dict = info[score_id]
-            f.write(f'  "{score_id}": {json.dumps(sub_dict)}')
-            if ct != n_items - 1:
-                f.write(",")
-            f.write("\n")
-        f.write("}\n")
-
-    all_time_signatures = set()
-    for score_info in info.values():
-        for ts in score_info["times"]:
-            all_time_signatures.add(tuple(ts))
-    with open(Paths.TIME_SIGNATURES_FILE, "w") as f:
-        f.write(json.dumps(list(sorted(all_time_signatures))))
-
-
 if __name__ == "__main__":
     args = parser.parse_args()
 
@@ -85,6 +63,4 @@ if __name__ == "__main__":
     export_yt(args.n)
 
     # Extract info from musicXML directly
-    score_info = read_json(Paths.SCORE_INFO_FILE)
-    extracted_info = extract_all_information(score_info, Paths.XML_SCORES_PATH)
-    _write_generated(extracted_info)
+    extract_all_information()
