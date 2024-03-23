@@ -16,6 +16,7 @@ domain at https://ytplayalong.chrisbaumann.ch.
 To publish the most recent version run the following commands:
 
 ```
+cd play-along
 npm run build
 npm run deploy
 ```
