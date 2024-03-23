@@ -4,7 +4,6 @@
 import warnings
 import xml.etree.ElementTree as ET
 from pathlib import Path
-from typing import Dict, List
 
 from tqdm import tqdm
 
@@ -41,10 +40,10 @@ def extract_info(xml: Path):
     return {"keys": all_keys, "times": times}
 
 
-def extract_all_information(score_info: List[Dict[str, str]], base_mxl_dir: Path):
+def extract_all_information(score_info: list[dict[str, str]], base_mxl_dir: Path):
     """Collect information from all scores in the given list."""
 
-    generated_info: Dict[str, list] = {}
+    generated_info: dict[str, list] = {}
     for score in tqdm(score_info):
         file_name = score["fileName"]
 

@@ -6,7 +6,7 @@ and attributes from the XML document.
 """
 import argparse
 import json
-from typing import Dict, Optional
+from typing import Optional
 
 from mxlpy import Paths, export_mscz
 from mxlpy.clean_xml import reduce_file
@@ -55,7 +55,7 @@ parser.add_argument(
 )
 
 
-def _write_generated(info: Dict[str, list]) -> None:
+def _write_generated(info: dict[str, list]) -> None:
     with open(Paths.GENERATED_SCORE_INFO_FILE, "w") as f:
         f.write("{\n")
         n_items = len(info)

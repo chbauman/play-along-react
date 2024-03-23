@@ -1,8 +1,7 @@
 import xml.etree.ElementTree as ET
-from typing import Dict, List
 
 
-def find_next_coda(measures: List[ET.Element], curr_ct: int) -> int:
+def find_next_coda(measures: list[ET.Element], curr_ct: int) -> int:
     for ct, meas in enumerate(measures[curr_ct:]):
         coda = meas.find(".//coda")
         if coda is not None:
@@ -10,7 +9,7 @@ def find_next_coda(measures: List[ET.Element], curr_ct: int) -> int:
     return curr_ct
 
 
-def clear_repeats(indices: List[int]) -> List[int]:
+def clear_repeats(indices: list[int]) -> list[int]:
     rev_idx = []
     curr_min = indices[-1] + 1
     for idx in reversed(indices):
@@ -22,7 +21,7 @@ def clear_repeats(indices: List[int]) -> List[int]:
 
 
 def handle_jump_back(
-    curr_indices: List[int], to_idx: int, end_idx: int, with_repeats: bool
+    curr_indices: list[int], to_idx: int, end_idx: int, with_repeats: bool
 ):
     found_ct = None
     first_end_encounter = None
@@ -48,7 +47,7 @@ def handle_jump_back(
 class RepeatAnalyzer:
     """Analyze score for repeats."""
 
-    repeats: Dict
+    repeats: dict
 
     last_draw_ct = 0
     end = ""
@@ -75,7 +74,7 @@ class RepeatAnalyzer:
                             play_times += 1
         return play_times
 
-    def analyze_measures(self, measures: List[ET.Element]):
+    def analyze_measures(self, measures: list[ET.Element]):
         repeats = {}
 
         start_idx = 0
