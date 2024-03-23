@@ -3,6 +3,7 @@ import artRoseScores from "./art-rose.json";
 import debugScores from "./debug.json";
 import bauSteiScores from "./bau-stei.json";
 import bauSteiBaslerScores from "./bau-stei-basler.json";
+import { esi } from "../util/util";
 
 export const getAudioScores = (audioId?: string) => {
   let scores = null;
@@ -29,6 +30,7 @@ export const getAudioScores = (audioId?: string) => {
       linkId: el.fileName,
       name: el.title,
       artist: el.interpret,
+      keys: esi[el.fileName].keys,
     };
   });
 };

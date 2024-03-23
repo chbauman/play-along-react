@@ -3,11 +3,10 @@ import { Col, Form, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { getAudioScores } from "../audio/util";
 import { strLatinise } from "../util/sorting";
-import { NormalizedScoreInfo, getCopiedScores } from "../util/util";
+import { NormalizedScoreInfo, esi, getCopiedScores } from "../util/util";
 import { wrapWithNav } from "./NavBar";
 import { ScoreTable } from "./ScoreTable";
 import { getCopiedSCScores } from "./player/SoundCloudPlayer";
-import ExtendedScoreInfo from "../scoreInfoGenerated.json";
 import TimeSignatures from "../timeSignatures.json";
 
 export const sortBy = ["name", "artist"] as const;
@@ -152,6 +151,13 @@ const useKeyFilter = () => {
   return [chosenKeys, comp] as const;
 };
 
+export const intToKey = (fifths: number) => {
+  if (fifths >= 0) {
+    return `${fifths}#`;
+  }
+  return `${-fifths}♭`;
+};
+
 /** Hook for filtering and sorting scores. */
 const useProcessedScores = (
   extendedScoreInfo: { [key: string]: { keys: number[]; times: number[][] } },
@@ -236,11 +242,7 @@ const useProcessedScores = (
 export const ListScores = ({ sub }: { sub?: string }) => {
   const params = useParams();
   const audioId = params.audioId;
-  const { scores, comp, sortInfo } = useProcessedScores(
-    ExtendedScoreInfo,
-    audioId,
-    sub
-  );
+  const { scores, comp, sortInfo } = useProcessedScores(esi, audioId, sub);
   const subNN = sub ? sub : audioId;
   const scoreTable = (
     <ScoreTable scores={scores} sortInfo={sortInfo} sub={subNN!} />

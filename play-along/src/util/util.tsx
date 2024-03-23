@@ -1,7 +1,13 @@
 import { getClef } from "../components/Settings";
 import { ScoreInfo, scores } from "../scores";
+import ExtendedScoreInfo from "../scoreInfoGenerated.json";
 
 export const DEBUG = false;
+
+type ExtendedScoreInfoT = {
+  [key: string]: { keys: number[]; times: number[][] };
+};
+export const esi: ExtendedScoreInfoT = ExtendedScoreInfo;
 
 export const parseXml = (xmlStr: string) => {
   return new window.DOMParser().parseFromString(xmlStr, "text/xml");
@@ -263,6 +269,7 @@ export type NormalizedScoreInfo = {
   linkId: string;
   name: string;
   artist: string;
+  keys: number[];
 };
 
 export const getCopiedScores = (scoreList?: ScoreInfo[]) => {
@@ -274,7 +281,8 @@ export const getCopiedScores = (scoreList?: ScoreInfo[]) => {
     const artistRaw = parts.slice(1).join("-");
     const name = parts[0].trimStart().trimEnd();
     const artist = artistRaw?.trimStart().trimEnd();
-    return { linkId: score.videoId, name, artist };
+    const keys = esi[score.videoId]["keys"];
+    return { linkId: score.videoId, name, artist, keys };
   });
   return [...scoresWithIndex] as NormalizedScoreInfo[];
 };

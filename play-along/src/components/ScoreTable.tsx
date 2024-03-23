@@ -1,15 +1,14 @@
 import { Table } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { sortBy, SortBy, sortByNames } from "./ListScores";
-
-type ScoresT = { name?: string; artist?: string; linkId: string }[];
+import { intToKey, sortBy, SortBy, sortByNames } from "./ListScores";
+import { NormalizedScoreInfo } from "../util/util";
 
 export const ScoreTable = ({
   scores,
   sub,
   sortInfo,
 }: {
-  scores: ScoresT;
+  scores: NormalizedScoreInfo[];
   sub: string;
   sortInfo?: {
     by: SortBy;
@@ -44,6 +43,7 @@ export const ScoreTable = ({
         <tr>
           <th></th>
           {th}
+          <th>Pitch</th>
         </tr>
       </thead>
       <tbody>
@@ -57,19 +57,25 @@ export const ScoreTable = ({
               <td>
                 <img
                   src={`https://img.youtube.com/vi/${el.linkId}/default.jpg`}
+                  alt={`YouTube thumbnail of ${el.name} by ${el.artist}`}
                 ></img>
               </td>
               {sortBy.map((field) => {
                 return (
-                  <td className="col-6" key={`td-${field}`}>
+                  <td className="col-5" key={`td-${field}`}>
                     {el[field]?.trim()}
                   </td>
                 );
               })}
+              <td className="col-1">{getKeys(el.keys)}</td>
             </tr>
           );
         })}
       </tbody>
     </Table>
   );
+};
+
+const getKeys = (keyInts: number[]) => {
+  return keyInts.map(intToKey).join(", ");
 };
