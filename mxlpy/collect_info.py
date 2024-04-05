@@ -19,10 +19,23 @@ def extract_info(xml: Path):
     tree = ET.parse(xml)
     root = tree.getroot()
 
+    # Find all parts (excluding drum sets)
+    score_parts = root.findall(".//score-part")
+    used_part_ids = []
+    for part in score_parts:
+        id = part.attrib["id"]
+        name = part.find("part-name").text
+        if "drum" not in name.lower():
+            used_part_ids.append(id)
+
     # Find keys
-    fifths = root.findall(f".//fifths")
-    all_keys = [int(fifth.text) for fifth in fifths]
+    all_keys = []
+    for part_id in used_part_ids:
+        part = root.find(f".//part[@id='{part_id}']")
+        fifths = part.findall(f".//fifths")
+        all_keys += [int(fifth.text) for fifth in fifths]
     all_keys = _make_unique(all_keys)
+
     assert len(all_keys) > 0, f"Key must be set for {xml.name}"
     for key in all_keys:
         if key > 6 or key < -6:
