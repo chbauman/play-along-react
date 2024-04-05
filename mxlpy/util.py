@@ -1,9 +1,9 @@
 """MusicXML utility module."""
 
 import json
-from typing import Any
 import xml.etree.ElementTree as ET
 from pathlib import Path
+from typing import Any
 
 
 class Paths:

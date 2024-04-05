@@ -1,9 +1,9 @@
 """Module for conversion of MuseScore files to audio and MusicXML."""
 
 import copy
-from typing import Callable
 import xml.etree.ElementTree as ET
 from pathlib import Path
+from typing import Callable
 
 from mxlpy import export_mscz, get_unrolled_measure_indices
 from mxlpy.clean_xml import reduce_file
