@@ -28,7 +28,7 @@ def extract_info(xml: Path):
         if "drum" not in name.lower():
             used_part_ids.append(id)
 
-    # Find keys
+    # Find keys, exclude drum parts
     all_keys = []
     for part_id in used_part_ids:
         part = root.find(f".//part[@id='{part_id}']")
