@@ -39,6 +39,12 @@
           <line>2</line>
           </clef>
         </attributes>
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <direction placement="above">
         <direction-type>
           <metronome parentheses="no">
@@ -278,6 +284,12 @@
         </barline>
       </measure>
     <measure number="3">
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -340,6 +352,12 @@
         </note>
       </measure>
     <measure number="4">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          </root>
+        <kind text="m7">minor-seventh</kind>
+        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -357,7 +375,7 @@
           </pitch>
         <duration>6</duration>
         <type>16th</type>
-        <beam number="1">end</beam>
+        <beam number="1">continue</beam>
         <beam number="2">end</beam>
         </note>
       <note>
@@ -365,8 +383,26 @@
           <step>F</step>
           <octave>4</octave>
           </pitch>
-        <duration>24</duration>
-        <type>quarter</type>
+        <duration>12</duration>
+        <tie type="start" />
+        <type>eighth</type>
+        <beam number="1">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
+        <type>eighth</type>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -376,18 +412,40 @@
           </pitch>
         <duration>6</duration>
         <type>16th</type>
-        <beam number="1">begin</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="1">continue</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
-        <type>eighth</type>
-        <dot />
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
         <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
+        <type>eighth</type>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -400,6 +458,13 @@
         </note>
       </measure>
     <measure number="5">
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -437,17 +502,39 @@
         <duration>6</duration>
         <type>16th</type>
         <beam number="1">begin</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
-        <type>eighth</type>
-        <dot />
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
         <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          </root>
+        <kind text="m7">minor-seventh</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
+        <type>eighth</type>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -487,6 +574,12 @@
         </note>
       </measure>
     <measure number="6">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -513,6 +606,14 @@
           <tied type="start" />
           </notations>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        <offset>24</offset>
+        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -542,6 +643,12 @@
         </note>
       </measure>
     <measure number="7">
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -586,6 +693,12 @@
           <slur type="start" placement="below" number="1" />
           </notations>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          </root>
+        <kind text="m7">minor-seventh</kind>
+        </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -622,6 +735,12 @@
         </note>
       </measure>
     <measure number="8">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -646,17 +765,41 @@
         <duration>6</duration>
         <type>16th</type>
         <beam number="1">begin</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
         <type>eighth</type>
-        <dot />
-        <beam number="1">continue</beam>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -684,6 +827,12 @@
         </note>
       </measure>
     <measure number="9">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          </root>
+        <kind text="m7">minor-seventh</kind>
+        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -721,17 +870,39 @@
         <duration>6</duration>
         <type>16th</type>
         <beam number="1">begin</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
-        <type>eighth</type>
-        <dot />
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
         <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
+        <type>eighth</type>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -755,6 +926,12 @@
         </note>
       </measure>
     <measure number="10">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -772,9 +949,37 @@
           <step>F</step>
           <octave>4</octave>
           </pitch>
-        <duration>72</duration>
-        <type>half</type>
+        <duration>36</duration>
+        <tie type="start" />
+        <type>quarter</type>
         <dot />
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>24</duration>
+        <tie type="stop" />
+        <type>quarter</type>
+        <notations>
+          <tied type="stop" />
+          </notations>
+        </note>
+      <note>
+        <rest />
+        <duration>12</duration>
+        <type>eighth</type>
         </note>
       <note>
         <pitch>
@@ -803,6 +1008,12 @@
         </note>
       </measure>
     <measure number="11">
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -841,6 +1052,12 @@
           <tied type="start" />
           </notations>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          </root>
+        <kind text="m7">minor-seventh</kind>
+        </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -869,6 +1086,12 @@
         </note>
       </measure>
     <measure number="12">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -899,16 +1122,43 @@
           </pitch>
         <duration>6</duration>
         <type>16th</type>
-        <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
+        <beam number="1">continue</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
           <step>F</step>
           <octave>4</octave>
           </pitch>
-        <duration>48</duration>
-        <type>half</type>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>42</duration>
+        <tie type="stop" />
+        <type>quarter</type>
+        <dot />
+        <dot />
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -921,6 +1171,13 @@
         </note>
       </measure>
     <measure number="13">
+      <harmony print-frame="no">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -963,9 +1220,35 @@
           <step>F</step>
           <octave>4</octave>
           </pitch>
-        <duration>12</duration>
-        <type>eighth</type>
-        <beam number="1">continue</beam>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">backward hook</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="stop" />
+        <type>16th</type>
+        <beam number="1">begin</beam>
+        <beam number="2">forward hook</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -1010,6 +1293,12 @@
         </note>
       </measure>
     <measure number="14">
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -1027,6 +1316,12 @@
         </barline>
       </measure>
     <measure number="15">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -1052,7 +1347,7 @@
         <duration>6</duration>
         <type>16th</type>
         <beam number="1">begin</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -1060,11 +1355,36 @@
           <alter>-1</alter>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
-        <type>eighth</type>
-        <dot />
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
         <accidental>flat</accidental>
-        <beam number="1">continue</beam>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>D</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
+        <type>eighth</type>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -1074,16 +1394,35 @@
         <duration>6</duration>
         <type>16th</type>
         <beam number="1">continue</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
           </pitch>
-        <duration>12</duration>
-        <type>eighth</type>
-        <beam number="1">continue</beam>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="stop" />
+        <type>16th</type>
+        <beam number="1">begin</beam>
+        <beam number="2">forward hook</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -1111,6 +1450,13 @@
         </note>
       </measure>
     <measure number="16">
+      <harmony print-frame="no">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -1145,9 +1491,32 @@
           <step>C</step>
           <octave>4</octave>
           </pitch>
-        <duration>12</duration>
-        <type>eighth</type>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>C</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="stop" />
+        <type>16th</type>
         <beam number="1">begin</beam>
+        <beam number="2">forward hook</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -1194,6 +1563,13 @@
         </note>
       </measure>
     <measure number="17">
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -1223,6 +1599,12 @@
         <duration>12</duration>
         <type>eighth</type>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -1241,17 +1623,34 @@
         <type>16th</type>
         <accidental>natural</accidental>
         <beam number="1">continue</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
         <type>eighth</type>
-        <dot />
-        <beam number="1">continue</beam>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -1279,6 +1678,27 @@
         </note>
       </measure>
     <measure number="18">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
+      <harmony print-frame="no">
+        <root>
+          <root-step>D</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        <offset>48</offset>
+        </harmony>
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        <offset>72</offset>
+        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -1293,6 +1713,12 @@
         </note>
       </measure>
     <measure number="19">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -1324,7 +1750,7 @@
         <tie type="stop" />
         <type>16th</type>
         <beam number="1">begin</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
         <notations>
           <tied type="stop" />
           </notations>
@@ -1335,10 +1761,37 @@
           <alter>-1</alter>
           <octave>4</octave>
           </pitch>
-        <duration>12</duration>
-        <type>eighth</type>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
         <accidental>flat</accidental>
-        <beam number="1">continue</beam>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>D</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="stop" />
+        <type>16th</type>
+        <beam number="1">begin</beam>
+        <beam number="2">forward hook</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -1383,6 +1836,13 @@
         </note>
       </measure>
     <measure number="20">
+      <harmony print-frame="no">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -1415,9 +1875,32 @@
           <step>C</step>
           <octave>4</octave>
           </pitch>
-        <duration>12</duration>
-        <type>eighth</type>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>C</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="stop" />
+        <type>16th</type>
         <beam number="1">begin</beam>
+        <beam number="2">forward hook</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -1464,6 +1947,13 @@
         </note>
       </measure>
     <measure number="21">
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -1493,6 +1983,12 @@
         <duration>12</duration>
         <type>eighth</type>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -1511,7 +2007,7 @@
         <duration>6</duration>
         <type>16th</type>
         <beam number="1">continue</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -1519,10 +2015,28 @@
           <alter>-1</alter>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
         <type>eighth</type>
-        <dot />
-        <beam number="1">continue</beam>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -1552,6 +2066,20 @@
         </note>
       </measure>
     <measure number="22">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
+      <harmony print-frame="no">
+        <root>
+          <root-step>D</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        <offset>48</offset>
+        </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -1566,18 +2094,17 @@
           <tied type="stop" />
           </notations>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <rest />
         <duration>12</duration>
         <type>eighth</type>
         </note>
-      <direction placement="below">
-        <direction-type>
-          <dynamics>
-            <mp />
-            </dynamics>
-          </direction-type>
-        </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -1592,6 +2119,12 @@
         </barline>
       </measure>
     <measure number="23">
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -1654,6 +2187,12 @@
         </note>
       </measure>
     <measure number="24">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          </root>
+        <kind text="m7">minor-seventh</kind>
+        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -1691,27 +2230,67 @@
         <duration>6</duration>
         <type>16th</type>
         <beam number="1">begin</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
         <type>eighth</type>
-        <dot />
-        <beam number="1">continue</beam>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
           <step>C</step>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
+        <duration>12</duration>
+        <tie type="start" />
         <type>eighth</type>
-        <dot />
-        <beam number="1">continue</beam>
+        <beam number="1">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>C</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="stop" />
+        <type>16th</type>
+        <beam number="1">begin</beam>
+        <beam number="2">begin</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -1722,7 +2301,7 @@
         <duration>6</duration>
         <type>16th</type>
         <beam number="1">continue</beam>
-        <beam number="2">begin</beam>
+        <beam number="2">continue</beam>
         </note>
       <note>
         <pitch>
@@ -1747,6 +2326,13 @@
         </note>
       </measure>
     <measure number="25">
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -1784,17 +2370,39 @@
         <duration>6</duration>
         <type>16th</type>
         <beam number="1">begin</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
-        <type>eighth</type>
-        <dot />
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
         <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          </root>
+        <kind text="m7">minor-seventh</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
+        <type>eighth</type>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -1818,6 +2426,12 @@
         </note>
       </measure>
     <measure number="26">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -1830,6 +2444,14 @@
           <tied type="stop" />
           </notations>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        <offset>36</offset>
+        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -1839,13 +2461,6 @@
         <type>half</type>
         <dot />
         </note>
-      <direction placement="below">
-        <direction-type>
-          <dynamics>
-            <mf />
-            </dynamics>
-          </direction-type>
-        </direction>
       <note>
         <pitch>
           <step>F</step>
@@ -1860,6 +2475,12 @@
         </note>
       </measure>
     <measure number="27">
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -1898,6 +2519,12 @@
           <tied type="start" />
           </notations>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          </root>
+        <kind text="m7">minor-seventh</kind>
+        </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -1926,6 +2553,12 @@
         </note>
       </measure>
     <measure number="28">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1973,6 +2606,13 @@
           <tied type="start" />
           </notations>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -1987,6 +2627,13 @@
         </note>
       </measure>
     <measure number="29">
+      <harmony print-frame="no">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <rest />
         <duration>12</duration>
@@ -2042,17 +2689,41 @@
         <duration>6</duration>
         <type>16th</type>
         <beam number="1">continue</beam>
-        <beam number="2">end</beam>
+        <beam number="2">continue</beam>
         </note>
       <note>
         <pitch>
           <step>F</step>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
         <type>eighth</type>
-        <dot />
-        <beam number="1">continue</beam>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -2062,7 +2733,7 @@
         <duration>6</duration>
         <type>16th</type>
         <beam number="1">continue</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -2070,10 +2741,28 @@
           <alter>-1</alter>
           <octave>3</octave>
           </pitch>
-        <duration>18</duration>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>3</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
         <type>eighth</type>
-        <dot />
-        <beam number="1">continue</beam>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -2101,6 +2790,12 @@
         </note>
       </measure>
     <measure number="30">
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -2119,9 +2814,10 @@
           <step>E</step>
           <octave>4</octave>
           </pitch>
-        <duration>72</duration>
+        <duration>42</duration>
         <tie type="start" />
-        <type>half</type>
+        <type>quarter</type>
+        <dot />
         <dot />
         <accidental>natural</accidental>
         <notations>
@@ -2134,10 +2830,9 @@
           <step>E</step>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
+        <duration>48</duration>
         <tie type="stop" />
-        <type>eighth</type>
-        <dot />
+        <type>half</type>
         <notations>
           <tied type="stop" />
           </notations>
@@ -2147,6 +2842,12 @@
         </barline>
       </measure>
     <measure number="31">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -2172,7 +2873,7 @@
         <duration>6</duration>
         <type>16th</type>
         <beam number="1">begin</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -2180,11 +2881,36 @@
           <alter>-1</alter>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
-        <type>eighth</type>
-        <dot />
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
         <accidental>flat</accidental>
-        <beam number="1">continue</beam>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>D</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
+        <type>eighth</type>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -2194,16 +2920,35 @@
         <duration>6</duration>
         <type>16th</type>
         <beam number="1">continue</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
           </pitch>
-        <duration>12</duration>
-        <type>eighth</type>
-        <beam number="1">continue</beam>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="stop" />
+        <type>16th</type>
+        <beam number="1">begin</beam>
+        <beam number="2">forward hook</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -2231,6 +2976,13 @@
         </note>
       </measure>
     <measure number="32">
+      <harmony print-frame="no">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -2265,9 +3017,32 @@
           <step>C</step>
           <octave>4</octave>
           </pitch>
-        <duration>12</duration>
-        <type>eighth</type>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>C</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="stop" />
+        <type>16th</type>
         <beam number="1">begin</beam>
+        <beam number="2">forward hook</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -2314,6 +3089,13 @@
         </note>
       </measure>
     <measure number="33">
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -2343,6 +3125,12 @@
         <duration>12</duration>
         <type>eighth</type>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -2361,17 +3149,34 @@
         <type>16th</type>
         <accidental>natural</accidental>
         <beam number="1">continue</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
         <type>eighth</type>
-        <dot />
-        <beam number="1">continue</beam>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -2399,6 +3204,12 @@
         </note>
       </measure>
     <measure number="34">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -2421,6 +3232,14 @@
         <dot />
         <beam number="1">begin</beam>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>D</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        <offset>6</offset>
+        </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -2433,6 +3252,13 @@
         <accidental>flat</accidental>
         <beam number="1">end</beam>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        <offset>12</offset>
+        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -2473,6 +3299,12 @@
         </note>
       </measure>
     <measure number="35">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -2504,7 +3336,7 @@
         <tie type="stop" />
         <type>16th</type>
         <beam number="1">begin</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
         <notations>
           <tied type="stop" />
           </notations>
@@ -2515,10 +3347,37 @@
           <alter>-1</alter>
           <octave>4</octave>
           </pitch>
-        <duration>12</duration>
-        <type>eighth</type>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
         <accidental>flat</accidental>
-        <beam number="1">continue</beam>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>D</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="stop" />
+        <type>16th</type>
+        <beam number="1">begin</beam>
+        <beam number="2">forward hook</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -2563,6 +3422,13 @@
         </note>
       </measure>
     <measure number="36">
+      <harmony print-frame="no">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -2598,6 +3464,12 @@
         <duration>6</duration>
         <type>16th</type>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -2654,6 +3526,13 @@
         </note>
       </measure>
     <measure number="37">
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -2682,6 +3561,12 @@
         <duration>12</duration>
         <type>eighth</type>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -2700,7 +3585,7 @@
         <duration>6</duration>
         <type>16th</type>
         <beam number="1">continue</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -2708,10 +3593,28 @@
           <alter>-1</alter>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
         <type>eighth</type>
-        <dot />
-        <beam number="1">continue</beam>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -2741,6 +3644,27 @@
         </note>
       </measure>
     <measure number="38">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
+      <harmony print-frame="no">
+        <root>
+          <root-step>D</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        <offset>48</offset>
+        </harmony>
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        <offset>72</offset>
+        </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -2756,6 +3680,13 @@
         </note>
       </measure>
     <measure number="39">
+      <harmony print-frame="no">
+        <root>
+          <root-step>D</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -2782,10 +3713,35 @@
           <alter>-1</alter>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">backward hook</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
         <type>eighth</type>
-        <dot />
-        <beam number="1">continue</beam>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -2793,10 +3749,28 @@
           <alter>-1</alter>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
+        <duration>12</duration>
+        <tie type="start" />
         <type>eighth</type>
-        <dot />
-        <beam number="1">continue</beam>
+        <beam number="1">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="stop" />
+        <type>16th</type>
+        <beam number="1">begin</beam>
+        <beam number="2">begin</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -2808,7 +3782,7 @@
         <type>16th</type>
         <accidental>flat</accidental>
         <beam number="1">continue</beam>
-        <beam number="2">begin</beam>
+        <beam number="2">continue</beam>
         </note>
       <note>
         <pitch>
@@ -2833,6 +3807,13 @@
         </note>
       </measure>
     <measure number="40">
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -2860,10 +3841,34 @@
           <alter>-1</alter>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
-        <type>eighth</type>
-        <dot />
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
         <beam number="1">end</beam>
+        <beam number="2">backward hook</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
+        <type>eighth</type>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -2898,6 +3903,12 @@
         </note>
       </measure>
     <measure number="41">
+      <harmony print-frame="no">
+        <root>
+          <root-step>A</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -2913,6 +3924,9 @@
         <rest measure="yes" />
         <duration>96</duration>
         </note>
+      <barline location="right">
+        <bar-style>light-light</bar-style>
+        </barline>
       </measure>
     <measure number="43">
       <note>
@@ -2958,17 +3972,34 @@
         <duration>6</duration>
         <type size="cue">16th</type>
         <beam number="1">continue</beam>
-        <beam number="2">end</beam>
+        <beam number="2">continue</beam>
         </note>
       <note>
         <pitch>
           <step>F</step>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
+        <duration>6</duration>
+        <tie type="start" />
+        <type size="cue">16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
         <type size="cue">eighth</type>
-        <dot />
-        <beam number="1">continue</beam>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -2978,7 +4009,7 @@
         <duration>6</duration>
         <type size="cue">16th</type>
         <beam number="1">continue</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -2986,10 +4017,28 @@
           <alter>-1</alter>
           <octave>3</octave>
           </pitch>
-        <duration>18</duration>
+        <duration>6</duration>
+        <tie type="start" />
+        <type size="cue">16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>3</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
         <type size="cue">eighth</type>
-        <dot />
-        <beam number="1">continue</beam>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -3040,7 +4089,7 @@
         <duration>6</duration>
         <type size="cue">16th</type>
         <beam number="1">continue</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -3048,10 +4097,28 @@
           <alter>-1</alter>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
+        <duration>6</duration>
+        <tie type="start" />
+        <type size="cue">16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>E</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
         <type size="cue">eighth</type>
-        <dot />
-        <beam number="1">continue</beam>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -3127,17 +4194,34 @@
         <duration>6</duration>
         <type size="cue">16th</type>
         <beam number="1">continue</beam>
-        <beam number="2">end</beam>
+        <beam number="2">continue</beam>
         </note>
       <note>
         <pitch>
           <step>F</step>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
+        <duration>6</duration>
+        <tie type="start" />
+        <type size="cue">16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
         <type size="cue">eighth</type>
-        <dot />
-        <beam number="1">continue</beam>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -3147,7 +4231,7 @@
         <duration>6</duration>
         <type size="cue">16th</type>
         <beam number="1">continue</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -3155,10 +4239,28 @@
           <alter>-1</alter>
           <octave>3</octave>
           </pitch>
-        <duration>18</duration>
+        <duration>6</duration>
+        <tie type="start" />
+        <type size="cue">16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>3</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
         <type size="cue">eighth</type>
-        <dot />
-        <beam number="1">continue</beam>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -3742,13 +4844,6 @@
         </barline>
       </measure>
     <measure number="51">
-      <direction placement="below">
-        <direction-type>
-          <dynamics>
-            <mp />
-            </dynamics>
-          </direction-type>
-        </direction>
       <note>
         <pitch>
           <step>F</step>
@@ -3833,17 +4928,33 @@
         <duration>6</duration>
         <type>16th</type>
         <beam number="1">begin</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
-        <type>eighth</type>
-        <dot />
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
         <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
+        <type>eighth</type>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -3908,13 +5019,6 @@
         </note>
       </measure>
     <measure number="54">
-      <direction placement="below">
-        <direction-type>
-          <dynamics>
-            <mf />
-            </dynamics>
-          </direction-type>
-        </direction>
       <note>
         <pitch>
           <step>F</step>
@@ -3940,7 +5044,7 @@
         <duration>6</duration>
         <type>16th</type>
         <beam number="1">begin</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -3948,11 +5052,29 @@
           <alter>-1</alter>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
-        <type>eighth</type>
-        <dot />
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
         <accidental>flat</accidental>
-        <beam number="1">continue</beam>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
+        <type>eighth</type>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -3962,16 +5084,35 @@
         <duration>6</duration>
         <type>16th</type>
         <beam number="1">continue</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
           </pitch>
-        <duration>12</duration>
-        <type>eighth</type>
-        <beam number="1">continue</beam>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="stop" />
+        <type>16th</type>
+        <beam number="1">begin</beam>
+        <beam number="2">forward hook</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -4033,9 +5174,26 @@
           <step>C</step>
           <octave>4</octave>
           </pitch>
-        <duration>12</duration>
-        <type>eighth</type>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>C</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="stop" />
+        <type>16th</type>
         <beam number="1">begin</beam>
+        <beam number="2">forward hook</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -4129,7 +5287,7 @@
         <duration>6</duration>
         <type>16th</type>
         <beam number="1">continue</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -4137,10 +5295,28 @@
           <alter>-1</alter>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
         <type>eighth</type>
-        <dot />
-        <beam number="1">continue</beam>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -4507,7 +5683,7 @@
         <duration>6</duration>
         <type>16th</type>
         <beam number="1">continue</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -4515,10 +5691,28 @@
           <alter>-1</alter>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
         <type>eighth</type>
-        <dot />
-        <beam number="1">continue</beam>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -4588,7 +5782,7 @@
         <duration>6</duration>
         <type>16th</type>
         <beam number="1">continue</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -4596,10 +5790,28 @@
           <alter>-1</alter>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
         <type>eighth</type>
-        <dot />
-        <beam number="1">continue</beam>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -4651,9 +5863,26 @@
           <step>C</step>
           <octave>5</octave>
           </pitch>
-        <duration>12</duration>
-        <type>eighth</type>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>C</step>
+          <octave>5</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="stop" />
+        <type>16th</type>
         <beam number="1">begin</beam>
+        <beam number="2">forward hook</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -4751,9 +5980,29 @@
           <alter>-1</alter>
           <octave>4</octave>
           </pitch>
-        <duration>12</duration>
-        <type>eighth</type>
-        <beam number="1">continue</beam>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">backward hook</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="stop" />
+        <type>16th</type>
+        <beam number="1">begin</beam>
+        <beam number="2">forward hook</beam>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -4824,13 +6073,9 @@
         </note>
       <note>
         <rest />
-        <duration>12</duration>
+        <duration>18</duration>
         <type>eighth</type>
-        </note>
-      <note>
-        <rest />
-        <duration>6</duration>
-        <type>16th</type>
+        <dot />
         </note>
       <note>
         <pitch>
@@ -4920,7 +6165,7 @@
         <duration>6</duration>
         <type>16th</type>
         <beam number="1">continue</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -4928,10 +6173,27 @@
           <alter>-1</alter>
           <octave>4</octave>
           </pitch>
-        <duration>18</duration>
-        <type>eighth</type>
-        <dot />
+        <duration>6</duration>
+        <tie type="start" />
+        <type>16th</type>
         <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop" />
+        <type>eighth</type>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <rest />
@@ -5006,11 +6268,6 @@
         </note>
       </measure>
     <measure number="66">
-      <direction placement="above">
-        <direction-type>
-          <words>3:55</words>
-          </direction-type>
-        </direction>
       <note>
         <pitch>
           <step>A</step>
