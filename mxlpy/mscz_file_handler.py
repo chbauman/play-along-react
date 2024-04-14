@@ -102,6 +102,7 @@ class MSCZFileHandler:
 
 
 def iter_and_export(mscz_dir: Path, out_dir: Path) -> None:
+    """Iterate through a directory and export all files in subfolders."""
     handler = MSCZFileHandler()
     handler.verbose = 0
 
@@ -113,7 +114,7 @@ def iter_and_export(mscz_dir: Path, out_dir: Path) -> None:
             out_sub_dir.mkdir(exist_ok=True)
             for sub_path in sub_dir.iterdir():
                 if sub_path.suffix.endswith("mscz"):
-                    print(f"\tProcessing {sub_path.name}")
+                    print(f"\t{sub_path.name}")
                     handler.export_pdf_parts(sub_path, out_sub_dir)
 
 
