@@ -71,6 +71,7 @@ def get_unrolled_measure_indices(measures: List[ET.Element]) -> List[int]:
     while ct < len(measures):
         meas = measures[ct]
         jump = None
+        jump_kind = None
 
         # Handle endings (houses)
         ending = meas.find(".//ending")
@@ -84,11 +85,39 @@ def get_unrolled_measure_indices(measures: List[ET.Element]) -> List[int]:
                     ct = rep_end_idx + 1
                     continue
 
+        # Repeats ||:   :||
+        reps = meas.findall(".//repeat")
+        for rep in reps:
+            direction = rep.attrib["direction"]
+            if direction == "forward":
+                rep_start_idx = ct
+            else:
+                assert direction == "backward", f"Unknown direction '{direction}'!"
+            if direction == "backward":
+                times = int(rep.attrib.get("times", "2"))
+                if not ds_dc_no_repeat:
+                    if ct not in done_repeats:
+                        assert rep_start_idx is not None, f"Backward at {ct}"
+                        jump = rep_start_idx
+                        done_repeats[ct] = times - 2
+                        jump_kind = "repeating"
+                    elif done_repeats[ct] > 0:
+                        assert rep_start_idx is not None, f"Backward at {ct}"
+                        jump = rep_start_idx
+                        done_repeats[ct] = done_repeats[ct] - 1
+                        jump_kind = "repeating"
+                    rep_end_idx = ct
+        if jump_kind is not None:
+            # Remember index and go to next measure
+            measure_indices.append(ct)
+            print(f"{jump_kind}: jump from {ct} to {jump} :)")
+            ct = jump
+            continue
+
         # Jumps
         segno = meas.find(".//segno")
         if segno is not None:
             last_segno = ct
-        jump_kind = None
         with_rep = False
         directions = meas.findall(".//direction-type")
         for direct in directions:
@@ -129,29 +158,6 @@ def get_unrolled_measure_indices(measures: List[ET.Element]) -> List[int]:
                 to_coda = None
                 fine = None
                 continue
-
-        # Repeats ||:   :||
-        reps = meas.findall(".//repeat")
-        for rep in reps:
-            direction = rep.attrib["direction"]
-            if direction == "forward":
-                rep_start_idx = ct
-            else:
-                assert direction == "backward", f"Unknown direction '{direction}'!"
-            if direction == "backward":
-                times = int(rep.attrib.get("times", "2"))
-                if not ds_dc_no_repeat:
-                    if ct not in done_repeats:
-                        assert rep_start_idx is not None, f"Backward at {ct}"
-                        jump = rep_start_idx
-                        done_repeats[ct] = times - 2
-                        jump_kind = "repeating"
-                    elif done_repeats[ct] > 0:
-                        assert rep_start_idx is not None, f"Backward at {ct}"
-                        jump = rep_start_idx
-                        done_repeats[ct] = done_repeats[ct] - 1
-                        jump_kind = "repeating"
-                    rep_end_idx = ct
 
         # Remember index and go to next measure
         measure_indices.append(ct)
