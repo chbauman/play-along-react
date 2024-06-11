@@ -11,6 +11,9 @@ const RESSOURCES = {
       instrumentKey: "Instrument Tuning",
       timeSignature: "Time Signature",
       fingering: "Fingering",
+      fingerNone: "None",
+      fingerThreeValves: "3 Valves",
+      fingerTrombone: "Trombone",
       songKey: "Key",
       clef: "Clef",
       bassClef: "Bass",
@@ -47,20 +50,23 @@ const RESSOURCES = {
       settingsTitle: "Ajustes",
       instrumentKey: "Afinación de instrumento",
       timeSignature: "Tipo de compás",
-      fingering: "...",
-      songKey: "...",
+      fingering: "Digitaciones",
+      fingerNone: "Ninguno",
+      fingerThreeValves: "3 Válvulas",
+      fingerTrombone: "Trombón",
+      songKey: "Tonalidad",
       clef: "Clave",
       bassClef: "Fa",
       trebleClef: "Sol",
-      totScores: "Numero de canciones: {{num}}",
-      filter: "...",
-      txtFilterDefault: "...",
-      allScores: "Todas",
+      totScores: "Número de canciones: {{num}}",
+      filter: "Filtro",
+      txtFilterDefault: "Insertar palabras clave",
+      allScores: "Toda la música",
       allScoresTxt:
-        "En total hay <num /> piezas. ... accessed under <all/>. Or: <random />",
-      randomScore: "...",
-      recentScores: "...",
-      recentTxt: "...",
+        "En total hay <num /> piezas. Se puede acceder a ellas a través del siguiente enlace <all/>. O elige una pieza al azar: <random />",
+      randomScore: "Pieza al azar",
+      recentScores: "Piezas recientes",
+      recentTxt: "Las piezas más recientes se muestran a continuación.",
       name: "Nombre",
       artist: "Artista",
       search: "Búsqueda",
@@ -84,6 +90,9 @@ const RESSOURCES = {
       instrumentKey: "Instrumentenstimmung",
       timeSignature: "Taktart",
       fingering: "Griffe",
+      fingerNone: "Keine",
+      fingerThreeValves: "3 Ventile",
+      fingerTrombone: "Posaune",
       songKey: "Tonart",
       clef: "Schlüssel",
       bassClef: "Bass",
@@ -124,14 +133,14 @@ const getLangCode = () => {
 };
 
 export const getSelectorInfo = (t: any) => {
-  const langMap: { [key: string]: string } = {};
-  LANGUAGES.forEach((langCode) => {
-    langMap[langCode] = RESSOURCES[langCode].translation.langName;
-  });
+  const getComp = (code: string) =>
+    RESSOURCES[code as LangKey].translation.langName;
   return {
-    getLangCode,
-    key: langKey,
-    map: langMap,
+    settingKey: langKey,
+    options: LANGUAGES,
+    currentValue: getLangCode(),
+    getCurr: getLangCode,
+    getComp,
   };
 };
 

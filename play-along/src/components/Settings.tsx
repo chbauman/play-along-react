@@ -1,4 +1,4 @@
-import { ReactElement, useState } from "react";
+import React, { ReactElement, useState } from "react";
 import { Col, Dropdown, DropdownButton, Row } from "react-bootstrap";
 import { wrapWithNav } from "./NavBar";
 import { PitchSetting } from "./PartSelector";
@@ -8,56 +8,39 @@ import { FingerType } from "../util/util";
 import { useTranslation } from "react-i18next";
 import { getSelectorInfo } from "../i18n";
 
-type ValToEl = { [key: string]: ReactElement | string };
-
-const clefs: ValToEl = {
-  Treble: (
-    <>
-      Treble <TrebleClef height={"3em"} />
-    </>
-  ),
-  Bass: (
-    <>
-      Bass <BassClef height={"3em"} />
-    </>
-  ),
-};
+const clefOptions = ["treble", "bass"];
 const clefKey = "clef";
 
 /** Returns the currently selected clef from local storage. */
 export const getClef = () => {
   const ret = localStorage.getItem(clefKey);
-  return ret ? ret : Object.keys(clefs)[0];
+  return ret ? ret : clefOptions[0];
+};
+
+type DDInfo = {
+  settingKey: string;
+  options: string[];
+  currentValue: string;
+  getComp: (opKey: string) => any;
+  afterChange?: any;
 };
 
 /** Setting that can be changed by dropdown. */
-const DDSetting = ({
-  settingKey,
-  getter,
-  map,
-  afterChange,
-}: {
-  settingKey: string;
-  getter: () => string;
-  map: ValToEl;
-  afterChange?: any;
-}) => {
-  const [val, setClef] = useState(getter());
+const DDSetting = ({ ddInfo }: { ddInfo: DDInfo }) => {
+  const [val, setClef] = useState(ddInfo.currentValue);
   const set = (newVal: string) => {
-    localStorage.setItem(settingKey, newVal);
+    localStorage.setItem(ddInfo.settingKey, newVal);
     setClef(newVal);
-    if (afterChange) {
-      afterChange();
-    }
+    ddInfo.afterChange?.();
   };
 
-  const titleComp = <>{map[val]}</>;
+  const titleComp = ddInfo.getComp(val);
   return (
-    <DropdownButton id={`choose-${settingKey}`} title={titleComp}>
-      {Object.entries(map).map((el, idx) => {
+    <DropdownButton id={`choose-${ddInfo.settingKey}`} title={titleComp}>
+      {ddInfo.options.map((el) => {
         return (
-          <Dropdown.Item key={idx} onClick={() => set(el[0])}>
-            {el[1]}
+          <Dropdown.Item key={el} onClick={() => set(el)}>
+            {ddInfo.getComp(el)}
           </Dropdown.Item>
         );
       })}
@@ -66,16 +49,12 @@ const DDSetting = ({
 };
 
 const fingerKey = "finger-mode";
-const fingerMap = {
-  none: <>None</>,
-  valve: <>3 Valves</>,
-  trombone: <>Trombone</>,
-};
+const fingerKeys = ["none", "valve", "trombone"];
 
 /** Returns the currently selected finger mode from local storage. */
 export const getFinger = () => {
   const ret = localStorage.getItem(fingerKey);
-  const retNotNull = ret ? ret : Object.keys(fingerMap)[0];
+  const retNotNull = ret ? ret : fingerKeys[0];
   return retNotNull as FingerType;
 };
 
@@ -84,7 +63,39 @@ export const Settings = () => {
   const { t, i18n } = useTranslation();
   const langSettingInfo = getSelectorInfo(t);
 
-  const onLangChange = () => i18n.changeLanguage(langSettingInfo.getLangCode());
+  const onLangChange = () => i18n.changeLanguage(langSettingInfo.getCurr());
+
+  const clefInfo: DDInfo = {
+    settingKey: clefKey,
+    options: clefOptions,
+    currentValue: getClef(),
+    getComp: (opKey: string) => {
+      if (opKey === "bass") {
+        return (
+          <>
+            {t("bassClef")} <BassClef height={"3em"} />
+          </>
+        );
+      }
+      return (
+        <>
+          {t("trebleClef")} <TrebleClef height={"3em"} />
+        </>
+      );
+    },
+  };
+
+  const fingerMap: { [key: string]: React.JSX.Element } = {
+    none: <>{t("fingerNone")}</>,
+    valve: <>{t("fingerThreeValves")}</>,
+    trombone: <>{t("fingerTrombone")}</>,
+  };
+  const fingerInfo: DDInfo = {
+    settingKey: fingerKey,
+    options: fingerKeys,
+    currentValue: getFinger(),
+    getComp: (opKey: string) => fingerMap[opKey],
+  };
 
   const pitchSelector = (
     <>
@@ -92,10 +103,7 @@ export const Settings = () => {
         <Col>{t("language")}</Col>
         <Col>
           <DDSetting
-            settingKey={langSettingInfo.key}
-            map={langSettingInfo.map}
-            getter={langSettingInfo.getLangCode}
-            afterChange={onLangChange}
+            ddInfo={{ ...langSettingInfo, afterChange: onLangChange }}
           />
         </Col>
       </Row>
@@ -108,17 +116,13 @@ export const Settings = () => {
       <Row className="mt-3">
         <Col>{t("clef")}</Col>
         <Col>
-          <DDSetting settingKey={clefKey} map={clefs} getter={getClef} />
+          <DDSetting ddInfo={clefInfo} />
         </Col>
       </Row>
       <Row className="mt-3">
         <Col>{t("fingering")}</Col>
         <Col>
-          <DDSetting
-            settingKey={fingerKey}
-            map={fingerMap}
-            getter={getFinger}
-          />
+          <DDSetting ddInfo={fingerInfo} />
         </Col>
       </Row>
     </>
