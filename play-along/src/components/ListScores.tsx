@@ -8,12 +8,12 @@ import { wrapWithNav } from "./NavBar";
 import { ScoreTable } from "./ScoreTable";
 import { getCopiedSCScores } from "./player/SoundCloudPlayer";
 import TimeSignatures from "../timeSignatures.json";
+import { useTranslation } from "react-i18next";
 
 export const sortBy = ["name", "artist"] as const;
-export const sortByNames = { name: "Song Name", artist: "Artist" };
 export type SortBy = (typeof sortBy)[number];
 type SortSetting = { by: SortBy; ascending: boolean };
-type ScoreNameArtist = typeof sortByNames;
+type ScoreNameArtist = { name: string; artist: string };
 
 /** Hook providing form to enter text for filtering scores. */
 const useScoreFilter = () => {
@@ -166,6 +166,7 @@ const useProcessedScores = (
 ) => {
   const subNN = sub ? sub : audioCollId;
   const [filterS, filterForm] = useScoreFilter();
+  const { t } = useTranslation();
   const sortInfo = useSortedScores();
   const [keys, keyFilterComp] = useKeyFilter();
   const [timeFilterComp, times] = useTimeSignatureFilter();
@@ -188,7 +189,7 @@ const useProcessedScores = (
   const comp = (
     <>
       <Row className="m-0 p-0 mb-3">
-        <Col className="m-0 p-0">Search</Col>
+        <Col className="m-0 p-0">{t("search")}</Col>
         <Col className="m-0 p-0">{filterForm}</Col>
       </Row>
       {filterComp}
@@ -255,5 +256,6 @@ export const ListScores = ({ sub }: { sub?: string }) => {
       {scoreTable}
     </>
   );
-  return wrapWithNav(fullComp, "All Scores");
+  const { t } = useTranslation();
+  return wrapWithNav(fullComp, t("allScores"));
 };

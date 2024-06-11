@@ -5,8 +5,10 @@ import { PitchSetting } from "./PartSelector";
 import { ReactComponent as BassClef } from "../img/bass.svg";
 import { ReactComponent as TrebleClef } from "../img/treble.svg";
 import { FingerType } from "../util/util";
+import { useTranslation } from "react-i18next";
+import { getSelectorInfo } from "../i18n";
 
-type ValToEl = { [key: string]: ReactElement };
+type ValToEl = { [key: string]: ReactElement | string };
 
 const clefs: ValToEl = {
   Treble: (
@@ -33,15 +35,20 @@ const DDSetting = ({
   settingKey,
   getter,
   map,
+  afterChange,
 }: {
   settingKey: string;
   getter: () => string;
   map: ValToEl;
+  afterChange?: any;
 }) => {
   const [val, setClef] = useState(getter());
   const set = (newVal: string) => {
     localStorage.setItem(settingKey, newVal);
     setClef(newVal);
+    if (afterChange) {
+      afterChange();
+    }
   };
 
   const titleComp = <>{map[val]}</>;
@@ -74,16 +81,32 @@ export const getFinger = () => {
 
 /** Setting component. */
 export const Settings = () => {
+  const { t, i18n } = useTranslation();
+  const langSettingInfo = getSelectorInfo(t);
+
+  const onLangChange = () => i18n.changeLanguage(langSettingInfo.getLangCode());
+
   const pitchSelector = (
     <>
       <Row>
+        <Col>{t("language")}</Col>
+        <Col>
+          <DDSetting
+            settingKey={langSettingInfo.key}
+            map={langSettingInfo.map}
+            getter={langSettingInfo.getLangCode}
+            afterChange={onLangChange}
+          />
+        </Col>
+      </Row>
+      <Row className="mt-3">
         <Col>Default pitch</Col>
         <Col>
           <PitchSetting title="" />
         </Col>
       </Row>
       <Row className="mt-3">
-        <Col>Clef</Col>
+        <Col>{t("clef")}</Col>
         <Col>
           <DDSetting settingKey={clefKey} map={clefs} getter={getClef} />
         </Col>
@@ -100,5 +123,5 @@ export const Settings = () => {
       </Row>
     </>
   );
-  return wrapWithNav(pitchSelector, "Settings");
+  return wrapWithNav(pitchSelector, t("settingsTitle"));
 };

@@ -1,5 +1,6 @@
 import { useForm, ValidationError } from "@formspree/react";
 import { Button, Col, Form, FormLabel, Row } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
 
 /** Form spree contact form component.
  *
@@ -7,6 +8,7 @@ import { Button, Col, Form, FormLabel, Row } from "react-bootstrap";
  */
 export default function ContactForm() {
   const [state, handleSubmit] = useForm("xpzbwoql");
+  const { t } = useTranslation();
 
   if (state.succeeded) {
     return <p>Thanks for your submission!</p>;
@@ -15,23 +17,17 @@ export default function ContactForm() {
   return (
     <>
       <Row>
-        <h4>Contact</h4>
-        <p>
-          If you have any questions, need assistance, or want to provide us with
-          helpful feedback, please don't hesitate to use the following contact
-          form. Simply provide your name, email address, and a brief message
-          describing your inquiry, and we will get back to you as soon as
-          possible.
-        </p>
+        <h4>{t("contact")}</h4>
+        <p>{t("contactTxt")}</p>
       </Row>
       <Row>
         <Col>
           <Form method="POST" onSubmit={handleSubmit}>
-            <FormLabel htmlFor="name">Full Name</FormLabel>
+            <FormLabel htmlFor="name">{t("fullName")}</FormLabel>
             <Form.Control type="text" name="name" id="name"></Form.Control>
             <ValidationError prefix="Name" field="name" errors={state.errors} />
 
-            <FormLabel htmlFor="email">Email Address</FormLabel>
+            <FormLabel htmlFor="email">{t("email")}</FormLabel>
             <Form.Control type="email" name="email" id="email"></Form.Control>
             <ValidationError
               prefix="Email"
@@ -39,7 +35,7 @@ export default function ContactForm() {
               errors={state.errors}
             />
 
-            <FormLabel htmlFor="message">Message</FormLabel>
+            <FormLabel htmlFor="message">{t("message")}</FormLabel>
             <Form.Control
               as="textarea"
               name="message"
@@ -52,7 +48,7 @@ export default function ContactForm() {
             />
 
             <Button className="mt-3" type="submit" disabled={state.submitting}>
-              Submit
+              {t("submit")}
             </Button>
             <ValidationError errors={state.errors} />
           </Form>

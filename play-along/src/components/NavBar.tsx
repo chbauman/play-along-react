@@ -2,8 +2,10 @@ import { ReactElement } from "react";
 import { Container, Nav, Navbar, NavLink } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import { MdHelp, MdList, MdSettings } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 
 const NavBar = ({ title }: { title: string }) => {
+  const { t } = useTranslation();
   const params = useParams();
   const audioId = params.audioId;
 
@@ -38,13 +40,13 @@ const NavBar = ({ title }: { title: string }) => {
         <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
           <Nav style={navTxtStyle}>
             <NavLink as={Link} to={getRoute("listall")}>
-              <MdList size={buttSize} /> All Scores
+              <MdList size={buttSize} /> {t("allScores")}
             </NavLink>
             <NavLink as={Link} to={getRoute("settings")}>
-              <MdSettings size={buttSize} /> Settings
+              <MdSettings size={buttSize} /> {t("settingsTitle")}
             </NavLink>
             <NavLink as={Link} to={getRoute("help")}>
-              <MdHelp size={buttSize} /> Help
+              <MdHelp size={buttSize} /> {t("helpTitle")}
             </NavLink>
           </Nav>
         </Navbar.Collapse>

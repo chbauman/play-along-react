@@ -1,7 +1,8 @@
 import { Table } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { intToKey, sortBy, SortBy, sortByNames } from "./ListScores";
+import { intToKey, sortBy, SortBy } from "./ListScores";
 import { NormalizedScoreInfo } from "../util/util";
+import { useTranslation } from "react-i18next";
 
 export const ScoreTable = ({
   scores,
@@ -17,6 +18,7 @@ export const ScoreTable = ({
   };
 }) => {
   const navi = useNavigate();
+  const { t } = useTranslation();
 
   const th = sortBy.map((el) => {
     let ex = "";
@@ -32,7 +34,7 @@ export const ScoreTable = ({
         style={{ cursor: "pointer" }}
         className="score-table-header"
       >
-        {sortByNames[el]}
+        {t(el)}
         {ex}
       </th>
     );
