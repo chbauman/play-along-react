@@ -16,12 +16,12 @@ type SortSetting = { by: SortBy; ascending: boolean };
 type ScoreNameArtist = { name: string; artist: string };
 
 /** Hook providing form to enter text for filtering scores. */
-const useScoreFilter = () => {
+const useScoreFilter = (placeholder: string) => {
   const [filterS, setFilterS] = useState<string | undefined>(undefined);
   const filterForm = (
     <Form.Control
       type="text"
-      placeholder="Enter keyword"
+      placeholder={placeholder}
       onChange={(ev: { target: any }) => setFilterS(ev.target.value)}
       value={filterS}
     />
@@ -165,8 +165,8 @@ const useProcessedScores = (
   sub?: string
 ) => {
   const subNN = sub ? sub : audioCollId;
-  const [filterS, filterForm] = useScoreFilter();
   const { t } = useTranslation();
+  const [filterS, filterForm] = useScoreFilter(t("txtFilterDefault"));
   const sortInfo = useSortedScores();
   const [keys, keyFilterComp] = useKeyFilter();
   const [timeFilterComp, times] = useTimeSignatureFilter();
@@ -175,13 +175,13 @@ const useProcessedScores = (
   const filterComp = enableKeyFiltering && (
     <>
       {" "}
-      <Row className="m-0 p-0 mb-3">Filter</Row>
+      <Row className="m-0 p-0 mb-3">{t("filter")}</Row>
       <Row className="m-0 p-0 mb-3">
-        <Col className="m-0 p-0">Key Signature</Col>
+        <Col className="m-0 p-0">{t("songKey")}</Col>
         <Col className="m-0 p-0">{keyFilterComp}</Col>
       </Row>
       <Row className="m-0 p-0 mb-3">
-        <Col className="m-0 p-0">Time Signature</Col>
+        <Col className="m-0 p-0">{t("timeSignature")}</Col>
         <Col className="m-0 p-0">{timeFilterComp}</Col>
       </Row>
     </>
@@ -249,13 +249,14 @@ export const ListScores = ({ sub }: { sub?: string }) => {
     <ScoreTable scores={scores} sortInfo={sortInfo} sub={subNN!} />
   );
 
+  const { t } = useTranslation();
+  const totScores = t("totScores", { num: scores.length });
   const fullComp = (
     <>
       {comp}
-      <Row className="m-0 p-0 mb-3">Scores in list: {scores.length}</Row>
+      <Row className="m-0 p-0 mb-3">{totScores}</Row>
       {scoreTable}
     </>
   );
-  const { t } = useTranslation();
   return wrapWithNav(fullComp, t("allScores"));
 };

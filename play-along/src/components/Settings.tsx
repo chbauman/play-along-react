@@ -100,7 +100,7 @@ export const Settings = () => {
         </Col>
       </Row>
       <Row className="mt-3">
-        <Col>Default pitch</Col>
+        <Col>{t("instrumentKey")}</Col>
         <Col>
           <PitchSetting title="" />
         </Col>
@@ -112,7 +112,7 @@ export const Settings = () => {
         </Col>
       </Row>
       <Row className="mt-3">
-        <Col>Fingering</Col>
+        <Col>{t("fingering")}</Col>
         <Col>
           <DDSetting
             settingKey={fingerKey}

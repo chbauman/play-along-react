@@ -45,7 +45,7 @@ export const ScoreTable = ({
         <tr>
           <th></th>
           {th}
-          <th>Pitch</th>
+          <th>{t("songKey")}</th>
         </tr>
       </thead>
       <tbody>

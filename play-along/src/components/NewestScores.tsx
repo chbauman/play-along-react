@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { getCopiedScores } from "../util/util";
 import { ScoreTable } from "./ScoreTable";
 
@@ -7,6 +8,7 @@ export const NewestScores = ({
   nMostRecentSongs: number;
 }) => {
   const allScores = getCopiedScores();
+  const { t } = useTranslation();
 
   // Select only most recent scores
   let scores = allScores.filter(
@@ -17,11 +19,8 @@ export const NewestScores = ({
 
   return (
     <div className="mb-3">
-      <h4>Most Recently Added Scores</h4>
-      <p>
-        The most recently added scores are listed below. Choose a song by
-        clicking on it and start playing right away.
-      </p>
+      <h4>{t("recentScores")}</h4>
+      <p>{t("recentTxt")}</p>
       {newestScores}
     </div>
   );
