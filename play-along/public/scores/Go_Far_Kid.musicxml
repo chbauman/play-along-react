@@ -2569,13 +2569,8 @@
           <step>A</step>
           <octave>4</octave>
           </pitch>
-        <duration>2</duration>
-        <type>eighth</type>
-        </note>
-      <note>
-        <rest />
-        <duration>2</duration>
-        <type>eighth</type>
+        <duration>4</duration>
+        <type>quarter</type>
         </note>
       <note>
         <rest />
@@ -3355,13 +3350,24 @@
           <step>A</step>
           <octave>4</octave>
           </pitch>
-        <duration>4</duration>
-        <type>quarter</type>
+        <duration>2</duration>
+        <tie type="start" />
+        <type>eighth</type>
+        <notations>
+          <tied type="start" />
+          </notations>
         </note>
       <note>
-        <rest />
-        <duration>2</duration>
-        <type>eighth</type>
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>4</duration>
+        <tie type="stop" />
+        <type>quarter</type>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -3760,13 +3766,8 @@
           <step>E</step>
           <octave>4</octave>
           </pitch>
-        <duration>2</duration>
-        <type>eighth</type>
-        </note>
-      <note>
-        <rest />
-        <duration>2</duration>
-        <type>eighth</type>
+        <duration>4</duration>
+        <type>quarter</type>
         </note>
       <note>
         <rest />
@@ -4020,13 +4021,8 @@
           <step>E</step>
           <octave>4</octave>
           </pitch>
-        <duration>2</duration>
-        <type>eighth</type>
-        </note>
-      <note>
-        <rest />
-        <duration>2</duration>
-        <type>eighth</type>
+        <duration>4</duration>
+        <type>quarter</type>
         </note>
       <note>
         <pitch>
@@ -4876,13 +4872,8 @@
           <step>G</step>
           <octave>4</octave>
           </pitch>
-        <duration>2</duration>
-        <type>eighth</type>
-        </note>
-      <note>
-        <rest />
-        <duration>2</duration>
-        <type>eighth</type>
+        <duration>4</duration>
+        <type>quarter</type>
         </note>
       <note>
         <pitch>
