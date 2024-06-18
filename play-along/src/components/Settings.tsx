@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from "react";
+import React, { useState } from "react";
 import { Col, Dropdown, DropdownButton, Row } from "react-bootstrap";
 import { wrapWithNav } from "./NavBar";
 import { PitchSetting } from "./PartSelector";
