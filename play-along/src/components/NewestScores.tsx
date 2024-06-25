@@ -12,7 +12,7 @@ export const NewestScores = ({
 
   // Select only most recent scores
   let scores = allScores.filter(
-    (el, idx) => idx > allScores.length - nMostRecentSongs - 1
+    (_el, idx) => idx > allScores.length - nMostRecentSongs - 1
   );
   scores = scores.reverse();
   const newestScores = <ScoreTable scores={scores} sub="yt" />;

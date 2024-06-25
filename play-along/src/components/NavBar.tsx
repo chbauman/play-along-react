@@ -69,6 +69,11 @@ export const wrapWithNav = (
   return (
     <>
       {navBar}
+      <Container style={{ width: "100%", color: "red", textAlign: "center" }}>
+        <h3>
+          This website will move to <a href="https://ytpa.ch">ytpa.ch</a>
+        </h3>
+      </Container>
       {cmp}
     </>
   );

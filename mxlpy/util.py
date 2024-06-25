@@ -42,11 +42,11 @@ def write_xml(tree: ET, out_path: Path) -> None:
 
 def read_json(p: Path):
     """Read data from JSON."""
-    with open(p, "r", encoding="utf8") as f:
+    with open(p, "r", encoding="UTF-8") as f:
         return json.load(f)
 
 
 def write_json(p: Path, data: Any, **kwargs) -> None:
     """Write data to JSON."""
-    with open(p, "w", encoding="utf8") as f:
-        json.dump(data, f, **kwargs)
+    with open(p, "w", encoding="UTF-8") as f:
+        json.dump(data, f, **kwargs, ensure_ascii=False)
